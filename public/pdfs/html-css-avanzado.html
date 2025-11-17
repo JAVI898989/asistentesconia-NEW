@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 2: HTML5 y CSS3 Avanzado</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #06b6d4;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #06b6d4;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #1f2937;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #67e8f9;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #06b6d4;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #34d399;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #fbbf24;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .code {
+        background: #0f172a;
+        color: #22d3ee;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        border: 1px solid #334155;
+        overflow-x: auto;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🌐 TEMA 2: HTML5 Y CSS3 AVANZADO</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #1f2937">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        Estructura web semántica y diseño responsive profesional
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>HTML5 Semántico</li>
+        <li>CSS3 Avanzado y Flexbox</li>
+        <li>CSS Grid Layout</li>
+        <li>Diseño Responsive</li>
+        <li>Animaciones y Transiciones</li>
+        <li>Formularios Avanzados</li>
+        <li>Optimización y Performance</li>
+        <li>Metodologías CSS</li>
+        <li>Proyecto Práctico</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. HTML5 SEMÁNTICO</h2>
+
+      <div class="definition">
+        <h4>HTML5 Semántico</h4>
+        <p>
+          HTML5 introdujo elementos semánticos que dan significado al contenido,
+          mejorando la accesibilidad, SEO y mantenibilidad del código.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Elementos Semánticos Principales</h3>
+
+        <div class="example">
+          &lt;!DOCTYPE html&gt;<br />
+          &lt;html lang="es"&gt;<br />
+          &lt;head&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport"
+          content="width=device-width, initial-scale=1.0"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Mi Sitio Web&lt;/title&gt;<br />
+          &lt;/head&gt;<br />
+          &lt;body&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+          href="#inicio"&gt;Inicio&lt;/a&gt;&lt;/li&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a
+          href="#acerca"&gt;Acerca&lt;/a&gt;&lt;/li&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section
+          id="inicio"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Título
+          del Artículo&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;time
+          datetime="2024-01-15"&gt;15 de Enero, 2024&lt;/time&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Contenido
+          del artículo...&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Sidebar&lt;/h3&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Contenido
+          adicional...&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&copy; 2024
+          Mi Sitio Web&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/footer&gt;<br />
+          &lt;/body&gt;<br />
+          &lt;/html&gt;
+        </div>
+
+        <h4>Elementos Semánticos Clave:</h4>
+        <ul>
+          <li>
+            <strong>&lt;header&gt;</strong> - Encabezado de página o sección
+          </li>
+          <li><strong>&lt;nav&gt;</strong> - Navegación principal</li>
+          <li>
+            <strong>&lt;main&gt;</strong> - Contenido principal (único por
+            página)
+          </li>
+          <li>
+            <strong>&lt;section&gt;</strong> - Sección temática del contenido
+          </li>
+          <li>
+            <strong>&lt;article&gt;</strong> - Contenido independiente y
+            reutilizable
+          </li>
+          <li>
+            <strong>&lt;aside&gt;</strong> - Contenido tangencial (sidebar)
+          </li>
+          <li><strong>&lt;footer&gt;</strong> - Pie de p��gina o sección</li>
+          <li>
+            <strong>&lt;figure&gt;</strong> - Contenido autocontenido (imágenes)
+          </li>
+          <li><strong>&lt;figcaption&gt;</strong> - Leyenda de figure</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. CSS3 AVANZADO Y FLEXBOX</h2>
+
+      <div class="section">
+        <h3>2.1 Flexbox - Layout Flexible</h3>
+
+        <div class="example">
+          /* Contenedor flex */<br />
+          .container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row; /* row | column |
+          row-reverse | column-reverse */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center; /* flex-start |
+          flex-end | center | space-between | space-around | space-evenly */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-items: center; /* flex-start | flex-end
+          | center | stretch | baseline */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap; /* nowrap | wrap |
+          wrap-reverse */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px; /* Espacio entre elementos */<br />
+          }<br /><br />
+          /* Elementos flex */<br />
+          .item {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1; /* flex-grow: 1, flex-shrink: 1,
+          flex-basis: 0% */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;/* O de forma individual: */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-grow: 1; /* Cuánto puede crecer */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-shrink: 0; /* Cuánto puede encoger */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-basis: 200px; /* Tamaño base */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-self: flex-end; /* Alineación individual
+          */<br />
+          }
+        </div>
+
+        <h4>Casos de Uso Comunes:</h4>
+        <div class="example">
+          /* Centrar elemento perfectamente */<br />
+          .center {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;<br />
+          }<br /><br />
+          /* Navbar horizontal */<br />
+          .navbar {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;justify-content: space-between;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 1rem;<br />
+          }<br /><br />
+          /* Grid de tarjetas responsive */<br />
+          .card-grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 1rem;<br />
+          }<br /><br />
+          .card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;flex: 1 1 300px; /* Crecer, encoger, mínimo
+          300px */<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. CSS GRID LAYOUT</h2>
+
+      <div class="definition">
+        <h4>CSS Grid</h4>
+        <p>
+          CSS Grid es un sistema de layout bidimensional que permite crear
+          layouts complejos con filas y columnas de manera sencilla y flexible.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>3.1 Grid Básico</h3>
+
+        <div class="example">
+          /* Contenedor grid */<br />
+          .grid-container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr 2fr 1fr; /* 3
+          columnas: pequeña, grande, pequeña */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-rows: auto 1fr auto; /* 3 filas:
+          auto, flexible, auto */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 1rem; /* Espacio entre elementos */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;<br />
+          }<br /><br />
+          /* Elementos grid */<br />
+          .header {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-column: 1 / -1; /* Desde la línea 1 hasta
+          la última */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-row: 1;<br />
+          }<br /><br />
+          .sidebar {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-column: 1;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-row: 2;<br />
+          }<br /><br />
+          .main-content {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-column: 2;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-row: 2;<br />
+          }<br /><br />
+          .aside {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-column: 3;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-row: 2;<br />
+          }<br /><br />
+          .footer {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-column: 1 / -1;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-row: 3;<br />
+          }
+        </div>
+
+        <h4>Grid con Áreas Nombradas:</h4>
+        <div class="example">
+          .layout {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-areas:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"header header
+          header"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sidebar main
+          aside"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"footer footer
+          footer";<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 200px 1fr 200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-rows: auto 1fr auto;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 1rem;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;min-height: 100vh;<br />
+          }<br /><br />
+          .header { grid-area: header; }<br />
+          .sidebar { grid-area: sidebar; }<br />
+          .main { grid-area: main; }<br />
+          .aside { grid-area: aside; }<br />
+          .footer { grid-area: footer; }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. DISEÑO RESPONSIVE</h2>
+
+      <div class="section">
+        <h3>4.1 Mobile First Approach</h3>
+
+        <div class="example">
+          /* Base: Mobile (sin media query) */<br />
+          .container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 1rem;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%;<br />
+          }<br /><br />
+          .grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: 1fr;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;gap: 1rem;<br />
+          }<br /><br />
+          /* Tablet: 768px+ */<br />
+          @media (min-width: 768px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: 2rem;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max-width: 1200px;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin: 0 auto;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          repeat(2, 1fr);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+          /* Desktop: 1024px+ */<br />
+          @media (min-width: 1024px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          repeat(3, 1fr);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+          /* Large Desktop: 1440px+ */<br />
+          @media (min-width: 1440px) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;.grid {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns:
+          repeat(4, 1fr);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+
+        <h4>Unidades Responsivas:</h4>
+        <div class="example">
+          /* Unidades relativas */<br />
+          .responsive-text {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;font-size: clamp(1rem, 4vw, 2rem); /* Mín:
+          1rem, Preferido: 4vw, Máx: 2rem */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;line-height: 1.5;<br />
+          }<br /><br />
+          .responsive-spacing {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: clamp(1rem, 5vw, 3rem);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;margin-bottom: clamp(2rem, 8vw, 6rem);<br />
+          }<br /><br />
+          /* Contenedores fluidos */<br />
+          .fluid-container {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;width: min(90%, 1200px); /* 90% del viewport o
+          máximo 1200px */<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;margin-inline: auto;<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>5. ANIMACIONES Y TRANSICIONES</h2>
+
+      <div class="section">
+        <h3>5.1 Transiciones CSS</h3>
+
+        <div class="example">
+          /* Transición básica */<br />
+          .button {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: #3b82f6;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;padding: 0.75rem 1.5rem;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border: none;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 0.5rem;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(0);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.3s ease;<br />
+          }<br /><br />
+          .button:hover {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;background-color: #2563eb;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-2px);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 4px 12px rgba(59, 130, 246,
+          0.4);<br />
+          }<br /><br />
+          .button:active {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(0);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;transition-duration: 0.1s;<br />
+          }
+        </div>
+
+        <h3>5.2 Animaciones con Keyframes</h3>
+
+        <div class="example">
+          /* Definir la animación */<br />
+          @keyframes fadeInUp {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;from {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:
+          translateY(30px);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;to {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 1;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:
+          translateY(0);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+          @keyframes pulse {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;0%, 100% {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:
+          scale(1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;50% {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:
+          scale(1.05);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+          /* Aplicar la animación */<br />
+          .card {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;animation: fadeInUp 0.6s ease-out;<br />
+          }<br /><br />
+          .loading {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;animation: pulse 2s infinite;<br />
+          }<br /><br />
+          /* Control de animación */<br />
+          .card:nth-child(1) { animation-delay: 0.1s; }<br />
+          .card:nth-child(2) { animation-delay: 0.2s; }<br />
+          .card:nth-child(3) { animation-delay: 0.3s; }
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 EJERCICIOS PRÁCTICOS</h2>
+
+      <h3>Ejercicio 1: Layout Responsive Completo</h3>
+      <p>Crear un layout web completo que incluya:</p>
+      <ul>
+        <li>Header con navegación responsive</li>
+        <li>Sidebar que se oculte en móvil</li>
+        <li>Grid de contenido adaptable</li>
+        <li>Footer pegajoso</li>
+      </ul>
+
+      <h3>Ejercicio 2: Componentes Interactivos</h3>
+      <p>Desarrollar componentes con:</p>
+      <ul>
+        <li>Botones con efectos hover y active</li>
+        <li>Tarjetas con animaciones de entrada</li>
+        <li>Modal con transiciones suaves</li>
+        <li>Menu hamburguesa animado</li>
+      </ul>
+
+      <h3>Ejercicio 3: Formulario Avanzado</h3>
+      <p>Crear formulario que incluya:</p>
+      <ul>
+        <li>Validación visual CSS</li>
+        <li>Estados de focus personalizados</li>
+        <li>Animaciones de error</li>
+        <li>Diseño completamente responsive</li>
+      </ul>
+    </div>
+
+    <div class="important">
+      <h2>🎯 MEJORES PRÁCTICAS</h2>
+      <ul>
+        <li>
+          Usar <strong>HTML semántico</strong> para mejor accesibilidad y SEO
+        </li>
+        <li>Aplicar <strong>Mobile First</strong> en el diseño responsive</li>
+        <li>
+          Preferir <strong>Flexbox</strong> para layouts 1D y
+          <strong>Grid</strong> para layouts 2D
+        </li>
+        <li>
+          Usar <strong>unidades relativas</strong> (rem, em, %, vw, vh) en lugar
+          de px
+        </li>
+        <li>
+          Optimizar <strong>performance</strong> minimizando reflows y repaints
+        </li>
+        <li>
+          Mantener <strong>consistencia</strong> en naming conventions (BEM,
+          etc.)
+        </li>
+        <li>
+          Usar <strong>custom properties (CSS Variables)</strong> para temas
+        </li>
+        <li>Implementar <strong>progressive enhancement</strong></li>
+      </ul>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 2: HTML5 y CSS3 Avanzado</strong> | Página 1 de 1 | Curso
+        Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>

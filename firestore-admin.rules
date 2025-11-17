@@ -1,0 +1,93 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return request.auth != null &&
+        (
+          // Check custom claims from token
+          request.auth.token.role == 'admin' ||
+          (request.auth.token.roles != null && request.auth.token.roles.hasAny(['admin'])) ||
+          // Fallback to Firestore users collection
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
+          (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles != null &&
+           get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles.hasAny(['admin'])) ||
+          // Legacy email check (temporary)
+          request.auth.token.email in ['javier@cursosgratis.ai', 'info@cursosgratis.ai', 'jgomez.devfocus@gmail.com', 'admin@devfocus.es']
+        );
+    }
+    
+    // Helper function to check subscription (placeholder)
+    function isSubscribedToAssistant(assistantId) {
+      // This would check actual subscription status
+      // For now, return false to force admin bypass testing
+      return false;
+    }
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Users collection - admin can read/write all, users can read/write their own
+    match /users/{userId} {
+      allow read, write: if isAdmin() || (isAuthenticated() && request.auth.uid == userId);
+    }
+    
+    // Assistant syllabi - admin can access all, others need subscription
+    match /assistant_syllabus/{syllabusId} {
+      allow read: if isAdmin() || (isAuthenticated() && 
+        (isSubscribedToAssistant(resource.data.assistantId) || 
+         resource.data.status == 'free'));
+      allow write: if isAdmin();
+    }
+    
+    // Syllabus keys for duplicate prevention - admin can manage all
+    match /syllabus_keys/{keyId} {
+      allow read, write: if isAdmin();
+      allow create: if isAuthenticated(); // Allow creation for generating content
+    }
+    
+    // Tests - admin can access all, others need subscription
+    match /assistant_tests/{testId} {
+      allow read: if isAdmin() || (isAuthenticated() && 
+        isSubscribedToAssistant(resource.data.assistantId));
+      allow write: if isAdmin();
+    }
+    
+    // Flashcards - admin can access all, others need subscription  
+    match /assistant_flashcards/{flashcardId} {
+      allow read: if isAdmin() || (isAuthenticated() && 
+        isSubscribedToAssistant(resource.data.assistantId));
+      allow write: if isAdmin();
+    }
+    
+    // User subscriptions - admin can read all, users can read their own
+    match /subscriptions/{subscriptionId} {
+      allow read: if isAdmin() || (isAuthenticated() && 
+        request.auth.uid == resource.data.userId);
+      allow write: if isAdmin();
+    }
+    
+    // Referrals - admin can read all, users can read their own
+    match /referrals/{referralId} {
+      allow read, write: if isAdmin() || (isAuthenticated() && 
+        request.auth.uid == resource.data.userId);
+    }
+    
+    // Analytics and admin data - admin only
+    match /analytics/{document=**} {
+      allow read, write: if isAdmin();
+    }
+    
+    match /admin/{document=**} {
+      allow read, write: if isAdmin();
+    }
+    
+    // Default deny rule
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

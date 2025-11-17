@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 3: React Framework</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #06b6d4;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #06b6d4;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #1f2937;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #67e8f9;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #06b6d4;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #34d399;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #fbbf24;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .code {
+        background: #0f172a;
+        color: #22d3ee;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        border: 1px solid #334155;
+        overflow-x: auto;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+      .react-feature {
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        color: #1f2937;
+        font-weight: bold;
+      }
+      .hook-box {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>⚛️ TEMA 3: REACT FRAMEWORK</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #1f2937">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        Componentes, hooks y desarrollo de SPAs
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>Introducción a React</li>
+        <li>Configuración del Entorno</li>
+        <li>Componentes de React</li>
+        <li>JSX - JavaScript XML</li>
+        <li>Props - Propiedades de Componentes</li>
+        <li>State y useState Hook</li>
+        <li>Manejo de Eventos</li>
+        <li>Renderizado Condicional</li>
+        <li>Listas y Keys</li>
+        <li>Hooks Avanzados</li>
+        <li>Context API</li>
+        <li>React Router</li>
+        <li>Ejercicios Prácticos</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. INTRODUCCIÓN A REACT</h2>
+
+      <div class="definition">
+        <h4>¿Qué es React?</h4>
+        <p>
+          React es una biblioteca de JavaScript desarrollada por Facebook para
+          construir interfaces de usuario interactivas. Se basa en componentes
+          reutilizables y un enfoque declarativo que hace que el desarrollo de
+          aplicaciones web sea más eficiente y mantenible.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Historia de React</h3>
+        <ul>
+          <li><strong>2011:</strong> Jordan Walke crea React en Facebook</li>
+          <li>
+            <strong>2013:</strong> Open source - React es liberado al público
+          </li>
+          <li><strong>2015:</strong> React Native para aplicaciones móviles</li>
+          <li><strong>2016:</strong> React 15 - Mejoras en performance</li>
+          <li>
+            <strong>2017:</strong> React 16 - React Fiber (nueva arquitectura)
+          </li>
+          <li>
+            <strong>2019:</strong> React Hooks - Revolución en el manejo de
+            estado
+          </li>
+          <li><strong>2022:</strong> React 18 - Concurrent Features</li>
+        </ul>
+      </div>
+
+      <div class="react-feature">
+        <h4>🚀 ¿Por qué React es tan Popular?</h4>
+        <ul style="color: #1f2937">
+          <li>
+            <strong>Componentes Reutilizables:</strong> Código modular y
+            mantenible
+          </li>
+          <li>
+            <strong>Virtual DOM:</strong> Actualizaciones eficientes del DOM
+          </li>
+          <li><strong>Declarativo:</strong> Describes QUÉ quieres, no CÓMO</li>
+          <li>
+            <strong>Ecosistema Rico:</strong> Miles de librerías y herramientas
+          </li>
+          <li>
+            <strong>Comunidad Activa:</strong> Soporte y recursos abundantes
+          </li>
+          <li>
+            <strong>Respaldado por Meta:</strong> Desarrollo continuo y estable
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>1.2 Conceptos Fundamentales</h3>
+
+        <h4>Virtual DOM</h4>
+        <p>
+          React mantiene una representación virtual del DOM en memoria. Cuando
+          el estado cambia, React compara la nueva versión virtual con la
+          anterior y actualiza solo los elementos que han cambiado en el DOM
+          real.
+        </p>
+
+        <h4>Componentes</h4>
+        <p>
+          Todo en React es un componente. Los componentes son funciones o clases
+          que retornan elementos JSX y pueden reutilizarse en toda la
+          aplicación.
+        </p>
+
+        <h4>Unidirectional Data Flow</h4>
+        <p>
+          Los datos fluyen en una sola dirección: de componentes padre a
+          componentes hijo a través de props.
+        </p>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. CONFIGURACIÓN DEL ENTORNO</h2>
+
+      <div class="section">
+        <h3>2.1 Create React App</h3>
+        <div class="example">
+          # Instalar Node.js (versión 14 o superior)<br />
+          # Verificar instalación<br />
+          node --version<br />
+          npm --version<br /><br />
+          # Crear nueva aplicación React<br />
+          npx create-react-app mi-app<br />
+          cd mi-app<br /><br />
+          # Iniciar servidor de desarrollo<br />
+          npm start<br /><br />
+          # Construir para producción<br />
+          npm run build
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>2.2 Estructura del Proyecto</h3>
+        <div class="example">
+          mi-app/<br />
+          ├── public/<br />
+          │ ├── index.html<br />
+          │ └── favicon.ico<br />
+          ├── src/<br />
+          │ ├── components/ # Componentes reutilizables<br />
+          │ ├── pages/ # Páginas de la aplicación<br />
+          │ ├── hooks/ # Custom hooks<br />
+          │ ├── utils/ # Funciones utilitarias<br />
+          │ ├── App.js # Componente principal<br />
+          │ ├── index.js # Punto de entrada<br />
+          │ └── App.css # Estilos globales<br />
+          ├── package.json<br />
+          └── README.md
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>2.3 Herramientas de Desarrollo</h3>
+        <ul>
+          <li>
+            <strong>React Developer Tools:</strong> Extensión de navegador para
+            debugging
+          </li>
+          <li>
+            <strong>ESLint:</strong> Análisis de código y detección de errores
+          </li>
+          <li><strong>Prettier:</strong> Formateo automático de código</li>
+          <li>
+            <strong>VS Code:</strong> Editor recomendado con extensiones para
+            React
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. COMPONENTES DE REACT</h2>
+
+      <div class="definition">
+        <h4>Componentes</h4>
+        <p>
+          Los componentes son los bloques de construcción de React. Son
+          funciones o clases que reciben datos (props) y devuelven elementos JSX
+          que describen la interfaz de usuario.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>3.1 Componentes Funcionales</h3>
+        <div class="example">
+          // Componente funcional básico<br />
+          function Saludo() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;;<br />
+          }<br /><br />
+          // Con arrow function<br />
+          const Saludo = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;;<br />
+          };<br /><br />
+          // Sintaxis corta (sin llaves)<br />
+          const Saludo = () => &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;;
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>3.2 Usando Componentes</h3>
+        <div class="example">
+          // App.js<br />
+          import Saludo from './components/Saludo';<br /><br />
+          function App() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Saludo
+          /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Saludo
+          /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Saludo
+          /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }<br /><br />
+          export default App;
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>3.3 Composición de Componentes</h3>
+        <div class="example">
+          // Header.js<br />
+          const Header = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Mi
+          Aplicación&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
+          href="/"&gt;Inicio&lt;/a&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a
+          href="/about"&gt;Acerca&lt;/a&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          };<br /><br />
+          // App.js<br />
+          import Header from './components/Header';<br />
+          import MainContent from './components/MainContent';<br />
+          import Footer from './components/Footer';<br /><br />
+          function App() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+          className="app"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Header
+          /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MainContent
+          /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Footer
+          /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. JSX - JAVASCRIPT XML</h2>
+
+      <div class="definition">
+        <h4>¿Qué es JSX?</h4>
+        <p>
+          JSX es una extensión de sintaxis para JavaScript que permite escribir
+          elementos similares a HTML dentro del código JavaScript. React utiliza
+          JSX para describir la estructura de la interfaz de usuario.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>4.1 Sintaxis JSX</h3>
+        <div class="example">
+          // JSX permite mezclar HTML y JavaScript<br />
+          const elemento = &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;;<br /><br />
+          // Expresiones JavaScript en JSX<br />
+          const nombre = "Ana";<br />
+          const saludo = &lt;h1&gt;¡Hola {nombre}!&lt;/h1&gt;;<br /><br />
+          // Múltiples líneas<br />
+          const componente = (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Título&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Este es un
+          párrafo&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          );
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>4.2 Reglas de JSX</h3>
+
+        <h4>1. Un Solo Elemento Raíz</h4>
+        <div class="example">
+          // ❌ Incorrecto<br />
+          return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Título&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Párrafo&lt;/p&gt;<br />
+          );<br /><br />
+          // ✅ Correcto - Con div<br />
+          return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Título&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Párrafo&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          );<br /><br />
+          // ✅ Correcto - Con Fragment<br />
+          return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Título&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Párrafo&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/&gt;<br />
+          );
+        </div>
+
+        <h4>2. Cerrar Todas las Etiquetas</h4>
+        <div class="example">
+          // HTML tradicional<br />
+          &lt;img src="imagen.jpg"&gt;<br />
+          &lt;br&gt;<br />
+          &lt;hr&gt;<br /><br />
+          // JSX requiere cerrar todas las etiquetas<br />
+          &lt;img src="imagen.jpg" /&gt;<br />
+          &lt;br /&gt;<br />
+          &lt;hr /&gt;
+        </div>
+
+        <h4>3. className en lugar de class</h4>
+        <div class="example">
+          // HTML<br />
+          &lt;div class="container"&gt;&lt;/div&gt;<br /><br />
+          // JSX<br />
+          &lt;div className="container"&gt;&lt;/div&gt;
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>4.3 Expresiones JavaScript en JSX</h3>
+        <div class="example">
+          const persona = {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;nombre: "Juan",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;edad: 25<br />
+          };<br /><br />
+          const ComponentePersona = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;{persona.nombre}&lt;/h2&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Edad:
+          {persona.edad} años&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Es
+          mayor de edad: {persona.edad >= 18 ? "Sí" : "No"}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Salario:
+          ${(persona.edad * 1000).toLocaleString()}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          };
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>5. PROPS - PROPIEDADES DE COMPONENTES</h2>
+
+      <div class="definition">
+        <h4>¿Qué son las Props?</h4>
+        <p>
+          Las props (propiedades) son argumentos que se pasan a los componentes
+          React. Son objetos de solo lectura que permiten que los componentes
+          padre envíen datos a los componentes hijo.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>5.1 Pasando Props</h3>
+        <div class="example">
+          // Componente hijo que recibe props<br />
+          function TarjetaUsuario(props) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+          className="tarjeta"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;{props.nombre}&lt;/h3&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Edad:
+          {props.edad}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Email:
+          {props.email}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }<br /><br />
+          // Componente padre que envía props<br />
+          function App() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TarjetaUsuario
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre="Ana
+          García"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad={28}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email="ana@email.com"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TarjetaUsuario
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre="Carlos
+          López"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad={32}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email="carlos@email.com"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>5.2 Destructuring de Props</h3>
+        <div class="example">
+          // En lugar de props.nombre, props.edad...<br />
+          function TarjetaUsuario({ nombre, edad, email, activo = true }) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+          className={`tarjeta ${activo ? 'activo' : 'inactivo'}`}&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;{nombre}&lt;/h3&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Edad:
+          {edad}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Email:
+          {email}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{activo
+          && &lt;span className="badge"&gt;Activo&lt;/span&gt;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>5.3 Props Children</h3>
+        <div class="example">
+          // Componente que recibe contenido hijo<br />
+          function Boton({ tipo = "primary", onClick, children }) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;className={`btn
+          btn-${tipo}`}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick={onClick}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{children}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }<br /><br />
+          // Uso del componente<br />
+          &lt;Boton tipo="success" onClick={manejarClick}&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;Guardar Datos<br />
+          &lt;/Boton&gt;<br /><br />
+          &lt;Boton tipo="danger"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;🗑️&lt;/span&gt; Eliminar<br />
+          &lt;/Boton&gt;
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>6. STATE Y USESTATE HOOK</h2>
+
+      <div class="definition">
+        <h4>¿Qué es el State?</h4>
+        <p>
+          El state (estado) es un objeto que contiene datos que pueden cambiar
+          durante el ciclo de vida del componente. Cuando el state cambia, React
+          re-renderiza automáticamente el componente.
+        </p>
+      </div>
+
+      <div class="hook-box">
+        <h4>🎣 useState Hook</h4>
+        <p>
+          El hook useState permite añadir estado a componentes funcionales.
+          Devuelve un array con el valor actual del estado y una función para
+          actualizarlo.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>6.1 useState Básico</h3>
+        <div class="example">
+          import React, { useState } from 'react';<br /><br />
+          function Contador() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Declarar variable de estado<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const [contador, setContador] =
+          useState(0);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const incrementar = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContador(contador +
+          1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const decrementar = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContador(contador -
+          1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Contador:
+          {contador}&lt;/h2&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          onClick={incrementar}&gt;+&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          onClick={decrementar}&gt;-&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>6.2 Estado de Objetos</h3>
+        <div class="example">
+          function FormularioUsuario() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const [usuario, setUsuario] = useState({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre: '',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: '',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edad: 0<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const manejarCambio = (campo, valor) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setUsuario({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...usuario,
+          // Copiar estado anterior<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[campo]:
+          valor // Actualizar campo específico<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={usuario.nombre}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={(e)
+          => manejarCambio('nombre', e.target.value)}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="Nombre"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={usuario.email}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={(e)
+          => manejarCambio('email', e.target.value)}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="Email"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>6.3 Estado de Arrays</h3>
+        <div class="example">
+          function ListaTareas() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const [tareas, setTareas] = useState([]);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const [nuevaTarea, setNuevaTarea] =
+          useState('');<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const agregarTarea = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (nuevaTarea.trim())
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const
+          tarea = {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:
+          Date.now(),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;texto:
+          nuevaTarea,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;completada:
+          false<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTareas([...tareas,
+          tarea]);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setNuevaTarea('');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const eliminarTarea = (id) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTareas(tareas.filter(tarea
+          => tarea.id !== id));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={nuevaTarea}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={(e)
+          => setNuevaTarea(e.target.value)}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="Nueva
+          tarea"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          onClick={agregarTarea}&gt;Agregar&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{tareas.map(tarea
+          => (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li
+          key={tarea.id}&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{tarea.texto}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          onClick={() => eliminarTarea(tarea.id)}&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>7. MANEJO DE EVENTOS</h2>
+
+      <div class="section">
+        <h3>7.1 Eventos Básicos</h3>
+        <div class="example">
+          function ComponenteEventos() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const [mensaje, setMensaje] = useState('');<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const manejarClick = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setMensaje('¡Botón
+          clickeado!');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const manejarMouseEnter = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setMensaje('Mouse
+          sobre el botón');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const manejarMouseLeave = () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setMensaje('');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick={manejarClick}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onMouseEnter={manejarMouseEnter}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onMouseLeave={manejarMouseLeave}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Botón
+          Interactivo<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{mensaje}&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>7.2 Eventos de Formulario</h3>
+        <div class="example">
+          function FormularioCompleto() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const [datos, setDatos] = useState({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nombre: '',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: '',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mensaje: ''<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const manejarEnvio = (e) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault(); //
+          Prevenir envío por defecto<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Datos del
+          formulario:', datos);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Procesar
+          datos...<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const manejarCambio = (e) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const { name, value }
+          = e.target;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setDatos({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...datos,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name]:
+          value<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;form
+          onSubmit={manejarEnvio}&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="text"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="nombre"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={datos.nombre}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={manejarCambio}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="Nombre"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type="email"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="email"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={datos.email}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={manejarCambio}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="Email"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="mensaje"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={datos.mensaje}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={manejarCambio}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder="Mensaje"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/textarea&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit"&gt;Enviar&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 EJERCICIOS PRÁCTICOS</h2>
+
+      <h3>Ejercicio 1: Aplicación de Notas</h3>
+      <p>Crear una aplicación de notas que permita:</p>
+      <ul>
+        <li>Crear nuevas notas con título y contenido</li>
+        <li>Mostrar lista de todas las notas</li>
+        <li>Editar notas existentes</li>
+        <li>Eliminar notas</li>
+        <li>Buscar notas por título</li>
+      </ul>
+
+      <h3>Ejercicio 2: E-commerce Básico</h3>
+      <p>Desarrollar un mini e-commerce con:</p>
+      <ul>
+        <li>Catálogo de productos</li>
+        <li>Carrito de compras</li>
+        <li>Agregar/quitar productos del carrito</li>
+        <li>Calcular total</li>
+        <li>Formulario de checkout</li>
+      </ul>
+
+      <h3>Ejercicio 3: Dashboard Personalizable</h3>
+      <p>Crear un dashboard que incluya:</p>
+      <ul>
+        <li>Widgets de información (clima, noticias, tareas)</li>
+        <li>Posibilidad de añadir/quitar widgets</li>
+        <li>Configuración de cada widget</li>
+        <li>Guardar configuración en localStorage</li>
+      </ul>
+
+      <h3>Ejercicio 4: Chat en Tiempo Real (Simulado)</h3>
+      <p>Simular un chat con:</p>
+      <ul>
+        <li>Lista de conversaciones</li>
+        <li>Envío de mensajes</li>
+        <li>Historial de mensajes</li>
+        <li>Estados: escribiendo, conectado</li>
+        <li>Emojis y formato básico</li>
+      </ul>
+    </div>
+
+    <div class="important">
+      <h2>🎯 MEJORES PRÁCTICAS DE REACT</h2>
+      <ul>
+        <li>
+          Usa <strong>componentes funcionales</strong> con hooks en lugar de
+          clases
+        </li>
+        <li>
+          Mantén los <strong>componentes pequeños</strong> y con una sola
+          responsabilidad
+        </li>
+        <li>Usa <strong>PropTypes o TypeScript</strong> para validar props</li>
+        <li>Evita <strong>mutar el estado</strong> directamente</li>
+        <li>Usa <strong>keys únicas</strong> al renderizar listas</li>
+        <li>Organiza el código en <strong>carpetas lógicas</strong></li>
+        <li>
+          Implementa <strong>manejo de errores</strong> con Error Boundaries
+        </li>
+        <li>
+          Optimiza con <strong>React.memo y useCallback</strong> cuando sea
+          necesario
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 3: React Framework</strong> | Página 1 de 1 | Curso
+        Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>

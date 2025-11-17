@@ -1,0 +1,69 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return request.auth != null &&
+        (
+          // Check custom claims from token
+          request.auth.token.role == 'admin' ||
+          (request.auth.token.roles != null && request.auth.token.roles.hasAny(['admin'])) ||
+          // Legacy email check (temporary)
+          request.auth.token.email in ['javier@cursosgratis.ai', 'info@cursosgratis.ai', 'jgomez.devfocus@gmail.com', 'admin@devfocus.es']
+        );
+    }
+    
+    // Helper function to check subscription (placeholder)
+    function isSubscribedToAssistant(assistantId) {
+      // This would check actual subscription status in Firestore
+      // For testing admin bypass, return false
+      return false;
+    }
+    
+    // Assistant syllabus PDFs - admin can access all, others need subscription
+    match /assistants/{assistantId}/syllabus/{slug}/{file=**} {
+      allow read: if isAdmin() || isSubscribedToAssistant(assistantId);
+      allow write: if isAdmin();
+    }
+    
+    // Assistant images - admin can manage all, public read
+    match /assistants/{assistantId}/images/{file=**} {
+      allow read: if true; // Public read for images
+      allow write: if isAdmin();
+    }
+    
+    // User uploads - admin can access all, users can access their own
+    match /users/{userId}/{file=**} {
+      allow read, write: if isAdmin() || (request.auth != null && request.auth.uid == userId);
+    }
+    
+    // Test files and resources - admin can access all, others need subscription
+    match /tests/{assistantId}/{file=**} {
+      allow read: if isAdmin() || isSubscribedToAssistant(assistantId);
+      allow write: if isAdmin();
+    }
+    
+    // Flashcard resources - admin can access all, others need subscription
+    match /flashcards/{assistantId}/{file=**} {
+      allow read: if isAdmin() || isSubscribedToAssistant(assistantId);
+      allow write: if isAdmin();
+    }
+    
+    // Public assets - everyone can read, admin can write
+    match /public/{file=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // Admin only files
+    match /admin/{file=**} {
+      allow read, write: if isAdmin();
+    }
+    
+    // Default deny rule
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

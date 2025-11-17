@@ -1,0 +1,1764 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+12 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programación Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 4: React y Desarrollo Moderno) Tj
+0 -60 Td
+/F2 14 Tf
+(4.1 Introducción a React) Tj
+0 -30 Td
+/F1 11 Tf
+(React es una biblioteca de JavaScript desarrollada por Facebook \(ahora Meta\)) Tj
+0 -15 Td
+(para construir interfaces de usuario interactivas y dinámicas. React ha) Tj
+0 -15 Td
+(revolucionado el desarrollo web frontend y es una de las tecnologías más) Tj
+0 -15 Td
+(demandadas en la industria tecnológica actual.) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Qué es React?) Tj
+0 -20 Td
+/F1 11 Tf
+(React es una biblioteca declarativa, eficiente y flexible para construir) Tj
+0 -15 Td
+(interfaces de usuario. Se basa en el concepto de componentes reutilizables) Tj
+0 -15 Td
+(que encapsulan su propio estado y lógica.) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Por qué usar React?) Tj
+0 -20 Td
+/F1 11 Tf
+(• Componentes Reutilizables: Código modular y mantenible) Tj
+0 -15 Td
+(• Virtual DOM: Renderizado eficiente y rápido) Tj
+0 -15 Td
+(• Ecosistema Rico: Miles de bibliotecas y herramientas) Tj
+0 -15 Td
+(• Comunidad Activa: Soporte masivo y recursos abundantes) Tj
+0 -15 Td
+(• Demanda Laboral: Una de las tecnologías más solicitadas) Tj
+0 -15 Td
+(• Flexibilidad: Se puede integrar gradualmente) Tj
+0 -30 Td
+/F2 12 Tf
+(Historia y Evolución) Tj
+0 -20 Td
+/F1 11 Tf
+(• 2011: Jordan Walke crea React en Facebook) Tj
+0 -15 Td
+(• 2013: React se hace open source) Tj
+0 -15 Td
+(• 2015: React Native para desarrollo móvil) Tj
+0 -15 Td
+(• 2016: React 15 - Mayor estabilidad) Tj
+0 -15 Td
+(• 2017: React 16 \(Fiber\) - Nueva arquitectura) Tj
+0 -15 Td
+(• 2019: React Hooks - Revolución en el manejo de estado) Tj
+0 -15 Td
+(• 2022: React 18 - Renderizado concurrente) Tj
+0 -30 Td
+/F2 12 Tf
+(Conceptos Fundamentales) Tj
+0 -20 Td
+/F2 11 Tf
+(Componentes) Tj
+0 -15 Td
+/F1 11 Tf
+(Bloques de construcción reutilizables que encapsulan UI y lógica.) Tj
+0 -20 Td
+/F2 11 Tf
+(JSX \(JavaScript XML\)) Tj
+0 -15 Td
+/F1 11 Tf
+(Sintaxis que permite escribir HTML dentro de JavaScript.) Tj
+0 -20 Td
+/F2 11 Tf
+(Props) Tj
+0 -15 Td
+/F1 11 Tf
+(Propiedades que se pasan de componentes padre a hijo.) Tj
+0 -20 Td
+/F2 11 Tf
+(State) Tj
+0 -15 Td
+/F1 11 Tf
+(Datos internos del componente que pueden cambiar.) Tj
+0 -20 Td
+/F2 11 Tf
+(Virtual DOM) Tj
+0 -15 Td
+/F1 11 Tf
+(Representación en memoria del DOM real para optimizar actualizaciones.) Tj
+0 -40 Td
+/F2 16 Tf
+(4.2 Configuración del Entorno) Tj
+0 -30 Td
+/F2 12 Tf
+(Herramientas Necesarias) Tj
+0 -20 Td
+/F1 11 Tf
+(• Node.js \(versión LTS recomendada\)) Tj
+0 -15 Td
+(• npm o yarn \(gestores de paquetes\)) Tj
+0 -15 Td
+(• Editor de código \(VS Code recomendado\)) Tj
+0 -15 Td
+(• Extensiones útiles: ES7+ React/Redux/React-Native snippets) Tj
+0 -30 Td
+/F2 12 Tf
+(Crear un Proyecto React) Tj
+0 -20 Td
+/F1 11 Tf
+(La forma más rápida de empezar es usando Create React App:) Tj
+0 -20 Td
+/F2 10 Tf
+(# Instalar Create React App globalmente) Tj
+0 -12 Td
+(npm install -g create-react-app) Tj
+0 -15 Td
+(# Crear un nuevo proyecto) Tj
+0 -12 Td
+(npx create-react-app mi-primera-app) Tj
+0 -12 Td
+(cd mi-primera-app) Tj
+0 -15 Td
+(# Iniciar el servidor de desarrollo) Tj
+0 -12 Td
+(npm start) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura de un Proyecto React) Tj
+0 -20 Td
+/F2 10 Tf
+(mi-primera-app/) Tj
+0 -12 Td
+(├── public/) Tj
+0 -12 Td
+(│   ├── index.html      # Archivo HTML principal) Tj
+0 -12 Td
+(│   └── favicon.ico     # Icono de la aplicación) Tj
+0 -12 Td
+(├── src/) Tj
+0 -12 Td
+(│   ├── components/     # Componentes personalizados) Tj
+0 -12 Td
+(│   ├── App.js         # Componente principal) Tj
+0 -12 Td
+(│   ├── App.css        # Estilos de la aplicación) Tj
+0 -12 Td
+(│   ├── index.js       # Punto de entrada) Tj
+0 -12 Td
+(│   └── index.css      # Estilos globales) Tj
+0 -12 Td
+(├── package.json       # Dependencias y scripts) Tj
+0 -12 Td
+(└── README.md          # Documentación) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4.3 JSX y Componentes Básicos) Tj
+0 -40 Td
+/F2 12 Tf
+(¿Qué es JSX?) Tj
+0 -20 Td
+/F1 11 Tf
+(JSX es una extensión de sintaxis para JavaScript que permite escribir) Tj
+0 -15 Td
+(elementos HTML dentro del código JavaScript de forma natural.) Tj
+0 -25 Td
+/F2 10 Tf
+(// JavaScript normal) Tj
+0 -12 Td
+(React.createElement\('h1', null, '¡Hola Mundo!'\)) Tj
+0 -15 Td
+(// Con JSX) Tj
+0 -12 Td
+(<h1>¡Hola Mundo!</h1>) Tj
+0 -25 Td
+/F2 12 Tf
+(Reglas de JSX) Tj
+0 -20 Td
+/F1 11 Tf
+(• Debe devolver un solo elemento padre) Tj
+0 -15 Td
+(• Los elementos deben cerrarse) Tj
+0 -15 Td
+(• Usa className en lugar de class) Tj
+0 -15 Td
+(• Usa camelCase para atributos) Tj
+0 -15 Td
+(• Usa {} para expresiones JavaScript) Tj
+0 -25 Td
+/F2 10 Tf
+(// Correcto) Tj
+0 -12 Td
+(function MiComponente\(\) {) Tj
+0 -12 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h1 className="titulo">Título</h1>) Tj
+0 -12 Td
+(      <p>Párrafo</p>) Tj
+0 -12 Td
+(      <img src="imagen.jpg" alt="Descripción" />) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Componentes Funcionales) Tj
+0 -20 Td
+/F1 11 Tf
+(Los componentes son funciones que devuelven JSX:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Componente simple) Tj
+0 -12 Td
+(function Saludo\(\) {) Tj
+0 -12 Td
+(  return <h1>¡Hola desde React!</h1>;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Componente con arrow function) Tj
+0 -12 Td
+(const Despedida = \(\) => {) Tj
+0 -12 Td
+(  return <h2>¡Hasta la vista!</h2>;) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Usar los componentes) Tj
+0 -12 Td
+(function App\(\) {) Tj
+0 -12 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <Saludo />) Tj
+0 -12 Td
+(      <Despedida />) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Props: Pasando Datos a Componentes) Tj
+0 -20 Td
+/F1 11 Tf
+(Las props permiten pasar datos de un componente padre a un hijo:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Componente que recibe props) Tj
+0 -12 Td
+(function SaludoPersonalizado\(props\) {) Tj
+0 -12 Td
+(  return <h1>¡Hola {props.nombre}!</h1>;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Con destructuring \(más común\)) Tj
+0 -12 Td
+(function SaludoPersonalizado\({ nombre, edad }\) {) Tj
+0 -12 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h1>¡Hola {nombre}!</h1>) Tj
+0 -12 Td
+(      <p>Tienes {edad} años</p>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Usar el componente con props) Tj
+0 -12 Td
+(function App\(\) {) Tj
+0 -12 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <SaludoPersonalizado nombre="Ana" edad={25} />) Tj
+0 -12 Td
+(      <SaludoPersonalizado nombre="Carlos" edad={30} />) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Expresiones JavaScript en JSX) Tj
+0 -20 Td
+/F2 10 Tf
+(function Calculadora\({ a, b }\) {) Tj
+0 -12 Td
+(  const suma = a + b;) Tj
+0 -12 Td
+(  const fecha = new Date\(\);) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>Calculadora</h2>) Tj
+0 -12 Td
+(      <p>{a} + {b} = {suma}</p>) Tj
+0 -12 Td
+(      <p>Fecha actual: {fecha.toLocaleDateString\(\)}</p>) Tj
+0 -12 Td
+(      <p>¿Es mayor a 10? {suma > 10 ? "Sí" : "No"}</p>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Renderizado Condicional) Tj
+0 -20 Td
+/F2 10 Tf
+(function EstadoUsuario\({ estaLogueado, nombre }\) {) Tj
+0 -12 Td
+(  if \(estaLogueado\) {) Tj
+0 -12 Td
+(    return <h1>Bienvenido, {nombre}!</h1>;) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  return <h1>Por favor, inicia sesión</h1>;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Con operador ternario) Tj
+0 -12 Td
+(function EstadoUsuario\({ estaLogueado, nombre }\) {) Tj
+0 -12 Td
+(  return \() Tj
+0 -12 Td
+(    <h1>) Tj
+0 -12 Td
+(      {estaLogueado ? `Bienvenido, ${nombre}!` : "Inicia sesión"}) Tj
+0 -12 Td
+(    </h1>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Con operador &&) Tj
+0 -12 Td
+(function Notificacion\({ tieneNotificaciones, cantidad }\) {) Tj
+0 -12 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      {tieneNotificaciones && \() Tj
+0 -12 Td
+(        <p>Tienes {cantidad} notificaciones</p>) Tj
+0 -12 Td
+(      \)}) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4.4 Estado y Hooks) Tj
+0 -40 Td
+/F2 12 Tf
+(¿Qué es el Estado?) Tj
+0 -20 Td
+/F1 11 Tf
+(El estado es información que el componente mantiene internamente y que) Tj
+0 -15 Td
+(puede cambiar durante el ciclo de vida del componente. Cuando el estado) Tj
+0 -15 Td
+(cambia, React re-renderiza el componente automáticamente.) Tj
+0 -30 Td
+/F2 12 Tf
+(Hook useState) Tj
+0 -20 Td
+/F1 11 Tf
+(useState es el hook más básico para manejar estado en componentes funcionales:) Tj
+0 -20 Td
+/F2 10 Tf
+(import React, { useState } from 'react';) Tj
+0 -15 Td
+(function Contador\(\) {) Tj
+0 -12 Td
+(  // Declarar estado con valor inicial) Tj
+0 -12 Td
+(  const [contador, setContador] = useState\(0\);) Tj
+0 -15 Td
+(  const incrementar = \(\) => {) Tj
+0 -12 Td
+(    setContador\(contador + 1\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const decrementar = \(\) => {) Tj
+0 -12 Td
+(    setContador\(contador - 1\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>Contador: {contador}</h2>) Tj
+0 -12 Td
+(      <button onClick={incrementar}>+</button>) Tj
+0 -12 Td
+(      <button onClick={decrementar}>-</button>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Estado con Objetos y Arrays) Tj
+0 -20 Td
+/F2 10 Tf
+(function FormularioUsuario\(\) {) Tj
+0 -12 Td
+(  const [usuario, setUsuario] = useState\({) Tj
+0 -12 Td
+(    nombre: '',) Tj
+0 -12 Td
+(    email: '',) Tj
+0 -12 Td
+(    edad: 0) Tj
+0 -12 Td
+(  }\);) Tj
+0 -15 Td
+(  const actualizarNombre = \(nuevoNombre\) => {) Tj
+0 -12 Td
+(    setUsuario\({) Tj
+0 -12 Td
+(      ...usuario,  // Spread operator para mantener otros valores) Tj
+0 -12 Td
+(      nombre: nuevoNombre) Tj
+0 -12 Td
+(    }\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <input) Tj
+0 -12 Td
+(        type="text") Tj
+0 -12 Td
+(        value={usuario.nombre}) Tj
+0 -12 Td
+(        onChange={\(e\) => actualizarNombre\(e.target.value\)}) Tj
+0 -12 Td
+(        placeholder="Nombre") Tj
+0 -12 Td
+(      />) Tj
+0 -12 Td
+(      <p>Hola, {usuario.nombre}</p>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Lista de Tareas con Estado) Tj
+0 -20 Td
+/F2 10 Tf
+(function ListaTareas\(\) {) Tj
+0 -12 Td
+(  const [tareas, setTareas] = useState\([]\);) Tj
+0 -12 Td
+(  const [nuevaTarea, setNuevaTarea] = useState\(''\);) Tj
+0 -15 Td
+(  const agregarTarea = \(\) => {) Tj
+0 -12 Td
+(    if \(nuevaTarea.trim\(\) !== ''\) {) Tj
+0 -12 Td
+(      setTareas\([...tareas, {) Tj
+0 -12 Td
+(        id: Date.now\(\),) Tj
+0 -12 Td
+(        texto: nuevaTarea,) Tj
+0 -12 Td
+(        completada: false) Tj
+0 -12 Td
+(      }]\);) Tj
+0 -12 Td
+(      setNuevaTarea\(''\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const eliminarTarea = \(id\) => {) Tj
+0 -12 Td
+(    setTareas\(tareas.filter\(tarea => tarea.id !== id\)\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const completarTarea = \(id\) => {) Tj
+0 -12 Td
+(    setTareas\(tareas.map\(tarea => ) Tj
+0 -12 Td
+(      tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea) Tj
+0 -12 Td
+(    \)\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>Lista de Tareas</h2>) Tj
+0 -12 Td
+(      <input) Tj
+0 -12 Td
+(        type="text") Tj
+0 -12 Td
+(        value={nuevaTarea}) Tj
+0 -12 Td
+(        onChange={\(e\) => setNuevaTarea\(e.target.value\)}) Tj
+0 -12 Td
+(        placeholder="Nueva tarea") Tj
+0 -12 Td
+(        onKeyPress={\(e\) => e.key === 'Enter' && agregarTarea\(\)}) Tj
+0 -12 Td
+(      />) Tj
+0 -12 Td
+(      <button onClick={agregarTarea}>Agregar</button>) Tj
+0 -15 Td
+(      <ul>) Tj
+0 -12 Td
+(        {tareas.map\(tarea => \() Tj
+0 -12 Td
+(          <li key={tarea.id}>) Tj
+0 -12 Td
+(            <span) Tj
+0 -12 Td
+(              style={{) Tj
+0 -12 Td
+(                textDecoration: tarea.completada ? 'line-through' : 'none') Tj
+0 -12 Td
+(              }}) Tj
+0 -12 Td
+(              onClick={\(\) => completarTarea\(tarea.id\)}) Tj
+0 -12 Td
+(            >) Tj
+0 -12 Td
+(              {tarea.texto}) Tj
+0 -12 Td
+(            </span>) Tj
+0 -12 Td
+(            <button onClick={\(\) => eliminarTarea\(tarea.id\)}>Eliminar</button>) Tj
+0 -12 Td
+(          </li>) Tj
+0 -12 Td
+(        \)}) Tj
+0 -12 Td
+(      </ul>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4.5 Hook useEffect) Tj
+0 -40 Td
+/F2 12 Tf
+(¿Qué es useEffect?) Tj
+0 -20 Td
+/F1 11 Tf
+(useEffect permite realizar efectos secundarios en componentes funcionales,) Tj
+0 -15 Td
+(como llamadas a APIs, suscripciones, o manipulación del DOM. Es el) Tj
+0 -15 Td
+(equivalente a componentDidMount, componentDidUpdate y componentWillUnmount.) Tj
+0 -30 Td
+/F2 12 Tf
+(Efectos Básicos) Tj
+0 -20 Td
+/F2 10 Tf
+(import React, { useState, useEffect } from 'react';) Tj
+0 -15 Td
+(function ContadorConEfecto\(\) {) Tj
+0 -12 Td
+(  const [contador, setContador] = useState\(0\);) Tj
+0 -15 Td
+(  // Efecto que se ejecuta después de cada render) Tj
+0 -12 Td
+(  useEffect\(\(\) => {) Tj
+0 -12 Td
+(    document.title = `Contador: ${contador}`;) Tj
+0 -12 Td
+(  }\);) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>Contador: {contador}</h2>) Tj
+0 -12 Td
+(      <button onClick={\(\) => setContador\(contador + 1\)}>+</button>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Efectos con Dependencias) Tj
+0 -20 Td
+/F1 11 Tf
+(Controlar cuándo se ejecuta el efecto:) Tj
+0 -20 Td
+/F2 10 Tf
+(function UsuarioInfo\({ userId }\) {) Tj
+0 -12 Td
+(  const [usuario, setUsuario] = useState\(null\);) Tj
+0 -12 Td
+(  const [cargando, setCargando] = useState\(true\);) Tj
+0 -15 Td
+(  // Efecto que solo se ejecuta cuando userId cambia) Tj
+0 -12 Td
+(  useEffect\(\(\) => {) Tj
+0 -12 Td
+(    const cargarUsuario = async \(\) => {) Tj
+0 -12 Td
+(      setCargando\(true\);) Tj
+0 -12 Td
+(      try {) Tj
+0 -12 Td
+(        const response = await fetch\(`/api/usuarios/${userId}`\);) Tj
+0 -12 Td
+(        const userData = await response.json\(\);) Tj
+0 -12 Td
+(        setUsuario\(userData\);) Tj
+0 -12 Td
+(      } catch \(error\) {) Tj
+0 -12 Td
+(        console.error\('Error cargando usuario:', error\);) Tj
+0 -12 Td
+(      } finally {) Tj
+0 -12 Td
+(        setCargando\(false\);) Tj
+0 -12 Td
+(      }) Tj
+0 -12 Td
+(    };) Tj
+0 -15 Td
+(    cargarUsuario\(\);) Tj
+0 -12 Td
+(  }, [userId]\);  // Solo se ejecuta cuando userId cambia) Tj
+0 -15 Td
+(  if \(cargando\) return <div>Cargando...</div>;) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>{usuario?.nombre}</h2>) Tj
+0 -12 Td
+(      <p>{usuario?.email}</p>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Efectos con Limpieza) Tj
+0 -20 Td
+/F1 11 Tf
+(Para limpiar recursos como timers o suscripciones:) Tj
+0 -20 Td
+/F2 10 Tf
+(function Reloj\(\) {) Tj
+0 -12 Td
+(  const [hora, setHora] = useState\(new Date\(\)\);) Tj
+0 -15 Td
+(  useEffect\(\(\) => {) Tj
+0 -12 Td
+(    // Configurar timer) Tj
+0 -12 Td
+(    const timer = setInterval\(\(\) => {) Tj
+0 -12 Td
+(      setHora\(new Date\(\)\);) Tj
+0 -12 Td
+(    }, 1000\);) Tj
+0 -15 Td
+(    // Función de limpieza) Tj
+0 -12 Td
+(    return \(\) => {) Tj
+0 -12 Td
+(      clearInterval\(timer\);) Tj
+0 -12 Td
+(    };) Tj
+0 -12 Td
+(  }, []\);  // Array vacío = solo se ejecuta una vez) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>Hora actual:</h2>) Tj
+0 -12 Td
+(      <p>{hora.toLocaleTimeString\(\)}</p>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Aplicación Práctica: Buscador de Películas) Tj
+0 -20 Td
+/F2 10 Tf
+(function BuscadorPeliculas\(\) {) Tj
+0 -12 Td
+(  const [busqueda, setBusqueda] = useState\(''\);) Tj
+0 -12 Td
+(  const [peliculas, setPeliculas] = useState\([]\);) Tj
+0 -12 Td
+(  const [cargando, setCargando] = useState\(false\);) Tj
+0 -15 Td
+(  useEffect\(\(\) => {) Tj
+0 -12 Td
+(    if \(busqueda.trim\(\) === ''\) {) Tj
+0 -12 Td
+(      setPeliculas\([]\);) Tj
+0 -12 Td
+(      return;) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    const buscarPeliculas = async \(\) => {) Tj
+0 -12 Td
+(      setCargando\(true\);) Tj
+0 -12 Td
+(      try {) Tj
+0 -12 Td
+(        const response = await fetch\() Tj
+0 -12 Td
+(          `https://api.themoviedb.org/3/search/movie?query=${busqueda}`\() Tj
+0 -12 Td
+(        \);) Tj
+0 -12 Td
+(        const data = await response.json\(\);) Tj
+0 -12 Td
+(        setPeliculas\(data.results || []\);) Tj
+0 -12 Td
+(      } catch \(error\) {) Tj
+0 -12 Td
+(        console.error\('Error buscando películas:', error\);) Tj
+0 -12 Td
+(      } finally {) Tj
+0 -12 Td
+(        setCargando\(false\);) Tj
+0 -12 Td
+(      }) Tj
+0 -12 Td
+(    };) Tj
+0 -15 Td
+(    // Debounce: esperar 500ms después del último cambio) Tj
+0 -12 Td
+(    const timeoutId = setTimeout\(buscarPeliculas, 500\);) Tj
+0 -15 Td
+(    return \(\) => clearTimeout\(timeoutId\);) Tj
+0 -12 Td
+(  }, [busqueda]\);) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <h2>Buscador de Películas</h2>) Tj
+0 -12 Td
+(      <input) Tj
+0 -12 Td
+(        type="text") Tj
+0 -12 Td
+(        value={busqueda}) Tj
+0 -12 Td
+(        onChange={\(e\) => setBusqueda\(e.target.value\)}) Tj
+0 -12 Td
+(        placeholder="Buscar películas...") Tj
+0 -12 Td
+(      />) Tj
+0 -15 Td
+(      {cargando && <p>Buscando...</p>}) Tj
+0 -15 Td
+(      <div>) Tj
+0 -12 Td
+(        {peliculas.map\(pelicula => \() Tj
+0 -12 Td
+(          <div key={pelicula.id}>) Tj
+0 -12 Td
+(            <h3>{pelicula.title}</h3>) Tj
+0 -12 Td
+(            <p>{pelicula.overview}</p>) Tj
+0 -12 Td
+(          </div>) Tj
+0 -12 Td
+(        \)}) Tj
+0 -12 Td
+(      </div>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 2200
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4.6 Manejo de Eventos y Formularios) Tj
+0 -40 Td
+/F2 12 Tf
+(Eventos en React) Tj
+0 -20 Td
+/F1 11 Tf
+(React usa SyntheticEvents que proporcionan una API consistente:) Tj
+0 -20 Td
+/F2 10 Tf
+(function EventosBasicos\(\) {) Tj
+0 -12 Td
+(  const manejarClick = \(e\) => {) Tj
+0 -12 Td
+(    console.log\('Botón clickeado!', e\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const manejarMouseOver = \(\) => {) Tj
+0 -12 Td
+(    console.log\('Mouse sobre el elemento'\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const manejarKeyPress = \(e\) => {) Tj
+0 -12 Td
+(    if \(e.key === 'Enter'\) {) Tj
+0 -12 Td
+(      console.log\('Enter presionado'\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div>) Tj
+0 -12 Td
+(      <button onClick={manejarClick}>Hacer Click</button>) Tj
+0 -12 Td
+(      <div onMouseOver={manejarMouseOver}>Pasa el mouse aquí</div>) Tj
+0 -12 Td
+(      <input onKeyPress={manejarKeyPress} placeholder="Presiona Enter" />) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Formularios Controlados) Tj
+0 -20 Td
+/F1 11 Tf
+(En React, los formularios controlados mantienen el estado en React:) Tj
+0 -20 Td
+/F2 10 Tf
+(function FormularioContacto\(\) {) Tj
+0 -12 Td
+(  const [datos, setDatos] = useState\({) Tj
+0 -12 Td
+(    nombre: '',) Tj
+0 -12 Td
+(    email: '',) Tj
+0 -12 Td
+(    mensaje: '',) Tj
+0 -12 Td
+(    acepta: false) Tj
+0 -12 Td
+(  }\);) Tj
+0 -15 Td
+(  const manejarCambio = \(e\) => {) Tj
+0 -12 Td
+(    const { name, value, type, checked } = e.target;) Tj
+0 -12 Td
+(    setDatos\({) Tj
+0 -12 Td
+(      ...datos,) Tj
+0 -12 Td
+(      [name]: type === 'checkbox' ? checked : value) Tj
+0 -12 Td
+(    }\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const manejarEnvio = \(e\) => {) Tj
+0 -12 Td
+(    e.preventDefault\(\);) Tj
+0 -12 Td
+(    console.log\('Datos del formulario:', datos\);) Tj
+0 -12 Td
+(    // Aquí enviarías los datos al servidor) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <form onSubmit={manejarEnvio}>) Tj
+0 -12 Td
+(      <input) Tj
+0 -12 Td
+(        type="text") Tj
+0 -12 Td
+(        name="nombre") Tj
+0 -12 Td
+(        value={datos.nombre}) Tj
+0 -12 Td
+(        onChange={manejarCambio}) Tj
+0 -12 Td
+(        placeholder="Nombre") Tj
+0 -12 Td
+(        required) Tj
+0 -12 Td
+(      />) Tj
+0 -15 Td
+(      <input) Tj
+0 -12 Td
+(        type="email") Tj
+0 -12 Td
+(        name="email") Tj
+0 -12 Td
+(        value={datos.email}) Tj
+0 -12 Td
+(        onChange={manejarCambio}) Tj
+0 -12 Td
+(        placeholder="Email") Tj
+0 -12 Td
+(        required) Tj
+0 -12 Td
+(      />) Tj
+0 -15 Td
+(      <textarea) Tj
+0 -12 Td
+(        name="mensaje") Tj
+0 -12 Td
+(        value={datos.mensaje}) Tj
+0 -12 Td
+(        onChange={manejarCambio}) Tj
+0 -12 Td
+(        placeholder="Mensaje") Tj
+0 -12 Td
+(        rows="4") Tj
+0 -12 Td
+(      />) Tj
+0 -15 Td
+(      <label>) Tj
+0 -12 Td
+(        <input) Tj
+0 -12 Td
+(          type="checkbox") Tj
+0 -12 Td
+(          name="acepta") Tj
+0 -12 Td
+(          checked={datos.acepta}) Tj
+0 -12 Td
+(          onChange={manejarCambio}) Tj
+0 -12 Td
+(        />) Tj
+0 -12 Td
+(        Acepto los términos y condiciones) Tj
+0 -12 Td
+(      </label>) Tj
+0 -15 Td
+(      <button type="submit" disabled={!datos.acepta}>) Tj
+0 -12 Td
+(        Enviar) Tj
+0 -12 Td
+(      </button>) Tj
+0 -12 Td
+(    </form>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Validación de Formularios) Tj
+0 -20 Td
+/F2 10 Tf
+(function FormularioConValidacion\(\) {) Tj
+0 -12 Td
+(  const [datos, setDatos] = useState\({ email: '', password: '' }\);) Tj
+0 -12 Td
+(  const [errores, setErrores] = useState\({}\);) Tj
+0 -15 Td
+(  const validar = \(\) => {) Tj
+0 -12 Td
+(    const nuevosErrores = {};) Tj
+0 -15 Td
+(    if \(!datos.email.includes\('@'\)\) {) Tj
+0 -12 Td
+(      nuevosErrores.email = 'Email inválido';) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    if \(datos.password.length < 6\) {) Tj
+0 -12 Td
+(      nuevosErrores.password = 'Password debe tener al menos 6 caracteres';) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    setErrores\(nuevosErrores\);) Tj
+0 -12 Td
+(    return Object.keys\(nuevosErrores\).length === 0;) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const manejarEnvio = \(e\) => {) Tj
+0 -12 Td
+(    e.preventDefault\(\);) Tj
+0 -12 Td
+(    if \(validar\(\)\) {) Tj
+0 -12 Td
+(      console.log\('Formulario válido:', datos\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <form onSubmit={manejarEnvio}>) Tj
+0 -12 Td
+(      <input) Tj
+0 -12 Td
+(        type="email") Tj
+0 -12 Td
+(        value={datos.email}) Tj
+0 -12 Td
+(        onChange={\(e\) => setDatos\({...datos, email: e.target.value}\)}) Tj
+0 -12 Td
+(        placeholder="Email") Tj
+0 -12 Td
+(      />) Tj
+0 -12 Td
+(      {errores.email && <p style={{color: 'red'}}>{errores.email}</p>}) Tj
+0 -15 Td
+(      <input) Tj
+0 -12 Td
+(        type="password") Tj
+0 -12 Td
+(        value={datos.password}) Tj
+0 -12 Td
+(        onChange={\(e\) => setDatos\({...datos, password: e.target.value}\)}) Tj
+0 -12 Td
+(        placeholder="Password") Tj
+0 -12 Td
+(      />) Tj
+0 -12 Td
+(      {errores.password && <p style={{color: 'red'}}>{errores.password}</p>}) Tj
+0 -15 Td
+(      <button type="submit">Iniciar Sesión</button>) Tj
+0 -12 Td
+(    </form>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 2100
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4.7 Proyecto Final: Aplicación de Tareas Completa) Tj
+0 -40 Td
+/F1 11 Tf
+(Vamos a crear una aplicación completa que integre todos los conceptos aprendidos:) Tj
+0 -25 Td
+/F2 10 Tf
+(import React, { useState, useEffect } from 'react';) Tj
+0 -12 Td
+(import './App.css';) Tj
+0 -15 Td
+(function App\(\) {) Tj
+0 -12 Td
+(  const [tareas, setTareas] = useState\([]\);) Tj
+0 -12 Td
+(  const [nuevaTarea, setNuevaTarea] = useState\(''\);) Tj
+0 -12 Td
+(  const [filtro, setFiltro] = useState\('todas'\);) Tj
+0 -12 Td
+(  const [editandoId, setEditandoId] = useState\(null\);) Tj
+0 -12 Td
+(  const [textoEditando, setTextoEditando] = useState\(''\);) Tj
+0 -15 Td
+(  // Cargar tareas del localStorage al iniciar) Tj
+0 -12 Td
+(  useEffect\(\(\) => {) Tj
+0 -12 Td
+(    const tareasGuardadas = localStorage.getItem\('tareas'\);) Tj
+0 -12 Td
+(    if \(tareasGuardadas\) {) Tj
+0 -12 Td
+(      setTareas\(JSON.parse\(tareasGuardadas\)\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(  }, []\);) Tj
+0 -15 Td
+(  // Guardar tareas en localStorage cuando cambien) Tj
+0 -12 Td
+(  useEffect\(\(\) => {) Tj
+0 -12 Td
+(    localStorage.setItem\('tareas', JSON.stringify\(tareas\)\);) Tj
+0 -12 Td
+(  }, [tareas]\);) Tj
+0 -15 Td
+(  const agregarTarea = \(\) => {) Tj
+0 -12 Td
+(    if \(nuevaTarea.trim\(\) !== ''\) {) Tj
+0 -12 Td
+(      const tarea = {) Tj
+0 -12 Td
+(        id: Date.now\(\),) Tj
+0 -12 Td
+(        texto: nuevaTarea.trim\(\),) Tj
+0 -12 Td
+(        completada: false,) Tj
+0 -12 Td
+(        fechaCreacion: new Date\(\).toLocaleDateString\(\)) Tj
+0 -12 Td
+(      };) Tj
+0 -12 Td
+(      setTareas\([...tareas, tarea]\);) Tj
+0 -12 Td
+(      setNuevaTarea\(''\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const eliminarTarea = \(id\) => {) Tj
+0 -12 Td
+(    setTareas\(tareas.filter\(tarea => tarea.id !== id\)\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const toggleCompletada = \(id\) => {) Tj
+0 -12 Td
+(    setTareas\(tareas.map\(tarea => ) Tj
+0 -12 Td
+(      tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea) Tj
+0 -12 Td
+(    \)\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const iniciarEdicion = \(id, texto\) => {) Tj
+0 -12 Td
+(    setEditandoId\(id\);) Tj
+0 -12 Td
+(    setTextoEditando\(texto\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const guardarEdicion = \(\) => {) Tj
+0 -12 Td
+(    setTareas\(tareas.map\(tarea => ) Tj
+0 -12 Td
+(      tarea.id === editandoId ? { ...tarea, texto: textoEditando } : tarea) Tj
+0 -12 Td
+(    \)\);) Tj
+0 -12 Td
+(    setEditandoId\(null\);) Tj
+0 -12 Td
+(    setTextoEditando\(''\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const cancelarEdicion = \(\) => {) Tj
+0 -12 Td
+(    setEditandoId\(null\);) Tj
+0 -12 Td
+(    setTextoEditando\(''\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  const limpiarCompletadas = \(\) => {) Tj
+0 -12 Td
+(    setTareas\(tareas.filter\(tarea => !tarea.completada\)\);) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  // Filtrar tareas según el filtro activo) Tj
+0 -12 Td
+(  const tareasFiltradas = tareas.filter\(tarea => {) Tj
+0 -12 Td
+(    switch \(filtro\) {) Tj
+0 -12 Td
+(      case 'activas': return !tarea.completada;) Tj
+0 -12 Td
+(      case 'completadas': return tarea.completada;) Tj
+0 -12 Td
+(      default: return true;) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(  }\);) Tj
+0 -15 Td
+(  // Estadísticas) Tj
+0 -12 Td
+(  const tareasActivas = tareas.filter\(t => !t.completada\).length;) Tj
+0 -12 Td
+(  const tareasCompletadas = tareas.filter\(t => t.completada\).length;) Tj
+0 -15 Td
+(  return \() Tj
+0 -12 Td
+(    <div className="app">) Tj
+0 -12 Td
+(      <header className="header">) Tj
+0 -12 Td
+(        <h1>Gestor de Tareas</h1>) Tj
+0 -12 Td
+(        <div className="estadisticas">) Tj
+0 -12 Td
+(          <span>Total: {tareas.length}</span>) Tj
+0 -12 Td
+(          <span>Activas: {tareasActivas}</span>) Tj
+0 -12 Td
+(          <span>Completadas: {tareasCompletadas}</span>) Tj
+0 -12 Td
+(        </div>) Tj
+0 -12 Td
+(      </header>) Tj
+0 -15 Td
+(      <main className="main">) Tj
+0 -12 Td
+(        <div className="agregar-tarea">) Tj
+0 -12 Td
+(          <input) Tj
+0 -12 Td
+(            type="text") Tj
+0 -12 Td
+(            value={nuevaTarea}) Tj
+0 -12 Td
+(            onChange={\(e\) => setNuevaTarea\(e.target.value\)}) Tj
+0 -12 Td
+(            placeholder="¿Qué necesitas hacer?") Tj
+0 -12 Td
+(            onKeyPress={\(e\) => e.key === 'Enter' && agregarTarea\(\)}) Tj
+0 -12 Td
+(            className="input-tarea") Tj
+0 -12 Td
+(          />) Tj
+0 -12 Td
+(          <button onClick={agregarTarea} className="btn-agregar">) Tj
+0 -12 Td
+(            Agregar) Tj
+0 -12 Td
+(          </button>) Tj
+0 -12 Td
+(        </div>) Tj
+0 -15 Td
+(        <div className="filtros">) Tj
+0 -12 Td
+(          <button) Tj
+0 -12 Td
+(            onClick={\(\) => setFiltro\('todas'\)}) Tj
+0 -12 Td
+(            className={filtro === 'todas' ? 'activo' : ''}) Tj
+0 -12 Td
+(          >) Tj
+0 -12 Td
+(            Todas) Tj
+0 -12 Td
+(          </button>) Tj
+0 -12 Td
+(          <button) Tj
+0 -12 Td
+(            onClick={\(\) => setFiltro\('activas'\)}) Tj
+0 -12 Td
+(            className={filtro === 'activas' ? 'activo' : ''}) Tj
+0 -12 Td
+(          >) Tj
+0 -12 Td
+(            Activas) Tj
+0 -12 Td
+(          </button>) Tj
+0 -12 Td
+(          <button) Tj
+0 -12 Td
+(            onClick={\(\) => setFiltro\('completadas'\)}) Tj
+0 -12 Td
+(            className={filtro === 'completadas' ? 'activo' : ''}) Tj
+0 -12 Td
+(          >) Tj
+0 -12 Td
+(            Completadas) Tj
+0 -12 Td
+(          </button>) Tj
+0 -12 Td
+(        </div>) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 10 Tf
+50 720 Td
+(        <ul className="lista-tareas">) Tj
+0 -12 Td
+(          {tareasFiltradas.map\(tarea => \() Tj
+0 -12 Td
+(            <li key={tarea.id} className={`tarea ${tarea.completada ? 'completada' : ''}`}>) Tj
+0 -12 Td
+(              {editandoId === tarea.id ? \() Tj
+0 -12 Td
+(                <div className="editar-tarea">) Tj
+0 -12 Td
+(                  <input) Tj
+0 -12 Td
+(                    type="text") Tj
+0 -12 Td
+(                    value={textoEditando}) Tj
+0 -12 Td
+(                    onChange={\(e\) => setTextoEditando\(e.target.value\)}) Tj
+0 -12 Td
+(                    onKeyPress={\(e\) => e.key === 'Enter' && guardarEdicion\(\)}) Tj
+0 -12 Td
+(                    onBlur={guardarEdicion}) Tj
+0 -12 Td
+(                    autoFocus) Tj
+0 -12 Td
+(                  />) Tj
+0 -12 Td
+(                  <button onClick={guardarEdicion}>✓</button>) Tj
+0 -12 Td
+(                  <button onClick={cancelarEdicion}>✗</button>) Tj
+0 -12 Td
+(                </div>) Tj
+0 -12 Td
+(              \) : \() Tj
+0 -12 Td
+(                <div className="ver-tarea">) Tj
+0 -12 Td
+(                  <input) Tj
+0 -12 Td
+(                    type="checkbox") Tj
+0 -12 Td
+(                    checked={tarea.completada}) Tj
+0 -12 Td
+(                    onChange={\(\) => toggleCompletada\(tarea.id\)}) Tj
+0 -12 Td
+(                  />) Tj
+0 -12 Td
+(                  <span) Tj
+0 -12 Td
+(                    onDoubleClick={\(\) => iniciarEdicion\(tarea.id, tarea.texto\)}) Tj
+0 -12 Td
+(                    className="texto-tarea") Tj
+0 -12 Td
+(                  >) Tj
+0 -12 Td
+(                    {tarea.texto}) Tj
+0 -12 Td
+(                  </span>) Tj
+0 -12 Td
+(                  <small className="fecha">{tarea.fechaCreacion}</small>) Tj
+0 -12 Td
+(                  <button) Tj
+0 -12 Td
+(                    onClick={\(\) => eliminarTarea\(tarea.id\)}) Tj
+0 -12 Td
+(                    className="btn-eliminar") Tj
+0 -12 Td
+(                  >) Tj
+0 -12 Td
+(                    🗑️) Tj
+0 -12 Td
+(                  </button>) Tj
+0 -12 Td
+(                </div>) Tj
+0 -12 Td
+(              \)}) Tj
+0 -12 Td
+(            </li>) Tj
+0 -12 Td
+(          \)}) Tj
+0 -12 Td
+(        </ul>) Tj
+0 -15 Td
+(        {tareasCompletadas > 0 && \() Tj
+0 -12 Td
+(          <button) Tj
+0 -12 Td
+(            onClick={limpiarCompletadas}) Tj
+0 -12 Td
+(            className="btn-limpiar") Tj
+0 -12 Td
+(          >) Tj
+0 -12 Td
+(            Limpiar Completadas) Tj
+0 -12 Td
+(          </button>) Tj
+0 -12 Td
+(        \)}) Tj
+0 -12 Td
+(      </main>) Tj
+0 -12 Td
+(    </div>) Tj
+0 -12 Td
+(  \);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(export default App;) Tj
+0 -40 Td
+/F2 16 Tf
+(4.8 Resumen del Tema 4) Tj
+0 -30 Td
+/F2 12 Tf
+(Conceptos Dominados) Tj
+0 -20 Td
+/F1 11 Tf
+(En este tema hemos construido la base para el desarrollo moderno con React:) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Fundamentos de React) Tj
+0 -15 Td
+/F1 11 Tf
+(• Configuración del entorno de desarrollo) Tj
+0 -15 Td
+(• Componentes funcionales y reutilización) Tj
+0 -15 Td
+(• JSX para escribir interfaces declarativas) Tj
+0 -15 Td
+(• Props para comunicación entre componentes) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Estado y Ciclo de Vida) Tj
+0 -15 Td
+/F1 11 Tf
+(• Hook useState para manejo de estado local) Tj
+0 -15 Td
+(• Hook useEffect para efectos secundarios) Tj
+0 -15 Td
+(• Patrones de actualización de estado) Tj
+0 -15 Td
+(• Limpieza de recursos y optimización) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Interactividad) Tj
+0 -15 Td
+/F1 11 Tf
+(• Manejo de eventos sintéticos) Tj
+0 -15 Td
+(• Formularios controlados y validación) Tj
+0 -15 Td
+(• Renderizado condicional avanzado) Tj
+0 -15 Td
+(• Patrones de comunicación entre componentes) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Proyecto Completo) Tj
+0 -15 Td
+/F1 11 Tf
+(• Aplicación de tareas con CRUD completo) Tj
+0 -15 Td
+(• Persistencia local con localStorage) Tj
+0 -15 Td
+(• Filtrado y búsqueda de datos) Tj
+0 -15 Td
+(• Arquitectura escalable y mantenible) Tj
+0 -30 Td
+/F2 12 Tf
+(Preparación para el Próximo Tema) Tj
+0 -20 Td
+/F1 11 Tf
+(En el Tema 5 exploraremos el desarrollo backend con Node.js:) Tj
+0 -15 Td
+(• Creación de APIs RESTful) Tj
+0 -15 Td
+(• Servidor Express.js) Tj
+0 -15 Td
+(• Conexión con bases de datos) Tj
+0 -15 Td
+(• Autenticación y autorización) Tj
+0 -15 Td
+(• Integración frontend-backend) Tj
+0 -30 Td
+/F1 11 Tf
+(¡Excelente trabajo! Ahora dominas React y puedes crear aplicaciones) Tj
+0 -15 Td
+(web modernas e interactivas. El siguiente paso es aprender backend.) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000261 00000 n 
+0000000382 00000 n 
+0000000503 00000 n 
+0000000624 00000 n 
+0000000745 00000 n 
+0000000866 00000 n 
+0000000988 00000 n 
+0000001087 00000 n 
+0000001191 00000 n 
+0000003542 00000 n 
+0000005993 00000 n 
+0000008344 00000 n 
+0000010795 00000 n 
+0000013046 00000 n 
+0000015197 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+17048
+%%EOF

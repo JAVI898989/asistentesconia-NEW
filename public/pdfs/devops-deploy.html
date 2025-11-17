@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 7: Despliegue y DevOps</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #06b6d4;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #06b6d4;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #1f2937;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #67e8f9;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #06b6d4;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #34d399;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #fbbf24;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🚀 TEMA 7: DESPLIEGUE Y DEVOPS</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #1f2937">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        Git, Docker, CI/CD y despliegue en producción
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>Control de Versiones con Git</li>
+        <li>GitHub y Colaboración</li>
+        <li>Containerización con Docker</li>
+        <li>Variables de Entorno y Configuración</li>
+        <li>CI/CD (Integración y Despliegue Continuo)</li>
+        <li>Plataformas de Despliegue</li>
+        <li>Monitoreo y Logging</li>
+        <li>Seguridad en Producción</li>
+        <li>Mejores Prácticas</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. CONTROL DE VERSIONES CON GIT</h2>
+
+      <div class="definition">
+        <h4>Git</h4>
+        <p>
+          Git es un sistema de control de versiones distribuido que permite
+          rastrear cambios en archivos, colaborar con otros desarrolladores y
+          mantener un historial completo del proyecto.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Comandos Básicos de Git</h3>
+
+        <div class="example">
+          # Configuración inicial<br />
+          git config --global user.name "Tu Nombre"<br />
+          git config --global user.email "tu@email.com"<br />
+          git config --global init.defaultBranch main<br /><br />
+          # Inicializar repositorio<br />
+          git init<br />
+          git clone https://github.com/usuario/repositorio.git<br /><br />
+          # Workflow básico<br />
+          git status # Ver estado de archivos<br />
+          git add . # Añadir todos los archivos al staging<br />
+          git add archivo.js # Añadir archivo específico<br />
+          git commit -m "Mensaje descriptivo del commit"<br />
+          git push origin main # Subir cambios al repositorio remoto<br />
+          git pull origin main # Traer cambios del repositorio remoto<br /><br />
+          # Branches (ramas)<br />
+          git branch # Ver ramas locales<br />
+          git branch nueva-feature # Crear nueva rama<br />
+          git checkout nueva-feature # Cambiar a rama<br />
+          git checkout -b otra-feature # Crear y cambiar a rama<br />
+          git merge nueva-feature # Fusionar rama<br />
+          git branch -d nueva-feature # Eliminar rama<br /><br />
+          # Historial y logs<br />
+          git log # Ver historial de commits<br />
+          git log --oneline # Historial resumido<br />
+          git diff # Ver diferencias<br />
+          git show HEAD # Ver último commit
+        </div>
+
+        <h3>1.2 Gitflow - Flujo de Trabajo</h3>
+
+        <div class="example">
+          # Estructura de branches recomendada:<br />
+          main # Rama principal (producción)<br />
+          develop # Rama de desarrollo<br />
+          feature/nueva-funcionalidad # Ramas para features<br />
+          hotfix/correccion-urgente # Ramas para fixes críticos<br />
+          release/v1.2.0 # Ramas para preparar releases<br /><br />
+          # Workflow típico:<br />
+          git checkout develop<br />
+          git pull origin develop<br />
+          git checkout -b feature/login-system<br />
+          # ... desarrollar la funcionalidad ...<br />
+          git add .<br />
+          git commit -m "feat: implementar sistema de login"<br />
+          git push origin feature/login-system<br />
+          # Crear Pull Request en GitHub<br />
+          # Después de aprobar el PR:<br />
+          git checkout develop<br />
+          git pull origin develop<br />
+          git branch -d feature/login-system
+        </div>
+
+        <h3>1.3 .gitignore - Archivos a Ignorar</h3>
+
+        <div class="example">
+          # .gitignore para proyecto Node.js<br />
+          # Dependencias<br />
+          node_modules/<br />
+          npm-debug.log*<br />
+          yarn-debug.log*<br />
+          yarn-error.log*<br /><br />
+          # Variables de entorno<br />
+          .env<br />
+          .env.local<br />
+          .env.development.local<br />
+          .env.test.local<br />
+          .env.production.local<br /><br />
+          # Archivos de build<br />
+          build/<br />
+          dist/<br />
+          out/<br /><br />
+          # Archivos temporales<br />
+          .DS_Store<br />
+          Thumbs.db<br />
+          *.log<br />
+          *.tmp<br /><br />
+          # IDEs<br />
+          .vscode/<br />
+          .idea/<br />
+          *.swp<br />
+          *.swo<br /><br />
+          # Bases de datos locales<br />
+          *.db<br />
+          *.sqlite<br /><br />
+          # Uploads de usuario<br />
+          uploads/<br />
+          public/uploads/
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. GITHUB Y COLABORACIÓN</h2>
+
+      <div class="section">
+        <h3>2.1 Pull Requests y Code Review</h3>
+
+        <div class="example">
+          # Crear Pull Request desde línea de comandos (GitHub CLI)<br />
+          gh auth login<br />
+          gh pr create --title "feat: nuevo sistema de autenticación" --body
+          "Implementa JWT y middleware de auth"<br />
+          gh pr list # Ver PRs<br />
+          gh pr view 123 # Ver PR específico<br />
+          gh pr merge 123 # Hacer merge del PR<br /><br />
+          # Template para Pull Request (.github/pull_request_template.md)<br />
+          ## Descripción<br />
+          Breve descripción de los cambios realizados.<br /><br />
+          ## Tipo de cambio<br />
+          - [ ] Bug fix (cambio que corrige un problema)<br />
+          - [ ] Nueva funcionalidad (cambio que añade una funcionalidad)<br />
+          - [ ] Breaking change (cambio que puede romper funcionalidad
+          existente)<br />
+          - [ ] Documentación<br /><br />
+          ## Checklist<br />
+          - [ ] Mi código sigue las guías de estilo del proyecto<br />
+          - [ ] He realizado auto-review de mi código<br />
+          - [ ] He comentado mi código en áreas difíciles de entender<br />
+          - [ ] He añadido tests que prueban mi fix/funcionalidad<br />
+          - [ ] Tests nuevos y existentes pasan localmente
+        </div>
+
+        <h3>2.2 GitHub Actions para CI/CD</h3>
+
+        <div class="example">
+          # .github/workflows/ci.yml<br />
+          name: CI/CD Pipeline<br /><br />
+          on:<br />
+          &nbsp;&nbsp;push:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;branches: [main, develop]<br />
+          &nbsp;&nbsp;pull_request:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;branches: [main]<br /><br />
+          jobs:<br />
+          &nbsp;&nbsp;test:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;runs-on: ubuntu-latest<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;strategy:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrix:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-version: [16.x,
+          18.x, 20.x]<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;steps:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- uses: actions/checkout@v3<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- name: Use Node.js ${{ matrix.node-version
+          }}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uses: actions/setup-node@v3<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node-version: ${{
+          matrix.node-version }}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cache: 'npm'<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- name: Install dependencies<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: npm ci<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- name: Run tests<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: npm test<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- name: Run linter<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: npm run lint<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- name: Build application<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: npm run build<br /><br />
+          &nbsp;&nbsp;deploy:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;needs: test<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;runs-on: ubuntu-latest<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if: github.ref == 'refs/heads/main'<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;steps:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- uses: actions/checkout@v3<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;- name: Deploy to production<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: |<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Deploying to
+          production..."<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Comandos de
+          despliegue aquí
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. CONTAINERIZACIÓN CON DOCKER</h2>
+
+      <div class="definition">
+        <h4>Docker</h4>
+        <p>
+          Docker es una plataforma de containerización que permite empaquetar
+          aplicaciones y sus dependencias en contenedores ligeros y portables
+          que pueden ejecutarse consistentemente en cualquier entorno.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>3.1 Dockerfile - Crear Imágenes</h3>
+
+        <div class="example">
+          # Dockerfile para aplicación Node.js<br />
+          FROM node:18-alpine<br /><br />
+          # Crear directorio de trabajo<br />
+          WORKDIR /app<br /><br />
+          # Copiar package.json y package-lock.json<br />
+          COPY package*.json ./<br /><br />
+          # Instalar dependencias<br />
+          RUN npm ci --only=production<br /><br />
+          # Copiar código fuente<br />
+          COPY . .<br /><br />
+          # Crear usuario no-root<br />
+          RUN addgroup -g 1001 -S nodejs<br />
+          RUN adduser -S nextjs -u 1001<br />
+          USER nextjs<br /><br />
+          # Exponer puerto<br />
+          EXPOSE 3000<br /><br />
+          # Comando de inicio<br />
+          CMD ["npm", "start"]<br /><br />
+          # Multi-stage build para optimizar tamaño<br />
+          # Stage 1: Build<br />
+          FROM node:18-alpine AS builder<br />
+          WORKDIR /app<br />
+          COPY package*.json ./<br />
+          RUN npm ci<br />
+          COPY . .<br />
+          RUN npm run build<br /><br />
+          # Stage 2: Production<br />
+          FROM node:18-alpine AS production<br />
+          WORKDIR /app<br />
+          COPY package*.json ./<br />
+          RUN npm ci --only=production && npm cache clean --force<br />
+          COPY --from=builder /app/build ./build<br />
+          EXPOSE 3000<br />
+          CMD ["npm", "start"]
+        </div>
+
+        <h3>3.2 Docker Compose - Múltiples Servicios</h3>
+
+        <div class="example">
+          # docker-compose.yml<br />
+          version: '3.8'<br /><br />
+          services:<br />
+          &nbsp;&nbsp;app:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;build: .<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;ports:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "3000:3000"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;environment:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- NODE_ENV=production<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+          MONGO_URI=mongodb://mongo:27017/miapp<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;depends_on:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mongo<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- redis<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;volumes:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ./uploads:/app/uploads<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;networks:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- app-network<br /><br />
+          &nbsp;&nbsp;mongo:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;image: mongo:5.0<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;ports:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "27017:27017"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;environment:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+          MONGO_INITDB_ROOT_USERNAME=admin<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+          MONGO_INITDB_ROOT_PASSWORD=password<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;volumes:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mongo-data:/data/db<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;networks:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- app-network<br /><br />
+          &nbsp;&nbsp;redis:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;image: redis:7-alpine<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;ports:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "6379:6379"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;networks:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- app-network<br /><br />
+          &nbsp;&nbsp;nginx:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;image: nginx:alpine<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;ports:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "80:80"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "443:443"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;volumes:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-
+          ./nginx.conf:/etc/nginx/nginx.conf<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ./ssl:/etc/nginx/ssl<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;depends_on:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- app<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;networks:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- app-network<br /><br />
+          volumes:<br />
+          &nbsp;&nbsp;mongo-data:<br /><br />
+          networks:<br />
+          &nbsp;&nbsp;app-network:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;driver: bridge<br /><br />
+          # Comandos útiles<br />
+          # docker-compose up -d # Iniciar en background<br />
+          # docker-compose down # Parar y eliminar contenedores<br />
+          # docker-compose logs app # Ver logs del servicio app<br />
+          # docker-compose exec app sh # Acceder al contenedor
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. VARIABLES DE ENTORNO Y CONFIGURACIÓN</h2>
+
+      <div class="section">
+        <h3>4.1 Gestión de Variables de Entorno</h3>
+
+        <div class="example">
+          # .env (desarrollo local)<br />
+          NODE_ENV=development<br />
+          PORT=3000<br />
+          MONGO_URI=mongodb://localhost:27017/miapp_dev<br />
+          JWT_SECRET=mi-secreto-de-desarrollo<br />
+          API_KEY=tu-api-key-de-desarrollo<br />
+          EMAIL_USER=test@example.com<br />
+          EMAIL_PASS=password<br />
+          REDIS_URL=redis://localhost:6379<br />
+          CLOUDINARY_NAME=tu-cloud-name<br />
+          CLOUDINARY_API_KEY=tu-api-key<br />
+          CLOUDINARY_API_SECRET=tu-api-secret<br /><br />
+          # .env.production (producción)<br />
+          NODE_ENV=production<br />
+          PORT=3000<br />
+          MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/miapp<br />
+          JWT_SECRET=secreto-ultra-seguro-para-produccion<br />
+          API_KEY=tu-api-key-de-produccion<br />
+          EMAIL_USER=noreply@tudominio.com<br />
+          EMAIL_PASS=password-seguro<br />
+          REDIS_URL=redis://redis-provider-url<br /><br />
+          # config/config.js<br />
+          require('dotenv').config();<br /><br />
+          module.exports = {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;development: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port: process.env.PORT
+          || 3000,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri:
+          process.env.MONGO_URI || 'mongodb://localhost:27017/miapp_dev'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jwt: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secret:
+          process.env.JWT_SECRET || 'fallback-secret',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expiresIn:
+          '24h'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;production: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port: process.env.PORT
+          || 3000,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri:
+          process.env.MONGO_URI<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jwt: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;secret:
+          process.env.JWT_SECRET,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expiresIn:
+          '1h'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          const config = module.exports[process.env.NODE_ENV || 'development'];
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>5. PLATAFORMAS DE DESPLIEGUE</h2>
+
+      <div class="section">
+        <h3>5.1 Heroku - Despliegue Simplificado</h3>
+
+        <div class="example">
+          # Instalar Heroku CLI<br />
+          # https://devcenter.heroku.com/articles/heroku-cli<br /><br />
+          # Login y crear app<br />
+          heroku login<br />
+          heroku create mi-app-nodejs<br /><br />
+          # Configurar variables de entorno<br />
+          heroku config:set NODE_ENV=production<br />
+          heroku config:set JWT_SECRET=mi-secreto-seguro<br />
+          heroku config:set MONGO_URI=mongodb+srv://...<br /><br />
+          # Procfile (configurar proceso de inicio)<br />
+          web: npm start<br /><br />
+          # package.json scripts<br />
+          {<br />
+          &nbsp;&nbsp;"scripts": {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"start": "node server.js",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"heroku-postbuild": "npm run build"<br />
+          &nbsp;&nbsp;}<br />
+          }<br /><br />
+          # Desplegar<br />
+          git add .<br />
+          git commit -m "Deploy to Heroku"<br />
+          git push heroku main<br /><br />
+          # Ver logs<br />
+          heroku logs --tail<br /><br />
+          # Abrir app<br />
+          heroku open
+        </div>
+
+        <h3>5.2 Vercel - Frontend y Serverless</h3>
+
+        <div class="example">
+          # vercel.json<br />
+          {<br />
+          &nbsp;&nbsp;"version": 2,<br />
+          &nbsp;&nbsp;"builds": [<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"src": "package.json",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use": "@vercel/node"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;],<br />
+          &nbsp;&nbsp;"routes": [<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"src": "/api/(.*)",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dest": "/api/$1"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"src": "/(.*)",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dest": "/$1"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;],<br />
+          &nbsp;&nbsp;"env": {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"NODE_ENV": "production"<br />
+          &nbsp;&nbsp;}<br />
+          }<br /><br />
+          # Instalar Vercel CLI<br />
+          npm i -g vercel<br /><br />
+          # Login y deploy<br />
+          vercel login<br />
+          vercel # Seguir prompts<br /><br />
+          # Deploy automático desde GitHub<br />
+          # 1. Conectar repositorio en vercel.com<br />
+          # 2. Configurar variables de entorno<br />
+          # 3. Push a main dispara deploy automático
+        </div>
+
+        <h3>5.3 DigitalOcean Droplets - VPS</h3>
+
+        <div class="example">
+          # Configurar servidor Ubuntu 20.04<br />
+          # 1. Crear Droplet en DigitalOcean<br />
+          # 2. Conectar por SSH<br />
+          ssh root@tu-ip-del-servidor<br /><br />
+          # Actualizar sistema<br />
+          apt update && apt upgrade -y<br /><br />
+          # Instalar Node.js<br />
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -<br />
+          apt-get install -y nodejs<br /><br />
+          # Instalar PM2 (Process Manager)<br />
+          npm install -g pm2<br /><br />
+          # Clonar repositorio<br />
+          git clone https://github.com/usuario/mi-app.git<br />
+          cd mi-app<br />
+          npm install<br /><br />
+          # Configurar variables de entorno<br />
+          nano .env # Editar variables<br /><br />
+          # Iniciar app con PM2<br />
+          pm2 start server.js --name "mi-app"<br />
+          pm2 startup # Configurar inicio automático<br />
+          pm2 save<br /><br />
+          # Instalar y configurar Nginx<br />
+          apt install nginx<br />
+          nano /etc/nginx/sites-available/mi-app<br /><br />
+          # Configuración Nginx<br />
+          server {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;listen 80;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;server_name tu-dominio.com;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;location / {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proxy_pass
+          http://localhost:3000;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proxy_http_version
+          1.1;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proxy_set_header
+          Upgrade $http_upgrade;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proxy_set_header
+          Connection 'upgrade';<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proxy_set_header Host
+          $host;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proxy_cache_bypass
+          $http_upgrade;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }<br /><br />
+          # Activar sitio<br />
+          ln -s /etc/nginx/sites-available/mi-app /etc/nginx/sites-enabled/<br />
+          nginx -t # Verificar configuración<br />
+          systemctl restart nginx<br /><br />
+          # SSL con Let's Encrypt<br />
+          apt install certbot python3-certbot-nginx<br />
+          certbot --nginx -d tu-dominio.com
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 EJERCICIOS PRÁCTICOS</h2>
+
+      <h3>Ejercicio 1: Pipeline CI/CD Completo</h3>
+      <p>Configurar pipeline que incluya:</p>
+      <ul>
+        <li>Tests automáticos en múltiples versiones de Node.js</li>
+        <li>Linting y formateo de código</li>
+        <li>Build y optimización</li>
+        <li>Deploy automático a staging/producción</li>
+      </ul>
+
+      <h3>Ejercicio 2: Containerización Full Stack</h3>
+      <p>Dockerizar aplicación completa:</p>
+      <ul>
+        <li>Frontend React en contenedor optimizado</li>
+        <li>Backend Node.js con múltiples stages</li>
+        <li>Base de datos MongoDB persistente</li>
+        <li>Nginx como reverse proxy</li>
+      </ul>
+
+      <h3>Ejercicio 3: Despliegue Multi-Ambiente</h3>
+      <p>Configurar despliegue en:</p>
+      <ul>
+        <li>Desarrollo local con Docker Compose</li>
+        <li>Staging en Heroku</li>
+        <li>Producción en VPS con HTTPS</li>
+        <li>Monitoreo y alertas básicas</li>
+      </ul>
+    </div>
+
+    <div class="important">
+      <h2>🎯 MEJORES PRÁCTICAS</h2>
+      <ul>
+        <li>
+          Nunca commitear <strong>secrets o credenciales</strong> en el
+          repositorio
+        </li>
+        <li>
+          Usar <strong>multi-stage builds</strong> en Docker para optimizar
+          tamaño
+        </li>
+        <li>
+          Implementar <strong>health checks</strong> en contenedores y
+          aplicaciones
+        </li>
+        <li>
+          Mantener <strong>logs estructurados</strong> para debugging efectivo
+        </li>
+        <li>
+          Configurar <strong>monitoring y alertas</strong> para detectar
+          problemas temprano
+        </li>
+        <li>
+          Usar <strong>feature flags</strong> para deploys seguros de nuevas
+          funcionalidades
+        </li>
+        <li>
+          Implementar <strong>rollback automático</strong> en caso de fallos
+        </li>
+        <li>
+          Documentar <strong>procesos de despliegue</strong> y procedimientos de
+          emergencia
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 7: Despliegue y DevOps</strong> | Página 1 de 1 | Curso
+        Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>

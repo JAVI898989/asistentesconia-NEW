@@ -1,0 +1,139 @@
+{
+  "id": "policia-local",
+  "name": "Policía Local",
+  "description": "Adaptador para generar temarios de Policía Local",
+  "version": "1.0",
+  "ROL_DESTINO": "Policía Local",
+  "AMBITO_DESTINO": "seguridad urbana, tráfico municipal, ordenanzas municipales, proximidad ciudadana",
+  "REMAP_NORMATIVA": {
+    "LECrim": "mantener",
+    "CP": "mantener", 
+    "LO 4/2015": "mantener",
+    "RDL 6/2015": "mantener",
+    "RD 1428/2003": "mantener",
+    "LO 1/2004": "mantener",
+    "Ley 17/2015": "mantener",
+    "RD 137/1993": "mantener",
+    "LBRL 7/1985": "añadir",
+    "Ley 2/1986": "añadir",
+    "ordenanzas municipales": "añadir"
+  },
+  "REMAP_BLOQUES": {
+    "procedimiento-penal": "procedimiento-penal-local",
+    "seguridad-ciudadana": "seguridad-urbana",
+    "trafico": "trafico-municipal",
+    "armas": "armas-local",
+    "extranjeria": "extranjeria-municipal",
+    "proteccion-civil": "proteccion-civil-municipal",
+    "derechos-ffccse": "derechos-policia-local",
+    "vg": "vg-proximidad",
+    "medioambiente": "medioambiente-municipal",
+    "organizacion-gc": "organizacion-policia-local"
+  },
+  "BLOQUES_DESTINO": {
+    "procedimiento-penal-local": {
+      "titulo": "Procedimiento penal y Policía Judicial (ámbito municipal)",
+      "requisitos": ["atestado", "detención", "coordinación judicial"],
+      "normativa_principal": ["LECrim", "CP"],
+      "horas_estimadas": 25,
+      "complejidad": "alta"
+    },
+    "seguridad-urbana": {
+      "titulo": "Seguridad urbana y ordenanzas municipales",
+      "requisitos": ["ordenanzas", "convivencia", "espacio público"],
+      "normativa_principal": ["LO 4/2015", "LBRL 7/1985"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "trafico-municipal": {
+      "titulo": "Tráfico y movilidad urbana",
+      "requisitos": ["circulación urbana", "estacionamiento", "señalización"],
+      "normativa_principal": ["RDL 6/2015", "RD 1428/2003"],
+      "horas_estimadas": 30,
+      "complejidad": "alta"
+    },
+    "armas-local": {
+      "titulo": "Armas: competencias municipales",
+      "requisitos": ["licencias", "control", "coordinación"],
+      "normativa_principal": ["RD 137/1993"],
+      "horas_estimadas": 10,
+      "complejidad": "baja"
+    },
+    "extranjeria-municipal": {
+      "titulo": "Extranjería: aspectos municipales",
+      "requisitos": ["empadronamiento", "documentación", "servicios"],
+      "normativa_principal": ["LO 4/2000"],
+      "horas_estimadas": 15,
+      "complejidad": "media"
+    },
+    "proteccion-civil-municipal": {
+      "titulo": "Protección civil municipal",
+      "requisitos": ["emergencias locales", "planes municipales", "coordinación"],
+      "normativa_principal": ["Ley 17/2015", "LBRL 7/1985"],
+      "horas_estimadas": 15,
+      "complejidad": "media"
+    },
+    "derechos-policia-local": {
+      "titulo": "Derechos y deberes de la Policía Local",
+      "requisitos": ["estatuto", "régimen disciplinario", "coordinación"],
+      "normativa_principal": ["Ley 2/1986", "LBRL 7/1985"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "vg-proximidad": {
+      "titulo": "Violencia de género: policía de proximidad",
+      "requisitos": ["proximidad", "prevención", "coordinación social"],
+      "normativa_principal": ["LO 1/2004"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "medioambiente-municipal": {
+      "titulo": "Medio ambiente urbano",
+      "requisitos": ["ruidos", "residuos", "contaminación urbana"],
+      "normativa_principal": ["ordenanzas ambientales"],
+      "horas_estimadas": 15,
+      "complejidad": "baja"
+    },
+    "organizacion-policia-local": {
+      "titulo": "Organización de la Policía Local",
+      "requisitos": ["estructura", "competencias", "coordinación"],
+      "normativa_principal": ["LBRL 7/1985", "Ley 2/1986"],
+      "horas_estimadas": 15,
+      "complejidad": "baja"
+    }
+  },
+  "ESTILO_EXAMEN_DESTINO": "tipo test 100 preguntas + supuestos prácticos municipales",
+  "REGLAS_REESCRITURA": {
+    "min_rewrite_ratio": 0.35,
+    "cambios_obligatorios": [
+      "adaptar casos a ámbito municipal",
+      "incluir ordenanzas municipales",
+      "enfoque en proximidad ciudadana",
+      "coordinación con servicios sociales",
+      "gestión del espacio público urbano"
+    ],
+    "mantener_estructura": [
+      "Objetivos",
+      "Desarrollo teórico", 
+      "Ejemplos prácticos",
+      "Test",
+      "Casos",
+      "Glosario"
+    ],
+    "ejemplos_contexto": [
+      "patrullaje urbano",
+      "control de ordenanzas",
+      "mediación ciudadana",
+      "eventos municipales",
+      "coordinación servicios",
+      "atención vecinal"
+    ]
+  },
+  "COMPETENCIAS_DESTINO": [
+    "Seguridad urbana",
+    "Aplicación de ordenanzas",
+    "Tráfico municipal",
+    "Proximidad ciudadana",
+    "Coordinación servicios municipales"
+  ]
+}

@@ -1,0 +1,1218 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+12 0 obj
+<<
+/Length 1980
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programaci\363n Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 8: Proyecto Final Full-Stack) Tj
+0 -60 Td
+/F1 12 Tf
+(Duraci\363n estimada: 25 horas) Tj
+0 -40 Td
+/F2 14 Tf
+(1. Introducci\363n al Desarrollo Full-Stack) Tj
+0 -25 Td
+/F1 11 Tf
+(Un desarrollador Full-Stack domina tanto el frontend \(interfaz de) Tj
+0 -15 Td
+(usuario\) como el backend \(servidor y base de datos\), siendo capaz) Tj
+0 -15 Td
+(de crear aplicaciones web completas de extremo a extremo.) Tj
+0 -25 Td
+/F2 12 Tf
+(Componentes de una Aplicaci\363n Full-Stack:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Frontend: React, HTML, CSS \(interfaz de usuario\)) Tj
+0 -15 Td
+(\2022 Backend: Node.js, Express \(l\363gica del servidor\)) Tj
+0 -15 Td
+(\2022 Base de Datos: MongoDB o SQL \(almacenamiento\)) Tj
+0 -15 Td
+(\2022 APIs: Comunicaci\363n entre frontend y backend) Tj
+0 -15 Td
+(\2022 Autenticaci\363n: Gesti\363n de usuarios y seguridad) Tj
+0 -15 Td
+(\2022 Deployment: Poner la aplicaci\363n en producci\363n) Tj
+0 -30 Td
+/F2 14 Tf
+(2. Planificaci\363n del Proyecto) Tj
+0 -25 Td
+/F1 11 Tf
+(Vamos a desarrollar "TaskMaster", una aplicaci\363n completa) Tj
+0 -15 Td
+(de gesti\363n de tareas y proyectos para equipos de trabajo.) Tj
+0 -25 Td
+/F2 12 Tf
+(Caracter\355sticas Principales:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Sistema de autenticaci\363n de usuarios) Tj
+0 -15 Td
+(\2022 Creaci\363n y gesti\363n de proyectos) Tj
+0 -15 Td
+(\2022 Asignaci\363n de tareas con estados) Tj
+0 -15 Td
+(\2022 Colaboraci\363n en tiempo real) Tj
+0 -15 Td
+(\2022 Dashboard con estad\355sticas) Tj
+0 -15 Td
+(\2022 Notificaciones y comentarios) Tj
+0 -15 Td
+(\2022 Dise\361o responsivo) Tj
+0 -30 Td
+/F2 14 Tf
+(3. Arquitectura de la Aplicaci\363n) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura del Proyecto:) Tj
+0 -20 Td
+/F1 10 Tf
+(taskmaster/) Tj
+0 -12 Td
+(\251\251\251 client/              # Frontend React) Tj
+0 -12 Td
+(\251   \251\251\251 src/) Tj
+0 -12 Td
+(\251   \251   \251\251\251 components/) Tj
+0 -12 Td
+(\251   \251   \251\251\251 pages/) Tj
+0 -12 Td
+(\251   \251   \251\251\251 hooks/) Tj
+0 -12 Td
+(\251   \251   \251\251\251 services/) Tj
+0 -12 Td
+(\251   \251   \300\300\300 utils/) Tj
+0 -12 Td
+(\251   \251\251\251 public/) Tj
+0 -12 Td
+(\251   \300\300\300 package.json) Tj
+0 -12 Td
+(\251\251\251 server/              # Backend Node.js) Tj
+0 -12 Td
+(\251   \251\251\251 routes/) Tj
+0 -12 Td
+(\251   \251\251\251 models/) Tj
+0 -12 Td
+(\251   \251\251\251 middleware/) Tj
+0 -12 Td
+(\251   \251\251\251 controllers/) Tj
+0 -12 Td
+(\251   \300\300\300 app.js) Tj
+0 -12 Td
+(\251\251\251 database/           # Scripts de base de datos) Tj
+0 -12 Td
+(\251\251\251 docs/               # Documentaci\363n) Tj
+0 -12 Td
+(\300\300\300 README.md) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4. Dise\361o de la Base de Datos) Tj
+0 -30 Td
+/F1 11 Tf
+(Utilizaremos MongoDB para almacenar nuestros datos.) Tj
+0 -15 Td
+(Dise\361aremos esquemas eficientes y escalables.) Tj
+0 -25 Td
+/F2 12 Tf
+(Modelo de Usuario:) Tj
+0 -20 Td
+/F1 10 Tf
+(const userSchema = {) Tj
+0 -12 Td
+(  _id: ObjectId,) Tj
+0 -12 Td
+(  email: String \(unique, required\),) Tj
+0 -12 Td
+(  password: String \(hashed, required\),) Tj
+0 -12 Td
+(  firstName: String \(required\),) Tj
+0 -12 Td
+(  lastName: String \(required\),) Tj
+0 -12 Td
+(  avatar: String \(URL\),) Tj
+0 -12 Td
+(  role: String \(admin, user\),) Tj
+0 -12 Td
+(  createdAt: Date,) Tj
+0 -12 Td
+(  updatedAt: Date,) Tj
+0 -12 Td
+(  isActive: Boolean) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Modelo de Proyecto:) Tj
+0 -20 Td
+/F1 10 Tf
+(const projectSchema = {) Tj
+0 -12 Td
+(  _id: ObjectId,) Tj
+0 -12 Td
+(  name: String \(required\),) Tj
+0 -12 Td
+(  description: String,) Tj
+0 -12 Td
+(  owner: ObjectId \(ref: User\),) Tj
+0 -12 Td
+(  members: [ObjectId] \(ref: User\),) Tj
+0 -12 Td
+(  status: String \(active, completed, paused\),) Tj
+0 -12 Td
+(  priority: String \(low, medium, high\),) Tj
+0 -12 Td
+(  deadline: Date,) Tj
+0 -12 Td
+(  createdAt: Date,) Tj
+0 -12 Td
+(  updatedAt: Date) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Modelo de Tarea:) Tj
+0 -20 Td
+/F1 10 Tf
+(const taskSchema = {) Tj
+0 -12 Td
+(  _id: ObjectId,) Tj
+0 -12 Td
+(  title: String \(required\),) Tj
+0 -12 Td
+(  description: String,) Tj
+0 -12 Td
+(  project: ObjectId \(ref: Project\),) Tj
+0 -12 Td
+(  assignedTo: ObjectId \(ref: User\),) Tj
+0 -12 Td
+(  createdBy: ObjectId \(ref: User\),) Tj
+0 -12 Td
+(  status: String \(todo, in-progress, review, done\),) Tj
+0 -12 Td
+(  priority: String \(low, medium, high\),) Tj
+0 -12 Td
+(  dueDate: Date,) Tj
+0 -12 Td
+(  tags: [String],) Tj
+0 -12 Td
+(  comments: [{) Tj
+0 -12 Td
+(    user: ObjectId \(ref: User\),) Tj
+0 -12 Td
+(    text: String,) Tj
+0 -12 Td
+(    createdAt: Date) Tj
+0 -12 Td
+(  }],) Tj
+0 -12 Td
+(  createdAt: Date,) Tj
+0 -12 Td
+(  updatedAt: Date) Tj
+0 -12 Td
+(}) Tj
+0 -30 Td
+/F2 14 Tf
+(5. Configuraci\363n del Backend) Tj
+0 -25 Td
+/F2 12 Tf
+(Instalaci\363n de Dependencias:) Tj
+0 -20 Td
+/F1 10 Tf
+(npm init -y) Tj
+0 -12 Td
+(npm install express mongoose cors dotenv) Tj
+0 -12 Td
+(npm install bcryptjs jsonwebtoken) Tj
+0 -12 Td
+(npm install express-validator express-rate-limit) Tj
+0 -12 Td
+(npm install --save-dev nodemon) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(6. Implementaci\363n del Backend) Tj
+0 -30 Td
+/F2 12 Tf
+(Archivo Principal \(server/app.js\):) Tj
+0 -20 Td
+/F1 9 Tf
+(const express = require\('express'\);) Tj
+0 -11 Td
+(const mongoose = require\('mongoose'\);) Tj
+0 -11 Td
+(const cors = require\('cors'\);) Tj
+0 -11 Td
+(require\('dotenv'\).config\(\);) Tj
+0 -13 Td
+(const app = express\(\);) Tj
+0 -11 Td
+(const PORT = process.env.PORT || 5000;) Tj
+0 -13 Td
+(// Middleware) Tj
+0 -11 Td
+(app.use\(cors\(\)\);) Tj
+0 -11 Td
+(app.use\(express.json\({ limit: '10mb' }\)\);) Tj
+0 -11 Td
+(app.use\(express.urlencoded\({ extended: true }\)\);) Tj
+0 -13 Td
+(// Rutas) Tj
+0 -11 Td
+(app.use\('/api/auth', require\('./routes/auth'\)\);) Tj
+0 -11 Td
+(app.use\('/api/projects', require\('./routes/projects'\)\);) Tj
+0 -11 Td
+(app.use\('/api/tasks', require\('./routes/tasks'\)\);) Tj
+0 -13 Td
+(// Conexi\363n a MongoDB) Tj
+0 -11 Td
+(mongoose.connect\(process.env.MONGODB_URI\)) Tj
+0 -11 Td
+(  .then\(\(\) => console.log\('MongoDB conectado'\)\)) Tj
+0 -11 Td
+(  .catch\(err => console.error\(err\)\);) Tj
+0 -13 Td
+(app.listen\(PORT, \(\) => {) Tj
+0 -11 Td
+(  console.log\(`Servidor ejecut\341ndose en puerto ${PORT}`\);) Tj
+0 -11 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Controlador de Autenticaci\363n \(auth.js\):) Tj
+0 -20 Td
+/F1 9 Tf
+(const bcrypt = require\('bcryptjs'\);) Tj
+0 -11 Td
+(const jwt = require\('jsonwebtoken'\);) Tj
+0 -11 Td
+(const User = require\('../models/User'\);) Tj
+0 -13 Td
+(exports.register = async \(req, res\) => {) Tj
+0 -11 Td
+(  try {) Tj
+0 -11 Td
+(    const { email, password, firstName, lastName } = req.body;) Tj
+0 -11 Td
+(    ) Tj
+0 -11 Td
+(    const existingUser = await User.findOne\({ email }\);) Tj
+0 -11 Td
+(    if \(existingUser\) {) Tj
+0 -11 Td
+(      return res.status\(400\).json\({ message: 'Usuario ya existe' }\);) Tj
+0 -11 Td
+(    }) Tj
+0 -11 Td
+(    ) Tj
+0 -11 Td
+(    const hashedPassword = await bcrypt.hash\(password, 12\);) Tj
+0 -11 Td
+(    ) Tj
+0 -11 Td
+(    const user = new User\({) Tj
+0 -11 Td
+(      email, password: hashedPassword, firstName, lastName) Tj
+0 -11 Td
+(    }\);) Tj
+0 -11 Td
+(    ) Tj
+0 -11 Td
+(    await user.save\(\);) Tj
+0 -11 Td
+(    ) Tj
+0 -11 Td
+(    const token = jwt.sign\() Tj
+0 -11 Td
+(      { userId: user._id },) Tj
+0 -11 Td
+(      process.env.JWT_SECRET,) Tj
+0 -11 Td
+(      { expiresIn: '7d' }) Tj
+0 -11 Td
+(    \);) Tj
+0 -11 Td
+(    ) Tj
+0 -11 Td
+(    res.status\(201\).json\({ token, user: { id: user._id, email, firstName, lastName } }\);) Tj
+0 -11 Td
+(  } catch \(error\) {) Tj
+0 -11 Td
+(    res.status\(500\).json\({ message: 'Error del servidor' }\);) Tj
+0 -11 Td
+(  }) Tj
+0 -11 Td
+(};) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(7. Desarrollo del Frontend con React) Tj
+0 -30 Td
+/F2 12 Tf
+(Configuraci\363n del Frontend:) Tj
+0 -20 Td
+/F1 10 Tf
+(npx create-react-app client) Tj
+0 -12 Td
+(cd client) Tj
+0 -12 Td
+(npm install axios react-router-dom) Tj
+0 -12 Td
+(npm install @mui/material @emotion/react @emotion/styled) Tj
+0 -12 Td
+(npm install @mui/icons-material) Tj
+0 -12 Td
+(npm install react-hook-form yup @hookform/resolvers) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura de Componentes:) Tj
+0 -20 Td
+/F1 9 Tf
+(src/) Tj
+0 -11 Td
+(\251\251\251 components/) Tj
+0 -11 Td
+(\251   \251\251\251 common/) Tj
+0 -11 Td
+(\251   \251   \251\251\251 Header.jsx) Tj
+0 -11 Td
+(\251   \251   \251\251\251 Sidebar.jsx) Tj
+0 -11 Td
+(\251   \251   \300\300\300 Loading.jsx) Tj
+0 -11 Td
+(\251   \251\251\251 auth/) Tj
+0 -11 Td
+(\251   \251   \251\251\251 LoginForm.jsx) Tj
+0 -11 Td
+(\251   \251   \300\300\300 RegisterForm.jsx) Tj
+0 -11 Td
+(\251   \251\251\251 projects/) Tj
+0 -11 Td
+(\251   \251   \251\251\251 ProjectList.jsx) Tj
+0 -11 Td
+(\251   \251   \251\251\251 ProjectCard.jsx) Tj
+0 -11 Td
+(\251   \251   \300\300\300 ProjectForm.jsx) Tj
+0 -11 Td
+(\251   \300\300\300 tasks/) Tj
+0 -11 Td
+(\251       \251\251\251 TaskBoard.jsx) Tj
+0 -11 Td
+(\251       \251\251\251 TaskCard.jsx) Tj
+0 -11 Td
+(\251       \300\300\300 TaskForm.jsx) Tj
+0 -11 Td
+(\251\251\251 pages/) Tj
+0 -11 Td
+(\251   \251\251\251 Dashboard.jsx) Tj
+0 -11 Td
+(\251   \251\251\251 Projects.jsx) Tj
+0 -11 Td
+(\251   \251\251\251 Tasks.jsx) Tj
+0 -11 Td
+(\251   \300\300\300 Profile.jsx) Tj
+0 -11 Td
+(\251\251\251 hooks/) Tj
+0 -11 Td
+(\251   \251\251\251 useAuth.js) Tj
+0 -11 Td
+(\251   \300\300\300 useApi.js) Tj
+0 -11 Td
+(\251\251\251 services/) Tj
+0 -11 Td
+(\251   \251\251\251 authService.js) Tj
+0 -11 Td
+(\251   \251\251\251 projectService.js) Tj
+0 -11 Td
+(\251   \300\300\300 taskService.js) Tj
+0 -11 Td
+(\251\251\251 context/) Tj
+0 -11 Td
+(\251   \300\300\300 AuthContext.js) Tj
+0 -11 Td
+(\300\300\300 App.js) Tj
+0 -25 Td
+/F2 12 Tf
+(Componente Principal \(App.js\):) Tj
+0 -20 Td
+/F1 9 Tf
+(import React from 'react';) Tj
+0 -11 Td
+(import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';) Tj
+0 -11 Td
+(import { ThemeProvider, createTheme } from '@mui/material/styles';) Tj
+0 -11 Td
+(import CssBaseline from '@mui/material/CssBaseline';) Tj
+0 -11 Td
+(import { AuthProvider } from './context/AuthContext';) Tj
+0 -11 Td
+(import ProtectedRoute from './components/common/ProtectedRoute';) Tj
+0 -11 Td
+(import Login from './pages/Login';) Tj
+0 -11 Td
+(import Dashboard from './pages/Dashboard';) Tj
+0 -11 Td
+(import Projects from './pages/Projects';) Tj
+0 -11 Td
+(import Tasks from './pages/Tasks';) Tj
+0 -13 Td
+(const theme = createTheme\({) Tj
+0 -11 Td
+(  palette: {) Tj
+0 -11 Td
+(    primary: { main: '#1976d2' },) Tj
+0 -11 Td
+(    secondary: { main: '#dc004e' }) Tj
+0 -11 Td
+(  }) Tj
+0 -11 Td
+(}\);) Tj
+0 -13 Td
+(function App\(\) {) Tj
+0 -11 Td
+(  return \() Tj
+0 -11 Td
+(    <ThemeProvider theme={theme}>) Tj
+0 -11 Td
+(      <CssBaseline />) Tj
+0 -11 Td
+(      <AuthProvider>) Tj
+0 -11 Td
+(        <Router>) Tj
+0 -11 Td
+(          <Routes>) Tj
+0 -11 Td
+(            <Route path="/login" element={<Login />} />) Tj
+0 -11 Td
+(            <Route path="/" element={) Tj
+0 -11 Td
+(              <ProtectedRoute><Dashboard /></ProtectedRoute>) Tj
+0 -11 Td
+(            } />) Tj
+0 -11 Td
+(            <Route path="/projects" element={) Tj
+0 -11 Td
+(              <ProtectedRoute><Projects /></ProtectedRoute>) Tj
+0 -11 Td
+(            } />) Tj
+0 -11 Td
+(            <Route path="/tasks" element={) Tj
+0 -11 Td
+(              <ProtectedRoute><Tasks /></ProtectedRoute>) Tj
+0 -11 Td
+(            } />) Tj
+0 -11 Td
+(          </Routes>) Tj
+0 -11 Td
+(        </Router>) Tj
+0 -11 Td
+(      </AuthProvider>) Tj
+0 -11 Td
+(    </ThemeProvider>) Tj
+0 -11 Td
+(  \);) Tj
+0 -11 Td
+(}) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(8. Implementaci\363n de Autenticaci\363n) Tj
+0 -30 Td
+/F2 12 Tf
+(Context de Autenticaci\363n \(AuthContext.js\):) Tj
+0 -20 Td
+/F1 8 Tf
+(import React, { createContext, useContext, useReducer, useEffect } from 'react';) Tj
+0 -10 Td
+(import authService from '../services/authService';) Tj
+0 -12 Td
+(const AuthContext = createContext\(\);) Tj
+0 -12 Td
+(const initialState = {) Tj
+0 -10 Td
+(  user: null,) Tj
+0 -10 Td
+(  token: localStorage.getItem\('token'\),) Tj
+0 -10 Td
+(  isLoading: true,) Tj
+0 -10 Td
+(  isAuthenticated: false) Tj
+0 -10 Td
+(};) Tj
+0 -12 Td
+(const authReducer = \(state, action\) => {) Tj
+0 -10 Td
+(  switch \(action.type\) {) Tj
+0 -10 Td
+(    case 'LOGIN_SUCCESS':) Tj
+0 -10 Td
+(      localStorage.setItem\('token', action.payload.token\);) Tj
+0 -10 Td
+(      return {) Tj
+0 -10 Td
+(        ...state,) Tj
+0 -10 Td
+(        user: action.payload.user,) Tj
+0 -10 Td
+(        token: action.payload.token,) Tj
+0 -10 Td
+(        isAuthenticated: true,) Tj
+0 -10 Td
+(        isLoading: false) Tj
+0 -10 Td
+(      };) Tj
+0 -10 Td
+(    case 'LOGOUT':) Tj
+0 -10 Td
+(      localStorage.removeItem\('token'\);) Tj
+0 -10 Td
+(      return { ...initialState, isLoading: false };) Tj
+0 -10 Td
+(    default:) Tj
+0 -10 Td
+(      return state;) Tj
+0 -10 Td
+(  }) Tj
+0 -10 Td
+(};) Tj
+0 -15 Td
+/F2 12 Tf
+(Hook useAuth:) Tj
+0 -18 Td
+/F1 8 Tf
+(export const useAuth = \(\) => {) Tj
+0 -10 Td
+(  const context = useContext\(AuthContext\);) Tj
+0 -10 Td
+(  if \(!context\) throw new Error\('useAuth must be used within AuthProvider'\);) Tj
+0 -10 Td
+(  return context;) Tj
+0 -10 Td
+(};) Tj
+0 -15 Td
+/F2 12 Tf
+(Componente de Login:) Tj
+0 -18 Td
+/F1 8 Tf
+(import React from 'react';) Tj
+0 -10 Td
+(import { useForm } from 'react-hook-form';) Tj
+0 -10 Td
+(import { Box, Card, TextField, Button, Typography, Alert } from '@mui/material';) Tj
+0 -10 Td
+(import { useAuth } from '../context/AuthContext';) Tj
+0 -12 Td
+(const LoginForm = \(\) => {) Tj
+0 -10 Td
+(  const { login, isLoading, error } = useAuth\(\);) Tj
+0 -10 Td
+(  const { register, handleSubmit, formState: { errors } } = useForm\(\);) Tj
+0 -12 Td
+(  const onSubmit = async \(data\) => {) Tj
+0 -10 Td
+(    try {) Tj
+0 -10 Td
+(      await login\(data.email, data.password\);) Tj
+0 -10 Td
+(    } catch \(err\) {) Tj
+0 -10 Td
+(      console.error\('Error de login:', err\);) Tj
+0 -10 Td
+(    }) Tj
+0 -10 Td
+(  };) Tj
+0 -12 Td
+(  return \() Tj
+0 -10 Td
+(    <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">) Tj
+0 -10 Td
+(      <Card sx={{ p: 4, maxWidth: 400, width: '100%' }}>) Tj
+0 -10 Td
+(        <Typography variant="h4" align="center" gutterBottom>) Tj
+0 -10 Td
+(          TaskMaster) Tj
+0 -10 Td
+(        </Typography>) Tj
+0 -10 Td
+(        {error && <Alert severity="error">{error}</Alert>}) Tj
+0 -10 Td
+(        <Box component="form" onSubmit={handleSubmit\(onSubmit\)} sx={{ mt: 2 }}>) Tj
+0 -10 Td
+(          <TextField) Tj
+0 -10 Td
+(            fullWidth margin="normal" label="Email") Tj
+0 -10 Td
+(            {...register\('email', { required: 'Email es requerido' }\)}) Tj
+0 -10 Td
+(            error={!!errors.email}) Tj
+0 -10 Td
+(            helperText={errors.email?.message}) Tj
+0 -10 Td
+(          />) Tj
+0 -10 Td
+(          <TextField) Tj
+0 -10 Td
+(            fullWidth margin="normal" label="Contrase\361a" type="password") Tj
+0 -10 Td
+(            {...register\('password', { required: 'Contrase\361a es requerida' }\)}) Tj
+0 -10 Td
+(            error={!!errors.password}) Tj
+0 -10 Td
+(            helperText={errors.password?.message}) Tj
+0 -10 Td
+(          />) Tj
+0 -10 Td
+(          <Button) Tj
+0 -10 Td
+(            type="submit" fullWidth variant="contained" sx={{ mt: 3 }}) Tj
+0 -10 Td
+(            disabled={isLoading}) Tj
+0 -10 Td
+(          >) Tj
+0 -10 Td
+(            {isLoading ? 'Iniciando sesi\363n...' : 'Iniciar Sesi\363n'}) Tj
+0 -10 Td
+(          </Button>) Tj
+0 -10 Td
+(        </Box>) Tj
+0 -10 Td
+(      </Card>) Tj
+0 -10 Td
+(    </Box>) Tj
+0 -10 Td
+(  \);) Tj
+0 -10 Td
+(};) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(9. Dashboard y Gesti\363n de Proyectos) Tj
+0 -30 Td
+/F2 12 Tf
+(Componente Dashboard:) Tj
+0 -20 Td
+/F1 8 Tf
+(import React, { useState, useEffect } from 'react';) Tj
+0 -10 Td
+(import { Grid, Card, CardContent, Typography, Box } from '@mui/material';) Tj
+0 -10 Td
+(import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';) Tj
+0 -10 Td
+(import projectService from '../services/projectService';) Tj
+0 -10 Td
+(import taskService from '../services/taskService';) Tj
+0 -12 Td
+(const Dashboard = \(\) => {) Tj
+0 -10 Td
+(  const [stats, setStats] = useState\({) Tj
+0 -10 Td
+(    totalProjects: 0,) Tj
+0 -10 Td
+(    activeTasks: 0,) Tj
+0 -10 Td
+(    completedTasks: 0,) Tj
+0 -10 Td
+(    teamMembers: 0) Tj
+0 -10 Td
+(  }\);) Tj
+0 -10 Td
+(  const [chartData, setChartData] = useState\([\]\);) Tj
+0 -12 Td
+(  useEffect\(\(\) => {) Tj
+0 -10 Td
+(    const fetchDashboardData = async \(\) => {) Tj
+0 -10 Td
+(      try {) Tj
+0 -10 Td
+(        const [projects, tasks] = await Promise.all\([) Tj
+0 -10 Td
+(          projectService.getProjects\(\),) Tj
+0 -10 Td
+(          taskService.getTasks\(\)) Tj
+0 -10 Td
+(        ]\);) Tj
+0 -12 Td
+(        setStats\({) Tj
+0 -10 Td
+(          totalProjects: projects.length,) Tj
+0 -10 Td
+(          activeTasks: tasks.filter\(t => t.status !== 'done'\).length,) Tj
+0 -10 Td
+(          completedTasks: tasks.filter\(t => t.status === 'done'\).length,) Tj
+0 -10 Td
+(          teamMembers: new Set\(projects.flatMap\(p => p.members\)\).size) Tj
+0 -10 Td
+(        }\);) Tj
+0 -12 Td
+(        const statusCounts = tasks.reduce\(\(acc, task\) => {) Tj
+0 -10 Td
+(          acc[task.status] = \(acc[task.status] || 0\) + 1;) Tj
+0 -10 Td
+(          return acc;) Tj
+0 -10 Td
+(        }, {}\);) Tj
+0 -12 Td
+(        setChartData\(Object.entries\(statusCounts\).map\(\([status, count]\) => \({) Tj
+0 -10 Td
+(          status: status.charAt\(0\).toUpperCase\(\) + status.slice\(1\),) Tj
+0 -10 Td
+(          count) Tj
+0 -10 Td
+(        }\))\);) Tj
+0 -10 Td
+(      } catch \(error\) {) Tj
+0 -10 Td
+(        console.error\('Error fetching dashboard data:', error\);) Tj
+0 -10 Td
+(      }) Tj
+0 -10 Td
+(    };) Tj
+0 -12 Td
+(    fetchDashboardData\(\);) Tj
+0 -10 Td
+(  }, [\]\);) Tj
+0 -15 Td
+/F2 12 Tf
+(Sistema de Gesti\363n de Estado:) Tj
+0 -18 Td
+/F1 8 Tf
+(// useProjects hook) Tj
+0 -10 Td
+(import { useState, useEffect } from 'react';) Tj
+0 -10 Td
+(import projectService from '../services/projectService';) Tj
+0 -12 Td
+(export const useProjects = \(\) => {) Tj
+0 -10 Td
+(  const [projects, setProjects] = useState\([\]\);) Tj
+0 -10 Td
+(  const [loading, setLoading] = useState\(true\);) Tj
+0 -10 Td
+(  const [error, setError] = useState\(null\);) Tj
+0 -12 Td
+(  const fetchProjects = async \(\) => {) Tj
+0 -10 Td
+(    try {) Tj
+0 -10 Td
+(      setLoading\(true\);) Tj
+0 -10 Td
+(      const data = await projectService.getProjects\(\);) Tj
+0 -10 Td
+(      setProjects\(data\);) Tj
+0 -10 Td
+(    } catch \(err\) {) Tj
+0 -10 Td
+(      setError\(err.message\);) Tj
+0 -10 Td
+(    } finally {) Tj
+0 -10 Td
+(      setLoading\(false\);) Tj
+0 -10 Td
+(    }) Tj
+0 -10 Td
+(  };) Tj
+0 -12 Td
+(  const createProject = async \(projectData\) => {) Tj
+0 -10 Td
+(    try {) Tj
+0 -10 Td
+(      const newProject = await projectService.createProject\(projectData\);) Tj
+0 -10 Td
+(      setProjects\(prev => [...prev, newProject]\);) Tj
+0 -10 Td
+(      return newProject;) Tj
+0 -10 Td
+(    } catch \(err\) {) Tj
+0 -10 Td
+(      setError\(err.message\);) Tj
+0 -10 Td
+(      throw err;) Tj
+0 -10 Td
+(    }) Tj
+0 -10 Td
+(  };) Tj
+0 -12 Td
+(  useEffect\(\(\) => {) Tj
+0 -10 Td
+(    fetchProjects\(\);) Tj
+0 -10 Td
+(  }, [\]\);) Tj
+0 -12 Td
+(  return { projects, loading, error, createProject, refetch: fetchProjects };) Tj
+0 -10 Td
+(};) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1650
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(10. Testing y Deployment) Tj
+0 -30 Td
+/F2 12 Tf
+(Configuraci\363n de Tests:) Tj
+0 -20 Td
+/F1 10 Tf
+(npm install --save-dev jest supertest) Tj
+0 -12 Td
+(npm install --save-dev @testing-library/react @testing-library/jest-dom) Tj
+0 -25 Td
+/F2 12 Tf
+(Test de API \(backend\):) Tj
+0 -18 Td
+/F1 9 Tf
+(const request = require\('supertest'\);) Tj
+0 -11 Td
+(const app = require\('../app'\);) Tj
+0 -13 Td
+(describe\('Auth Endpoints', \(\) => {) Tj
+0 -11 Td
+(  test\('POST /api/auth/register', async \(\) => {) Tj
+0 -11 Td
+(    const userData = {) Tj
+0 -11 Td
+(      email: 'test@test.com',) Tj
+0 -11 Td
+(      password: 'password123',) Tj
+0 -11 Td
+(      firstName: 'Test',) Tj
+0 -11 Td
+(      lastName: 'User') Tj
+0 -11 Td
+(    };) Tj
+0 -13 Td
+(    const response = await request\(app\)) Tj
+0 -11 Td
+(      .post\('/api/auth/register'\)) Tj
+0 -11 Td
+(      .send\(userData\)) Tj
+0 -11 Td
+(      .expect\(201\);) Tj
+0 -13 Td
+(    expect\(response.body\).toHaveProperty\('token'\);) Tj
+0 -11 Td
+(    expect\(response.body.user\).toHaveProperty\('email', userData.email\);) Tj
+0 -11 Td
+(  }\);) Tj
+0 -11 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Variables de Entorno \(.env\):) Tj
+0 -20 Td
+/F1 10 Tf
+(NODE_ENV=production) Tj
+0 -12 Td
+(PORT=5000) Tj
+0 -12 Td
+(MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmaster) Tj
+0 -12 Td
+(JWT_SECRET=super_secret_jwt_key_change_in_production) Tj
+0 -12 Td
+(CORS_ORIGIN=https://taskmaster-frontend.vercel.app) Tj
+0 -25 Td
+/F2 12 Tf
+(Deployment con Vercel \(Frontend\):) Tj
+0 -20 Td
+/F1 10 Tf
+(# vercel.json) Tj
+0 -12 Td
+({) Tj
+0 -12 Td
+(  "builds": [) Tj
+0 -12 Td
+(    { "src": "package.json", "use": "@vercel/static-build" }) Tj
+0 -12 Td
+(  ],) Tj
+0 -12 Td
+(  "routes": [) Tj
+0 -12 Td
+(    { "src": "/static/\(.*\)", "dest": "/static/$1" },) Tj
+0 -12 Td
+(    { "src": "/\(.*\)", "dest": "/index.html" }) Tj
+0 -12 Td
+(  ]) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Deployment con Railway \(Backend\):) Tj
+0 -20 Td
+/F1 10 Tf
+(# railway.json) Tj
+0 -12 Td
+({) Tj
+0 -12 Td
+(  "$schema": "https://railway.app/railway.schema.json",) Tj
+0 -12 Td
+(  "build": {) Tj
+0 -12 Td
+(    "builder": "NIXPACKS") Tj
+0 -12 Td
+(  },) Tj
+0 -12 Td
+(  "deploy": {) Tj
+0 -12 Td
+(    "startCommand": "npm start",) Tj
+0 -12 Td
+(    "restartPolicyType": "ON_FAILURE",) Tj
+0 -12 Td
+(    "restartPolicyMaxRetries": 10) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -30 Td
+/F2 14 Tf
+(11. Conclusi\363n y Logros) Tj
+0 -25 Td
+/F1 11 Tf
+(Has completado exitosamente el desarrollo de una aplicaci\363n) Tj
+0 -15 Td
+(Full-Stack completa, integrando todos los conocimientos:) Tj
+0 -20 Td
+(\2022 Frontend moderno con React y Material-UI) Tj
+0 -15 Td
+(\2022 Backend robusto con Node.js y Express) Tj
+0 -15 Td
+(\2022 Base de datos NoSQL con MongoDB) Tj
+0 -15 Td
+(\2022 Autenticaci\363n segura con JWT) Tj
+0 -15 Td
+(\2022 Control de versiones con Git) Tj
+0 -15 Td
+(\2022 Deployment en la nube) Tj
+0 -15 Td
+(\2022 Testing automatizado) Tj
+0 -25 Td
+(\241Felicitaciones! Ahora eres un desarrollador Full-Stack capaz) Tj
+0 -15 Td
+(de crear aplicaciones web completas desde cero.) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000274 00000 n 
+0000000418 00000 n 
+0000000562 00000 n 
+0000000706 00000 n 
+0000000850 00000 n 
+0000000994 00000 n 
+0000001138 00000 n 
+0000001205 00000 n 
+0000001278 00000 n 
+0000003310 00000 n 
+0000005312 00000 n 
+0000007264 00000 n 
+0000009266 00000 n 
+0000011118 00000 n 
+0000013070 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+14772
+%%EOF

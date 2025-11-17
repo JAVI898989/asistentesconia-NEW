@@ -1,0 +1,346 @@
+/* Estilos profesionales para temario de Guardia Civil */
+.temario-profesional {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  color: #2c3e50;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos principales (H1) - Tamaño grande, negrita, azul oscuro */
+.temario-profesional h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a; /* Azul oscuro */
+  margin: 40px 0 30px 0;
+  padding: 20px 0;
+  border-bottom: 3px solid #3b82f6;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 8px;
+  padding: 25px 20px;
+}
+
+/* Subtítulos (H2) - Tamaño mediano, negrita, gris oscuro */
+.temario-profesional h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #374151; /* Gris oscuro */
+  margin: 30px 0 20px 0;
+  padding: 15px 0 10px 0;
+  border-left: 5px solid #3b82f6;
+  padding-left: 20px;
+  background: #f9fafb;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Subtítulos menores (H3) */
+.temario-profesional h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4b5563; /* Gris medio */
+  margin: 25px 0 15px 0;
+  padding: 10px 0;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Subtítulos H4 */
+.temario-profesional h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 20px 0 12px 0;
+}
+
+/* Texto normal - 14-16px, interlineado 1.5 */
+.temario-profesional p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 15px 0;
+  text-align: justify;
+  color: #374151;
+}
+
+/* Espacio entre secciones - mínimo 20px */
+.temario-profesional section,
+.temario-profesional .seccion {
+  margin: 30px 0;
+  padding: 20px 0;
+}
+
+/* Listas con viñetas - buena separación */
+.temario-profesional ul {
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+.temario-profesional ul li {
+  margin: 12px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.temario-profesional ul li::marker {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+/* Listas numeradas */
+.temario-profesional ol {
+  margin: 20px 0;
+  padding-left: 30px;
+  counter-reset: item;
+}
+
+.temario-profesional ol li {
+  margin: 15px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  counter-increment: item;
+}
+
+.temario-profesional ol li::marker {
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+/* Palabras clave importantes - negrita y verde */
+.temario-profesional .palabra-clave,
+.temario-profesional strong.importante {
+  font-weight: 700;
+  color: #059669; /* Verde */
+  background: #ecfdf5;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Términos legales importantes */
+.temario-profesional .termino-legal {
+  font-weight: 600;
+  color: #7c2d12;
+  background: #fef2f2;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Tablas - centradas, bordes finos */
+.temario-profesional table {
+  width: 100%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.temario-profesional table th {
+  background: #1e3a8a;
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.temario-profesional table td {
+  padding: 12px 10px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  background: #ffffff;
+}
+
+.temario-profesional table tr:nth-child(even) td {
+  background: #f9fafb;
+}
+
+.temario-profesional table tr:hover td {
+  background: #eff6ff;
+}
+
+/* Bloques destacados - recuadro gris claro */
+.temario-profesional .bloque-destacado,
+.temario-profesional .definicion,
+.temario-profesional .articulo-ley {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+  font-size: 17px;
+  line-height: 1.7;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.temario-profesional .bloque-destacado h4,
+.temario-profesional .definicion h4 {
+  color: #1e3a8a;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Artículos de ley específicos */
+.temario-profesional .articulo-ley {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  border-left: 6px solid #f59e0b;
+}
+
+.temario-profesional .articulo-ley .numero-articulo {
+  font-weight: 700;
+  color: #92400e;
+  font-size: 18px;
+}
+
+/* Ejemplos prácticos */
+.temario-profesional .ejemplo {
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+.temario-profesional .ejemplo::before {
+  content: "💡 Ejemplo Práctico:";
+  display: block;
+  font-weight: 700;
+  color: #15803d;
+  font-style: normal;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Resúmenes y puntos clave */
+.temario-profesional .resumen {
+  background: #fef3c7;
+  border: 2px solid #fbbf24;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.temario-profesional .resumen h4 {
+  color: #92400e;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.temario-profesional .puntos-clave {
+  background: #dbeafe;
+  border: 2px solid #3b82f6;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.temario-profesional .puntos-clave h4 {
+  color: #1e40af;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* Enlaces y referencias */
+.temario-profesional a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.temario-profesional a:hover {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+/* Notas al pie */
+.temario-profesional .nota {
+  font-size: 14px;
+  color: #6b7280;
+  border-left: 3px solid #d1d5db;
+  padding-left: 15px;
+  margin: 15px 0;
+  font-style: italic;
+}
+
+/* Códigos y fórmulas */
+.temario-profesional code {
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* Separadores de sección */
+.temario-profesional hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #3b82f6, transparent);
+  margin: 40px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .temario-profesional {
+    padding: 20px;
+  }
+  
+  .temario-profesional h1 {
+    font-size: 26px;
+    padding: 20px 15px;
+  }
+  
+  .temario-profesional h2 {
+    font-size: 20px;
+  }
+  
+  .temario-profesional p {
+    font-size: 15px;
+  }
+  
+  .temario-profesional table {
+    font-size: 13px;
+  }
+  
+  .temario-profesional table th,
+  .temario-profesional table td {
+    padding: 8px 5px;
+  }
+}
+
+/* Impresión */
+@media print {
+  .temario-profesional {
+    box-shadow: none;
+    padding: 20px;
+  }
+  
+  .temario-profesional h1 {
+    page-break-after: avoid;
+    background: none !important;
+    color: #000 !important;
+  }
+  
+  .temario-profesional h2 {
+    page-break-after: avoid;
+    background: none !important;
+  }
+  
+  .temario-profesional .bloque-destacado,
+  .temario-profesional .ejemplo,
+  .temario-profesional .resumen {
+    page-break-inside: avoid;
+    border: 2px solid #000 !important;
+    background: none !important;
+  }
+}

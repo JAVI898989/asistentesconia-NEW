@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 5: Backend con Node.js</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #10b981;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #10b981;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #1f2937;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #34d399;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #10b981;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #60a5fa;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #fbbf24;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🟢 TEMA 5: BACKEND CON NODE.JS</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #1f2937">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        Servidor, APIs REST, autenticación y bases de datos
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>Introducción a Node.js</li>
+        <li>Express.js Framework</li>
+        <li>APIs REST</li>
+        <li>Middleware y Routing</li>
+        <li>Autenticación y Autorización</li>
+        <li>Conexión con Bases de Datos</li>
+        <li>Validación y Manejo de Errores</li>
+        <li>Testing y Debugging</li>
+        <li>Despliegue en Producción</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. INTRODUCCIÓN A NODE.JS</h2>
+
+      <div class="definition">
+        <h4>¿Qué es Node.js?</h4>
+        <p>
+          Node.js es un entorno de ejecución de JavaScript del lado del
+          servidor, construido sobre el motor V8 de Chrome. Permite ejecutar
+          JavaScript fuera del navegador y crear aplicaciones backend
+          escalables.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Características Principales</h3>
+        <ul>
+          <li><strong>Event-driven:</strong> Arquitectura basada en eventos</li>
+          <li>
+            <strong>Non-blocking I/O:</strong> Operaciones asíncronas por
+            defecto
+          </li>
+          <li><strong>Single-threaded:</strong> Un solo hilo con event loop</li>
+          <li><strong>NPM:</strong> Gestor de paquetes más grande del mundo</li>
+          <li>
+            <strong>Cross-platform:</strong> Funciona en Windows, Mac, Linux
+          </li>
+        </ul>
+
+        <h4>Instalación y Verificación:</h4>
+        <div class="example">
+          # Verificar instalación<br />
+          node --version<br />
+          npm --version<br /><br />
+          # Crear proyecto nuevo<br />
+          mkdir mi-api<br />
+          cd mi-api<br />
+          npm init -y<br /><br />
+          # Instalar dependencias<br />
+          npm install express<br />
+          npm install --save-dev nodemon
+        </div>
+
+        <h4>Primer Servidor:</h4>
+        <div class="example">
+          // server.js<br />
+          const http = require('http');<br /><br />
+          const server = http.createServer((req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200, { 'Content-Type':
+          'text/plain' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.end('¡Hola desde Node.js!');<br />
+          });<br /><br />
+          const PORT = process.env.PORT || 3000;<br />
+          server.listen(PORT, () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Servidor ejecutándose en puerto
+          ${PORT}`);<br />
+          });
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. EXPRESS.JS FRAMEWORK</h2>
+
+      <div class="definition">
+        <h4>Express.js</h4>
+        <p>
+          Express es un framework web mínimo y flexible para Node.js que
+          proporciona un conjunto robusto de características para aplicaciones
+          web y móviles.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>2.1 Servidor Express Básico</h3>
+
+        <div class="example">
+          // app.js<br />
+          const express = require('express');<br />
+          const app = express();<br />
+          const PORT = process.env.PORT || 3000;<br /><br />
+          // Middleware para parsear JSON<br />
+          app.use(express.json());<br />
+          app.use(express.urlencoded({ extended: true }));<br /><br />
+          // Middleware para servir archivos estáticos<br />
+          app.use(express.static('public'));<br /><br />
+          // Ruta básica<br />
+          app.get('/', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message: '¡API
+          funcionando!'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          });<br /><br />
+          // Iniciar servidor<br />
+          app.listen(PORT, () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Servidor ejecutándose en puerto
+          ${PORT}`);<br />
+          });
+        </div>
+
+        <h3>2.2 Routing en Express</h3>
+
+        <div class="example">
+          // routes/users.js<br />
+          const express = require('express');<br />
+          const router = express.Router();<br /><br />
+          // GET /users<br />
+          router.get('/', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users: [<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          id: 1, name: 'Juan', email: 'juan@email.com' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          id: 2, name: 'Ana', email: 'ana@email.com' }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          });<br /><br />
+          // GET /users/:id<br />
+          router.get('/:id', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const { id } = req.params;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user: { id:
+          parseInt(id), name: 'Usuario', email: 'user@email.com' }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          });<br /><br />
+          // POST /users<br />
+          router.post('/', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const { name, email } = req.body;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(201).json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message: 'Usuario
+          creado',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user: { id:
+          Date.now(), name, email }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          });<br /><br />
+          module.exports = router;<br /><br />
+          // En app.js<br />
+          const userRoutes = require('./routes/users');<br />
+          app.use('/api/users', userRoutes);
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. APIs REST</h2>
+
+      <div class="definition">
+        <h4>REST API</h4>
+        <p>
+          REST (Representational State Transfer) es un estilo arquitectónico
+          para diseñar APIs web. Define un conjunto de restricciones y
+          propiedades basadas en HTTP.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>3.1 Principios REST</h3>
+        <ul>
+          <li><strong>Stateless:</strong> Sin estado entre peticiones</li>
+          <li>
+            <strong>Client-Server:</strong> Separación clara de
+            responsabilidades
+          </li>
+          <li><strong>Cacheable:</strong> Respuestas pueden ser cacheadas</li>
+          <li>
+            <strong>Uniform Interface:</strong> Interfaz uniforme para recursos
+          </li>
+          <li>
+            <strong>Layered System:</strong> Arquitectura en capas posible
+          </li>
+        </ul>
+
+        <h4>Métodos HTTP y Operaciones CRUD:</h4>
+        <div class="example">
+          // Estructura de API REST para recursos 'posts'<br /><br />
+          // GET /api/posts - Obtener todos los posts<br />
+          app.get('/api/posts', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.json({ posts: allPosts });<br />
+          });<br /><br />
+          // GET /api/posts/:id - Obtener un post específico<br />
+          app.get('/api/posts/:id', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const post = posts.find(p => p.id ===
+          parseInt(req.params.id));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!post) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(404).json({ error: 'Post no encontrado' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.json({ post });<br />
+          });<br /><br />
+          // POST /api/posts - Crear nuevo post<br />
+          app.post('/api/posts', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const { title, content, author } =
+          req.body;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const newPost = {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: Date.now(),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;createdAt: new
+          Date()<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;posts.push(newPost);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(201).json({ post: newPost });<br />
+          });<br /><br />
+          // PUT /api/posts/:id - Actualizar post completo<br />
+          app.put('/api/posts/:id', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const postIndex = posts.findIndex(p => p.id
+          === parseInt(req.params.id));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (postIndex === -1) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(404).json({ error: 'Post no encontrado' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;posts[postIndex] = { ...posts[postIndex],
+          ...req.body, updatedAt: new Date() };<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.json({ post: posts[postIndex] });<br />
+          });<br /><br />
+          // DELETE /api/posts/:id - Eliminar post<br />
+          app.delete('/api/posts/:id', (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const postIndex = posts.findIndex(p => p.id
+          === parseInt(req.params.id));<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (postIndex === -1) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(404).json({ error: 'Post no encontrado' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;posts.splice(postIndex, 1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(204).send();<br />
+          });
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. MIDDLEWARE Y ROUTING</h2>
+
+      <div class="section">
+        <h3>4.1 Middleware Personalizado</h3>
+
+        <div class="example">
+          // Middleware de logging<br />
+          const logger = (req, res, next) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const timestamp = new Date().toISOString();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${timestamp} - ${req.method}
+          ${req.url}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;next(); // Pasar al siguiente middleware<br />
+          };<br /><br />
+          // Middleware de autenticación<br />
+          const authenticateToken = (req, res, next) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const authHeader =
+          req.headers['authorization'];<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const token = authHeader && authHeader.split('
+          ')[1];<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!token) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(401).json({ error: 'Token requerido' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Verificar token (simplificado)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (token !== 'valid-token') {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(403).json({ error: 'Token inválido' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;req.user = { id: 1, username: 'usuario' };<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;next();<br />
+          };<br /><br />
+          // Middleware de manejo de errores<br />
+          const errorHandler = (err, req, res, next) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.error(err.stack);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(500).json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error: 'Error interno
+          del servidor'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          };<br /><br />
+          // Usar middleware<br />
+          app.use(logger);<br />
+          app.use('/api/protected', authenticateToken);<br />
+          app.use(errorHandler);
+        </div>
+
+        <h3>4.2 Validación de Datos</h3>
+
+        <div class="example">
+          // Middleware de validación para crear usuario<br />
+          const validateUser = (req, res, next) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const { name, email, password } = req.body;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const errors = [];<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!name || name.trim().length < 2) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errors.push('El nombre
+          debe tener al menos 2 caracteres');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const emailRegex =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!email || !emailRegex.test(email)) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errors.push('Email
+          inválido');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!password || password.length < 6) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;errors.push('La
+          contraseña debe tener al menos 6 caracteres');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (errors.length > 0) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(400).json({ errors });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;next();<br />
+          };<br /><br />
+          // Usar validación<br />
+          app.post('/api/users', validateUser, (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Crear usuario después de validación<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(201).json({ message: 'Usuario
+          creado exitosamente' });<br />
+          });
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>5. AUTENTICACIÓN Y AUTORIZACIÓN</h2>
+
+      <div class="section">
+        <h3>5.1 JWT (JSON Web Tokens)</h3>
+
+        <div class="example">
+          // Instalar: npm install jsonwebtoken bcryptjs<br />
+          const jwt = require('jsonwebtoken');<br />
+          const bcrypt = require('bcryptjs');<br /><br />
+          const JWT_SECRET = process.env.JWT_SECRET ||
+          'mi-secreto-super-seguro';<br /><br />
+          // Registro de usuario<br />
+          app.post('/api/auth/register', async (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const { username,
+          email, password } = req.body;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Verificar si
+          usuario ya existe<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const existingUser =
+          users.find(u => u.email === email);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (existingUser) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(400).json({ error: 'Usuario ya existe' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Hashear
+          contraseña<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const hashedPassword =
+          await bcrypt.hash(password, 10);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Crear usuario<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const newUser = {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:
+          Date.now(),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password:
+          hashedPassword<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users.push(newUser);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Generar token<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const token =
+          jwt.sign(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          userId: newUser.id, email: newUser.email },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JWT_SECRET,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          expiresIn: '24h' }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status(201).json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message:
+          'Usuario creado exitosamente',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user:
+          { id: newUser.id, username, email }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status(500).json({
+          error: 'Error interno del servidor' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          });<br /><br />
+          // Login de usuario<br />
+          app.post('/api/auth/login', async (req, res) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const { email,
+          password } = req.body;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Buscar usuario<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user =
+          users.find(u => u.email === email);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!user) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(401).json({ error: 'Credenciales inválidas' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Verificar
+          contraseña<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const validPassword =
+          await bcrypt.compare(password, user.password);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!validPassword)
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+          res.status(401).json({ error: 'Credenciales inválidas' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Generar token<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const token =
+          jwt.sign(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          userId: user.id, email: user.email },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JWT_SECRET,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          expiresIn: '24h' }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message:
+          'Login exitoso',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user:
+          { id: user.id, username: user.username, email: user.email }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status(500).json({
+          error: 'Error interno del servidor' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          });
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 EJERCICIOS PRÁCTICOS</h2>
+
+      <h3>Ejercicio 1: API de Blog Completa</h3>
+      <p>Crear una API REST que incluya:</p>
+      <ul>
+        <li>CRUD completo para posts y comentarios</li>
+        <li>Sistema de autenticación con JWT</li>
+        <li>Middleware de validación</li>
+        <li>Manejo de errores profesional</li>
+      </ul>
+
+      <h3>Ejercicio 2: Sistema de E-commerce</h3>
+      <p>Desarrollar API para:</p>
+      <ul>
+        <li>Gestión de productos y categorías</li>
+        <li>Carrito de compras</li>
+        <li>Sistema de usuarios y roles</li>
+        <li>Procesamiento de pedidos</li>
+      </ul>
+
+      <h3>Ejercicio 3: API con Base de Datos</h3>
+      <p>Implementar:</p>
+      <ul>
+        <li>Conexión a MongoDB</li>
+        <li>Modelos con Mongoose</li>
+        <li>Relaciones entre entidades</li>
+        <li>Consultas avanzadas y paginación</li>
+      </ul>
+    </div>
+
+    <div class="important">
+      <h2>🎯 MEJORES PRÁCTICAS</h2>
+      <ul>
+        <li>
+          Usar <strong>variables de entorno</strong> para configuraciones
+          sensibles
+        </li>
+        <li>
+          Implementar <strong>validación robusta</strong> en todas las entradas
+        </li>
+        <li>Aplicar <strong>principios RESTful</strong> consistentemente</li>
+        <li>
+          Usar <strong>middleware de seguridad</strong> (helmet, cors, etc.)
+        </li>
+        <li>Implementar <strong>logging y monitoreo</strong> apropiados</li>
+        <li>
+          Manejar <strong>errores de forma consistente</strong> y profesional
+        </li>
+        <li>Usar <strong>códigos de estado HTTP</strong> apropiados</li>
+        <li>Documentar APIs con <strong>OpenAPI/Swagger</strong></li>
+      </ul>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 5: Backend con Node.js</strong> | Página 1 de 1 | Curso
+        Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+﻿[hasura]
+version = 1
+use_admin_secret = true
+
+[global]
+project_id = "xxxhgktstheyjoyfspcx"
+region = "eu-central-1"
+
+[functions]
+source = "./functions"
+dist = "functions-build"
+
+[hasura.secrets]
+admin_secret = "{{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}"
+
+

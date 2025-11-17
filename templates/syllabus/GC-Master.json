@@ -1,0 +1,152 @@
+{
+  "id": "gc-master",
+  "name": "Guardia Civil - Plantilla Maestra",
+  "description": "Plantilla base para temarios de Guardia Civil (Escala Cabos y Guardias)",
+  "version": "1.0",
+  "variables": {
+    "CORPUS_NORMATIVO": [
+      "LECrim",
+      "CP", 
+      "LO 4/2015",
+      "RDL 6/2015",
+      "RD 1428/2003",
+      "LO 1/2004",
+      "Ley 17/2015",
+      "RD 137/1993"
+    ],
+    "ESTILO_EXAMEN": "tipo test 100 preguntas, crono y supuestos",
+    "ROL": "Guardia Civil (Escala Cabos y Guardias)",
+    "AMBITO_ACTUACION": "seguridad ciudadana, tráfico, medio ambiente, orden público",
+    "COMPETENCIAS_BASICAS": [
+      "Procedimientos policiales",
+      "Atestados e informes",
+      "Detención e identificación",
+      "Cadena de custodia",
+      "Intervención ciudadana"
+    ]
+  },
+  "bloques": [
+    {
+      "slug": "procedimiento-penal",
+      "titulo": "Procedimiento penal y Policía Judicial",
+      "orden": 1,
+      "requisitos": ["atestado", "detención", "cadena custodia"],
+      "normativa_principal": ["LECrim", "CP"],
+      "horas_estimadas": 25,
+      "complejidad": "alta"
+    },
+    {
+      "slug": "seguridad-ciudadana", 
+      "titulo": "LO 4/2015: identificación y actas",
+      "orden": 2,
+      "requisitos": ["identificación", "registro", "actas"],
+      "normativa_principal": ["LO 4/2015"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    {
+      "slug": "trafico",
+      "titulo": "Seguridad vial: alcoholemia/drogas y atestados",
+      "orden": 3,
+      "requisitos": ["alcoholemia", "atestados tráfico", "investigación accidentes"],
+      "normativa_principal": ["RDL 6/2015", "RD 1428/2003"],
+      "horas_estimadas": 30,
+      "complejidad": "alta"
+    },
+    {
+      "slug": "armas",
+      "titulo": "Armas y Explosivos: licencias e intervención",
+      "orden": 4,
+      "requisitos": ["licencias armas", "intervención", "almacenamiento"],
+      "normativa_principal": ["RD 137/1993"],
+      "horas_estimadas": 15,
+      "complejidad": "media"
+    },
+    {
+      "slug": "extranjeria",
+      "titulo": "Extranjería: LO 4/2000 y RD 557/2011",
+      "orden": 5,
+      "requisitos": ["expulsiones", "internamiento", "documentación"],
+      "normativa_principal": ["LO 4/2000", "RD 557/2011"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    {
+      "slug": "proteccion-civil",
+      "titulo": "Ley 17/2015 y coordinación",
+      "orden": 6,
+      "requisitos": ["emergencias", "coordinación", "protocolos"],
+      "normativa_principal": ["Ley 17/2015"],
+      "horas_estimadas": 15,
+      "complejidad": "baja"
+    },
+    {
+      "slug": "derechos-ffccse",
+      "titulo": "Derechos fundamentales y LO 2/1986",
+      "orden": 7,
+      "requisitos": ["derechos fundamentales", "régimen disciplinario", "estatuto"],
+      "normativa_principal": ["LO 2/1986", "Constitución"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    {
+      "slug": "vg",
+      "titulo": "Violencia de género: actuación y VioGén",
+      "orden": 8,
+      "requisitos": ["violencia género", "VioGén", "protección víctimas"],
+      "normativa_principal": ["LO 1/2004"],
+      "horas_estimadas": 25,
+      "complejidad": "alta"
+    },
+    {
+      "slug": "medioambiente",
+      "titulo": "SEPRONA: medio ambiente y CITES",
+      "orden": 9,
+      "requisitos": ["delitos ambientales", "CITES", "especies protegidas"],
+      "normativa_principal": ["CP ambiental", "CITES"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    {
+      "slug": "organizacion-gc",
+      "titulo": "Organización y régimen disciplinario GC",
+      "orden": 10,
+      "requisitos": ["estructura", "disciplina", "régimen interior"],
+      "normativa_principal": ["LO 2/1986", "RD organización"],
+      "horas_estimadas": 15,
+      "complejidad": "baja"
+    }
+  ],
+  "seccionesEstandar": [
+    "Objetivos",
+    "Desarrollo",
+    "Ejemplos",
+    "Buenas prácticas", 
+    "Test (20)",
+    "Casos (2)",
+    "Glosario (≥25)",
+    "Referencias (verificar)"
+  ],
+  "formatoSalida": {
+    "pdf": {
+      "paginas_minimas": 10,
+      "paginas_maximas": 15,
+      "fuente": "Arial",
+      "encoding": "UTF-8",
+      "sin_cortes_pagina": true
+    },
+    "tests": {
+      "cantidad_minima": 20,
+      "con_explicacion": true,
+      "dificultad_graduada": true
+    },
+    "flashcards": {
+      "cantidad_minima": 15,
+      "incluir_casos": true
+    },
+    "glosario": {
+      "terminos_minimos": 25,
+      "definiciones_completas": true
+    }
+  }
+}

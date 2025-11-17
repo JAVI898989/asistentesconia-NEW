@@ -1,0 +1,33 @@
+rules_version = '2';
+
+// Firebase Storage Security Rules for Assistant Images
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Assistant images - only admins can write, public can read
+    match /assistants/{assistantId}/images/{imageFile} {
+      // Allow read for everyone (public access)
+      allow read: if true;
+      
+      // Allow write/delete only for authenticated admin users
+      allow write, delete: if request.auth != null 
+        && (
+          // Admin email check (replace with your admin emails)
+          request.auth.token.email == 'javier@cursosgratis.ai' ||
+          request.auth.token.email == 'info@cursosgratis.ai' ||
+          // Or check custom claims if you have roles
+          request.auth.token.admin == true ||
+          request.auth.token.role == 'admin'
+        )
+        // File size limit (5MB)
+        && request.resource.size <= 5 * 1024 * 1024
+        // File type validation
+        && request.resource.contentType.matches('image/.*');
+    }
+    
+    // Deny all other paths by default
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

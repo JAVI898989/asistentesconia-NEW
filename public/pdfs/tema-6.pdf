@@ -1,0 +1,1780 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+12 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programación Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 6: Bases de Datos y SQL) Tj
+0 -60 Td
+/F2 14 Tf
+(6.1 Introducción a las Bases de Datos) Tj
+0 -30 Td
+/F1 11 Tf
+(Las bases de datos son sistemas organizados para almacenar, gestionar y) Tj
+0 -15 Td
+(recuperar información de manera eficiente. Son fundamentales en casi todas) Tj
+0 -15 Td
+(las aplicaciones modernas, desde simples sitios web hasta complejos sistemas) Tj
+0 -15 Td
+(empresariales que manejan millones de registros.) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Por qué son Importantes las Bases de Datos?) Tj
+0 -20 Td
+/F1 11 Tf
+(• Persistencia: Los datos sobreviven al cierre de la aplicación) Tj
+0 -15 Td
+(• Integridad: Garantizan la consistencia y validez de los datos) Tj
+0 -15 Td
+(• Concurrencia: Múltiples usuarios pueden acceder simultáneamente) Tj
+0 -15 Td
+(• Escalabilidad: Manejan grandes volúmenes de información) Tj
+0 -15 Td
+(• Seguridad: Controlan el acceso y protegen información sensible) Tj
+0 -15 Td
+(• Eficiencia: Optimizan las consultas y el rendimiento) Tj
+0 -30 Td
+/F2 12 Tf
+(Tipos de Bases de Datos) Tj
+0 -20 Td
+/F2 11 Tf
+(Relacionales \(SQL\)) Tj
+0 -15 Td
+/F1 11 Tf
+(• Organizan datos en tablas con filas y columnas) Tj
+0 -15 Td
+(• Usan relaciones entre tablas \(foreign keys\)) Tj
+0 -15 Td
+(• Ejemplos: MySQL, PostgreSQL, SQLite, Oracle, SQL Server) Tj
+0 -15 Td
+(• Ideales para: aplicaciones con estructura de datos clara) Tj
+0 -20 Td
+/F2 11 Tf
+(No Relacionales \(NoSQL\)) Tj
+0 -15 Td
+/F1 11 Tf
+(• Documentos: MongoDB, CouchDB) Tj
+0 -15 Td
+(• Clave-Valor: Redis, DynamoDB) Tj
+0 -15 Td
+(• Grafos: Neo4j, Amazon Neptune) Tj
+0 -15 Td
+(• Columnas: Cassandra, HBase) Tj
+0 -15 Td
+(• Ideales para: datos no estructurados, escalabilidad horizontal) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Qué es SQL?) Tj
+0 -20 Td
+/F1 11 Tf
+(SQL \(Structured Query Language\) es el lenguaje estándar para comunicarse) Tj
+0 -15 Td
+(con bases de datos relacionales. Permite realizar operaciones como:) Tj
+0 -15 Td
+(• Consultar datos \(SELECT\)) Tj
+0 -15 Td
+(• Insertar nuevos registros \(INSERT\)) Tj
+0 -15 Td
+(• Actualizar datos existentes \(UPDATE\)) Tj
+0 -15 Td
+(• Eliminar registros \(DELETE\)) Tj
+0 -15 Td
+(• Crear y modificar estructura \(CREATE, ALTER, DROP\)) Tj
+0 -30 Td
+/F2 12 Tf
+(Conceptos Fundamentales) Tj
+0 -20 Td
+/F2 11 Tf
+(Tabla) Tj
+0 -15 Td
+/F1 11 Tf
+(Estructura que organiza datos en filas y columnas, como una hoja de cálculo.) Tj
+0 -20 Td
+/F2 11 Tf
+(Fila \(Registro\)) Tj
+0 -15 Td
+/F1 11 Tf
+(Cada entrada individual en una tabla, representa una entidad completa.) Tj
+0 -20 Td
+/F2 11 Tf
+(Columna \(Campo\)) Tj
+0 -15 Td
+/F1 11 Tf
+(Cada atributo de una entidad, tiene un tipo de dato específico.) Tj
+0 -20 Td
+/F2 11 Tf
+(Clave Primaria \(Primary Key\)) Tj
+0 -15 Td
+/F1 11 Tf
+(Identificador único para cada fila en una tabla.) Tj
+0 -20 Td
+/F2 11 Tf
+(Clave Foránea \(Foreign Key\)) Tj
+0 -15 Td
+/F1 11 Tf
+(Referencia a la clave primaria de otra tabla, establece relaciones.) Tj
+0 -20 Td
+/F2 11 Tf
+(Índice) Tj
+0 -15 Td
+/F1 11 Tf
+(Estructura que acelera las consultas sobre columnas específicas.) Tj
+0 -40 Td
+/F2 16 Tf
+(6.2 Configuración del Entorno) Tj
+0 -30 Td
+/F2 12 Tf
+(Instalación de PostgreSQL) Tj
+0 -20 Td
+/F1 11 Tf
+(PostgreSQL es una base de datos robusta y de código abierto:) Tj
+0 -15 Td
+(1. Descargar desde postgresql.org) Tj
+0 -15 Td
+(2. Instalar siguiendo el asistente) Tj
+0 -15 Td
+(3. Configurar contraseña para usuario 'postgres') Tj
+0 -15 Td
+(4. Opcional: instalar pgAdmin \(interfaz gráfica\)) Tj
+0 -25 Td
+/F2 12 Tf
+(Herramientas de Desarrollo) Tj
+0 -20 Td
+/F1 11 Tf
+(• psql: Cliente de línea de comandos) Tj
+0 -15 Td
+(• pgAdmin: Interfaz gráfica completa) Tj
+0 -15 Td
+(• DBeaver: Cliente universal multiplataforma) Tj
+0 -15 Td
+(• VS Code: Extensiones para SQL) Tj
+0 -25 Td
+/F2 12 Tf
+(Conexión Básica) Tj
+0 -20 Td
+/F2 10 Tf
+(# Conectar con psql) Tj
+0 -12 Td
+(psql -U postgres -h localhost -d nombre_base_datos) Tj
+0 -15 Td
+(# Comandos básicos en psql) Tj
+0 -12 Td
+(\\l                    # Listar bases de datos) Tj
+0 -12 Td
+(\\c nombre_bd          # Cambiar a base de datos) Tj
+0 -12 Td
+(\\dt                   # Listar tablas) Tj
+0 -12 Td
+(\\d nombre_tabla       # Describir tabla) Tj
+0 -12 Td
+(\\q                    # Salir) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(6.3 Diseño de Base de Datos) Tj
+0 -40 Td
+/F2 12 Tf
+(Modelado de Datos) Tj
+0 -20 Td
+/F1 11 Tf
+(Antes de crear tablas, debemos diseñar la estructura de datos:) Tj
+0 -25 Td
+/F2 11 Tf
+(Ejemplo: Sistema de Blog) Tj
+0 -15 Td
+/F1 11 Tf
+(Entidades principales:) Tj
+0 -15 Td
+(• Usuarios: autores del blog) Tj
+0 -15 Td
+(• Posts: artículos publicados) Tj
+0 -15 Td
+(• Categorías: clasificación de posts) Tj
+0 -15 Td
+(• Comentarios: respuestas de lectores) Tj
+0 -25 Td
+/F2 12 Tf
+(Creación de Base de Datos y Tablas) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Crear base de datos) Tj
+0 -12 Td
+(CREATE DATABASE blog_db;) Tj
+0 -15 Td
+(-- Usar la base de datos) Tj
+0 -12 Td
+(\\c blog_db;) Tj
+0 -15 Td
+(-- Tabla de usuarios) Tj
+0 -12 Td
+(CREATE TABLE usuarios \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    nombre VARCHAR\(100\) NOT NULL,) Tj
+0 -12 Td
+(    email VARCHAR\(255\) UNIQUE NOT NULL,) Tj
+0 -12 Td
+(    password_hash VARCHAR\(255\) NOT NULL,) Tj
+0 -12 Td
+(    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,) Tj
+0 -12 Td
+(    activo BOOLEAN DEFAULT true) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- Tabla de categorías) Tj
+0 -12 Td
+(CREATE TABLE categorias \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    nombre VARCHAR\(100\) UNIQUE NOT NULL,) Tj
+0 -12 Td
+(    descripcion TEXT,) Tj
+0 -12 Td
+(    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- Tabla de posts) Tj
+0 -12 Td
+(CREATE TABLE posts \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    titulo VARCHAR\(255\) NOT NULL,) Tj
+0 -12 Td
+(    contenido TEXT NOT NULL,) Tj
+0 -12 Td
+(    resumen TEXT,) Tj
+0 -12 Td
+(    usuario_id INTEGER REFERENCES usuarios\(id\) ON DELETE CASCADE,) Tj
+0 -12 Td
+(    categoria_id INTEGER REFERENCES categorias\(id\) ON DELETE SET NULL,) Tj
+0 -12 Td
+(    fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,) Tj
+0 -12 Td
+(    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,) Tj
+0 -12 Td
+(    publicado BOOLEAN DEFAULT false,) Tj
+0 -12 Td
+(    vistas INTEGER DEFAULT 0) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- Tabla de comentarios) Tj
+0 -12 Td
+(CREATE TABLE comentarios \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    contenido TEXT NOT NULL,) Tj
+0 -12 Td
+(    autor_nombre VARCHAR\(100\) NOT NULL,) Tj
+0 -12 Td
+(    autor_email VARCHAR\(255\) NOT NULL,) Tj
+0 -12 Td
+(    post_id INTEGER REFERENCES posts\(id\) ON DELETE CASCADE,) Tj
+0 -12 Td
+(    fecha_comentario TIMESTAMP DEFAULT CURRENT_TIMESTAMP,) Tj
+0 -12 Td
+(    aprobado BOOLEAN DEFAULT false) Tj
+0 -12 Td
+(\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Tipos de Datos Comunes) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Números) Tj
+0 -12 Td
+(INTEGER          -- Números enteros) Tj
+0 -12 Td
+(SERIAL           -- Auto-incremento) Tj
+0 -12 Td
+(BIGINT           -- Enteros grandes) Tj
+0 -12 Td
+(DECIMAL\(10,2\)    -- Decimales exactos) Tj
+0 -12 Td
+(REAL             -- Punto flotante) Tj
+0 -15 Td
+(-- Texto) Tj
+0 -12 Td
+(VARCHAR\(n\)       -- Cadena variable hasta n caracteres) Tj
+0 -12 Td
+(CHAR\(n\)          -- Cadena fija de n caracteres) Tj
+0 -12 Td
+(TEXT             -- Texto de longitud variable) Tj
+0 -15 Td
+(-- Fechas y tiempo) Tj
+0 -12 Td
+(DATE             -- Solo fecha) Tj
+0 -12 Td
+(TIME             -- Solo hora) Tj
+0 -12 Td
+(TIMESTAMP        -- Fecha y hora) Tj
+0 -15 Td
+(-- Otros) Tj
+0 -12 Td
+(BOOLEAN          -- true/false) Tj
+0 -12 Td
+(JSON             -- Datos JSON) Tj
+0 -12 Td
+(UUID             -- Identificador único) Tj
+0 -25 Td
+/F2 12 Tf
+(Restricciones \(Constraints\)) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Restricciones básicas) Tj
+0 -12 Td
+(NOT NULL         -- El campo no puede estar vacío) Tj
+0 -12 Td
+(UNIQUE           -- El valor debe ser único) Tj
+0 -12 Td
+(PRIMARY KEY      -- Clave primaria) Tj
+0 -12 Td
+(FOREIGN KEY      -- Clave foránea) Tj
+0 -12 Td
+(CHECK            -- Validación personalizada) Tj
+0 -12 Td
+(DEFAULT          -- Valor por defecto) Tj
+0 -15 Td
+(-- Ejemplos de restricciones) Tj
+0 -12 Td
+(CREATE TABLE productos \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    nombre VARCHAR\(100\) NOT NULL,) Tj
+0 -12 Td
+(    precio DECIMAL\(10,2\) CHECK \(precio > 0\),) Tj
+0 -12 Td
+(    categoria VARCHAR\(50\) DEFAULT 'General',) Tj
+0 -12 Td
+(    stock INTEGER CHECK \(stock >= 0\),) Tj
+0 -12 Td
+(    activo BOOLEAN DEFAULT true) Tj
+0 -12 Td
+(\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Índices para Optimización) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Crear índices para mejorar consultas) Tj
+0 -12 Td
+(CREATE INDEX idx_posts_usuario ON posts\(usuario_id\);) Tj
+0 -12 Td
+(CREATE INDEX idx_posts_categoria ON posts\(categoria_id\);) Tj
+0 -12 Td
+(CREATE INDEX idx_posts_fecha ON posts\(fecha_publicacion\);) Tj
+0 -12 Td
+(CREATE INDEX idx_comentarios_post ON comentarios\(post_id\);) Tj
+0 -15 Td
+(-- Índice compuesto) Tj
+0 -12 Td
+(CREATE INDEX idx_posts_publicado_fecha ON posts\(publicado, fecha_publicacion\);) Tj
+0 -15 Td
+(-- Índice único) Tj
+0 -12 Td
+(CREATE UNIQUE INDEX idx_usuarios_email ON usuarios\(email\);) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(6.4 Consultas SQL Básicas) Tj
+0 -40 Td
+/F2 12 Tf
+(INSERT: Insertar Datos) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Insertar un registro) Tj
+0 -12 Td
+(INSERT INTO usuarios \(nombre, email, password_hash\)) Tj
+0 -12 Td
+(VALUES \('Juan Pérez', 'juan@email.com', 'hash_seguro_123'\);) Tj
+0 -15 Td
+(-- Insertar múltiples registros) Tj
+0 -12 Td
+(INSERT INTO categorias \(nombre, descripcion\) VALUES) Tj
+0 -12 Td
+(    \('Tecnología', 'Artículos sobre tecnología y programación'\),) Tj
+0 -12 Td
+(    \('Viajes', 'Experiencias y guías de viaje'\),) Tj
+0 -12 Td
+(    \('Cocina', 'Recetas y técnicas culinarias'\);) Tj
+0 -15 Td
+(-- Insertar con subconsulta) Tj
+0 -12 Td
+(INSERT INTO posts \(titulo, contenido, usuario_id, categoria_id\)) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    'Mi primer post',) Tj
+0 -12 Td
+(    'Contenido del primer post',) Tj
+0 -12 Td
+(    u.id,) Tj
+0 -12 Td
+(    c.id) Tj
+0 -12 Td
+(FROM usuarios u, categorias c) Tj
+0 -12 Td
+(WHERE u.email = 'juan@email.com' AND c.nombre = 'Tecnología';) Tj
+0 -25 Td
+/F2 12 Tf
+(SELECT: Consultar Datos) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Seleccionar todas las columnas) Tj
+0 -12 Td
+(SELECT * FROM usuarios;) Tj
+0 -15 Td
+(-- Seleccionar columnas específicas) Tj
+0 -12 Td
+(SELECT nombre, email FROM usuarios;) Tj
+0 -15 Td
+(-- Condiciones con WHERE) Tj
+0 -12 Td
+(SELECT * FROM usuarios WHERE activo = true;) Tj
+0 -12 Td
+(SELECT * FROM posts WHERE fecha_publicacion >= '2024-01-01';) Tj
+0 -15 Td
+(-- Operadores de comparación) Tj
+0 -12 Td
+(SELECT * FROM posts WHERE vistas > 100;) Tj
+0 -12 Td
+(SELECT * FROM posts WHERE vistas BETWEEN 50 AND 200;) Tj
+0 -12 Td
+(SELECT * FROM usuarios WHERE nombre LIKE 'Juan%';) Tj
+0 -12 Td
+(SELECT * FROM posts WHERE categoria_id IN \(1, 2, 3\);) Tj
+0 -15 Td
+(-- Ordenamiento) Tj
+0 -12 Td
+(SELECT * FROM posts ORDER BY fecha_publicacion DESC;) Tj
+0 -12 Td
+(SELECT * FROM posts ORDER BY vistas DESC, titulo ASC;) Tj
+0 -15 Td
+(-- Limitación de resultados) Tj
+0 -12 Td
+(SELECT * FROM posts ORDER BY fecha_publicacion DESC LIMIT 10;) Tj
+0 -12 Td
+(SELECT * FROM posts ORDER BY id LIMIT 10 OFFSET 20;) Tj
+0 -25 Td
+/F2 12 Tf
+(UPDATE: Actualizar Datos) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Actualizar un registro específico) Tj
+0 -12 Td
+(UPDATE usuarios ) Tj
+0 -12 Td
+(SET nombre = 'Juan Carlos Pérez' ) Tj
+0 -12 Td
+(WHERE email = 'juan@email.com';) Tj
+0 -15 Td
+(-- Actualizar múltiples campos) Tj
+0 -12 Td
+(UPDATE posts ) Tj
+0 -12 Td
+(SET publicado = true, fecha_actualizacion = CURRENT_TIMESTAMP) Tj
+0 -12 Td
+(WHERE id = 1;) Tj
+0 -15 Td
+(-- Actualizar con cálculos) Tj
+0 -12 Td
+(UPDATE posts ) Tj
+0 -12 Td
+(SET vistas = vistas + 1 ) Tj
+0 -12 Td
+(WHERE id = 1;) Tj
+0 -15 Td
+(-- Actualizar con subconsulta) Tj
+0 -12 Td
+(UPDATE posts ) Tj
+0 -12 Td
+(SET categoria_id = \() Tj
+0 -12 Td
+(    SELECT id FROM categorias WHERE nombre = 'Tecnología') Tj
+0 -12 Td
+(\)) Tj
+0 -12 Td
+(WHERE titulo LIKE '%programación%';) Tj
+0 -25 Td
+/F2 12 Tf
+(DELETE: Eliminar Datos) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Eliminar registro específico) Tj
+0 -12 Td
+(DELETE FROM comentarios WHERE id = 1;) Tj
+0 -15 Td
+(-- Eliminar con condiciones) Tj
+0 -12 Td
+(DELETE FROM comentarios WHERE aprobado = false;) Tj
+0 -15 Td
+(-- Eliminar con subconsulta) Tj
+0 -12 Td
+(DELETE FROM comentarios ) Tj
+0 -12 Td
+(WHERE post_id IN \() Tj
+0 -12 Td
+(    SELECT id FROM posts WHERE publicado = false) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- ¡CUIDADO! Eliminar todos los registros) Tj
+0 -12 Td
+(-- DELETE FROM comentarios;  -- Esto elimina TODO) Tj
+0 -25 Td
+/F2 12 Tf
+(Funciones de Agregación) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Contar registros) Tj
+0 -12 Td
+(SELECT COUNT\(*\) FROM posts;) Tj
+0 -12 Td
+(SELECT COUNT\(*\) FROM posts WHERE publicado = true;) Tj
+0 -15 Td
+(-- Valores máximo, mínimo y promedio) Tj
+0 -12 Td
+(SELECT MAX\(vistas\) FROM posts;) Tj
+0 -12 Td
+(SELECT MIN\(fecha_publicacion\) FROM posts;) Tj
+0 -12 Td
+(SELECT AVG\(vistas\) FROM posts WHERE publicado = true;) Tj
+0 -15 Td
+(-- Suma total) Tj
+0 -12 Td
+(SELECT SUM\(vistas\) FROM posts;) Tj
+0 -15 Td
+(-- Combinación de funciones) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    COUNT\(*\) as total_posts,) Tj
+0 -12 Td
+(    COUNT\(CASE WHEN publicado = true THEN 1 END\) as publicados,) Tj
+0 -12 Td
+(    AVG\(vistas\) as promedio_vistas,) Tj
+0 -12 Td
+(    MAX\(vistas\) as max_vistas) Tj
+0 -12 Td
+(FROM posts;) Tj
+0 -25 Td
+/F2 12 Tf
+(GROUP BY: Agrupación de Datos) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Agrupar por categoría) Tj
+0 -12 Td
+(SELECT categoria_id, COUNT\(*\) as cantidad_posts) Tj
+0 -12 Td
+(FROM posts ) Tj
+0 -12 Td
+(GROUP BY categoria_id;) Tj
+0 -15 Td
+(-- Agrupar con HAVING \(filtro para grupos\)) Tj
+0 -12 Td
+(SELECT categoria_id, COUNT\(*\) as cantidad) Tj
+0 -12 Td
+(FROM posts ) Tj
+0 -12 Td
+(WHERE publicado = true) Tj
+0 -12 Td
+(GROUP BY categoria_id) Tj
+0 -12 Td
+(HAVING COUNT\(*\) > 5;) Tj
+0 -15 Td
+(-- Agrupar por múltiples campos) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    usuario_id, ) Tj
+0 -12 Td
+(    categoria_id, ) Tj
+0 -12 Td
+(    COUNT\(*\) as posts,) Tj
+0 -12 Td
+(    AVG\(vistas\) as promedio_vistas) Tj
+0 -12 Td
+(FROM posts ) Tj
+0 -12 Td
+(GROUP BY usuario_id, categoria_id) Tj
+0 -12 Td
+(ORDER BY posts DESC;) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(6.5 Consultas Avanzadas y JOINs) Tj
+0 -40 Td
+/F2 12 Tf
+(INNER JOIN: Unión Interna) Tj
+0 -20 Td
+/F1 11 Tf
+(Combina filas de dos o más tablas basándose en una condición relacionada:) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Posts con información del autor) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    p.titulo,) Tj
+0 -12 Td
+(    p.fecha_publicacion,) Tj
+0 -12 Td
+(    u.nombre as autor,) Tj
+0 -12 Td
+(    p.vistas) Tj
+0 -12 Td
+(FROM posts p) Tj
+0 -12 Td
+(INNER JOIN usuarios u ON p.usuario_id = u.id) Tj
+0 -12 Td
+(WHERE p.publicado = true) Tj
+0 -12 Td
+(ORDER BY p.fecha_publicacion DESC;) Tj
+0 -15 Td
+(-- Posts con autor y categoría) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    p.titulo,) Tj
+0 -12 Td
+(    u.nombre as autor,) Tj
+0 -12 Td
+(    c.nombre as categoria,) Tj
+0 -12 Td
+(    p.vistas) Tj
+0 -12 Td
+(FROM posts p) Tj
+0 -12 Td
+(INNER JOIN usuarios u ON p.usuario_id = u.id) Tj
+0 -12 Td
+(INNER JOIN categorias c ON p.categoria_id = c.id) Tj
+0 -12 Td
+(WHERE p.publicado = true;) Tj
+0 -25 Td
+/F2 12 Tf
+(LEFT JOIN: Unión Izquierda) Tj
+0 -20 Td
+/F1 11 Tf
+(Incluye todos los registros de la tabla izquierda, aunque no tengan coincidencia:) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Todas las categorías con conteo de posts \(incluso sin posts\)) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    c.nombre as categoria,) Tj
+0 -12 Td
+(    COUNT\(p.id\) as cantidad_posts) Tj
+0 -12 Td
+(FROM categorias c) Tj
+0 -12 Td
+(LEFT JOIN posts p ON c.id = p.categoria_id AND p.publicado = true) Tj
+0 -12 Td
+(GROUP BY c.id, c.nombre) Tj
+0 -12 Td
+(ORDER BY cantidad_posts DESC;) Tj
+0 -15 Td
+(-- Usuarios con sus posts \(incluso usuarios sin posts\)) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    u.nombre,) Tj
+0 -12 Td
+(    u.email,) Tj
+0 -12 Td
+(    COUNT\(p.id\) as total_posts,) Tj
+0 -12 Td
+(    COALESCE\(SUM\(p.vistas\), 0\) as total_vistas) Tj
+0 -12 Td
+(FROM usuarios u) Tj
+0 -12 Td
+(LEFT JOIN posts p ON u.id = p.usuario_id) Tj
+0 -12 Td
+(GROUP BY u.id, u.nombre, u.email) Tj
+0 -12 Td
+(ORDER BY total_posts DESC;) Tj
+0 -25 Td
+/F2 12 Tf
+(RIGHT JOIN y FULL OUTER JOIN) Tj
+0 -20 Td
+/F2 10 Tf
+(-- RIGHT JOIN \(menos común\)) Tj
+0 -12 Td
+(SELECT * FROM posts p) Tj
+0 -12 Td
+(RIGHT JOIN usuarios u ON p.usuario_id = u.id;) Tj
+0 -15 Td
+(-- FULL OUTER JOIN \(incluye todos los registros de ambas tablas\)) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    u.nombre,) Tj
+0 -12 Td
+(    p.titulo) Tj
+0 -12 Td
+(FROM usuarios u) Tj
+0 -12 Td
+(FULL OUTER JOIN posts p ON u.id = p.usuario_id;) Tj
+0 -25 Td
+/F2 12 Tf
+(Subconsultas) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Subconsulta en WHERE) Tj
+0 -12 Td
+(SELECT * FROM posts) Tj
+0 -12 Td
+(WHERE usuario_id = \() Tj
+0 -12 Td
+(    SELECT id FROM usuarios WHERE email = 'juan@email.com') Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- Subconsulta con IN) Tj
+0 -12 Td
+(SELECT * FROM posts) Tj
+0 -12 Td
+(WHERE categoria_id IN \() Tj
+0 -12 Td
+(    SELECT id FROM categorias WHERE nombre IN \('Tecnología', 'Viajes'\)) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- Subconsulta correlacionada) Tj
+0 -12 Td
+(SELECT * FROM posts p1) Tj
+0 -12 Td
+(WHERE vistas > \() Tj
+0 -12 Td
+(    SELECT AVG\(vistas\)) Tj
+0 -12 Td
+(    FROM posts p2) Tj
+0 -12 Td
+(    WHERE p2.categoria_id = p1.categoria_id) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(-- Subconsulta en SELECT) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    u.nombre,) Tj
+0 -12 Td
+(    \(SELECT COUNT\(*\) FROM posts WHERE usuario_id = u.id\) as total_posts,) Tj
+0 -12 Td
+(    \(SELECT MAX\(vistas\) FROM posts WHERE usuario_id = u.id\) as max_vistas) Tj
+0 -12 Td
+(FROM usuarios u;) Tj
+0 -25 Td
+/F2 12 Tf
+(Common Table Expressions \(CTE\)) Tj
+0 -20 Td
+/F1 11 Tf
+(CTEs hacen las consultas complejas más legibles:) Tj
+0 -20 Td
+/F2 10 Tf
+(-- CTE simple) Tj
+0 -12 Td
+(WITH posts_populares AS \() Tj
+0 -12 Td
+(    SELECT * FROM posts WHERE vistas > 100) Tj
+0 -12 Td
+(\)) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    pp.titulo,) Tj
+0 -12 Td
+(    u.nombre as autor) Tj
+0 -12 Td
+(FROM posts_populares pp) Tj
+0 -12 Td
+(JOIN usuarios u ON pp.usuario_id = u.id;) Tj
+0 -15 Td
+(-- CTE recursiva \(para jerarquías\)) Tj
+0 -12 Td
+(WITH RECURSIVE comentarios_thread AS \() Tj
+0 -12 Td
+(    -- Caso base: comentarios principales) Tj
+0 -12 Td
+(    SELECT id, contenido, post_id, NULL as parent_id, 1 as nivel) Tj
+0 -12 Td
+(    FROM comentarios) Tj
+0 -12 Td
+(    WHERE parent_id IS NULL) Tj
+0 -15 Td
+(    UNION ALL) Tj
+0 -15 Td
+(    -- Caso recursivo: respuestas) Tj
+0 -12 Td
+(    SELECT c.id, c.contenido, c.post_id, c.parent_id, ct.nivel + 1) Tj
+0 -12 Td
+(    FROM comentarios c) Tj
+0 -12 Td
+(    JOIN comentarios_thread ct ON c.parent_id = ct.id) Tj
+0 -12 Td
+(\)) Tj
+0 -12 Td
+(SELECT * FROM comentarios_thread ORDER BY post_id, nivel;) Tj
+0 -25 Td
+/F2 12 Tf
+(Window Functions) Tj
+0 -20 Td
+/F1 11 Tf
+(Funciones que operan sobre un conjunto de filas relacionadas:) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Ranking de posts por vistas) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    titulo,) Tj
+0 -12 Td
+(    vistas,) Tj
+0 -12 Td
+(    ROW_NUMBER\(\) OVER \(ORDER BY vistas DESC\) as ranking,) Tj
+0 -12 Td
+(    RANK\(\) OVER \(ORDER BY vistas DESC\) as rank_with_ties) Tj
+0 -12 Td
+(FROM posts) Tj
+0 -12 Td
+(WHERE publicado = true;) Tj
+0 -15 Td
+(-- Comparación con promedio por categoría) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    titulo,) Tj
+0 -12 Td
+(    vistas,) Tj
+0 -12 Td
+(    categoria_id,) Tj
+0 -12 Td
+(    AVG\(vistas\) OVER \(PARTITION BY categoria_id\) as promedio_categoria,) Tj
+0 -12 Td
+(    vistas - AVG\(vistas\) OVER \(PARTITION BY categoria_id\) as diferencia) Tj
+0 -12 Td
+(FROM posts) Tj
+0 -12 Td
+(WHERE publicado = true;) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 2200
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(6.6 Integración con Node.js) Tj
+0 -40 Td
+/F2 12 Tf
+(Instalación de Cliente PostgreSQL) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install pg dotenv) Tj
+0 -25 Td
+/F2 12 Tf
+(Configuración de Conexión) Tj
+0 -20 Td
+/F2 10 Tf
+(// config/database.js) Tj
+0 -12 Td
+(const { Pool } = require\('pg'\);) Tj
+0 -12 Td
+(require\('dotenv'\).config\(\);) Tj
+0 -15 Td
+(const pool = new Pool\({) Tj
+0 -12 Td
+(  host: process.env.DB_HOST || 'localhost',) Tj
+0 -12 Td
+(  port: process.env.DB_PORT || 5432,) Tj
+0 -12 Td
+(  database: process.env.DB_NAME || 'blog_db',) Tj
+0 -12 Td
+(  user: process.env.DB_USER || 'postgres',) Tj
+0 -12 Td
+(  password: process.env.DB_PASSWORD,) Tj
+0 -12 Td
+(  max: 20,) Tj
+0 -12 Td
+(  idleTimeoutMillis: 30000,) Tj
+0 -12 Td
+(  connectionTimeoutMillis: 2000,) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(module.exports = pool;) Tj
+0 -25 Td
+/F2 12 Tf
+(Operaciones CRUD Básicas) Tj
+0 -20 Td
+/F2 10 Tf
+(// models/Usuario.js) Tj
+0 -12 Td
+(const pool = require\('../config/database'\);) Tj
+0 -15 Td
+(class Usuario {) Tj
+0 -12 Td
+(  static async crear\(nombre, email, passwordHash\) {) Tj
+0 -12 Td
+(    const query = `) Tj
+0 -12 Td
+(      INSERT INTO usuarios \(nombre, email, password_hash\)) Tj
+0 -12 Td
+(      VALUES \($1, $2, $3\)) Tj
+0 -12 Td
+(      RETURNING id, nombre, email, fecha_registro`) Tj
+0 -12 Td
+(    ;) Tj
+0 -15 Td
+(    const result = await pool.query\(query, [nombre, email, passwordHash]\);) Tj
+0 -12 Td
+(    return result.rows[0];) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async buscarPorEmail\(email\) {) Tj
+0 -12 Td
+(    const query = 'SELECT * FROM usuarios WHERE email = $1';) Tj
+0 -12 Td
+(    const result = await pool.query\(query, [email]\);) Tj
+0 -12 Td
+(    return result.rows[0];) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async obtenerTodos\(\) {) Tj
+0 -12 Td
+(    const query = `) Tj
+0 -12 Td
+(      SELECT id, nombre, email, fecha_registro, activo) Tj
+0 -12 Td
+(      FROM usuarios) Tj
+0 -12 Td
+(      ORDER BY fecha_registro DESC`) Tj
+0 -12 Td
+(    ;) Tj
+0 -12 Td
+(    const result = await pool.query\(query\);) Tj
+0 -12 Td
+(    return result.rows;) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async actualizar\(id, datos\) {) Tj
+0 -12 Td
+(    const campos = Object.keys\(datos\);) Tj
+0 -12 Td
+(    const valores = Object.values\(datos\);) Tj
+0 -12 Td
+(    const placeholders = campos.map\(\(_, i\) => `$${i + 1}`\);) Tj
+0 -15 Td
+(    const query = `UPDATE usuarios SET ${campos.map\(\(campo, i\) => ) Tj
+0 -12 Td
+(      `${campo} = $${i + 1}`).join\(', '\)} WHERE id = $${campos.length + 1}`;) Tj
+0 -15 Td
+(    const result = await pool.query\(query, [...valores, id]\);) Tj
+0 -12 Td
+(    return result.rowCount > 0;) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async eliminar\(id\) {) Tj
+0 -12 Td
+(    const query = 'DELETE FROM usuarios WHERE id = $1';) Tj
+0 -12 Td
+(    const result = await pool.query\(query, [id]\);) Tj
+0 -12 Td
+(    return result.rowCount > 0;) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(module.exports = Usuario;) Tj
+0 -25 Td
+/F2 12 Tf
+(Modelo de Posts con JOINs) Tj
+0 -20 Td
+/F2 10 Tf
+(// models/Post.js) Tj
+0 -12 Td
+(const pool = require\('../config/database'\);) Tj
+0 -15 Td
+(class Post {) Tj
+0 -12 Td
+(  static async crear\(titulo, contenido, usuarioId, categoriaId\) {) Tj
+0 -12 Td
+(    const query = `) Tj
+0 -12 Td
+(      INSERT INTO posts \(titulo, contenido, usuario_id, categoria_id\)) Tj
+0 -12 Td
+(      VALUES \($1, $2, $3, $4\)) Tj
+0 -12 Td
+(      RETURNING *`) Tj
+0 -12 Td
+(    ;) Tj
+0 -15 Td
+(    const result = await pool.query\(query, [titulo, contenido, usuarioId, categoriaId]\);) Tj
+0 -12 Td
+(    return result.rows[0];) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async obtenerConAutorYCategoria\(limite = 10, offset = 0\) {) Tj
+0 -12 Td
+(    const query = `SELECT ) Tj
+0 -12 Td
+(        p.id, p.titulo, p.resumen, p.fecha_publicacion, p.vistas,) Tj
+0 -12 Td
+(        u.nombre as autor, u.email as autor_email,) Tj
+0 -12 Td
+(        c.nombre as categoria) Tj
+0 -12 Td
+(      FROM posts p) Tj
+0 -12 Td
+(      LEFT JOIN usuarios u ON p.usuario_id = u.id) Tj
+0 -12 Td
+(      LEFT JOIN categorias c ON p.categoria_id = c.id) Tj
+0 -12 Td
+(      WHERE p.publicado = true) Tj
+0 -12 Td
+(      ORDER BY p.fecha_publicacion DESC) Tj
+0 -12 Td
+(      LIMIT $1 OFFSET $2`;) Tj
+0 -15 Td
+(    const result = await pool.query\(query, [limite, offset]\);) Tj
+0 -12 Td
+(    return result.rows;) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async incrementarVistas\(id\) {) Tj
+0 -12 Td
+(    const query = 'UPDATE posts SET vistas = vistas + 1 WHERE id = $1';) Tj
+0 -12 Td
+(    await pool.query\(query, [id]\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  static async buscarPorCategoria\(categoriaId\) {) Tj
+0 -12 Td
+(    const query = `SELECT p.*, u.nombre as autor FROM posts p) Tj
+0 -12 Td
+(      LEFT JOIN usuarios u ON p.usuario_id = u.id) Tj
+0 -12 Td
+(      WHERE p.categoria_id = $1 AND p.publicado = true) Tj
+0 -12 Td
+(      ORDER BY p.fecha_publicacion DESC`;) Tj
+0 -15 Td
+(    const result = await pool.query\(query, [categoriaId]\);) Tj
+0 -12 Td
+(    return result.rows;) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(module.exports = Post;) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 2100
+>>
+stream
+BT
+/F2 12 Tf
+50 720 Td
+(Transacciones) Tj
+0 -20 Td
+/F1 11 Tf
+(Para operaciones que requieren consistencia de datos:) Tj
+0 -20 Td
+/F2 10 Tf
+(// utils/transacciones.js) Tj
+0 -12 Td
+(const pool = require\('../config/database'\);) Tj
+0 -15 Td
+(async function crearPostConComentario\(postData, comentarioData\) {) Tj
+0 -12 Td
+(  const client = await pool.connect\(\);) Tj
+0 -15 Td
+(  try {) Tj
+0 -12 Td
+(    await client.query\('BEGIN'\);) Tj
+0 -15 Td
+(    // Crear post) Tj
+0 -12 Td
+(    const postQuery = `INSERT INTO posts \(titulo, contenido, usuario_id\)) Tj
+0 -12 Td
+(      VALUES \($1, $2, $3\) RETURNING id`;) Tj
+0 -12 Td
+(    const postResult = await client.query\(postQuery, ) Tj
+0 -12 Td
+(      [postData.titulo, postData.contenido, postData.usuarioId]\);) Tj
+0 -15 Td
+(    const postId = postResult.rows[0].id;) Tj
+0 -15 Td
+(    // Crear comentario) Tj
+0 -12 Td
+(    const comentarioQuery = `INSERT INTO comentarios ) Tj
+0 -12 Td
+(      \(contenido, autor_nombre, autor_email, post_id\)) Tj
+0 -12 Td
+(      VALUES \($1, $2, $3, $4\)`;) Tj
+0 -12 Td
+(    await client.query\(comentarioQuery, [) Tj
+0 -12 Td
+(      comentarioData.contenido,) Tj
+0 -12 Td
+(      comentarioData.autorNombre,) Tj
+0 -12 Td
+(      comentarioData.autorEmail,) Tj
+0 -12 Td
+(      postId) Tj
+0 -12 Td
+(    ]\);) Tj
+0 -15 Td
+(    await client.query\('COMMIT'\);) Tj
+0 -12 Td
+(    return postId;) Tj
+0 -15 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    await client.query\('ROLLBACK'\);) Tj
+0 -12 Td
+(    throw error;) Tj
+0 -12 Td
+(  } finally {) Tj
+0 -12 Td
+(    client.release\(\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Migração y Scripts de BD) Tj
+0 -20 Td
+/F2 10 Tf
+(// scripts/migrate.js) Tj
+0 -12 Td
+(const fs = require\('fs'\);) Tj
+0 -12 Td
+(const path = require\('path'\);) Tj
+0 -12 Td
+(const pool = require\('../config/database'\);) Tj
+0 -15 Td
+(async function ejecutarMigraciones\(\) {) Tj
+0 -12 Td
+(  try {) Tj
+0 -12 Td
+(    // Crear tabla de migraciones si no existe) Tj
+0 -12 Td
+(    await pool.query\(`CREATE TABLE IF NOT EXISTS migraciones \() Tj
+0 -12 Td
+(      id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(      nombre VARCHAR\(255\) UNIQUE NOT NULL,) Tj
+0 -12 Td
+(      ejecutada_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP) Tj
+0 -12 Td
+(    \)`\);) Tj
+0 -15 Td
+(    // Leer archivos de migración) Tj
+0 -12 Td
+(    const migracionesDir = path.join\(__dirname, 'migraciones'\);) Tj
+0 -12 Td
+(    const archivos = fs.readdirSync\(migracionesDir\);) Tj
+0 -15 Td
+(    for \(const archivo of archivos\) {) Tj
+0 -12 Td
+(      // Verificar si ya se ejecutó) Tj
+0 -12 Td
+(      const yaEjecutada = await pool.query\() Tj
+0 -12 Td
+(        'SELECT id FROM migraciones WHERE nombre = $1', [archivo]\);) Tj
+0 -15 Td
+(      if \(yaEjecutada.rows.length === 0\) {) Tj
+0 -12 Td
+(        console.log\(`Ejecutando migración: ${archivo}`\);) Tj
+0 -12 Td
+(        const sql = fs.readFileSync\(path.join\(migracionesDir, archivo\), 'utf8'\);) Tj
+0 -12 Td
+(        await pool.query\(sql\);) Tj
+0 -12 Td
+(        await pool.query\('INSERT INTO migraciones \(nombre\) VALUES \($1\)', [archivo]\);) Tj
+0 -12 Td
+(      }) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    console.log\('Migraciones completadas'\);) Tj
+0 -12 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    console.error\('Error en migraciones:', error\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(ejecutarMigraciones\(\);) Tj
+0 -40 Td
+/F2 16 Tf
+(6.7 Optimización y Mejores Prácticas) Tj
+0 -30 Td
+/F2 12 Tf
+(Índices Estratégicos) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Índices para consultas frecuentes) Tj
+0 -12 Td
+(CREATE INDEX CONCURRENTLY idx_posts_publicado_fecha ) Tj
+0 -12 Td
+(  ON posts\(publicado, fecha_publicacion DESC\)) Tj
+0 -12 Td
+(  WHERE publicado = true;) Tj
+0 -15 Td
+(-- Índice parcial para búsquedas de texto) Tj
+0 -12 Td
+(CREATE INDEX idx_posts_titulo_busqueda ) Tj
+0 -12 Td
+(  ON posts USING gin\(to_tsvector\('spanish', titulo\)\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Connection Pooling) Tj
+0 -20 Td
+/F2 10 Tf
+(// Configuración optimizada del pool) Tj
+0 -12 Td
+(const pool = new Pool\({) Tj
+0 -12 Td
+(  max: 20,                    // máximo 20 conexiones) Tj
+0 -12 Td
+(  idleTimeoutMillis: 30000,   // cerrar conexiones inactivas) Tj
+0 -12 Td
+(  connectionTimeoutMillis: 2000, // timeout de conexión) Tj
+0 -12 Td
+(  query_timeout: 5000         // timeout de consulta) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Manejo de Errores) Tj
+0 -20 Td
+/F2 10 Tf
+(async function manejarConsultaSegura\(query, params\) {) Tj
+0 -12 Td
+(  try {) Tj
+0 -12 Td
+(    const result = await pool.query\(query, params\);) Tj
+0 -12 Td
+(    return { success: true, data: result.rows };) Tj
+0 -12 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    console.error\('Error en consulta:', error\);) Tj
+0 -15 Td
+(    if \(error.code === '23505'\) {) Tj
+0 -12 Td
+(      return { success: false, error: 'Registro duplicado' };) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(    if \(error.code === '23503'\) {) Tj
+0 -12 Td
+(      return { success: false, error: 'Referencia inválida' };) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(    return { success: false, error: 'Error de base de datos' };) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -40 Td
+/F2 16 Tf
+(6.8 Resumen del Tema 6) Tj
+0 -30 Td
+/F2 12 Tf
+(Conceptos Dominados) Tj
+0 -20 Td
+/F1 11 Tf
+(En este tema hemos construido una base sólida en bases de datos:) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Fundamentos de Bases de Datos) Tj
+0 -15 Td
+/F1 11 Tf
+(• Diseño y modelado de datos relacionales) Tj
+0 -15 Td
+(• Creación de tablas con restricciones apropiadas) Tj
+0 -15 Td
+(• Tipos de datos y optimización de estructura) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ SQL Avanzado) Tj
+0 -15 Td
+/F1 11 Tf
+(• Consultas complejas con JOINs múltiples) Tj
+0 -15 Td
+(• Subconsultas y CTEs para lógica avanzada) Tj
+0 -15 Td
+(• Window functions y funciones de agregación) Tj
+0 -15 Td
+(• Optimización con índices estratégicos) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Integración con Node.js) Tj
+0 -15 Td
+/F1 11 Tf
+(• Connection pooling y gestión de conexiones) Tj
+0 -15 Td
+(• Modelos de datos con operaciones CRUD) Tj
+0 -15 Td
+(• Transacciones para consistencia de datos) Tj
+0 -15 Td
+(• Migraciones y scripts de base de datos) Tj
+0 -30 Td
+/F2 12 Tf
+(Preparación para el Próximo Tema) Tj
+0 -20 Td
+/F1 11 Tf
+(En el Tema 7 exploraremos Git y control de versiones:) Tj
+0 -15 Td
+(• Gestión de código fuente) Tj
+0 -15 Td
+(��� Colaboración en equipo) Tj
+0 -15 Td
+(• Flujos de trabajo profesionales) Tj
+0 -15 Td
+(• GitHub y plataformas de desarrollo) Tj
+0 -30 Td
+/F1 11 Tf
+(¡Excelente trabajo! Ahora puedes diseñar, implementar y optimizar) Tj
+0 -15 Td
+(bases de datos robustas para aplicaciones profesionales.) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(6.9 Ejercicios Prácticos) Tj
+0 -40 Td
+/F2 12 Tf
+(Ejercicio 1: Sistema de E-commerce) Tj
+0 -20 Td
+/F1 11 Tf
+(Diseña una base de datos para un sistema de comercio electrónico:) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Tablas principales) Tj
+0 -12 Td
+(CREATE TABLE clientes \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    nombre VARCHAR\(100\) NOT NULL,) Tj
+0 -12 Td
+(    email VARCHAR\(255\) UNIQUE NOT NULL,) Tj
+0 -12 Td
+(    telefono VARCHAR\(20\),) Tj
+0 -12 Td
+(    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(CREATE TABLE productos \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    nombre VARCHAR\(200\) NOT NULL,) Tj
+0 -12 Td
+(    descripcion TEXT,) Tj
+0 -12 Td
+(    precio DECIMAL\(10,2\) CHECK \(precio >= 0\),) Tj
+0 -12 Td
+(    stock INTEGER CHECK \(stock >= 0\),) Tj
+0 -12 Td
+(    categoria_id INTEGER,) Tj
+0 -12 Td
+(    activo BOOLEAN DEFAULT true) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(CREATE TABLE pedidos \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    cliente_id INTEGER REFERENCES clientes\(id\),) Tj
+0 -12 Td
+(    fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,) Tj
+0 -12 Td
+(    estado VARCHAR\(20\) DEFAULT 'pendiente',) Tj
+0 -12 Td
+(    total DECIMAL\(10,2\)) Tj
+0 -12 Td
+(\);) Tj
+0 -15 Td
+(CREATE TABLE detalle_pedidos \() Tj
+0 -12 Td
+(    id SERIAL PRIMARY KEY,) Tj
+0 -12 Td
+(    pedido_id INTEGER REFERENCES pedidos\(id\),) Tj
+0 -12 Td
+(    producto_id INTEGER REFERENCES productos\(id\),) Tj
+0 -12 Td
+(    cantidad INTEGER CHECK \(cantidad > 0\),) Tj
+0 -12 Td
+(    precio_unitario DECIMAL\(10,2\)) Tj
+0 -12 Td
+(\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejercicio 2: Consultas de Análisis) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Top 10 productos más vendidos) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    p.nombre,) Tj
+0 -12 Td
+(    SUM\(dp.cantidad\) as total_vendido,) Tj
+0 -12 Td
+(    SUM\(dp.cantidad * dp.precio_unitario\) as ingresos) Tj
+0 -12 Td
+(FROM productos p) Tj
+0 -12 Td
+(JOIN detalle_pedidos dp ON p.id = dp.producto_id) Tj
+0 -12 Td
+(GROUP BY p.id, p.nombre) Tj
+0 -12 Td
+(ORDER BY total_vendido DESC) Tj
+0 -12 Td
+(LIMIT 10;) Tj
+0 -15 Td
+(-- Clientes más valiosos) Tj
+0 -12 Td
+(SELECT ) Tj
+0 -12 Td
+(    c.nombre,) Tj
+0 -12 Td
+(    c.email,) Tj
+0 -12 Td
+(    COUNT\(pe.id\) as total_pedidos,) Tj
+0 -12 Td
+(    SUM\(pe.total\) as valor_total) Tj
+0 -12 Td
+(FROM clientes c) Tj
+0 -12 Td
+(LEFT JOIN pedidos pe ON c.id = pe.cliente_id) Tj
+0 -12 Td
+(GROUP BY c.id, c.nombre, c.email) Tj
+0 -12 Td
+(ORDER BY valor_total DESC) Tj
+0 -12 Td
+(LIMIT 20;) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejercicio 3: Procedimientos y Funciones) Tj
+0 -20 Td
+/F2 10 Tf
+(-- Función para calcular total del pedido) Tj
+0 -12 Td
+(CREATE OR REPLACE FUNCTION calcular_total_pedido\(pedido_id_param INTEGER\)) Tj
+0 -12 Td
+(RETURNS DECIMAL\(10,2\) AS $$) Tj
+0 -12 Td
+(DECLARE) Tj
+0 -12 Td
+(    total_calculado DECIMAL\(10,2\);) Tj
+0 -12 Td
+(BEGIN) Tj
+0 -12 Td
+(    SELECT SUM\(cantidad * precio_unitario\)) Tj
+0 -12 Td
+(    INTO total_calculado) Tj
+0 -12 Td
+(    FROM detalle_pedidos) Tj
+0 -12 Td
+(    WHERE pedido_id = pedido_id_param;) Tj
+0 -15 Td
+(    RETURN COALESCE\(total_calculado, 0\);) Tj
+0 -12 Td
+(END;) Tj
+0 -12 Td
+($$ LANGUAGE plpgsql;) Tj
+0 -15 Td
+(-- Trigger para actualizar stock) Tj
+0 -12 Td
+(CREATE OR REPLACE FUNCTION actualizar_stock\(\)) Tj
+0 -12 Td
+(RETURNS TRIGGER AS $$) Tj
+0 -12 Td
+(BEGIN) Tj
+0 -12 Td
+(    UPDATE productos) Tj
+0 -12 Td
+(    SET stock = stock - NEW.cantidad) Tj
+0 -12 Td
+(    WHERE id = NEW.producto_id;) Tj
+0 -12 Td
+(    RETURN NEW;) Tj
+0 -12 Td
+(END;) Tj
+0 -12 Td
+($$ LANGUAGE plpgsql;) Tj
+0 -15 Td
+(CREATE TRIGGER trigger_actualizar_stock) Tj
+0 -12 Td
+(    AFTER INSERT ON detalle_pedidos) Tj
+0 -12 Td
+(    FOR EACH ROW) Tj
+0 -12 Td
+(    EXECUTE FUNCTION actualizar_stock\(\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Consejos para la Práctica) Tj
+0 -20 Td
+/F1 11 Tf
+(• Practica creando diferentes esquemas de bases de datos) Tj
+0 -15 Td
+(• Experimenta con consultas complejas usando datos reales) Tj
+0 -15 Td
+(• Aprende a leer y entender planes de ejecución) Tj
+0 -15 Td
+(• Practica optimización con índices apropiados) Tj
+0 -15 Td
+(• Implementa sistemas completos con Node.js) Tj
+0 -30 Td
+/F1 11 Tf
+(¡Continúa practicando! La experiencia con bases de datos se construye) Tj
+0 -15 Td
+(resolviendo problemas reales y trabajando con datos complejos.) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000261 00000 n 
+0000000382 00000 n 
+0000000503 00000 n 
+0000000624 00000 n 
+0000000745 00000 n 
+0000000866 00000 n 
+0000000988 00000 n 
+0000001087 00000 n 
+0000001191 00000 n 
+0000003542 00000 n 
+0000005993 00000 n 
+0000008344 00000 n 
+0000010795 00000 n 
+0000013046 00000 n 
+0000015197 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+17048
+%%EOF

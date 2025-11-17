@@ -1,0 +1,968 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+12 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programaci\363n Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 7: Git y Control de Versiones) Tj
+0 -60 Td
+/F1 12 Tf
+(Duraci\363n estimada: 10 horas) Tj
+0 -40 Td
+/F2 14 Tf
+(1. \277Qu\351 es el Control de Versiones?) Tj
+0 -25 Td
+/F1 11 Tf
+(El control de versiones es un sistema que registra los cambios) Tj
+0 -15 Td
+(realizados en archivos a lo largo del tiempo, permitiendo) Tj
+0 -15 Td
+(recuperar versiones espec\355ficas cuando sea necesario.) Tj
+0 -25 Td
+/F2 12 Tf
+(Problemas que Resuelve:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Historial completo de cambios en el proyecto) Tj
+0 -15 Td
+(\2022 Colaboraci\363n segura entre m\372ltiples desarrolladores) Tj
+0 -15 Td
+(\2022 Capacidad de revertir cambios problem\341ticos) Tj
+0 -15 Td
+(\2022 Ramificaci\363n para desarrollar caracter\355sticas en paralelo) Tj
+0 -15 Td
+(\2022 Respaldo distribuido del c\363digo fuente) Tj
+0 -30 Td
+/F2 14 Tf
+(2. Historia y Evoluci\363n) Tj
+0 -25 Td
+/F1 11 Tf
+(Los sistemas de control de versiones han evolucionado:) Tj
+0 -20 Td
+/F2 12 Tf
+(Sistemas Locales \(RCS\):) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 Guardaban parches en disco duro local) Tj
+0 -15 Td
+(\2022 No permit\355an colaboraci\363n) Tj
+0 -20 Td
+/F2 12 Tf
+(Sistemas Centralizados \(CVS, Subversion\):) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 Servidor central con todo el historial) Tj
+0 -15 Td
+(\2022 Clientes solo ten\355an \372ltima versi\363n) Tj
+0 -15 Td
+(\2022 Punto \372nico de falla) Tj
+0 -20 Td
+/F2 12 Tf
+(Sistemas Distribuidos \(Git, Mercurial\):) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 Cada cliente tiene copia completa del historial) Tj
+0 -15 Td
+(\2022 Trabajo offline completo) Tj
+0 -15 Td
+(\2022 M\372ltiples respaldos autom\341ticos) Tj
+0 -15 Td
+(\2022 Ramificaci\363n y fusi\363n muy eficientes) Tj
+0 -30 Td
+/F2 14 Tf
+(3. Introducci\363n a Git) Tj
+0 -25 Td
+/F1 11 Tf
+(Git es el sistema de control de versiones m\341s popular del mundo,) Tj
+0 -15 Td
+(creado por Linus Torvalds en 2005 para el desarrollo del kernel) Tj
+0 -15 Td
+(de Linux. Caracter\355sticas principales:) Tj
+0 -20 Td
+(\2022 Velocidad: Operaciones locales muy r\341pidas) Tj
+0 -15 Td
+(\2022 Dise\361o simple: Conceptos claros y consistentes) Tj
+0 -15 Td
+(\2022 Soporte para desarrollo no lineal: Ramificaci\363n eficiente) Tj
+0 -15 Td
+(\2022 Completamente distribuido: Sin dependencia de servidor) Tj
+0 -15 Td
+(\2022 Manejo eficiente de proyectos grandes) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4. Configuraci\363n Inicial de Git) Tj
+0 -30 Td
+/F1 11 Tf
+(Antes de empezar a usar Git, debemos configurar nuestra identidad:) Tj
+0 -25 Td
+/F2 12 Tf
+(Configuraci\363n Global \(para todos los repositorios\):) Tj
+0 -20 Td
+/F1 10 Tf
+(git config --global user.name "Tu Nombre") Tj
+0 -12 Td
+(git config --global user.email "tu.email@ejemplo.com") Tj
+0 -12 Td
+(git config --global init.defaultBranch main) Tj
+0 -25 Td
+/F2 12 Tf
+(Configuraci\363n \372til adicional:) Tj
+0 -20 Td
+/F1 10 Tf
+(git config --global core.editor "code --wait"  # VS Code como editor) Tj
+0 -12 Td
+(git config --global core.autocrlf true         # Windows) Tj
+0 -12 Td
+(git config --global core.autocrlf input        # macOS/Linux) Tj
+0 -25 Td
+/F2 12 Tf
+(Verificar configuraci\363n:) Tj
+0 -20 Td
+/F1 10 Tf
+(git config --list) Tj
+0 -12 Td
+(git config user.name) Tj
+0 -12 Td
+(git config user.email) Tj
+0 -30 Td
+/F2 14 Tf
+(5. Conceptos Fundamentales) Tj
+0 -25 Td
+/F2 12 Tf
+(Repositorio \(Repository\):) Tj
+0 -18 Td
+/F1 11 Tf
+(Directorio que contiene tu proyecto y todo el historial de Git.) Tj
+0 -20 Td
+/F2 12 Tf
+(Working Directory \(Directorio de Trabajo\):) Tj
+0 -18 Td
+/F1 11 Tf
+(Los archivos actuales en los que est\341s trabajando.) Tj
+0 -20 Td
+/F2 12 Tf
+(Staging Area \(\315ndice\):) Tj
+0 -18 Td
+/F1 11 Tf
+(Zona intermedia donde preparas los cambios para el pr\363ximo commit.) Tj
+0 -20 Td
+/F2 12 Tf
+(Commit:) Tj
+0 -18 Td
+/F1 11 Tf
+(Instant\341nea de tu proyecto en un momento espec\355fico del tiempo.) Tj
+0 -25 Td
+/F2 12 Tf
+(Estados de los Archivos:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Untracked: Archivos nuevos que Git no conoce) Tj
+0 -15 Td
+(\2022 Modified: Archivos modificados pero no preparados) Tj
+0 -15 Td
+(\2022 Staged: Archivos preparados para el pr\363ximo commit) Tj
+0 -15 Td
+(\2022 Committed: Archivos guardados en el repositorio) Tj
+0 -30 Td
+/F2 14 Tf
+(6. Comandos B\341sicos de Git) Tj
+0 -25 Td
+/F2 12 Tf
+(Inicializar un repositorio:) Tj
+0 -20 Td
+/F1 10 Tf
+(git init                    # Crea repositorio en directorio actual) Tj
+0 -12 Td
+(git init mi-proyecto        # Crea directorio y repositorio) Tj
+0 -20 Td
+/F2 12 Tf
+(Ver estado del repositorio:) Tj
+0 -18 Td
+/F1 10 Tf
+(git status                  # Estado completo) Tj
+0 -12 Td
+(git status -s               # Estado resumido) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(7. Flujo de Trabajo B\341sico) Tj
+0 -30 Td
+/F2 12 Tf
+(A\361adir archivos al staging area:) Tj
+0 -20 Td
+/F1 10 Tf
+(git add archivo.txt         # A\361adir archivo espec\355fico) Tj
+0 -12 Td
+(git add .                   # A\361adir todos los archivos modificados) Tj
+0 -12 Td
+(git add *.js                # A\361adir archivos por patr\363n) Tj
+0 -12 Td
+(git add -A                  # A\361adir todo \(incluso eliminados\)) Tj
+0 -25 Td
+/F2 12 Tf
+(Crear commits:) Tj
+0 -20 Td
+/F1 10 Tf
+(git commit -m "Mensaje descriptivo del cambio") Tj
+0 -12 Td
+(git commit -am "A\361adir y commit en un paso") Tj
+0 -12 Td
+(git commit --amend          # Modificar \372ltimo commit) Tj
+0 -25 Td
+/F2 12 Tf
+(Ver historial:) Tj
+0 -20 Td
+/F1 10 Tf
+(git log                     # Historial completo) Tj
+0 -12 Td
+(git log --oneline           # Una l\355nea por commit) Tj
+0 -12 Td
+(git log --graph             # Vista gr\341fica) Tj
+0 -12 Td
+(git log -p                  # Con diferencias) Tj
+0 -12 Td
+(git log --since="2 weeks ago") Tj
+0 -25 Td
+/F2 12 Tf
+(Ver diferencias:) Tj
+0 -20 Td
+/F1 10 Tf
+(git diff                    # Cambios no preparados) Tj
+0 -12 Td
+(git diff --staged           # Cambios preparados) Tj
+0 -12 Td
+(git diff HEAD~1             # Comparar con commit anterior) Tj
+0 -30 Td
+/F2 14 Tf
+(8. Trabajando con Ramas \(Branches\)) Tj
+0 -25 Td
+/F1 11 Tf
+(Las ramas permiten desarrollar caracter\355sticas en paralelo) Tj
+0 -15 Td
+(sin afectar la rama principal del proyecto.) Tj
+0 -25 Td
+/F2 12 Tf
+(Comandos de ramas:) Tj
+0 -20 Td
+/F1 10 Tf
+(git branch                  # Ver ramas locales) Tj
+0 -12 Td
+(git branch -a               # Ver todas las ramas) Tj
+0 -12 Td
+(git branch nueva-feature    # Crear nueva rama) Tj
+0 -12 Td
+(git checkout nueva-feature  # Cambiar a la rama) Tj
+0 -12 Td
+(git checkout -b mi-rama     # Crear y cambiar) Tj
+0 -12 Td
+(git switch mi-rama          # Comando moderno para cambiar) Tj
+0 -12 Td
+(git switch -c nueva-rama    # Crear y cambiar \(moderno\)) Tj
+0 -25 Td
+/F2 12 Tf
+(Fusionar ramas:) Tj
+0 -20 Td
+/F1 10 Tf
+(git checkout main           # Ir a rama principal) Tj
+0 -12 Td
+(git merge nueva-feature     # Fusionar rama) Tj
+0 -12 Td
+(git branch -d nueva-feature # Eliminar rama fusionada) Tj
+0 -12 Td
+(git branch -D rama-forzar   # Eliminar forzosamente) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejemplo de flujo con ramas:) Tj
+0 -20 Td
+/F1 10 Tf
+(git checkout -b feature/login-usuario) Tj
+0 -12 Td
+(# Desarrollar funcionalidad de login) Tj
+0 -12 Td
+(git add .) Tj
+0 -12 Td
+(git commit -m "Implementar sistema de login") Tj
+0 -12 Td
+(git checkout main) Tj
+0 -12 Td
+(git merge feature/login-usuario) Tj
+0 -12 Td
+(git branch -d feature/login-usuario) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(9. Resolviendo Conflictos) Tj
+0 -30 Td
+/F1 11 Tf
+(Los conflictos ocurren cuando Git no puede fusionar autom\341ticamente) Tj
+0 -15 Td
+(los cambios porque diferentes ramas modificaron las mismas l\355neas.) Tj
+0 -25 Td
+/F2 12 Tf
+(C\363mo se ve un conflicto:) Tj
+0 -20 Td
+/F1 9 Tf
+(function saludar\(nombre\) {) Tj
+0 -11 Td
+(<<<<<<< HEAD) Tj
+0 -11 Td
+(    console.log\("Hola " + nombre + "!"\);) Tj
+0 -11 Td
+(=======) Tj
+0 -11 Td
+(    console.log\(`Hola ${nombre}!\`\);) Tj
+0 -11 Td
+(>>>>>>> nueva-rama) Tj
+0 -11 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Pasos para resolver:) Tj
+0 -20 Td
+/F1 11 Tf
+(1. Abrir el archivo con conflicto) Tj
+0 -15 Td
+(2. Editar manualmente para elegir qu\351 cambios mantener) Tj
+0 -15 Td
+(3. Eliminar marcadores de conflicto \(<<<<<<<, =======, >>>>>>>\)) Tj
+0 -15 Td
+(4. A\361adir el archivo resuelto al staging area) Tj
+0 -15 Td
+(5. Hacer commit para completar la fusi\363n) Tj
+0 -25 Td
+/F1 10 Tf
+(git add archivo-resuelto.js) Tj
+0 -12 Td
+(git commit -m "Resolver conflicto en funci\363n saludar") Tj
+0 -30 Td
+/F2 14 Tf
+(10. Trabajando con Repositorios Remotos) Tj
+0 -25 Td
+/F2 12 Tf
+(Clonar un repositorio:) Tj
+0 -20 Td
+/F1 10 Tf
+(git clone https://github.com/usuario/proyecto.git) Tj
+0 -12 Td
+(git clone https://github.com/usuario/proyecto.git mi-carpeta) Tj
+0 -25 Td
+/F2 12 Tf
+(Ver repositorios remotos:) Tj
+0 -20 Td
+/F1 10 Tf
+(git remote -v               # Ver remotos configurados) Tj
+0 -12 Td
+(git remote add origin https://github.com/usuario/proyecto.git) Tj
+0 -12 Td
+(git remote rename origin nuevo-nombre) Tj
+0 -12 Td
+(git remote remove nombre-remoto) Tj
+0 -25 Td
+/F2 12 Tf
+(Sincronizar con remoto:) Tj
+0 -20 Td
+/F1 10 Tf
+(git fetch origin            # Descargar cambios sin fusionar) Tj
+0 -12 Td
+(git pull origin main        # Descargar y fusionar) Tj
+0 -12 Td
+(git push origin main        # Subir cambios) Tj
+0 -12 Td
+(git push -u origin main     # Configurar upstream) Tj
+0 -25 Td
+/F2 12 Tf
+(Trabajando con ramas remotas:) Tj
+0 -20 Td
+/F1 10 Tf
+(git checkout -b local-branch origin/remote-branch) Tj
+0 -12 Td
+(git push origin nueva-feature) Tj
+0 -12 Td
+(git push origin --delete rama-remota) Tj
+0 -30 Td
+/F2 14 Tf
+(11. Comandos \372tiles para Correcci\363n) Tj
+0 -25 Td
+/F2 12 Tf
+(Deshacer cambios:) Tj
+0 -20 Td
+/F1 10 Tf
+(git checkout -- archivo.txt # Descartar cambios no preparados) Tj
+0 -12 Td
+(git reset HEAD archivo.txt  # Quitar del staging area) Tj
+0 -12 Td
+(git reset --soft HEAD~1     # Deshacer commit, mantener cambios) Tj
+0 -12 Td
+(git reset --hard HEAD~1     # Deshacer commit y cambios) Tj
+0 -12 Td
+(git revert HEAD             # Crear commit que deshace otro) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 1850
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(12. GitHub: Colaboraci\363n y Hosting) Tj
+0 -30 Td
+/F1 11 Tf
+(GitHub es una plataforma de hosting para repositorios Git que) Tj
+0 -15 Td
+(facilita la colaboraci\363n y el desarrollo de software.) Tj
+0 -25 Td
+/F2 12 Tf
+(Caracter\355sticas Principales:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Hosting gratuito para repositorios p\372blicos) Tj
+0 -15 Td
+(\2022 Herramientas de colaboraci\363n: Issues, Pull Requests) Tj
+0 -15 Td
+(\2022 Integraci\363n con CI/CD) Tj
+0 -15 Td
+(\2022 GitHub Pages para hosting de sitios web) Tj
+0 -15 Td
+(\2022 Control de acceso y equipos) Tj
+0 -30 Td
+/F2 14 Tf
+(13. Pull Requests) Tj
+0 -25 Td
+/F1 11 Tf
+(Los Pull Requests permiten proponer cambios y solicitar) Tj
+0 -15 Td
+(revisi\363n antes de fusionar c\363digo en la rama principal.) Tj
+0 -25 Td
+/F2 12 Tf
+(Flujo de trabajo con Pull Requests:) Tj
+0 -20 Td
+/F1 11 Tf
+(1. Crear rama para nueva funcionalidad) Tj
+0 -15 Td
+(2. Desarrollar y hacer commits en la rama) Tj
+0 -15 Td
+(3. Push de la rama al repositorio remoto) Tj
+0 -15 Td
+(4. Crear Pull Request en GitHub) Tj
+0 -15 Td
+(5. Revisi\363n de c\363digo por parte del equipo) Tj
+0 -15 Td
+(6. Discusi\363n y mejoras) Tj
+0 -15 Td
+(7. Fusi\363n del Pull Request) Tj
+0 -25 Td
+/F1 10 Tf
+(# Flujo completo:) Tj
+0 -12 Td
+(git checkout -b feature/nueva-funcionalidad) Tj
+0 -12 Td
+(git add .) Tj
+0 -12 Td
+(git commit -m "Implementar nueva funcionalidad") Tj
+0 -12 Td
+(git push origin feature/nueva-funcionalidad) Tj
+0 -12 Td
+(# Crear PR en GitHub) Tj
+0 -12 Td
+(# Despu\351s de merge, limpiar:) Tj
+0 -12 Td
+(git checkout main) Tj
+0 -12 Td
+(git pull origin main) Tj
+0 -12 Td
+(git branch -d feature/nueva-funcionalidad) Tj
+0 -30 Td
+/F2 14 Tf
+(14. Issues y Project Management) Tj
+0 -25 Td
+/F2 12 Tf
+(Issues \(Problemas\):) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Reporte de bugs) Tj
+0 -15 Td
+(\2022 Solicitud de nuevas caracter\355sticas) Tj
+0 -15 Td
+(\2022 Discusiones sobre el proyecto) Tj
+0 -15 Td
+(\2022 Etiquetas para organizaci\363n) Tj
+0 -15 Td
+(\2022 Asignaci\363n a desarrolladores) Tj
+0 -25 Td
+/F2 12 Tf
+(Referencias en Commits:) Tj
+0 -20 Td
+/F1 10 Tf
+(git commit -m "Corregir bug de login - fixes #42") Tj
+0 -12 Td
+(git commit -m "Mejora performance - closes #15") Tj
+0 -12 Td
+(git commit -m "Avance en nueva feature - refs #23") Tj
+0 -25 Td
+/F2 12 Tf
+(GitHub Projects:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Tableros Kanban integrados) Tj
+0 -15 Td
+(\2022 Automatizaci\363n con Issues y PRs) Tj
+0 -15 Td
+(\2022 Seguimiento de progreso) Tj
+0 -15 Td
+(\2022 Roadmaps y planificaci\363n) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(15. Flujos de Trabajo Profesionales) Tj
+0 -30 Td
+/F2 14 Tf
+(Git Flow) Tj
+0 -25 Td
+/F1 11 Tf
+(Modelo de ramificaci\363n para proyectos con releases planificados:) Tj
+0 -20 Td
+(\2022 main: C\363digo en producci\363n) Tj
+0 -15 Td
+(\2022 develop: Integraci\363n de nuevas caracter\355sticas) Tj
+0 -15 Td
+(\2022 feature/*: Desarrollo de funcionalidades) Tj
+0 -15 Td
+(\2022 release/*: Preparaci\363n de nuevas versiones) Tj
+0 -15 Td
+(\2022 hotfix/*: Correcciones urgentes en producci\363n) Tj
+0 -25 Td
+/F2 14 Tf
+(GitHub Flow) Tj
+0 -25 Td
+/F1 11 Tf
+(Flujo simplificado para desarrollo continuo:) Tj
+0 -20 Td
+(1. Crear rama desde main) Tj
+0 -15 Td
+(2. Desarrollar funcionalidad) Tj
+0 -15 Td
+(3. Abrir Pull Request) Tj
+0 -15 Td
+(4. Revisar y discutir) Tj
+0 -15 Td
+(5. Deploy para testing) Tj
+0 -15 Td
+(6. Merge a main) Tj
+0 -15 Td
+(7. Deploy a producci\363n) Tj
+0 -30 Td
+/F2 14 Tf
+(16. Mejores Pr\341cticas) Tj
+0 -25 Td
+/F2 12 Tf
+(Mensajes de Commit:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Usar modo imperativo: "Agregar" no "Agregado") Tj
+0 -15 Td
+(\2022 Primera l\355nea: resumen de 50 caracteres m\341x.) Tj
+0 -15 Td
+(\2022 Segunda l\355nea en blanco) Tj
+0 -15 Td
+(\2022 Explicaci\363n detallada si es necesario) Tj
+0 -20 Td
+/F1 10 Tf
+(feat: agregar autenticaci\363n con JWT) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(Implementa sistema completo de autenticaci\363n incluyendo:) Tj
+0 -12 Td
+(- Login con email y contrase\361a) Tj
+0 -12 Td
+(- Tokens JWT con expiraci\363n) Tj
+0 -12 Td
+(- Middleware de autorizaci\363n) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura de Ramas:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Nombres descriptivos: feature/user-authentication) Tj
+0 -15 Td
+(\2022 Prefijos consistentes: feature/, bugfix/, hotfix/) Tj
+0 -15 Td
+(\2022 Eliminar ramas despu\351s de merge) Tj
+0 -15 Td
+(\2022 Mantener main/develop siempre estables) Tj
+0 -25 Td
+/F2 12 Tf
+(Archivos .gitignore:) Tj
+0 -20 Td
+/F1 10 Tf
+(# Dependencias) Tj
+0 -12 Td
+(node_modules/) Tj
+0 -12 Td
+(# Archivos de compilaci\363n) Tj
+0 -12 Td
+(dist/) Tj
+0 -12 Td
+(build/) Tj
+0 -12 Td
+(# Variables de entorno) Tj
+0 -12 Td
+(.env) Tj
+0 -12 Td
+(.env.local) Tj
+0 -12 Td
+(# Logs) Tj
+0 -12 Td
+(*.log) Tj
+0 -12 Td
+(# Archivos del sistema) Tj
+0 -12 Td
+(.DS_Store) Tj
+0 -12 Td
+(Thumbs.db) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1700
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(17. Herramientas y Extensiones) Tj
+0 -30 Td
+/F2 12 Tf
+(Clientes Gr\341ficos:) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 GitHub Desktop: Interfaz simple y amigable) Tj
+0 -15 Td
+(\2022 SourceTree: Herramienta avanzada gratuita) Tj
+0 -15 Td
+(\2022 GitKraken: Cliente profesional con caracter\355sticas premium) Tj
+0 -15 Td
+(\2022 VS Code: Integraci\363n nativa de Git) Tj
+0 -25 Td
+/F2 12 Tf
+(Comandos Avanzados \372tiles:) Tj
+0 -20 Td
+/F1 10 Tf
+(git stash                   # Guardar cambios temporalmente) Tj
+0 -12 Td
+(git stash pop               # Recuperar cambios guardados) Tj
+0 -12 Td
+(git cherry-pick <commit>    # Aplicar commit espec\355fico) Tj
+0 -12 Td
+(git rebase -i HEAD~3       # Rebase interactivo) Tj
+0 -12 Td
+(git reflog                 # Historial de referencias) Tj
+0 -12 Td
+(git bisect start           # Buscar commit problem\341tico) Tj
+0 -25 Td
+/F2 12 Tf
+(Aliases \372tiles:) Tj
+0 -20 Td
+/F1 10 Tf
+(git config --global alias.st status) Tj
+0 -12 Td
+(git config --global alias.co checkout) Tj
+0 -12 Td
+(git config --global alias.br branch) Tj
+0 -12 Td
+(git config --global alias.ci commit) Tj
+0 -12 Td
+(git config --global alias.unstage 'reset HEAD --') Tj
+0 -30 Td
+/F2 14 Tf
+(18. Integraci\363n con CI/CD) Tj
+0 -25 Td
+/F1 11 Tf
+(GitHub Actions permite automatizar flujos de trabajo:) Tj
+0 -20 Td
+/F1 9 Tf
+(name: CI/CD Pipeline) Tj
+0 -11 Td
+(on:) Tj
+0 -11 Td
+(  push:) Tj
+0 -11 Td
+(    branches: [ main, develop ]) Tj
+0 -11 Td
+(  pull_request:) Tj
+0 -11 Td
+(    branches: [ main ]) Tj
+0 -11 Td
+(jobs:) Tj
+0 -11 Td
+(  test:) Tj
+0 -11 Td
+(    runs-on: ubuntu-latest) Tj
+0 -11 Td
+(    steps:) Tj
+0 -11 Td
+(    - uses: actions/checkout@v2) Tj
+0 -11 Td
+(    - name: Setup Node.js) Tj
+0 -11 Td
+(      uses: actions/setup-node@v2) Tj
+0 -11 Td
+(      with:) Tj
+0 -11 Td
+(        node-version: '16') Tj
+0 -11 Td
+(    - run: npm install) Tj
+0 -11 Td
+(    - run: npm test) Tj
+0 -30 Td
+/F2 14 Tf
+(19. Resumen y Pr\363ximos Pasos) Tj
+0 -25 Td
+/F1 11 Tf
+(Has aprendido los fundamentos de Git y GitHub:) Tj
+0 -15 Td
+(\2022 Control de versiones distribuido) Tj
+0 -15 Td
+(\2022 Comandos esenciales de Git) Tj
+0 -15 Td
+(\2022 Trabajo con ramas y fusiones) Tj
+0 -15 Td
+(\2022 Colaboraci\363n en GitHub) Tj
+0 -15 Td
+(\2022 Flujos de trabajo profesionales) Tj
+0 -25 Td
+/F2 12 Tf
+(Preparaci\363n para el Tema 8:) Tj
+0 -20 Td
+/F1 11 Tf
+(En el pr\363ximo tema integraremos todo lo aprendido:) Tj
+0 -15 Td
+(\2022 Proyecto Full-Stack completo) Tj
+0 -15 Td
+(\2022 Frontend con React) Tj
+0 -15 Td
+(\2022 Backend con Node.js) Tj
+0 -15 Td
+(\2022 Base de datos) Tj
+0 -15 Td
+(\2022 Control de versiones con Git) Tj
+0 -15 Td
+(\2022 Deployment en la nube) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000274 00000 n 
+0000000418 00000 n 
+0000000562 00000 n 
+0000000706 00000 n 
+0000000850 00000 n 
+0000000994 00000 n 
+0000001138 00000 n 
+0000001205 00000 n 
+0000001278 00000 n 
+0000003280 00000 n 
+0000005232 00000 n 
+0000007234 00000 n 
+0000009186 00000 n 
+0000011088 00000 n 
+0000013040 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+14792
+%%EOF

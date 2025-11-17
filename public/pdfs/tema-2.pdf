@@ -1,0 +1,980 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+12 0 obj
+<<
+/Length 1980
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programaci\363n Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 2: HTML y CSS B\341sico) Tj
+0 -60 Td
+/F1 12 Tf
+(Duraci\363n estimada: 12 horas) Tj
+0 -40 Td
+/F2 14 Tf
+(1. Introducci\363n al Desarrollo Web) Tj
+0 -25 Td
+/F1 11 Tf
+(El desarrollo web consiste en crear sitios y aplicaciones que) Tj
+0 -15 Td
+(funcionan en navegadores. Componentes principales:) Tj
+0 -20 Td
+(\2022 HTML: Define la estructura y contenido) Tj
+0 -15 Td
+(\2022 CSS: Controla la presentaci\363n y dise\361o) Tj
+0 -15 Td
+(\2022 JavaScript: A\361ade interactividad) Tj
+0 -30 Td
+/F2 14 Tf
+(2. \277Qu\351 es HTML?) Tj
+0 -25 Td
+/F1 11 Tf
+(HyperText Markup Language es el lenguaje est\341ndar para crear) Tj
+0 -15 Td
+(p\341ginas web. Utiliza "etiquetas" para marcar diferentes tipos) Tj
+0 -15 Td
+(de contenido y darle significado sem\341ntico.) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura B\341sica de un Documento HTML:) Tj
+0 -20 Td
+/F1 10 Tf
+(<!DOCTYPE html>) Tj
+0 -12 Td
+(<html lang="es">) Tj
+0 -12 Td
+(<head>) Tj
+0 -12 Td
+(    <meta charset="UTF-8">) Tj
+0 -12 Td
+(    <meta name="viewport" content="width=device-width, initial-scale=1.0">) Tj
+0 -12 Td
+(    <title>Mi Primera P\341gina</title>) Tj
+0 -12 Td
+(</head>) Tj
+0 -12 Td
+(<body>) Tj
+0 -12 Td
+(    <h1>Bienvenido a mi sitio web</h1>) Tj
+0 -12 Td
+(    <p>Este es mi primer p\341rrafo en HTML.</p>) Tj
+0 -12 Td
+(</body>) Tj
+0 -12 Td
+(</html>) Tj
+0 -25 Td
+/F2 14 Tf
+(3. Etiquetas HTML Esenciales) Tj
+0 -25 Td
+/F2 12 Tf
+(Encabezados \(Headings\):) Tj
+0 -18 Td
+/F1 10 Tf
+(<h1>T\355tulo Principal</h1>        <!-- M\341s importante -->) Tj
+0 -12 Td
+(<h2>Subt\355tulo</h2>               <!-- Segundo nivel -->) Tj
+0 -12 Td
+(<h3>Secci\363n</h3>                 <!-- Tercer nivel -->) Tj
+0 -12 Td
+(<h4>, <h5>, <h6>                 <!-- Hasta 6 niveles -->) Tj
+0 -20 Td
+/F2 12 Tf
+(P\341rrafos y Texto:) Tj
+0 -18 Td
+/F1 10 Tf
+(<p>Un p\341rrafo de texto normal.</p>) Tj
+0 -12 Td
+(<strong>Texto importante</strong>) Tj
+0 -12 Td
+(<em>Texto enfatizado</em>) Tj
+0 -12 Td
+(<br>                              <!-- Salto de l\355nea -->) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4. Listas en HTML) Tj
+0 -30 Td
+/F2 12 Tf
+(Listas No Ordenadas \(vi\361etas\):) Tj
+0 -20 Td
+/F1 10 Tf
+(<ul>) Tj
+0 -12 Td
+(    <li>Primer elemento</li>) Tj
+0 -12 Td
+(    <li>Segundo elemento</li>) Tj
+0 -12 Td
+(    <li>Tercer elemento</li>) Tj
+0 -12 Td
+(</ul>) Tj
+0 -25 Td
+/F2 12 Tf
+(Listas Ordenadas \(numeradas\):) Tj
+0 -20 Td
+/F1 10 Tf
+(<ol>) Tj
+0 -12 Td
+(    <li>Primer paso</li>) Tj
+0 -12 Td
+(    <li>Segundo paso</li>) Tj
+0 -12 Td
+(    <li>Tercer paso</li>) Tj
+0 -12 Td
+(</ol>) Tj
+0 -30 Td
+/F2 14 Tf
+(5. Enlaces e Im\341genes) Tj
+0 -25 Td
+/F2 12 Tf
+(Enlaces \(Links\):) Tj
+0 -20 Td
+/F1 10 Tf
+(<a href="https://www.google.com">Ir a Google</a>) Tj
+0 -12 Td
+(<a href="pagina2.html">Enlace interno</a>) Tj
+0 -12 Td
+(<a href="mailto:correo@ejemplo.com">Enviar email</a>) Tj
+0 -12 Td
+(<a href="tel:+34123456789">Llamar</a>) Tj
+0 -25 Td
+/F2 12 Tf
+(Im\341genes:) Tj
+0 -20 Td
+/F1 10 Tf
+(<img src="foto.jpg" alt="Descripci\363n de la imagen">) Tj
+0 -12 Td
+(<img src="logo.png" alt="Logo de la empresa" width="200">) Tj
+0 -30 Td
+/F2 14 Tf
+(6. Formularios HTML) Tj
+0 -25 Td
+/F1 11 Tf
+(Los formularios permiten recopilar informaci\363n del usuario:) Tj
+0 -20 Td
+/F1 10 Tf
+(<form action="/procesar" method="POST">) Tj
+0 -12 Td
+(    <label for="nombre">Nombre:</label>) Tj
+0 -12 Td
+(    <input type="text" id="nombre" name="nombre" required>) Tj
+0 -15 Td
+(    <label for="email">Email:</label>) Tj
+0 -12 Td
+(    <input type="email" id="email" name="email" required>) Tj
+0 -15 Td
+(    <label for="edad">Edad:</label>) Tj
+0 -12 Td
+(    <input type="number" id="edad" name="edad" min="18" max="100">) Tj
+0 -15 Td
+(    <label for="mensaje">Mensaje:</label>) Tj
+0 -12 Td
+(    <textarea id="mensaje" name="mensaje" rows="4"></textarea>) Tj
+0 -15 Td
+(    <input type="submit" value="Enviar">) Tj
+0 -12 Td
+(</form>) Tj
+0 -25 Td
+/F2 12 Tf
+(Tipos de Input Importantes:) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 text: Texto libre) Tj
+0 -12 Td
+(\2022 email: Validaci\363n autom\341tica de email) Tj
+0 -12 Td
+(\2022 password: Oculta el texto) Tj
+0 -12 Td
+(\2022 number: Solo n\372meros) Tj
+0 -12 Td
+(\2022 date: Selector de fecha) Tj
+0 -12 Td
+(\2022 checkbox: Casillas de selecci\363n) Tj
+0 -12 Td
+(\2022 radio: Opci\363n \372nica) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(7. Introducci\363n a CSS) Tj
+0 -30 Td
+/F1 11 Tf
+(Cascading Style Sheets \(CSS\) controla la presentaci\363n visual) Tj
+0 -15 Td
+(de los documentos HTML. Permite separar contenido de dise\361o.) Tj
+0 -25 Td
+/F2 12 Tf
+(Formas de Incluir CSS:) Tj
+0 -20 Td
+/F1 11 Tf
+(1. CSS Inline \(en la etiqueta\):) Tj
+0 -15 Td
+/F1 10 Tf
+(<p style="color: blue; font-size: 18px;">Texto azul</p>) Tj
+0 -20 Td
+/F1 11 Tf
+(2. CSS Interno \(en el <head>\):) Tj
+0 -15 Td
+/F1 10 Tf
+(<style>) Tj
+0 -12 Td
+(    p {) Tj
+0 -12 Td
+(        color: blue;) Tj
+0 -12 Td
+(        font-size: 18px;) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(</style>) Tj
+0 -20 Td
+/F1 11 Tf
+(3. CSS Externo \(archivo separado\):) Tj
+0 -15 Td
+/F1 10 Tf
+(<link rel="stylesheet" href="estilos.css">) Tj
+0 -30 Td
+/F2 14 Tf
+(8. Selectores CSS) Tj
+0 -25 Td
+/F2 12 Tf
+(Selector de Elemento:) Tj
+0 -18 Td
+/F1 10 Tf
+(p {) Tj
+0 -12 Td
+(    color: red;                  /* Todos los p\341rrafos */) Tj
+0 -12 Td
+(}) Tj
+0 -20 Td
+/F2 12 Tf
+(Selector de Clase:) Tj
+0 -18 Td
+/F1 10 Tf
+(.destacado {) Tj
+0 -12 Td
+(    background-color: yellow;    /* class="destacado" */) Tj
+0 -12 Td
+(}) Tj
+0 -20 Td
+/F2 12 Tf
+(Selector de ID:) Tj
+0 -18 Td
+/F1 10 Tf
+(#encabezado {) Tj
+0 -12 Td
+(    font-size: 24px;             /* id="encabezado" */) Tj
+0 -12 Td
+(}) Tj
+0 -20 Td
+/F2 12 Tf
+(Selector Descendiente:) Tj
+0 -18 Td
+/F1 10 Tf
+(div p {) Tj
+0 -12 Td
+(    margin: 10px;                /* P\341rrafos dentro de divs */) Tj
+0 -12 Td
+(}) Tj
+0 -30 Td
+/F2 14 Tf
+(9. Propiedades CSS Fundamentales) Tj
+0 -25 Td
+/F2 12 Tf
+(Colores y Tipograf\355a:) Tj
+0 -18 Td
+/F1 10 Tf
+(.texto-principal {) Tj
+0 -12 Td
+(    color: #333333;              /* Color del texto */) Tj
+0 -12 Td
+(    background-color: #f0f0f0;   /* Color de fondo */) Tj
+0 -12 Td
+(    font-family: Arial, sans-serif;) Tj
+0 -12 Td
+(    font-size: 16px;) Tj
+0 -12 Td
+(    font-weight: bold;           /* Grosor: normal, bold */) Tj
+0 -12 Td
+(    text-align: center;          /* Alineaci\363n del texto */) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(10. Box Model en CSS) Tj
+0 -30 Td
+/F1 11 Tf
+(Cada elemento HTML es una "caja" con cuatro \341reas:) Tj
+0 -20 Td
+(\2022 Content: El contenido real \(texto, imagen\)) Tj
+0 -15 Td
+(\2022 Padding: Espacio interno entre contenido y borde) Tj
+0 -15 Td
+(\2022 Border: Borde alrededor del padding) Tj
+0 -15 Td
+(\2022 Margin: Espacio externo alrededor del borde) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejemplo Pr\341ctico del Box Model:) Tj
+0 -20 Td
+/F1 10 Tf
+(.caja {) Tj
+0 -12 Td
+(    width: 200px;                /* Ancho del contenido */) Tj
+0 -12 Td
+(    height: 100px;               /* Alto del contenido */) Tj
+0 -12 Td
+(    padding: 20px;               /* Espacio interno */) Tj
+0 -12 Td
+(    border: 2px solid #000;      /* Borde negro s\363lido */) Tj
+0 -12 Td
+(    margin: 10px;                /* Espacio externo */) Tj
+0 -12 Td
+(    background-color: lightblue;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Ancho total = 200 + 20*2 + 2*2 + 10*2 = 264px */) Tj
+0 -30 Td
+/F2 14 Tf
+(11. Layout con Flexbox) Tj
+0 -25 Td
+/F1 11 Tf
+(Flexbox es una herramienta poderosa para crear layouts) Tj
+0 -15 Td
+(flexibles y alinear elementos de forma eficiente.) Tj
+0 -25 Td
+/F2 12 Tf
+(Contenedor Flex:) Tj
+0 -18 Td
+/F1 10 Tf
+(.contenedor {) Tj
+0 -12 Td
+(    display: flex;) Tj
+0 -12 Td
+(    justify-content: center;     /* Alineaci\363n horizontal */) Tj
+0 -12 Td
+(    align-items: center;         /* Alineaci\363n vertical */) Tj
+0 -12 Td
+(    height: 100vh;               /* Altura completa */) Tj
+0 -12 Td
+(    gap: 20px;                   /* Espacio entre elementos */) Tj
+0 -12 Td
+(}) Tj
+0 -20 Td
+/F2 12 Tf
+(Elementos Flex:) Tj
+0 -18 Td
+/F1 10 Tf
+(.elemento {) Tj
+0 -12 Td
+(    flex: 1;                     /* Crece para llenar espacio */) Tj
+0 -12 Td
+(    min-width: 200px;            /* Ancho m\355nimo */) Tj
+0 -12 Td
+(    background-color: #e0e0e0;) Tj
+0 -12 Td
+(    padding: 20px;) Tj
+0 -12 Td
+(    border-radius: 8px;          /* Esquinas redondeadas */) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Direcciones de Flexbox:) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 flex-direction: row \(horizontal, por defecto\)) Tj
+0 -12 Td
+(\2022 flex-direction: column \(vertical\)) Tj
+0 -12 Td
+(\2022 flex-direction: row-reverse \(horizontal invertido\)) Tj
+0 -12 Td
+(\2022 flex-direction: column-reverse \(vertical invertido\)) Tj
+0 -25 Td
+/F2 12 Tf
+(Justificaci\363n y Alineaci\363n:) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 justify-content: flex-start, center, flex-end, space-between) Tj
+0 -12 Td
+(\2022 align-items: flex-start, center, flex-end, stretch) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(12. CSS Grid B\341sico) Tj
+0 -30 Td
+/F1 11 Tf
+(CSS Grid permite crear layouts bidimensionales complejos) Tj
+0 -15 Td
+(con filas y columnas de manera muy intuitiva.) Tj
+0 -25 Td
+/F2 12 Tf
+(Grid Container B\341sico:) Tj
+0 -20 Td
+/F1 10 Tf
+(.grid-container {) Tj
+0 -12 Td
+(    display: grid;) Tj
+0 -12 Td
+(    grid-template-columns: 1fr 2fr 1fr;  /* 3 columnas */) Tj
+0 -12 Td
+(    grid-template-rows: auto auto auto;   /* 3 filas */) Tj
+0 -12 Td
+(    gap: 20px;                          /* Espacio entre celdas */) Tj
+0 -12 Td
+(    padding: 20px;) Tj
+0 -12 Td
+(}) Tj
+0 -20 Td
+/F2 12 Tf
+(Grid Items:) Tj
+0 -18 Td
+/F1 10 Tf
+(.grid-item {) Tj
+0 -12 Td
+(    background-color: #f0f0f0;) Tj
+0 -12 Td
+(    padding: 20px;) Tj
+0 -12 Td
+(    border: 1px solid #ddd;) Tj
+0 -12 Td
+(    text-align: center;) Tj
+0 -12 Td
+(}) Tj
+0 -20 Td
+(.destacado {) Tj
+0 -12 Td
+(    grid-column: 1 / 3;          /* Ocupa 2 columnas */) Tj
+0 -12 Td
+(    grid-row: 1 / 2;             /* Primera fila */) Tj
+0 -12 Td
+(    background-color: #ffffcc;) Tj
+0 -12 Td
+(}) Tj
+0 -30 Td
+/F2 14 Tf
+(13. Responsive Design) Tj
+0 -25 Td
+/F1 11 Tf
+(El dise\361o responsivo asegura que el sitio web se vea bien) Tj
+0 -15 Td
+(en todos los dispositivos: m\363viles, tablets y escritorio.) Tj
+0 -25 Td
+/F2 12 Tf
+(Media Queries:) Tj
+0 -20 Td
+/F1 10 Tf
+(/* Estilos para m\363viles \(por defecto\) */) Tj
+0 -12 Td
+(.contenedor {) Tj
+0 -12 Td
+(    width: 100%;) Tj
+0 -12 Td
+(    padding: 10px;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Estilos para tablets \(768px y m\341s\) */) Tj
+0 -12 Td
+(@media screen and \(min-width: 768px\) {) Tj
+0 -12 Td
+(    .contenedor {) Tj
+0 -12 Td
+(        width: 750px;) Tj
+0 -12 Td
+(        margin: 0 auto;) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Estilos para escritorio \(1024px y m\341s\) */) Tj
+0 -12 Td
+(@media screen and \(min-width: 1024px\) {) Tj
+0 -12 Td
+(    .contenedor {) Tj
+0 -12 Td
+(        width: 1000px;) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Meta Viewport \(Importante\):) Tj
+0 -18 Td
+/F1 10 Tf
+(<meta name="viewport" content="width=device-width, initial-scale=1.0">) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(14. Proyecto Pr\341ctico: P\341gina Personal) Tj
+0 -30 Td
+/F1 11 Tf
+(Vamos a crear una p\341gina personal completa que combine) Tj
+0 -15 Td
+(HTML sem\341ntico con CSS moderno y dise\361o responsivo.) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura HTML:) Tj
+0 -20 Td
+/F1 9 Tf
+(<!DOCTYPE html>) Tj
+0 -11 Td
+(<html lang="es">) Tj
+0 -11 Td
+(<head>) Tj
+0 -11 Td
+(    <meta charset="UTF-8">) Tj
+0 -11 Td
+(    <meta name="viewport" content="width=device-width, initial-scale=1.0">) Tj
+0 -11 Td
+(    <title>Juan P\351rez - Desarrollador Web</title>) Tj
+0 -11 Td
+(    <link rel="stylesheet" href="styles.css">) Tj
+0 -11 Td
+(</head>) Tj
+0 -11 Td
+(<body>) Tj
+0 -11 Td
+(    <header>) Tj
+0 -11 Td
+(        <nav>) Tj
+0 -11 Td
+(            <ul>) Tj
+0 -11 Td
+(                <li><a href="#inicio">Inicio</a></li>) Tj
+0 -11 Td
+(                <li><a href="#sobre-mi">Sobre M\355</a></li>) Tj
+0 -11 Td
+(                <li><a href="#proyectos">Proyectos</a></li>) Tj
+0 -11 Td
+(                <li><a href="#contacto">Contacto</a></li>) Tj
+0 -11 Td
+(            </ul>) Tj
+0 -11 Td
+(        </nav>) Tj
+0 -11 Td
+(    </header>) Tj
+0 -11 Td
+(    <main>) Tj
+0 -11 Td
+(        <section id="inicio" class="hero">) Tj
+0 -11 Td
+(            <h1>Juan P\351rez</h1>) Tj
+0 -11 Td
+(            <p>Desarrollador Web Full Stack</p>) Tj
+0 -11 Td
+(            <button>Ver mi trabajo</button>) Tj
+0 -11 Td
+(        </section>) Tj
+0 -11 Td
+(        <section id="sobre-mi">) Tj
+0 -11 Td
+(            <h2>Sobre M\355</h2>) Tj
+0 -11 Td
+(            <p>Soy un desarrollador apasionado...</p>) Tj
+0 -11 Td
+(        </section>) Tj
+0 -11 Td
+(        <section id="proyectos">) Tj
+0 -11 Td
+(            <h2>Mis Proyectos</h2>) Tj
+0 -11 Td
+(            <div class="grid-proyectos">) Tj
+0 -11 Td
+(                <article class="proyecto">) Tj
+0 -11 Td
+(                    <h3>E-commerce</h3>) Tj
+0 -11 Td
+(                    <p>Tienda online con React</p>) Tj
+0 -11 Td
+(                </article>) Tj
+0 -11 Td
+(                <!-- M\341s proyectos... -->) Tj
+0 -11 Td
+(            </div>) Tj
+0 -11 Td
+(        </section>) Tj
+0 -11 Td
+(        <section id="contacto">) Tj
+0 -11 Td
+(            <h2>Contacto</h2>) Tj
+0 -11 Td
+(            <form>) Tj
+0 -11 Td
+(                <input type="text" placeholder="Tu nombre">) Tj
+0 -11 Td
+(                <input type="email" placeholder="Tu email">) Tj
+0 -11 Td
+(                <textarea placeholder="Tu mensaje"></textarea>) Tj
+0 -11 Td
+(                <button type="submit">Enviar</button>) Tj
+0 -11 Td
+(            </form>) Tj
+0 -11 Td
+(        </section>) Tj
+0 -11 Td
+(    </main>) Tj
+0 -11 Td
+(    <footer>) Tj
+0 -11 Td
+(        <p>&copy; 2024 Juan P\351rez. Todos los derechos reservados.</p>) Tj
+0 -11 Td
+(    </footer>) Tj
+0 -11 Td
+(</body>) Tj
+0 -11 Td
+(</html>) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1650
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(15. CSS para el Proyecto) Tj
+0 -30 Td
+/F1 9 Tf
+(/* Reset y estilos globales */) Tj
+0 -12 Td
+(* {) Tj
+0 -12 Td
+(    margin: 0;) Tj
+0 -12 Td
+(    padding: 0;) Tj
+0 -12 Td
+(    box-sizing: border-box;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(body {) Tj
+0 -12 Td
+(    font-family: 'Arial', sans-serif;) Tj
+0 -12 Td
+(    line-height: 1.6;) Tj
+0 -12 Td
+(    color: #333;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Header y navegaci\363n */) Tj
+0 -12 Td
+(header {) Tj
+0 -12 Td
+(    background: #2c3e50;) Tj
+0 -12 Td
+(    color: white;) Tj
+0 -12 Td
+(    padding: 1rem 0;) Tj
+0 -12 Td
+(    position: fixed;) Tj
+0 -12 Td
+(    width: 100%;) Tj
+0 -12 Td
+(    top: 0;) Tj
+0 -12 Td
+(    z-index: 1000;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(nav ul {) Tj
+0 -12 Td
+(    display: flex;) Tj
+0 -12 Td
+(    list-style: none;) Tj
+0 -12 Td
+(    justify-content: center;) Tj
+0 -12 Td
+(    gap: 2rem;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(nav a {) Tj
+0 -12 Td
+(    color: white;) Tj
+0 -12 Td
+(    text-decoration: none;) Tj
+0 -12 Td
+(    transition: color 0.3s;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(nav a:hover {) Tj
+0 -12 Td
+(    color: #3498db;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Secci\363n hero */) Tj
+0 -12 Td
+(.hero {) Tj
+0 -12 Td
+(    background: linear-gradient\(135deg, #667eea 0%, #764ba2 100%\);) Tj
+0 -12 Td
+(    color: white;) Tj
+0 -12 Td
+(    height: 100vh;) Tj
+0 -12 Td
+(    display: flex;) Tj
+0 -12 Td
+(    flex-direction: column;) Tj
+0 -12 Td
+(    justify-content: center;) Tj
+0 -12 Td
+(    align-items: center;) Tj
+0 -12 Td
+(    text-align: center;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Grid de proyectos */) Tj
+0 -12 Td
+(.grid-proyectos {) Tj
+0 -12 Td
+(    display: grid;) Tj
+0 -12 Td
+(    grid-template-columns: repeat\(auto-fit, minmax\(300px, 1fr\)\);) Tj
+0 -12 Td
+(    gap: 2rem;) Tj
+0 -12 Td
+(    padding: 2rem;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(/* Responsive */) Tj
+0 -12 Td
+(@media \(max-width: 768px\) {) Tj
+0 -12 Td
+(    nav ul {) Tj
+0 -12 Td
+(        flex-direction: column;) Tj
+0 -12 Td
+(        gap: 1rem;) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000274 00000 n 
+0000000418 00000 n 
+0000000562 00000 n 
+0000000706 00000 n 
+0000000850 00000 n 
+0000000994 00000 n 
+0000001138 00000 n 
+0000001205 00000 n 
+0000001278 00000 n 
+0000003310 00000 n 
+0000005312 00000 n 
+0000007264 00000 n 
+0000009266 00000 n 
+0000011118 00000 n 
+0000013070 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+14772
+%%EOF

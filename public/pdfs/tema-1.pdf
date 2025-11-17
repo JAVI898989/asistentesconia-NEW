@@ -1,0 +1,825 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+12 0 obj
+<<
+/Length 1950
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programaci\363n Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 1: Introducci\363n a la Programaci\363n) Tj
+0 -60 Td
+/F1 12 Tf
+(Duraci\363n estimada: 8 horas) Tj
+0 -40 Td
+/F2 14 Tf
+(1. \277Qu\351 es la Programaci\363n?) Tj
+0 -25 Td
+/F1 11 Tf
+(La programaci\363n es el proceso de crear instrucciones para que un) Tj
+0 -15 Td
+(ordenador realice tareas espec\355ficas. Es como escribir una receta) Tj
+0 -15 Td
+(muy detallada que la m\341quina pueda seguir paso a paso.) Tj
+0 -30 Td
+/F2 14 Tf
+(2. Historia y Evoluci\363n) Tj
+0 -25 Td
+/F1 11 Tf
+(Desde los primeros ordenadores mec\341nicos hasta los lenguajes) Tj
+0 -15 Td
+(modernos, la programaci\363n ha evolucionado dr\341sticamente:) Tj
+0 -20 Td
+(\2022 1940s: Primeros ordenadores programables) Tj
+0 -15 Td
+(\2022 1950s: Aparecen los primeros lenguajes de alto nivel) Tj
+0 -15 Td
+(\2022 1970s-80s: C, Pascal y programaci\363n estructurada) Tj
+0 -15 Td
+(\2022 1990s: Internet y lenguajes web \(HTML, JavaScript\)) Tj
+0 -15 Td
+(\2022 2000s: Programaci\363n orientada a objetos masiva) Tj
+0 -15 Td
+(\2022 2010s-presente: Cloud computing y desarrollo \341gil) Tj
+0 -30 Td
+/F2 14 Tf
+(3. Pensamiento Computacional) Tj
+0 -25 Td
+/F1 11 Tf
+(Es la habilidad de resolver problemas de manera sistem\341tica:) Tj
+0 -20 Td
+(\2022 An\341lisis: Entender el problema completamente) Tj
+0 -15 Td
+(\2022 Descomposici\363n: Dividir en partes m\341s peque\361as) Tj
+0 -15 Td
+(\2022 Abstracci\363n: Identificar patrones y conceptos clave) Tj
+0 -15 Td
+(\2022 Algoritmos: Crear secuencias l\363gicas de pasos) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 1850
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(4. Algoritmos: La Base de Todo Programa) Tj
+0 -30 Td
+/F1 11 Tf
+(Un algoritmo es una secuencia finita de instrucciones bien definidas) Tj
+0 -15 Td
+(que resuelven un problema. Caracter\355sticas principales:) Tj
+0 -25 Td
+(\2022 Finitud: Debe terminar en un n\372mero finito de pasos) Tj
+0 -15 Td
+(\2022 Precisi\363n: Cada paso debe estar claramente definido) Tj
+0 -15 Td
+(\2022 Entrada: Puede tener cero o m\341s datos de entrada) Tj
+0 -15 Td
+(\2022 Salida: Debe producir al menos un resultado) Tj
+0 -15 Td
+(\2022 Efectividad: Debe ser realizable en tiempo razonable) Tj
+0 -30 Td
+/F2 14 Tf
+(Ejemplo Pr\341ctico: Algoritmo para Preparar Caf\351) Tj
+0 -25 Td
+/F1 11 Tf
+(1. INICIO) Tj
+0 -15 Td
+(2. Verificar si hay caf\351, agua y electricidad) Tj
+0 -15 Td
+(3. SI no hay alguno, IR a comprarlo) Tj
+0 -15 Td
+(4. Llenar la cafetera con agua) Tj
+0 -15 Td
+(5. A\361adir caf\351 molido al filtro) Tj
+0 -15 Td
+(6. Encender la cafetera) Tj
+0 -15 Td
+(7. Esperar hasta que termine) Tj
+0 -15 Td
+(8. Servir en taza) Tj
+0 -15 Td
+(9. FIN) Tj
+0 -30 Td
+/F2 14 Tf
+(5. Diagramas de Flujo) Tj
+0 -25 Td
+/F1 11 Tf
+(Representaci\363n gr\341fica de algoritmos usando s\355mbolos:) Tj
+0 -20 Td
+(\2022 \323valo: Inicio y fin del proceso) Tj
+0 -15 Td
+(\2022 Rect\341ngulo: Proceso o acci\363n) Tj
+0 -15 Td
+(\2022 Rombo: Decisi\363n \(s\355/no\)) Tj
+0 -15 Td
+(\2022 Paralelogramo: Entrada o salida de datos) Tj
+0 -15 Td
+(\2022 Flechas: Flujo de control) Tj
+0 -30 Td
+/F2 14 Tf
+(6. Pseudoc\363digo) Tj
+0 -25 Td
+/F1 11 Tf
+(Descripci\363n de algoritmos en lenguaje natural estructurado:) Tj
+0 -20 Td
+(ALGORITMO CalcularPromedio) Tj
+0 -15 Td
+(VARIABLES: nota1, nota2, nota3, promedio) Tj
+0 -15 Td
+(INICIO) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese la primera nota: ") Tj
+0 -15 Td
+(    LEER nota1) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese la segunda nota: ") Tj
+0 -15 Td
+(    LEER nota2) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese la tercera nota: ") Tj
+0 -15 Td
+(    LEER nota3) Tj
+0 -15 Td
+(    promedio = \(nota1 + nota2 + nota3\) / 3) Tj
+0 -15 Td
+(    ESCRIBIR "El promedio es: ", promedio) Tj
+0 -15 Td
+(FIN) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(7. Tipos de Datos B\341sicos) Tj
+0 -30 Td
+/F1 11 Tf
+(Los datos son la materia prima de los programas. Tipos principales:) Tj
+0 -25 Td
+/F2 12 Tf
+(N\372meros Enteros \(int\):) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Representan cantidades completas: -5, 0, 42, 1000) Tj
+0 -15 Td
+(\2022 Usos: contadores, edades, cantidades) Tj
+0 -25 Td
+/F2 12 Tf
+(N\372meros Decimales \(float/double\):) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Representan cantidades con fracciones: 3.14, -2.5, 0.001) Tj
+0 -15 Td
+(\2022 Usos: precios, medidas, c\341lculos cient\355ficos) Tj
+0 -25 Td
+/F2 12 Tf
+(Texto \(string\):) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Secuencias de caracteres: "Hola", "123abc", "usuario@email.com") Tj
+0 -15 Td
+(\2022 Usos: nombres, mensajes, URLs) Tj
+0 -25 Td
+/F2 12 Tf
+(Booleanos \(bool\):) Tj
+0 -20 Td
+/F1 11 Tf
+(\2022 Solo dos valores: verdadero \(true\) o falso \(false\)) Tj
+0 -15 Td
+(\2022 Usos: condiciones, estados, validaciones) Tj
+0 -30 Td
+/F2 14 Tf
+(8. Variables y Constantes) Tj
+0 -25 Td
+/F1 11 Tf
+(Las variables son contenedores que almacenan datos que pueden cambiar:) Tj
+0 -20 Td
+(Ejemplos en pseudoc\363digo:) Tj
+0 -15 Td
+(    edad = 25                    // Variable entera) Tj
+0 -15 Td
+(    nombre = "Ana"               // Variable de texto) Tj
+0 -15 Td
+(    precio = 19.99              // Variable decimal) Tj
+0 -15 Td
+(    activo = verdadero          // Variable booleana) Tj
+0 -25 Td
+(Las constantes son valores que NO cambian durante la ejecuci\363n:) Tj
+0 -15 Td
+(    PI = 3.14159                // Constante matem\341tica) Tj
+0 -15 Td
+(    IVA = 0.21                  // Constante fiscal) Tj
+0 -15 Td
+(    EMPRESA = "Mi Empresa"      // Constante de texto) Tj
+0 -30 Td
+/F2 14 Tf
+(9. Reglas para Nombrar Variables) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Usar nombres descriptivos: "edad" en lugar de "e") Tj
+0 -15 Td
+(\2022 No espacios: usar guiones bajos o camelCase) Tj
+0 -15 Td
+(\2022 No empezar con n\372meros: "usuario1" no "1usuario") Tj
+0 -15 Td
+(\2022 Evitar caracteres especiales: solo letras, n\372meros y _) Tj
+0 -15 Td
+(\2022 Ser consistente en el estilo a lo largo del programa) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(10. Operadores Aritm\351ticos) Tj
+0 -30 Td
+/F1 11 Tf
+(Permiten realizar c\341lculos matem\341ticos con n\372meros:) Tj
+0 -25 Td
+(\2022 Suma \(+\): 5 + 3 = 8) Tj
+0 -15 Td
+(\2022 Resta \(-\): 10 - 4 = 6) Tj
+0 -15 Td
+(\2022 Multiplicaci\363n \(*\): 6 * 7 = 42) Tj
+0 -15 Td
+(\2022 Divisi\363n \(/\): 15 / 3 = 5) Tj
+0 -15 Td
+(\2022 M\363dulo \(%\): 17 % 5 = 2 \(resto de la divisi\363n\)) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejemplo Pr\341ctico - Calculadora de Propinas:) Tj
+0 -20 Td
+/F1 11 Tf
+(    cuentaRestaurante = 45.50) Tj
+0 -15 Td
+(    porcentajePropina = 15) Tj
+0 -15 Td
+(    propina = cuentaRestaurante * porcentajePropina / 100) Tj
+0 -15 Td
+(    totalPagar = cuentaRestaurante + propina) Tj
+0 -15 Td
+(    // Resultado: propina = 6.83, total = 52.33) Tj
+0 -30 Td
+/F2 14 Tf
+(11. Operadores de Comparaci\363n) Tj
+0 -25 Td
+/F1 11 Tf
+(Comparan valores y devuelven verdadero o falso:) Tj
+0 -20 Td
+(\2022 Igual a \(==\): 5 == 5 es verdadero) Tj
+0 -15 Td
+(\2022 Diferente de \(!=\): 5 != 3 es verdadero) Tj
+0 -15 Td
+(\2022 Mayor que \(>\): 10 > 7 es verdadero) Tj
+0 -15 Td
+(\2022 Menor que \(<\): 3 < 8 es verdadero) Tj
+0 -15 Td
+(\2022 Mayor o igual \(>=\): 5 >= 5 es verdadero) Tj
+0 -15 Td
+(\2022 Menor o igual \(<=\): 4 <= 9 es verdadero) Tj
+0 -30 Td
+/F2 14 Tf
+(12. Operadores L\363gicos) Tj
+0 -25 Td
+/F1 11 Tf
+(Combinan condiciones booleanas:) Tj
+0 -20 Td
+/F2 12 Tf
+(AND \(&&\) - Y l\363gico:) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 verdadero AND verdadero = verdadero) Tj
+0 -15 Td
+(\2022 Cualquier otra combinaci\363n = falso) Tj
+0 -20 Td
+/F2 12 Tf
+(OR \(||\) - O l\363gico:) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 falso OR falso = falso) Tj
+0 -15 Td
+(\2022 Cualquier otra combinaci\363n = verdadero) Tj
+0 -20 Td
+/F2 12 Tf
+(NOT \(!\) - Negaci\363n:) Tj
+0 -18 Td
+/F1 11 Tf
+(\2022 NOT verdadero = falso) Tj
+0 -15 Td
+(\2022 NOT falso = verdadero) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejemplo Pr\341ctico:) Tj
+0 -20 Td
+/F1 11 Tf
+(    edad = 20) Tj
+0 -15 Td
+(    tieneCarnet = verdadero) Tj
+0 -15 Td
+(    puedeConducir = \(edad >= 18\) AND tieneCarnet) Tj
+0 -15 Td
+(    // Resultado: verdadero) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 1750
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(13. Ejercicios Pr\341cticos) Tj
+0 -30 Td
+/F2 14 Tf
+(Ejercicio 1: Conversor de Temperatura) Tj
+0 -25 Td
+/F1 11 Tf
+(Crear un algoritmo que convierta grados Celsius a Fahrenheit:) Tj
+0 -20 Td
+(ALGORITMO ConvertirTemperatura) Tj
+0 -15 Td
+(VARIABLES: celsius, fahrenheit) Tj
+0 -15 Td
+(INICIO) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese temperatura en Celsius: ") Tj
+0 -15 Td
+(    LEER celsius) Tj
+0 -15 Td
+(    fahrenheit = \(celsius * 9/5\) + 32) Tj
+0 -15 Td
+(    ESCRIBIR celsius, "\260C son ", fahrenheit, "\260F") Tj
+0 -15 Td
+(FIN) Tj
+0 -30 Td
+/F2 14 Tf
+(Ejercicio 2: Calculadora de IMC) Tj
+0 -25 Td
+/F1 11 Tf
+(Crear un algoritmo que calcule el \315ndice de Masa Corporal:) Tj
+0 -20 Td
+(ALGORITMO CalcularIMC) Tj
+0 -15 Td
+(VARIABLES: peso, altura, imc) Tj
+0 -15 Td
+(INICIO) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese su peso en kg: ") Tj
+0 -15 Td
+(    LEER peso) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese su altura en metros: ") Tj
+0 -15 Td
+(    LEER altura) Tj
+0 -15 Td
+(    imc = peso / \(altura * altura\)) Tj
+0 -15 Td
+(    ESCRIBIR "Su IMC es: ", imc) Tj
+0 -15 Td
+(    SI imc < 18.5 ENTONCES) Tj
+0 -15 Td
+(        ESCRIBIR "Bajo peso") Tj
+0 -15 Td
+(    SINO SI imc < 25 ENTONCES) Tj
+0 -15 Td
+(        ESCRIBIR "Peso normal") Tj
+0 -15 Td
+(    SINO SI imc < 30 ENTONCES) Tj
+0 -15 Td
+(        ESCRIBIR "Sobrepeso") Tj
+0 -15 Td
+(    SINO) Tj
+0 -15 Td
+(        ESCRIBIR "Obesidad") Tj
+0 -15 Td
+(    FIN SI) Tj
+0 -15 Td
+(FIN) Tj
+0 -30 Td
+/F2 14 Tf
+(Ejercicio 3: Verificador de A\361o Bisiesto) Tj
+0 -25 Td
+/F1 11 Tf
+(Un a\361o es bisiesto si es divisible por 4, excepto los a\361os) Tj
+0 -15 Td
+(divisibles por 100, a menos que tambi\351n sean divisibles por 400:) Tj
+0 -20 Td
+(ALGORITMO VerificarBisiesto) Tj
+0 -15 Td
+(VARIABLES: anio, esBisiesto) Tj
+0 -15 Td
+(INICIO) Tj
+0 -15 Td
+(    ESCRIBIR "Ingrese un a\361o: ") Tj
+0 -15 Td
+(    LEER anio) Tj
+0 -15 Td
+(    esBisiesto = \(\(anio % 4 == 0\) AND \(anio % 100 != 0\)\)) Tj
+0 -15 Td
+(                 OR \(anio % 400 == 0\)) Tj
+0 -15 Td
+(    SI esBisiesto ENTONCES) Tj
+0 -15 Td
+(        ESCRIBIR anio, " es bisiesto") Tj
+0 -15 Td
+(    SINO) Tj
+0 -15 Td
+(        ESCRIBIR anio, " no es bisiesto") Tj
+0 -15 Td
+(    FIN SI) Tj
+0 -15 Td
+(FIN) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 1900
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(14. Buenas Pr\341cticas en Programaci\363n) Tj
+0 -30 Td
+/F2 14 Tf
+(Principio DRY \(Don't Repeat Yourself\)) Tj
+0 -25 Td
+/F1 11 Tf
+(Evitar duplicar c\363digo. Si necesitas hacer algo m\341s de una vez,) Tj
+0 -15 Td
+(cr\351alo como una funci\363n reutilizable.) Tj
+0 -25 Td
+/F2 14 Tf
+(Nomenclatura Clara y Consistente) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Usar nombres descriptivos: "calcularPrecioTotal" no "calc") Tj
+0 -15 Td
+(\2022 Ser consistente: si usas camelCase, usalo siempre) Tj
+0 -15 Td
+(\2022 Evitar abreviaciones confusas: "usuario" no "usr") Tj
+0 -25 Td
+/F2 14 Tf
+(Comentarios y Documentaci\363n) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Explicar QU\311 hace el c\363digo, no C\323MO) Tj
+0 -15 Td
+(\2022 Comentar l\363gica compleja o decisiones de dise\361o) Tj
+0 -15 Td
+(\2022 Mantener comentarios actualizados con el c\363digo) Tj
+0 -25 Td
+/F2 14 Tf
+(Manejo de Errores) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Anticipar qu\351 puede salir mal) Tj
+0 -15 Td
+(\2022 Validar datos de entrada) Tj
+0 -15 Td
+(\2022 Proporcionar mensajes de error \372tiles) Tj
+0 -25 Td
+/F2 14 Tf
+(Testing y Verificaci\363n) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Probar con diferentes tipos de datos) Tj
+0 -15 Td
+(\2022 Verificar casos extremos \(valores muy grandes, muy peque\361os\)) Tj
+0 -15 Td
+(\2022 Asegurarse de que el programa maneja errores graciosamente) Tj
+0 -30 Td
+/F2 14 Tf
+(15. Introducci\363n a las Funciones) Tj
+0 -25 Td
+/F1 11 Tf
+(Las funciones son bloques de c\363digo reutilizables que realizan) Tj
+0 -15 Td
+(una tarea espec\355fica. Beneficios principales:) Tj
+0 -20 Td
+(\2022 Reutilizaci\363n: Escribe una vez, usa muchas veces) Tj
+0 -15 Td
+(\2022 Organizaci\363n: Divide problemas complejos en partes m\341s simples) Tj
+0 -15 Td
+(\2022 Mantenimiento: Cambios en un lugar afectan todo el programa) Tj
+0 -15 Td
+(\2022 Testing: M\341s f\341cil probar piezas peque\361as independientes) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejemplo de Funci\363n:) Tj
+0 -20 Td
+/F1 11 Tf
+(FUNCION calcularAreaCirculo\(radio\)) Tj
+0 -15 Td
+(    PI = 3.14159) Tj
+0 -15 Td
+(    area = PI * radio * radio) Tj
+0 -15 Td
+(    RETORNAR area) Tj
+0 -15 Td
+(FIN FUNCION) Tj
+0 -20 Td
+(// Uso de la funci\363n:) Tj
+0 -15 Td
+(radioCirculo = 5) Tj
+0 -15 Td
+(superficieCirculo = calcularAreaCirculo\(radioCirculo\)) Tj
+0 -15 Td
+(ESCRIBIR "El \341rea es: ", superficieCirculo) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1600
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(16. Resumen y Pr\363ximos Pasos) Tj
+0 -30 Td
+/F2 14 Tf
+(Conceptos Clave Aprendidos) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 La programaci\363n es resolver problemas paso a paso) Tj
+0 -15 Td
+(\2022 Los algoritmos son secuencias l\363gicas de instrucciones) Tj
+0 -15 Td
+(\2022 Los datos tienen tipos: n\372meros, texto, booleanos) Tj
+0 -15 Td
+(\2022 Las variables almacenan datos que pueden cambiar) Tj
+0 -15 Td
+(\2022 Los operadores permiten manipular y comparar datos) Tj
+0 -15 Td
+(\2022 El pensamiento computacional es fundamental) Tj
+0 -15 Td
+(\2022 Las buenas pr\341cticas evitan problemas futuros) Tj
+0 -30 Td
+/F2 14 Tf
+(Habilidades Desarrolladas) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Analizar problemas y descomponerlos en partes) Tj
+0 -15 Td
+(\2022 Crear algoritmos usando pseudoc\363digo) Tj
+0 -15 Td
+(\2022 Dise\361ar diagramas de flujo) Tj
+0 -15 Td
+(\2022 Entender tipos de datos y operadores) Tj
+0 -15 Td
+(\2022 Aplicar l\363gica para resolver problemas reales) Tj
+0 -30 Td
+/F2 14 Tf
+(Aplicaciones Pr\341cticas) Tj
+0 -25 Td
+/F1 11 Tf
+(Los conceptos aprendidos se aplican en:) Tj
+0 -15 Td
+(\2022 Desarrollo de aplicaciones m\363viles) Tj
+0 -15 Td
+(\2022 Creaci\363n de sitios web interactivos) Tj
+0 -15 Td
+(\2022 Automatizaci\363n de tareas repetitivas) Tj
+0 -15 Td
+(\2022 An\341lisis de datos y estad\355sticas) Tj
+0 -15 Td
+(\2022 Inteligencia artificial y machine learning) Tj
+0 -15 Td
+(\2022 Videojuegos y simulaciones) Tj
+0 -30 Td
+/F2 14 Tf
+(Preparaci\363n para el Tema 2) Tj
+0 -25 Td
+/F1 11 Tf
+(En el pr\363ximo tema abordaremos:) Tj
+0 -15 Td
+(\2022 HTML: Estructura de p\341ginas web) Tj
+0 -15 Td
+(\2022 CSS: Estilizaci\363n y dise\361o visual) Tj
+0 -15 Td
+(\2022 Creaci\363n de tu primera p\341gina web) Tj
+0 -15 Td
+(\2022 Formularios interactivos) Tj
+0 -15 Td
+(\2022 Dise\361o responsivo para m\363viles) Tj
+0 -30 Td
+/F2 14 Tf
+(Recomendaciones de Estudio) Tj
+0 -25 Td
+/F1 11 Tf
+(\2022 Practica los ejercicios hasta dominarlos completamente) Tj
+0 -15 Td
+(\2022 Crea tus propios problemas y resuelve con algoritmos) Tj
+0 -15 Td
+(\2022 Revisa los conceptos antes de avanzar al siguiente tema) Tj
+0 -15 Td
+(\2022 Busca ejemplos adicionales en situaciones cotidianas) Tj
+0 -15 Td
+(\2022 Forma grupos de estudio para discutir soluciones) Tj
+0 -30 Td
+/F1 10 Tf
+(Este material ha sido dise\361ado para proporcionar una base s\363lida) Tj
+0 -12 Td
+(en los fundamentos de la programaci\363n. La pr\341ctica constante y) Tj
+0 -12 Td
+(la aplicaci\363n de estos conceptos ser\341 clave para tu \351xito como) Tj
+0 -12 Td
+(desarrollador. \241Contin\372a con entusiasmo hacia el Tema 2!) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000274 00000 n 
+0000000418 00000 n 
+0000000562 00000 n 
+0000000706 00000 n 
+0000000850 00000 n 
+0000000994 00000 n 
+0000001138 00000 n 
+0000001205 00000 n 
+0000001278 00000 n 
+0000003280 00000 n 
+0000005182 00000 n 
+0000007134 00000 n 
+0000008986 00000 n 
+0000010788 00000 n 
+0000012740 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+14392
+%%EOF

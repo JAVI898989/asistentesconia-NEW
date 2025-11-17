@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 8: Proyecto Final Full Stack</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #fbbf24;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #fbbf24;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #1f2937;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #fcd34d;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #fbbf24;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #34d399;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #60a5fa;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+      .milestone {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🎯 TEMA 8: PROYECTO FINAL FULL STACK</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #1f2937">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        Aplicación completa con frontend React y backend Node.js
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>Descripción del Proyecto</li>
+        <li>Planificación y Arquitectura</li>
+        <li>Setup del Entorno de Desarrollo</li>
+        <li>Backend: API REST Completa</li>
+        <li>Frontend: Aplicación React</li>
+        <li>Integración Frontend-Backend</li>
+        <li>Testing y Validación</li>
+        <li>Despliegue en Producción</li>
+        <li>Entrega y Presentación</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. DESCRIPCIÓN DEL PROYECTO</h2>
+
+      <div class="definition">
+        <h4>TaskFlow - Gestor de Proyectos y Tareas</h4>
+        <p>
+          Desarrollarás una aplicación web completa para gestión de proyectos y
+          tareas, similar a Trello o Asana, que incluya autenticación de
+          usuarios, gestión de equipos, tableros kanban, y notificaciones en
+          tiempo real.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Funcionalidades Principales</h3>
+
+        <h4>🔐 Sistema de Usuarios:</h4>
+        <ul>
+          <li>Registro y login con validación</li>
+          <li>Perfiles de usuario personalizables</li>
+          <li>Roles: Admin, Project Manager, Developer, Viewer</li>
+          <li>Autenticación con JWT</li>
+          <li>Reset de contraseña por email</li>
+        </ul>
+
+        <h4>📋 Gestión de Proyectos:</h4>
+        <ul>
+          <li>Crear, editar y eliminar proyectos</li>
+          <li>Invitar miembros a proyectos</li>
+          <li>Tableros Kanban (To Do, In Progress, Done)</li>
+          <li>Tareas con prioridades y fechas límite</li>
+          <li>Comentarios y menciones (@usuario)</li>
+        </ul>
+
+        <h4>👥 Colaboración:</h4>
+        <ul>
+          <li>Chat en tiempo real por proyecto</li>
+          <li>Notificaciones push</li>
+          <li>Actividad timeline</li>
+          <li>Archivos adjuntos en tareas</li>
+          <li>Asignación múltiple de tareas</li>
+        </ul>
+
+        <h4>📊 Reportes y Analytics:</h4>
+        <ul>
+          <li>Dashboard con métricas</li>
+          <li>Progreso de proyectos</li>
+          <li>Tiempo dedicado por usuario</li>
+          <li>Gráficos de burndown</li>
+          <li>Exportación a PDF</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>1.2 Stack Tecnológico</h3>
+
+        <div class="example">
+          🎨 Frontend:<br />
+          - React 18 con TypeScript<br />
+          - Vite como build tool<br />
+          - React Router para navegación<br />
+          - Context API + useReducer para estado global<br />
+          - React Hook Form para formularios<br />
+          - Tailwind CSS para estilos<br />
+          - React Query para cache de datos<br />
+          - Socket.io-client para tiempo real<br /><br />
+          🚀 Backend:<br />
+          - Node.js con Express<br />
+          - MongoDB con Mongoose<br />
+          - JWT para autenticación<br />
+          - Socket.io para WebSockets<br />
+          - Multer para upload de archivos<br />
+          - Nodemailer para emails<br />
+          - Express Validator para validaciones<br />
+          - Jest y Supertest para testing<br /><br />
+          🛠️ DevOps:<br />
+          - Docker y Docker Compose<br />
+          - GitHub Actions para CI/CD<br />
+          - Heroku para deploy backend<br />
+          - Vercel para deploy frontend<br />
+          - MongoDB Atlas para base de datos<br />
+          - Cloudinary para almacenamiento de archivos
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. PLANIFICACIÓN Y ARQUITECTURA</h2>
+
+      <div class="section">
+        <h3>2.1 Metodología de Desarrollo</h3>
+
+        <div class="milestone">
+          <h4>📅 Sprint 1 (Semana 1): Fundación</h4>
+          <ul>
+            <li>Setup del entorno de desarrollo</li>
+            <li>Configuración de repositorios</li>
+            <li>Diseño de base de datos</li>
+            <li>API básica con autenticación</li>
+            <li>Frontend con routing básico</li>
+          </ul>
+        </div>
+
+        <div class="milestone">
+          <h4>📅 Sprint 2 (Semana 2): Core Features</h4>
+          <ul>
+            <li>CRUD completo de proyectos</li>
+            <li>Sistema de tareas y tableros</li>
+            <li>Interfaz de usuario principal</li>
+            <li>Drag & drop para tareas</li>
+            <li>Sistema de invitaciones</li>
+          </ul>
+        </div>
+
+        <div class="milestone">
+          <h4>📅 Sprint 3 (Semana 3): Colaboración</h4>
+          <ul>
+            <li>Chat en tiempo real</li>
+            <li>Sistema de notificaciones</li>
+            <li>Upload de archivos</li>
+            <li>Comentarios en tareas</li>
+            <li>Timeline de actividades</li>
+          </ul>
+        </div>
+
+        <div class="milestone">
+          <h4>📅 Sprint 4 (Semana 4): Refinamiento</h4>
+          <ul>
+            <li>Dashboard y reportes</li>
+            <li>Testing completo</li>
+            <li>Optimización y performance</li>
+            <li>Despliegue en producción</li>
+            <li>Documentación y presentación</li>
+          </ul>
+        </div>
+
+        <h3>2.2 Arquitectura del Sistema</h3>
+
+        <div class="example">
+          ┌─────────────────────────────────────────────────────────┐<br />
+          │ FRONTEND (React) │<br />
+          │ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ │<br />
+          │ │ Auth │ │ Project │ │ Dashboard │ │<br />
+          │ │ Components │ │ Management │ │ & Reports │ │<br />
+          │ └─────────────┘ └─────────────┘ └─────────────────┘ │<br />
+          │ │ │ │ │<br />
+          │ └──────────────┼────────────────┘ │<br />
+          │ │ │<br />
+          └───────────���──────────────┼─────────────────────────────┘<br />
+          │ HTTP/WebSocket<br />
+          ┌──────────────────────────┼─────────────────────────────┐<br />
+          │ BACKEND (Node.js) │<br />
+          │ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ │<br />
+          │ │ Express │ │ Socket.io │ │ Middleware │ │<br />
+          │ │ Routes │ │ Handlers │ │ (Auth, CORS) │ │<br />
+          │ └─────────────┘ └─────────────┘ └─────────────────┘ │<br />
+          │ │ │ │ │<br />
+          │ └──────────────┼────────────────┘ │<br />
+          │ │ │<br />
+          └──────────────────────────┼─────────────────────────────┘<br />
+          │ MongoDB Driver<br />
+          ┌──────────────────────────┼─────────────────────────────┐<br />
+          │ DATABASE (MongoDB) │<br />
+          │ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ │<br />
+          │ │ Users │ │ Projects │ │ Tasks │ │<br />
+          │ │ Collection │ │ Collection │ │ Collection │ │<br />
+          │ └─────────────┘ └─────────────┘ └─────────────────┘ │<br />
+          └─────────────────────────────────────────────────────────┘
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. SETUP DEL ENTORNO DE DESARROLLO</h2>
+
+      <div class="section">
+        <h3>3.1 Estructura del Proyecto</h3>
+
+        <div class="example">
+          taskflow-app/<br />
+          ├── client/ # Frontend React<br />
+          │ ├── public/<br />
+          │ │ ├── index.html<br />
+          │ │ └── favicon.ico<br />
+          │ ├── src/<br />
+          │ │ ├── components/ # Componentes reutilizables<br />
+          │ │ │ ├── ui/ # Componentes básicos<br />
+          │ │ │ ├── forms/ # Formularios<br />
+          │ │ │ └── layout/ # Layout components<br />
+          │ │ ├── pages/ # Páginas principales<br />
+          │ │ │ ├── auth/<br />
+          │ │ │ ├── dashboard/<br />
+          │ │ │ └── projects/<br />
+          │ │ ├── hooks/ # Custom hooks<br />
+          │ │ ├── context/ # Context providers<br />
+          │ │ ├── services/ # API calls<br />
+          │ │ ├── utils/ # Utilidades<br />
+          │ │ ├── types/ # TypeScript types<br />
+          │ │ └── App.tsx<br />
+          │ ├── package.json<br />
+          │ └── vite.config.ts<br />
+          ├── server/ # Backend Node.js<br />
+          │ ├── src/<br />
+          │ │ ├── controllers/ # Controladores<br />
+          │ │ ├── models/ # Modelos Mongoose<br />
+          │ │ ├── routes/ # Rutas Express<br />
+          │ │ ├── middleware/ # Middleware personalizado<br />
+          │ │ ├── utils/ # Utilidades<br />
+          │ │ ├── config/ # Configuraciones<br />
+          │ │ └── app.js<br />
+          │ ├── tests/ # Tests<br />
+          │ └── package.json<br />
+          ├── docs/ # Documentación<br />
+          ├── docker-compose.yml<br />
+          └── README.md
+        </div>
+
+        <h3>3.2 Configuración Inicial</h3>
+
+        <div class="example">
+          # Crear estructura del proyecto<br />
+          mkdir taskflow-app && cd taskflow-app<br />
+          mkdir client server docs<br /><br />
+          # Setup Frontend (React + TypeScript + Vite)<br />
+          cd client<br />
+          npm create vite@latest . -- --template react-ts<br />
+          npm install<br />
+          npm install react-router-dom react-hook-form<br />
+          npm install @tanstack/react-query axios<br />
+          npm install tailwindcss postcss autoprefixer<br />
+          npm install socket.io-client<br />
+          npm install @types/node<br /><br />
+          # Setup Backend (Node.js + Express)<br />
+          cd ../server<br />
+          npm init -y<br />
+          npm install express mongoose cors dotenv<br />
+          npm install jsonwebtoken bcryptjs<br />
+          npm install socket.io multer nodemailer<br />
+          npm install express-validator express-rate-limit helmet<br />
+          npm install --save-dev nodemon jest supertest<br /><br />
+          # Variables de entorno<br />
+          echo "NODE_ENV=development" > .env<br />
+          echo "PORT=5000" >> .env<br />
+          echo "MONGO_URI=mongodb://localhost:27017/taskflow" >> .env<br />
+          echo "JWT_SECRET=tu-secreto-aqui" >> .env
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. BACKEND: API REST COMPLETA</h2>
+
+      <div class="section">
+        <h3>4.1 Modelos de Base de Datos</h3>
+
+        <div class="example">
+          // models/User.js<br />
+          const mongoose = require('mongoose');<br />
+          const bcrypt = require('bcryptjs');<br /><br />
+          const userSchema = new mongoose.Schema({<br />
+          &nbsp;&nbsp;username: { type: String, required: true, unique: true
+          },<br />
+          &nbsp;&nbsp;email: { type: String, required: true, unique: true },<br />
+          &nbsp;&nbsp;password: { type: String, required: true },<br />
+          &nbsp;&nbsp;firstName: { type: String, required: true },<br />
+          &nbsp;&nbsp;lastName: { type: String, required: true },<br />
+          &nbsp;&nbsp;avatar: { type: String, default: '' },<br />
+          &nbsp;&nbsp;role: { type: String, enum: ['admin', 'manager',
+          'developer', 'viewer'], default: 'developer' },<br />
+          &nbsp;&nbsp;isActive: { type: Boolean, default: true },<br />
+          &nbsp;&nbsp;lastLogin: { type: Date }<br />
+          }, { timestamps: true });<br /><br />
+          // models/Project.js<br />
+          const projectSchema = new mongoose.Schema({<br />
+          &nbsp;&nbsp;name: { type: String, required: true },<br />
+          &nbsp;&nbsp;description: { type: String },<br />
+          &nbsp;&nbsp;owner: { type: mongoose.Schema.Types.ObjectId, ref:
+          'User', required: true },<br />
+          &nbsp;&nbsp;members: [{ <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;user: { type: mongoose.Schema.Types.ObjectId,
+          ref: 'User' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;role: { type: String, enum: ['admin',
+          'member', 'viewer'], default: 'member' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;joinedAt: { type: Date, default: Date.now }<br />
+          &nbsp;&nbsp;}],<br />
+          &nbsp;&nbsp;status: { type: String, enum: ['active', 'completed',
+          'archived'], default: 'active' },<br />
+          &nbsp;&nbsp;dueDate: { type: Date },<br />
+          &nbsp;&nbsp;color: { type: String, default: '#3B82F6' }<br />
+          }, { timestamps: true });<br /><br />
+          // models/Task.js<br />
+          const taskSchema = new mongoose.Schema({<br />
+          &nbsp;&nbsp;title: { type: String, required: true },<br />
+          &nbsp;&nbsp;description: { type: String },<br />
+          &nbsp;&nbsp;project: { type: mongoose.Schema.Types.ObjectId, ref:
+          'Project', required: true },<br />
+          &nbsp;&nbsp;assignedTo: [{ type: mongoose.Schema.Types.ObjectId, ref:
+          'User' }],<br />
+          &nbsp;&nbsp;createdBy: { type: mongoose.Schema.Types.ObjectId, ref:
+          'User', required: true },<br />
+          &nbsp;&nbsp;status: { type: String, enum: ['todo', 'in-progress',
+          'review', 'done'], default: 'todo' },<br />
+          &nbsp;&nbsp;priority: { type: String, enum: ['low', 'medium', 'high',
+          'urgent'], default: 'medium' },<br />
+          &nbsp;&nbsp;dueDate: { type: Date },<br />
+          &nbsp;&nbsp;estimatedHours: { type: Number },<br />
+          &nbsp;&nbsp;actualHours: { type: Number, default: 0 },<br />
+          &nbsp;&nbsp;tags: [{ type: String }],<br />
+          &nbsp;&nbsp;attachments: [{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;filename: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;url: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;uploadedBy: { type:
+          mongoose.Schema.Types.ObjectId, ref: 'User' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;uploadedAt: { type: Date, default: Date.now
+          }<br />
+          &nbsp;&nbsp;}],<br />
+          &nbsp;&nbsp;comments: [{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;user: { type: mongoose.Schema.Types.ObjectId,
+          ref: 'User' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;createdAt: { type: Date, default: Date.now
+          }<br />
+          &nbsp;&nbsp;}]<br />
+          }, { timestamps: true });
+        </div>
+
+        <h3>4.2 Rutas y Controladores</h3>
+
+        <div class="example">
+          // routes/auth.js<br />
+          const express = require('express');<br />
+          const { body } = require('express-validator');<br />
+          const authController = require('../controllers/authController');<br />
+          const auth = require('../middleware/auth');<br /><br />
+          const router = express.Router();<br /><br />
+          // POST /api/auth/register<br />
+          router.post('/register', [<br />
+          &nbsp;&nbsp;body('username').isLength({ min: 3
+          }).withMessage('Username must be at least 3 characters'),<br />
+          &nbsp;&nbsp;body('email').isEmail().withMessage('Invalid email'),<br />
+          &nbsp;&nbsp;body('password').isLength({ min: 6
+          }).withMessage('Password must be at least 6 characters')<br />
+          ], authController.register);<br /><br />
+          // POST /api/auth/login<br />
+          router.post('/login', [<br />
+          &nbsp;&nbsp;body('email').isEmail().withMessage('Invalid email'),<br />
+          &nbsp;&nbsp;body('password').exists().withMessage('Password is
+          required')<br />
+          ], authController.login);<br /><br />
+          // GET /api/auth/me<br />
+          router.get('/me', auth, authController.getMe);<br /><br />
+          // PUT /api/auth/profile<br />
+          router.put('/profile', auth, authController.updateProfile);<br /><br />
+          module.exports = router;<br /><br />
+          // controllers/authController.js<br />
+          const bcrypt = require('bcryptjs');<br />
+          const jwt = require('jsonwebtoken');<br />
+          const { validationResult } = require('express-validator');<br />
+          const User = require('../models/User');<br /><br />
+          exports.register = async (req, res) => {<br />
+          &nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const errors = validationResult(req);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!errors.isEmpty()) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return res.status(400).json({
+          errors: errors.array() });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const { username, email, password, firstName,
+          lastName } = req.body;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Verificar si el usuario ya existe<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const existingUser = await User.findOne({ $or:
+          [{ email }, { username }] });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (existingUser) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return res.status(400).json({
+          message: 'User already exists' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Crear nuevo usuario<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const hashedPassword = await
+          bcrypt.hash(password, 12);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const user = new User({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: hashedPassword,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstName,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastName<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;await user.save();<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Generar JWT<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const token = jwt.sign(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ userId: user._id },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;process.env.JWT_SECRET,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ expiresIn: '7d' }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(201).json({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message: 'User created
+          successfully',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: user._id,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username:
+          user.username,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: user.email,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstName:
+          user.firstName,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastName:
+          user.lastName<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+          &nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;res.status(500).json({ message: 'Server
+          error', error: error.message });<br />
+          &nbsp;&nbsp;}<br />
+          };
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>5. FRONTEND: APLICACIÓN REACT</h2>
+
+      <div class="section">
+        <h3>5.1 Configuración de React con TypeScript</h3>
+
+        <div class="example">
+          // src/types/index.ts<br />
+          export interface User {<br />
+          &nbsp;&nbsp;id: string;<br />
+          &nbsp;&nbsp;username: string;<br />
+          &nbsp;&nbsp;email: string;<br />
+          &nbsp;&nbsp;firstName: string;<br />
+          &nbsp;&nbsp;lastName: string;<br />
+          &nbsp;&nbsp;avatar?: string;<br />
+          &nbsp;&nbsp;role: 'admin' | 'manager' | 'developer' | 'viewer';<br />
+          }<br /><br />
+          export interface Project {<br />
+          &nbsp;&nbsp;id: string;<br />
+          &nbsp;&nbsp;name: string;<br />
+          &nbsp;&nbsp;description?: string;<br />
+          &nbsp;&nbsp;owner: User;<br />
+          &nbsp;&nbsp;members: ProjectMember[];<br />
+          &nbsp;&nbsp;status: 'active' | 'completed' | 'archived';<br />
+          &nbsp;&nbsp;dueDate?: string;<br />
+          &nbsp;&nbsp;color: string;<br />
+          &nbsp;&nbsp;createdAt: string;<br />
+          &nbsp;&nbsp;updatedAt: string;<br />
+          }<br /><br />
+          export interface Task {<br />
+          &nbsp;&nbsp;id: string;<br />
+          &nbsp;&nbsp;title: string;<br />
+          &nbsp;&nbsp;description?: string;<br />
+          &nbsp;&nbsp;project: string;<br />
+          &nbsp;&nbsp;assignedTo: User[];<br />
+          &nbsp;&nbsp;createdBy: User;<br />
+          &nbsp;&nbsp;status: 'todo' | 'in-progress' | 'review' | 'done';<br />
+          &nbsp;&nbsp;priority: 'low' | 'medium' | 'high' | 'urgent';<br />
+          &nbsp;&nbsp;dueDate?: string;<br />
+          &nbsp;&nbsp;estimatedHours?: number;<br />
+          &nbsp;&nbsp;actualHours: number;<br />
+          &nbsp;&nbsp;tags: string[];<br />
+          &nbsp;&nbsp;attachments: Attachment[];<br />
+          &nbsp;&nbsp;comments: Comment[];<br />
+          &nbsp;&nbsp;createdAt: string;<br />
+          &nbsp;&nbsp;updatedAt: string;<br />
+          }
+        </div>
+
+        <h3>5.2 Context para Estado Global</h3>
+
+        <div class="example">
+          // src/context/AuthContext.tsx<br />
+          import React, { createContext, useContext, useReducer, useEffect }
+          from 'react';<br />
+          import { User } from '../types';<br />
+          import { authService } from '../services/authService';<br /><br />
+          interface AuthState {<br />
+          &nbsp;&nbsp;user: User | null;<br />
+          &nbsp;&nbsp;token: string | null;<br />
+          &nbsp;&nbsp;isLoading: boolean;<br />
+          &nbsp;&nbsp;isAuthenticated: boolean;<br />
+          }<br /><br />
+          type AuthAction =<br />
+          &nbsp;&nbsp;| { type: 'LOGIN_START' }<br />
+          &nbsp;&nbsp;| { type: 'LOGIN_SUCCESS'; payload: { user: User; token:
+          string } }<br />
+          &nbsp;&nbsp;| { type: 'LOGIN_FAILURE' }<br />
+          &nbsp;&nbsp;| { type: 'LOGOUT' }<br />
+          &nbsp;&nbsp;| { type: 'UPDATE_USER'; payload: User };<br /><br />
+          const initialState: AuthState = {<br />
+          &nbsp;&nbsp;user: null,<br />
+          &nbsp;&nbsp;token: localStorage.getItem('token'),<br />
+          &nbsp;&nbsp;isLoading: false,<br />
+          &nbsp;&nbsp;isAuthenticated: false<br />
+          };<br /><br />
+          const authReducer = (state: AuthState, action: AuthAction): AuthState
+          => {<br />
+          &nbsp;&nbsp;switch (action.type) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;case 'LOGIN_START':<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return { ...state, isLoading: true
+          };<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;case 'LOGIN_SUCCESS':<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localStorage.setItem('token',
+          action.payload.token);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...state,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user:
+          action.payload.user,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token:
+          action.payload.token,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isLoading: false,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAuthenticated:
+          true<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;case 'LOGOUT':<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localStorage.removeItem('token');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return { ...initialState, token:
+          null };<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;default:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return state;<br />
+          &nbsp;&nbsp;}<br />
+          };<br /><br />
+          const AuthContext = createContext&lt;{<br />
+          &nbsp;&nbsp;state: AuthState;<br />
+          &nbsp;&nbsp;login: (email: string, password: string) =>
+          Promise&lt;void&gt;;<br />
+          &nbsp;&nbsp;logout: () => void;<br />
+          &nbsp;&nbsp;register: (userData: any) => Promise&lt;void&gt;;<br />
+          }&gt;(null!);<br /><br />
+          export const AuthProvider: React.FC&lt;{ children: React.ReactNode
+          }&gt; = ({ children }) => {<br />
+          &nbsp;&nbsp;const [state, dispatch] = useReducer(authReducer,
+          initialState);<br /><br />
+          &nbsp;&nbsp;const login = async (email: string, password: string) =>
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;dispatch({ type: 'LOGIN_START' });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const response = await
+          authService.login(email, password);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dispatch({ type: 'LOGIN_SUCCESS',
+          payload: response });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dispatch({ type: 'LOGIN_FAILURE'
+          });<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw error;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;};<br /><br />
+          &nbsp;&nbsp;return (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;AuthContext.Provider value={{ state,
+          login, logout, register }}&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{children}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/AuthContext.Provider&gt;<br />
+          &nbsp;&nbsp;);<br />
+          };<br /><br />
+          export const useAuth = () => useContext(AuthContext);
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 ENTREGABLES DEL PROYECTO</h2>
+
+      <h3>📋 Requisitos Técnicos Mínimos</h3>
+      <ul>
+        <li>✅ API REST completa con al menos 15 endpoints</li>
+        <li>✅ Base de datos con mínimo 4 colecciones relacionadas</li>
+        <li>✅ Sistema de autenticación JWT funcional</li>
+        <li>✅ Frontend React con TypeScript</li>
+        <li>✅ Al menos 8 componentes React reutilizables</li>
+        <li>✅ Responsive design (móvil y desktop)</li>
+        <li>✅ Tests unitarios con mínimo 70% de cobertura</li>
+        <li>✅ Documentación técnica completa</li>
+        <li>✅ Deploy funcional en producción</li>
+        <li>✅ README con instrucciones de instalación</li>
+      </ul>
+
+      <h3>🎯 Criterios de Evaluación</h3>
+      <div class="milestone">
+        <h4>Funcionalidad (40 puntos)</h4>
+        <ul>
+          <li>Todas las funcionalidades principales implementadas</li>
+          <li>Navegación fluida y sin errores</li>
+          <li>Validaciones apropiadas en formularios</li>
+          <li>Manejo de errores profesional</li>
+        </ul>
+      </div>
+
+      <div class="milestone">
+        <h4>Código y Arquitectura (25 puntos)</h4>
+        <ul>
+          <li>Código limpio y bien estructurado</li>
+          <li>Patrones de diseño apropiados</li>
+          <li>Separación de responsabilidades</li>
+          <li>Reutilización de componentes</li>
+        </ul>
+      </div>
+
+      <div class="milestone">
+        <h4>UI/UX (20 puntos)</h4>
+        <ul>
+          <li>Diseño atractivo y profesional</li>
+          <li>Experiencia de usuario intuitiva</li>
+          <li>Responsive design efectivo</li>
+          <li>Consistencia visual</li>
+        </ul>
+      </div>
+
+      <div class="milestone">
+        <h4>Testing y Deploy (15 puntos)</h4>
+        <ul>
+          <li>Tests unitarios y de integración</li>
+          <li>Deploy exitoso en producción</li>
+          <li>Configuración de CI/CD</li>
+          <li>Documentación de APIs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="important">
+      <h2>🚀 ENTREGA Y PRESENTACIÓN</h2>
+      <h3>📅 Fecha de Entrega: Final de la Semana 4</h3>
+      <ul>
+        <li>
+          <strong>Repositorio GitHub:</strong> Código completo con README
+          detallado
+        </li>
+        <li>
+          <strong>Demo Live:</strong> Aplicación funcionando en producción
+        </li>
+        <li>
+          <strong>Documentación:</strong> API docs, diagramas de arquitectura
+        </li>
+        <li>
+          <strong>Presentación:</strong> 15 minutos demo + 5 minutos preguntas
+        </li>
+        <li>
+          <strong>Video Demo:</strong> 3-5 minutos mostrando funcionalidades
+          principales
+        </li>
+      </ul>
+
+      <h3>🎥 Estructura de la Presentación</h3>
+      <ol>
+        <li><strong>Introducción:</strong> Problema y solución (2 min)</li>
+        <li><strong>Demo Live:</strong> Funcionalidades principales (8 min)</li>
+        <li>
+          <strong>Arquitectura:</strong> Stack técnico y decisiones (3 min)
+        </li>
+        <li>
+          <strong>Desafíos:</strong> Problemas encontrados y soluciones (2 min)
+        </li>
+        <li><strong>Q&A:</strong> Preguntas del evaluador (5 min)</li>
+      </ol>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 8: Proyecto Final Full Stack</strong> | Página 1 de 1 |
+        Curso Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>

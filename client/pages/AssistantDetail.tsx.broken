@@ -1,0 +1,2883 @@
+import { useState, useEffect, useMemo } from "react";
+import { useParams, Navigate } from "react-router-dom";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { onSnapshot, collection } from "firebase/firestore";
+import { db } from "@/lib/simpleAuth";
+import { toast } from "sonner";
+import BlurredPreview from "@/components/BlurredPreview";
+import {
+  getAssistantPricing,
+  getAssistantTemario,
+  checkIsCurrentUserAdmin,
+  checkUserHasAccess,
+  AssistantPricing,
+  AssistantTemario,
+} from "@/lib/firebaseData";
+import {
+  getTestsForAssistant,
+  hasTests,
+  getTestCount,
+  getThemeCount,
+  subscribeToTestsRealtime,
+  type TestQuestion,
+  type ThemeTests
+} from "@/utils/assistantTestsUtils";
+import {
+  getTemariosForAssistant,
+  hasTemarios,
+  getTemarioCount,
+  subscribeToTemariosRealtime,
+  type TemarioContent
+} from "@/utils/assistantTemariosUtils";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  MessageCircle,
+  BookOpen,
+  FileText,
+  Brain,
+  TrendingUp,
+  Heart,
+  Crown,
+  Calendar,
+  Users,
+  Send,
+  RotateCcw,
+  CheckCircle,
+  Award,
+  Target,
+  Flame,
+  Trophy,
+  Star,
+  Clock,
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Check,
+} from "lucide-react";
+import Header from "@/components/Header";
+import Chat from "@/components/Chat";
+import PublicCurriculumViewer from "@/components/PublicCurriculumViewer";
+import ReferralCodeInput from "@/components/ReferralCodeInput";
+import type { ReferralValidationResult } from "@/types/referral";
+
+interface AssistantData {
+  id: string;
+  name: string;
+  description: string;
+  difficulty: string;
+  isPublic?: boolean;
+  founderPrice: {
+    monthly: number;
+    annual: number;
+  };
+  normalPrice: {
+    monthly: number;
+    annual: number;
+  };
+  fundador_activo: boolean;
+}
+
+// Helper function to get complete assistant data with pricing
+const getAssistantById = (id: string): AssistantData | null => {
+  // Complete list copied directly from admin panel with exact same pricing
+  const assistants = [
+    {
+      id: "auxiliar-administrativo-estado",
+      name: "Auxiliar Administrativo del Estado",
+      description: "Preparación completa para oposiciones de auxiliar administrativo del estado con temario actualizado",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "guardia-civil",
+      name: "Guardia Civil",
+      description: "Asistente especializado en oposiciones de Guardia Civil con simulacros y temario oficial",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "mir",
+      name: "Médico Interno Residente (MIR)",
+      description: "Preparación especializada para el examen MIR con casos cl��nicos y simulacros",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: false,
+    },
+    {
+      id: "celador",
+      name: "Celador",
+      description: "Preparación para oposiciones de celador hospitalario",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "bombero",
+      name: "Bombero",
+      description: "Preparaci��n completa para oposiciones de bombero",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "correos",
+      name: "Correos y Telégrafos",
+      description: "Preparación completa para oposiciones de correos",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "tecnico-hacienda",
+      name: "Técnico de Hacienda",
+      description: "Preparación completa para técnico de hacienda",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "policia-nacional",
+      name: "Policía Nacional",
+      description: "Preparación completa para Policía Nacional",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+
+    {
+      id: "auxiliar-administrativo",
+      name: "Auxiliar Administrativo",
+      description: "Preparaci��n para auxiliar administrativo",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "administrativo",
+      name: "Administrativo del Estado",
+      description: "Preparación para administrativo del estado",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "auxilio-judicial",
+      name: "Auxilio Judicial",
+      description: "Preparación para auxilio judicial",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "inspeccion-hacienda",
+      name: "Inspección de Hacienda",
+      description: "Preparación para inspección de hacienda",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: false,
+    },
+    {
+      id: "tecnico-seguridad-social",
+      name: "Técnico de Seguridad Social",
+      description: "Preparación para técnico de seguridad social",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "enfermeria-eir",
+      name: "Enfermería (EIR)",
+      description: "Preparación para enfermería",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "farmaceutico-fir",
+      name: "Farmacéutico (FIR)",
+      description: "Preparación para farmacéutico",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "psicologia-pir",
+      name: "Psicología (PIR)",
+      description: "Preparación para psicología",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "quimica-qir",
+      name: "Química (QIR)",
+      description: "Preparación para qu��mica",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "radiofisica-rfir",
+      name: "Radiofísica (RFIR)",
+      description: "Preparación para radiofísica",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "biologia-bir",
+      name: "Biología (BIR)",
+      description: "Preparación para biología",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "trabajo-social",
+      name: "Trabajo Social",
+      description: "Preparación para trabajo social",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: false,
+    },
+    {
+      id: "tramitacion-procesal",
+      name: "Tramitación Procesal",
+      description: "Preparación para tramitación procesal",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "gestion-procesal",
+      name: "Gestión Procesal",
+      description: "Preparación para gestión procesal",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: false,
+    },
+    {
+      id: "administradores-civiles-estado",
+      name: "Administradores Civiles del Estado",
+      description: "Preparación completa para administradores civiles del estado",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "notarias",
+      name: "Notarías",
+      description: "Preparación completa para oposiciones de notarías",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "auxiliar-enfermeria",
+      name: "Auxiliar de Enfermer��a",
+      description: "Preparación para auxiliar de enfermería hospitalaria",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "maestro-primaria",
+      name: "Maestro de Educación Primaria",
+      description: "Preparación para maestros de educación primaria",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "tecnico-laboratorio",
+      name: "Técnico de Laboratorio",
+      description: "Preparación para técnicos de laboratorio clínico",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "tecnico-farmacia",
+      name: "Técnico de Farmacia",
+      description: "Preparación para técnicos de farmacia hospitalaria",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "pir",
+      name: "Psicólogo Interno Residente (PIR)",
+      description: "Preparación para psicólogos internos residentes",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: false,
+    },
+    {
+      id: "fisioterapia",
+      name: "Fisioterapia",
+      description: "Preparación para fisioterapeutas del sistema público",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "policia-local",
+      name: "Policía Local",
+      description: "Preparación para policía local",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "mossos-esquadra",
+      name: "Mossos d'Esquadra",
+      description: "Preparación para Mossos d'Esquadra",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "ertzaintza",
+      name: "Ertzaintza",
+      description: "Preparación para Ertzaintza",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "gestion-administracion-civil",
+      name: "Gestión de la Administración Civil",
+      description: "Preparación para gestión de la administración civil",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: false,
+    },
+    {
+      id: "tecnico-rayos",
+      name: "Técnico de Rayos",
+      description: "Preparación para técnicos en radiodiagnóstico",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "maestro-secundaria",
+      name: "Maestro de Educación Secundaria",
+      description: "Preparación para maestros de educación secundaria",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "profesor-universidad",
+      name: "Profesor de Universidad",
+      description: "Preparación para profesores de universidad",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: false,
+    },
+    {
+      id: "legal-general",
+      name: "Asistente Legal General",
+      description: "Asistente legal general de acceso p��blico",
+      difficulty: "basic",
+      isPublic: true,
+      founderPrice: { monthly: 10, annual: 100 },
+      normalPrice: { monthly: 30, annual: 300 },
+      fundador_activo: false,
+    },
+    {
+      id: "tecnicos-auditoria-contabilidad",
+      name: "Técnicos de Auditoría y Contabilidad",
+      description: "Preparación para técnicos de auditoría y contabilidad",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "nutricion-deporte",
+      name: "Asistente de Nutrición y Deporte",
+      description: "Asistente especializado en nutrición y ejercicio físico",
+      difficulty: "basic",
+      isPublic: true,
+      founderPrice: { monthly: 10, annual: 100 },
+      normalPrice: { monthly: 30, annual: 300 },
+      fundador_activo: false,
+    },
+    {
+      id: "judicatura",
+      name: "Judicatura",
+      description: "Preparación para oposiciones de judicatura",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "abogacia-estado",
+      name: "Abogacía del Estado",
+      description: "Preparación para oposiciones de abogac��a del estado",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "registro-propiedad",
+      name: "Registro de la Propiedad",
+      description: "Preparación para oposiciones de registrador de la propiedad",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "secretarios-judiciales",
+      name: "Secretarios Judiciales",
+      description: "Preparación para oposiciones de secretarios judiciales",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "medicina-legal",
+      name: "Medicina Legal",
+      description: "Preparación para oposiciones de medicina legal y forense",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "intervencion-general-estado",
+      name: "Intervención General del Estado",
+      description: "Preparación para oposiciones de interventores y auditores del estado",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "matrona",
+      name: "Matrona",
+      description: "Preparación para oposiciones de matrona hospitalaria",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "bomberos",
+      name: "Bomberos",
+      description: "Preparación completa para oposiciones de bomberos",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "ingenieros-estado",
+      name: "Ingenieros del Estado",
+      description: "Preparaci���n para oposiciones de ingenieros del estado",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "arquitectos-estado",
+      name: "Arquitectos del Estado",
+      description: "Preparación para oposiciones de arquitectos del estado",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "meteorologia",
+      name: "Meteorología",
+      description: "Preparación para oposiciones de meteorología del estado",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "instituto-geografico",
+      name: "Instituto Geográfico Nacional",
+      description: "Preparación para oposiciones del Instituto Geográfico Nacional",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "estudiante-eso",
+      name: "Estudiante ESO",
+      description: "Asistente educativo para estudiantes de Educaci��n Secundaria Obligatoria",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "estudiante-bachillerato",
+      name: "Estudiante Bachillerato",
+      description: "Asistente educativo para estudiantes de Bachillerato",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "estudiante-fp",
+      name: "Estudiante FP",
+      description: "Asistente educativo para estudiantes de Formación Profesional",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "estudiante-universitario",
+      name: "Estudiante Universitario",
+      description: "Asistente educativo para estudiantes universitarios",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "idioma-ingles",
+      name: "Idioma Inglés",
+      description: "Asistente especializado en aprendizaje del idioma inglés",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "idioma-frances",
+      name: "Idioma Francés",
+      description: "Asistente especializado en aprendizaje del idioma francés",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "idioma-aleman",
+      name: "Idioma Alemán",
+      description: "Asistente especializado en aprendizaje del idioma alemán",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "tecnico-comunicaciones",
+      name: "Técnico de Comunicaciones",
+      description: "Preparación para oposiciones de técnico de comunicaciones",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "atencion-cliente-postal",
+      name: "Atención al Cliente Postal",
+      description: "Preparación para oposiciones de atención al cliente postal",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "renfe",
+      name: "RENFE",
+      description: "Preparación para oposiciones de RENFE",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "transporte-metropolitano",
+      name: "Transporte Metropolitano",
+      description: "Preparación para oposiciones de transporte metropolitano",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "trafico-aereo",
+      name: "Tráfico Aéreo",
+      description: "Preparación para oposiciones de controlador de tráfico a��reo",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "conserje-portero",
+      name: "Conserje Portero",
+      description: "Preparación para oposiciones de conserje portero",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "limpieza",
+      name: "Limpieza",
+      description: "Preparación para oposiciones de personal de limpieza",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "vigilancia-seguridad",
+      name: "Vigilancia y Seguridad",
+      description: "Preparación para oposiciones de vigilancia y seguridad",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "tramitacion-procesal-autonomica",
+      name: "Tramitación Procesal Autonómica",
+      description: "Preparación para oposiciones de tramitación procesal en comunidades autónomas",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "gestion-procesal-autonomica",
+      name: "Gestión Procesal Autonómica",
+      description: "Preparación para oposiciones de gestión procesal en comunidades autónomas",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "auxilio-judicial-autonomico",
+      name: "Auxilio Judicial Autonómico",
+      description: "Preparación para oposiciones de auxilio judicial en comunidades autónomas",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "tropa-marineria",
+      name: "Tropa y Marinería",
+      description: "Preparación para oposiciones de tropa y marinería",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "suboficiales",
+      name: "Suboficiales",
+      description: "Preparación para oposiciones de suboficiales del ejército",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "oficiales",
+      name: "Oficiales",
+      description: "Preparación para oposiciones de oficiales del ejército",
+      difficulty: "advanced",
+      isPublic: false,
+      founderPrice: { monthly: 20, annual: 200 },
+      normalPrice: { monthly: 60, annual: 600 },
+      fundador_activo: true,
+    },
+    {
+      id: "carnet-b",
+      name: "Carnet B",
+      description: "Preparación para el examen teórico del carnet de conducir B",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "carnet-a",
+      name: "Carnet A",
+      description: "Preparación para el examen teórico del carnet de moto A",
+      difficulty: "basic",
+      isPublic: false,
+      founderPrice: { monthly: 16, annual: 160 },
+      normalPrice: { monthly: 48, annual: 480 },
+      fundador_activo: true,
+    },
+    {
+      id: "carnet-c",
+      name: "Carnet C",
+      description: "Preparación para el examen teórico del carnet de camión C",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "carnet-d",
+      name: "Carnet D",
+      description: "Preparación para el examen teórico del carnet de autobús D",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "cap",
+      name: "CAP",
+      description: "Preparación para el Certificado de Aptitud Profesional (CAP) de transporte",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+    {
+      id: "bienestar-emocional",
+      name: "Bienestar Emocional",
+      description: "Asistente especializado en bienestar emocional y salud mental",
+      difficulty: "basic",
+      isPublic: true,
+      founderPrice: { monthly: 10, annual: 100 },
+      normalPrice: { monthly: 30, annual: 300 },
+      fundador_activo: true,
+    },
+    {
+      id: "burocracia-tramites",
+      name: "Burocracia y Trámites",
+      description: "Asistente especializado en trámites burocráticos y procedimientos administrativos",
+      difficulty: "basic",
+      isPublic: true,
+      founderPrice: { monthly: 10, annual: 100 },
+      normalPrice: { monthly: 30, annual: 300 },
+      fundador_activo: true,
+    },
+    {
+      id: "laboral-basico",
+      name: "Laboral B��sico",
+      description: "Asistente especializado en derecho laboral básico y derechos del trabajador",
+      difficulty: "basic",
+      isPublic: true,
+      founderPrice: { monthly: 10, annual: 100 },
+      normalPrice: { monthly: 30, annual: 300 },
+      fundador_activo: true,
+    },
+    {
+      id: "fiscalia",
+      name: "Fiscalía",
+      description: "Preparación para oposiciones de fiscalía",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "inspectores-hacienda-superior",
+      name: "Cuerpo Superior de Inspectores de Hacienda",
+      description: "Preparaci��n para el Cuerpo Superior de Inspectores de Hacienda",
+      difficulty: "expert",
+      isPublic: false,
+      founderPrice: { monthly: 22, annual: 220 },
+      normalPrice: { monthly: 66, annual: 660 },
+      fundador_activo: true,
+    },
+    {
+      id: "administrativo-estado",
+      name: "Administrativo del Estado",
+      description: "Preparación para oposiciones de administrativo del estado",
+      difficulty: "intermediate",
+      isPublic: false,
+      founderPrice: { monthly: 18, annual: 180 },
+      normalPrice: { monthly: 54, annual: 540 },
+      fundador_activo: true,
+    },
+  ];
+
+  return assistants.find(a => a.id === id) || null;
+};
+
+// Componente para tests del asistente
+interface AssistantTestInterfaceProps {
+  assistantId: string;
+}
+
+interface TestSession {
+  themeId: string;
+  themeName: string;
+  testNumber: number;
+  questions: TestQuestion[];
+  currentQuestionIndex: number;
+  userAnswers: Record<string, number>;
+  timeRemaining: number;
+  isCompleted: boolean;
+  score: number | null;
+}
+
+function AssistantTestInterface({ assistantId }: AssistantTestInterfaceProps) {
+  const [selectedTheme, setSelectedTheme] = useState<ThemeTests | null>(null);
+  const [currentTestSession, setCurrentTestSession] = useState<TestSession | null>(null);
+  const [view, setView] = useState<'themes' | 'tests' | 'active' | 'results'>('themes');
+  const [testThemes, setTestThemes] = useState<ThemeTests[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  // Real-time tests subscription - always shows latest data from Firebase
+  useEffect(() => {
+    console.log(`🔴 Setting up real-time tests subscription for: ${assistantId}`);
+    setIsLoading(true);
+
+    // Subscribe to real-time updates
+    const unsubscribe = subscribeToTestsRealtime(
+      assistantId,
+      (latestTests) => {
+        console.log(`📡 Real-time tests update received: ${latestTests.length} themes`);
+        setTestThemes(latestTests);
+        setIsLoading(false);
+
+        // Show notification when new tests are detected
+        if (latestTests.length > 0) {
+          const totalQuestions = latestTests.reduce((sum, theme) => sum + theme.tests.length, 0);
+          console.log(`✅ Tests updated: ${latestTests.length} themes, ${totalQuestions} questions`);
+        }
+
+      },
+      (error) => {
+        console.error(`��� Real-time subscription error:`, error);
+        setIsLoading(false);
+
+        // Fallback to manual load if real-time fails
+        getTestsForAssistant(assistantId, true).then((fallbackTests) => {
+          setTestThemes(fallbackTests);
+        });
+      }
+    );
+
+    return () => {
+      console.log(`🔴 Cleaning up real-time subscription for: ${assistantId}`);
+      unsubscribe();
+    };
+  }, [assistantId, refreshKey]);
+
+
+
+  const hasTestsAvailable = testThemes.length > 0;
+
+  // Refresh function (automatic with real-time subscription)
+  const refreshTests = () => {
+    console.log('🔄 Tests refresh requested - real-time subscription handles this automatically');
+  };
+
+  // Debug function with Firebase testing
+  const debugLocalStorage = async () => {
+    console.log('🔍=== COMPREHENSIVE DEBUG ===');
+    console.log('���� Current Assistant ID:', assistantId);
+    console.log('📊 Current themes count:', testThemes.length);
+    console.log('✅ Has tests available:', hasTestsAvailable);
+
+    // Test storage
+    const storageKey = `assistant_tests_${assistantId}`;
+    const storedTestsSession = sessionStorage.getItem(storageKey);
+    const storedTestsLocal = localStorage.getItem(storageKey);
+
+    console.log('🔑 Storage key:', storageKey);
+    console.log('📦 SessionStorage:', storedTestsSession ? 'FOUND' : 'NOT FOUND');
+    console.log('📦 LocalStorage:', storedTestsLocal ? 'FOUND' : 'NOT FOUND');
+
+    // List all test-related keys
+    console.log('����️ All storage keys with "test":');
+    for (let i = 0; i < sessionStorage.length; i++) {
+      const key = sessionStorage.key(i);
+      if (key && key.includes('test')) {
+        console.log(`  📋 Session: ${key}`);
+      }
+    }
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.includes('test')) {
+        console.log(`  💾 Local: ${key}`);
+      }
+    }
+
+    // Test Firebase directly
+    console.log('🔥 Testing Firebase directly...');
+    try {
+      const directResult = await getTestsForAssistant(assistantId, true);
+      console.log('🔥 Direct Firebase call result:', directResult);
+      console.log('🔥 Direct themes count:', directResult.length);
+
+      if (directResult.length > 0) {
+        console.log('🔥 First theme from Firebase:', directResult[0]);
+
+        // Force update the local state
+        setTestThemes(directResult);
+        console.log('✅ State updated with Firebase data');
+      }
+    } catch (error) {
+      console.error('🔥 Firebase error:', error);
+    }
+
+    // Test common ID variations
+    const testIds = [
+      'auxiliar-administrativo-estado',
+      'auxiliar-administrativo-del-estado',
+      'administrativo-estado',
+      'auxiliar-administrativo'
+    ];
+
+    console.log('��� Testing alternative IDs...');
+    for (const testId of testIds) {
+      try {
+        const result = await getTestsForAssistant(testId, true);
+        console.log(`🔍 ID "${testId}": ${result.length} themes`);
+        if (result.length > 0) {
+          console.log(`  📝 Sample:`, result[0]);
+        }
+      } catch (error) {
+        console.log(`🔍 ID "${testId}": Error -`, error.message);
+      }
+    }
+
+    alert(`🔍 Debug completo!\n\nID actual: ${assistantId}\nTemas: ${testThemes.length}\n\nRevisa la consola para ver resultados de Firebase y IDs alternativos.`);
+  };
+
+  // Timer effect
+  useEffect(() => {
+    if (currentTestSession && view === 'active' && currentTestSession.timeRemaining > 0 && !currentTestSession.isCompleted) {
+      const timer = setTimeout(() => {
+        setCurrentTestSession(prev => prev ? {
+          ...prev,
+          timeRemaining: prev.timeRemaining - 1
+        } : null);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (currentTestSession && currentTestSession.timeRemaining === 0 && !currentTestSession.isCompleted) {
+      finishTest();
+    }
+  }, [currentTestSession?.timeRemaining, view]);
+
+  const selectTheme = (theme: ThemeTests) => {
+    setSelectedTheme(theme);
+    setView('tests');
+  };
+
+  const generateTestQuestions = (theme: ThemeTests, testNumber: number): TestQuestion[] => {
+    // Create 5 different test variations by shuffling and selecting 20 questions
+    const allQuestions = [...theme.tests];
+
+    // Use test number as seed for consistent but different question sets
+    const seed = testNumber * 7; // Simple seeding
+
+    // Shuffle based on test number for consistent results
+    for (let i = allQuestions.length - 1; i > 0; i--) {
+      const j = (seed + i * 3) % (i + 1);
+      [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+    }
+
+    // Take first 20 questions (or all if less than 20)
+    return allQuestions.slice(0, Math.min(20, allQuestions.length));
+  };
+
+  const startTest = (theme: ThemeTests, testNumber: number) => {
+    const questions = generateTestQuestions(theme, testNumber);
+
+    setCurrentTestSession({
+      themeId: theme.themeId,
+      themeName: theme.themeName,
+      testNumber,
+      questions,
+      currentQuestionIndex: 0,
+      userAnswers: {},
+      timeRemaining: 30 * 60, // 30 minutes
+      isCompleted: false,
+      score: null
+    });
+    setView('active');
+  };
+
+  const selectAnswer = (questionId: string, answerIndex: number) => {
+    if (!currentTestSession) return;
+
+    setCurrentTestSession(prev => prev ? {
+      ...prev,
+      userAnswers: {
+        ...prev.userAnswers,
+        [questionId]: answerIndex
+      }
+    } : null);
+  };
+
+  const finishTest = () => {
+    if (!currentTestSession) return;
+
+    let correctAnswers = 0;
+    currentTestSession.questions.forEach(question => {
+      if (currentTestSession.userAnswers[question.id] === question.correctAnswer) {
+        correctAnswers++;
+      }
+    });
+
+    const score = Math.round((correctAnswers / currentTestSession.questions.length) * 10);
+
+    setCurrentTestSession(prev => prev ? {
+      ...prev,
+      score,
+      isCompleted: true
+    } : null);
+    setView('results');
+  };
+
+  const goToQuestion = (index: number) => {
+    if (!currentTestSession) return;
+
+    setCurrentTestSession(prev => prev ? {
+      ...prev,
+      currentQuestionIndex: index
+    } : null);
+  };
+
+  const resetToThemes = () => {
+    setSelectedTheme(null);
+    setCurrentTestSession(null);
+    setView('themes');
+  };
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  if (!hasTestsAvailable) {
+    return (
+      <Card className="bg-slate-800/50 border-slate-700">
+        <CardContent className="p-12 text-center">
+          <FileText className="w-16 h-16 text-slate-400 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold text-white mb-2">
+            Tests no disponibles
+          </h3>
+          <p className="text-slate-400">
+            Los tests para este asistente están en desarrollo
+          </p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  // Show test results
+  if (view === 'results' && currentTestSession && currentTestSession.score !== null) {
+    const isPassed = currentTestSession.score >= 5;
+    const correctAnswers = currentTestSession.questions.filter(q =>
+      currentTestSession.userAnswers[q.id] === q.correctAnswer
+    ).length;
+
+    return (
+      <div className="space-y-6">
+        <Card className={`border-2 ${isPassed ? 'border-green-500 bg-green-500/10' : 'border-red-500 bg-red-500/10'}`}>
+          <CardHeader className="text-center">
+            <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+              isPassed ? 'bg-green-500/20' : 'bg-red-500/20'
+            }`}>
+              {isPassed ? (
+                <Trophy className="w-8 h-8 text-green-400" />
+              ) : (
+                <X className="w-8 h-8 text-red-400" />
+              )}
+            </div>
+            <CardTitle className="text-white text-2xl">
+              {isPassed ? '¡Aprobado!' : 'No aprobado'}
+            </CardTitle>
+            <div className={`text-3xl font-bold ${isPassed ? 'text-green-400' : 'text-red-400'}`}>
+              {currentTestSession.score}/10
+            </div>
+            <p className="text-slate-400 mt-2">
+              {currentTestSession.themeName} - Test #{currentTestSession.testNumber}
+            </p>
+          </CardHeader>
+          <CardContent className="text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-400">{correctAnswers}</div>
+                <div className="text-sm text-slate-400">Correctas</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-red-400">
+                  {currentTestSession.questions.length - correctAnswers}
+                </div>
+                <div className="text-sm text-slate-400">Incorrectas</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-400">
+                  {Math.round((correctAnswers / currentTestSession.questions.length) * 100)}%
+                </div>
+                <div className="text-sm text-slate-400">Acierto</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-400">
+                  {currentTestSession.questions.length}
+                </div>
+                <div className="text-sm text-slate-400">Preguntas</div>
+              </div>
+            </div>
+            <div className="flex gap-3 justify-center">
+              <Button onClick={resetToThemes} variant="outline">
+                Volver a temas
+              </Button>
+              <Button
+                onClick={() => setView('tests')}
+                variant="outline"
+                className="border-blue-500 text-blue-400 hover:bg-blue-500/10"
+              >
+                Otros tests del tema
+              </Button>
+              <Button
+                onClick={() => startTest(selectedTheme!, currentTestSession.testNumber)}
+                className="bg-blue-600 hover:bg-blue-700"
+              >
+                <RotateCcw className="w-4 h-4 mr-2" />
+                Repetir test
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Show active test
+  if (view === 'active' && currentTestSession) {
+    const currentQuestion = currentTestSession.questions[currentTestSession.currentQuestionIndex];
+    const progress = ((currentTestSession.currentQuestionIndex + 1) / currentTestSession.questions.length) * 100;
+    const answeredQuestions = Object.keys(currentTestSession.userAnswers).length;
+
+    return (
+      <div className="space-y-6">
+        {/* Test Header */}
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardHeader>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5" />
+                  {currentTestSession.themeName}
+                </CardTitle>
+                <p className="text-slate-400 text-sm">Test #{currentTestSession.testNumber}</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Badge className="bg-blue-500/20 text-blue-400">
+                  {currentTestSession.currentQuestionIndex + 1}/{currentTestSession.questions.length}
+                </Badge>
+                <Badge className={currentTestSession.timeRemaining < 300 ? "bg-red-500/20 text-red-400" : "bg-slate-600 text-slate-300"}>
+                  <Clock className="w-3 h-3 mr-1" />
+                  {formatTime(currentTestSession.timeRemaining)}
+                </Badge>
+              </div>
+            </div>
+            <div className="w-full bg-slate-700 rounded-full h-2">
+              <div
+                className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+          </CardHeader>
+        </Card>
+
+        {/* Current Question */}
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardHeader>
+            <CardTitle className="text-white text-lg">
+              Pregunta {currentTestSession.currentQuestionIndex + 1}
+            </CardTitle>
+            <p className="text-slate-300 text-base leading-relaxed">
+              {currentQuestion.question}
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {currentQuestion.options.map((option, index) => (
+                <button
+                  key={index}
+                  onClick={() => selectAnswer(currentQuestion.id, index)}
+                  className={`w-full text-left p-4 rounded-lg border transition-colors ${
+                    currentTestSession.userAnswers[currentQuestion.id] === index
+                      ? 'border-blue-500 bg-blue-500/20 text-blue-400'
+                      : 'border-slate-600 hover:border-slate-500 text-slate-300 hover:bg-slate-700/50'
+                  }`}
+                >
+                  <span className="mr-3 font-semibold">
+                    {String.fromCharCode(65 + index)}.
+                  </span>
+                  {option}
+                </button>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Question Navigation Grid */}
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardHeader>
+            <CardTitle className="text-white text-sm">
+              Navegaci��n ({answeredQuestions}/{currentTestSession.questions.length} respondidas)
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-10 gap-2 mb-6">
+              {currentTestSession.questions.map((_, index) => (
+                <Button
+                  key={index}
+                  variant={currentTestSession.currentQuestionIndex === index ? "default" : "outline"}
+                  size="sm"
+                  className={`h-8 w-8 p-0 text-xs ${
+                    currentTestSession.userAnswers[currentTestSession.questions[index].id] !== undefined
+                      ? "bg-green-600 hover:bg-green-700 border-green-500"
+                      : "border-slate-600"
+                  }`}
+                  onClick={() => goToQuestion(index)}
+                >
+                  {index + 1}
+                </Button>
+              ))}
+            </div>
+
+            <div className="flex gap-3">
+              <Button
+                onClick={() => goToQuestion(Math.max(0, currentTestSession.currentQuestionIndex - 1))}
+                disabled={currentTestSession.currentQuestionIndex === 0}
+                variant="outline"
+              >
+                <ChevronLeft className="w-4 h-4 mr-2" />
+                Anterior
+              </Button>
+
+              <Button
+                onClick={() => goToQuestion(Math.min(currentTestSession.questions.length - 1, currentTestSession.currentQuestionIndex + 1))}
+                disabled={currentTestSession.currentQuestionIndex === currentTestSession.questions.length - 1}
+                variant="outline"
+              >
+                Siguiente
+                <ChevronRight className="w-4 h-4 ml-2" />
+              </Button>
+
+              <Button
+                onClick={finishTest}
+                className="ml-auto bg-green-600 hover:bg-green-700"
+              >
+                <Trophy className="w-4 h-4 mr-2" />
+                Finalizar Test
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Show test selection for selected theme
+  if (view === 'tests' && selectedTheme) {
+    return (
+      <div className="space-y-6">
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <BookOpen className="w-5 h-5" />
+                  {selectedTheme.themeName}
+                </CardTitle>
+                <p className="text-slate-400">
+                  {Math.ceil(selectedTheme.tests.length / 20)} tests disponibles con {selectedTheme.tests.length} preguntas totales
+                </p>
+              </div>
+              <Button
+                onClick={resetToThemes}
+                variant="outline"
+                size="sm"
+              >
+                <ChevronLeft className="w-4 h-4 mr-2" />
+                Volver a temas
+              </Button>
+            </div>
+          </CardHeader>
+        </Card>
+
+        <div className="grid gap-4">
+          {(() => {
+            // Calculate how many tests we can create from available questions
+            const questionsPerTest = 20;
+            const totalQuestions = selectedTheme.tests.length;
+            const maxTests = Math.ceil(totalQuestions / questionsPerTest);
+
+            // Create array of tests with the actual questions
+            const availableTests = [];
+            for (let i = 0; i < maxTests; i++) {
+              const startIndex = i * questionsPerTest;
+              const endIndex = Math.min(startIndex + questionsPerTest, totalQuestions);
+              const testQuestions = selectedTheme.tests.slice(startIndex, endIndex);
+
+              if (testQuestions.length > 0) {
+                availableTests.push({
+                  testNumber: i + 1,
+                  questions: testQuestions,
+                  questionCount: testQuestions.length
+                });
+              }
+            }
+
+            return availableTests.map((test) => (
+              <Card key={test.testNumber} className="bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-colors">
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                          <span className="text-white font-bold">#{test.testNumber}</span>
+                        </div>
+                        <div>
+                          <h3 className="text-white font-semibold">Test de Simulacro #{test.testNumber}</h3>
+                          <p className="text-slate-400 text-sm">
+                            {test.questionCount} preguntas de {selectedTheme.themeName}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-4 text-xs text-slate-500">
+                        <span className="flex items-center gap-1">
+                          <FileText className="w-3 h-3" />
+                          {test.questionCount} preguntas
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {Math.ceil(test.questionCount * 1.5)} minutos
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Target className="w-3 h-3" />
+                          Nota mínima: 5/10
+                        </span>
+                      </div>
+                    </div>
+
+                    <Button
+                      onClick={() => startTest(selectedTheme, test.testNumber)}
+                      className="bg-blue-600 hover:bg-blue-700"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      Comenzar Test
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ));
+          })()}
+        </div>
+      </div>
+    );
+  }
+
+  // Detect Builder preview mode
+  const isPreview = typeof window !== 'undefined' && (
+    (window as any).__BUILDER_PREVIEW__ === true ||
+    (window as any).Builder?.isEditing === true ||
+    window.location.hostname.includes('builder.io') ||
+    window.location.search.includes('builder.preview')
+  );
+
+  // Show theme selection (main view)
+  return (
+    <div className="space-y-6" key={`tests-${assistantId}-${testThemes?.length || 0}`}>
+      {/* PASO 1: Builder Preview Diagnostic Panel */}
+      {isPreview && (
+        <div style={{border:'1px dashed #999', padding:8, margin:'8px 0', backgroundColor: '#1a1a1a', color: '#10b981', borderRadius: '4px', fontSize:12}}>
+          <strong>DIAGNÓSTICO PREVIEW - TESTS (GPT-4o-mini)</strong>
+          <div>tests: {testThemes?.length ?? 0}</div>
+          <div>primero test: {testThemes?.[0]?.themeName ?? '—'}</div>
+          <div>filtros activos: Sin filtros en preview</div>
+          <div>último error: ���</div>
+          <div>Assistant ID: {assistantId || '—'}</div>
+          {/* PASO 7: Reload button for debugging */}
+          <button
+            onClick={() => {
+              console.log('[DEBUG] Refetch manual tests');
+              // Force refresh by clearing cache and re-subscribing
+              sessionStorage.removeItem(`assistant_tests_${assistantId}`);
+              setRefreshKey(prev => prev + 1);
+            }}
+            style={{marginTop: 8, padding: '4px 8px', background: '#10b981', color: 'white', border: 'none', borderRadius: '4px', fontSize: 11}}
+          >
+            Recargar (preview)
+          </button>
+        </div>
+      )}
+
+      <Card className="bg-slate-800/50 border-slate-700">
+        <CardHeader>
+          <CardTitle className="text-white flex items-center gap-2">
+            <FileText className="w-5 h-5" />
+            Tests Especializados por Temas
+          </CardTitle>
+          <p className="text-slate-400">
+            Selecciona un tema para acceder a sus 5 tests de simulacro. Cada test contiene 20 preguntas cuidadosamente seleccionadas.
+          </p>
+
+        </CardHeader>
+      </Card>
+
+      <div className="grid gap-4">
+        {testThemes.map((theme, index) => (
+          <Card key={theme.themeId} className="bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-colors group">
+            <CardContent className="pt-6">
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">{index + 1}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">{theme.themeName}</h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge className="bg-blue-500/20 text-blue-400">
+                          {Math.ceil(theme.tests.length / 20)} tests disponibles
+                        </Badge>
+                        <Badge className="bg-purple-500/20 text-purple-400">
+                          {theme.tests.length} preguntas totales
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-xs text-slate-500">
+                    <span className="flex items-center gap-1">
+                      <FileText className="w-3 h-3" />
+                      20 preguntas por test
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      30 minutos por test
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Award className="w-3 h-3" />
+                      {Math.ceil(theme.tests.length / 20)} simulacros únicos
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Target className="w-3 h-3" />
+                      Nota mínima: 5/10
+                    </span>
+                  </div>
+                </div>
+
+                <Button
+                  onClick={() => selectTheme(theme)}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 group-hover:scale-105 transition-all"
+                >
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Ver Tests
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Componente para temarios del asistente
+interface AssistantTemarioInterfaceProps {
+  assistantId: string;
+}
+
+function AssistantTemarioInterface({ assistantId }: AssistantTemarioInterfaceProps) {
+  const [selectedTemario, setSelectedTemario] = useState<TemarioContent | null>(null);
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [isViewingPDF, setIsViewingPDF] = useState(false);
+  const [temarioThemes, setTemarioThemes] = useState<TemarioContent[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Real-time temarios subscription - always shows latest data from Firebase
+  useEffect(() => {
+    console.log(`🔴 Setting up real-time temarios subscription for: ${assistantId}`);
+    setIsLoading(true);
+
+    // Subscribe to real-time updates
+    const unsubscribe = subscribeToTemariosRealtime(
+      assistantId,
+      (latestTemarios) => {
+        console.log(`📡 Real-time temarios update received: ${latestTemarios.length} temarios`);
+        setTemarioThemes(latestTemarios);
+        setIsLoading(false);
+
+        // Show notification when new temarios are detected
+        if (latestTemarios.length > 0) {
+          console.log(`✅ Temarios updated: ${latestTemarios.length} temarios`);
+        }
+      },
+      (error) => {
+        console.error(`❌ Real-time temarios subscription error:`, error);
+        setIsLoading(false);
+
+        // Fallback to manual load if real-time fails
+        getTemariosForAssistant(assistantId, true).then((fallbackTemarios) => {
+          setTemarioThemes(fallbackTemarios);
+        });
+      }
+    );
+
+    return () => {
+      console.log(`🔴 Cleaning up real-time temarios subscription for: ${assistantId}`);
+      unsubscribe();
+    };
+  }, [assistantId, refreshKey]);
+
+  const hasTemariosAvailable = temarioThemes.length > 0;
+
+  // Refresh function to reload temarios
+  const refreshTemarios = () => {
+    setRefreshKey(prev => prev + 1);
+    console.log('🔄 Refreshing temarios...');
+  };
+
+  // Debug function
+  const debugSessionStorage = () => {
+    const storageKey = `assistant_temarios_${assistantId}`;
+    const storedTemarios = sessionStorage.getItem(storageKey);
+    console.log('🔍 Debug sessionStorage for assistant:', assistantId);
+    console.log('���� Storage key:', storageKey);
+    console.log('📦 Stored data:', storedTemarios ? 'FOUND' : 'NOT FOUND');
+
+    // Check all sessionStorage keys
+    console.log('🗂️ All sessionStorage keys:');
+    for (let i = 0; i < sessionStorage.length; i++) {
+      const key = sessionStorage.key(i);
+      if (key && key.includes('assistant_temarios_')) {
+        console.log(`  - ${key}: ${sessionStorage.getItem(key) ? 'HAS DATA' : 'NO DATA'}`);
+      }
+    }
+
+    if (storedTemarios) {
+      try {
+        const parsed = JSON.parse(storedTemarios);
+        console.log('✅ Parsed data:', parsed);
+        console.log('📊 Number of themes:', parsed.length);
+        if (parsed.length > 0) {
+          console.log('📝 First theme sample:', parsed[0]);
+        }
+      } catch (error) {
+        console.error('❌ Error parsing:', error);
+      }
+    }
+    console.log('🧪 hasTemariosAvailable:', hasTemariosAvailable);
+    console.log('����� temarioThemes length:', temarioThemes.length);
+    console.log('🎯 temarioThemes sample:', temarioThemes[0]);
+
+    alert(`Debug info sent to console!\nAssistant ID: ${assistantId}\nHas temarios: ${hasTemariosAvailable}\nThemes found: ${temarioThemes.length}`);
+  };
+
+  const openTemarioPDF = (temario: TemarioContent) => {
+    setSelectedTemario(temario);
+    setIsViewingPDF(true);
+  };
+
+  const closeTemarioPDF = () => {
+    setSelectedTemario(null);
+    setIsViewingPDF(false);
+  };
+
+  // Show PDF viewer
+  if (isViewingPDF && selectedTemario) {
+    return (
+      <div className="space-y-6">
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5" />
+                  {selectedTemario.themeName}
+                </CardTitle>
+                <p className="text-slate-400">
+                  Páginas: {selectedTemario.pages} • Generado: {new Date(selectedTemario.generated).toLocaleDateString('es-ES')}
+                </p>
+              </div>
+              <Button
+                onClick={closeTemarioPDF}
+                variant="outline"
+                size="sm"
+              >
+                <ChevronLeft className="w-4 h-4 mr-2" />
+                Volver a temarios
+              </Button>
+            </div>
+          </CardHeader>
+        </Card>
+
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardContent className="p-6">
+            <div className="bg-white rounded-lg p-8 text-gray-900 max-h-[600px] overflow-y-auto">
+              <div
+                className="prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{
+                  __html: selectedTemario.content
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/\n/g, '<br>')
+                    .replace(/^/, '<p>')
+                    .replace(/$/, '</p>')
+                    .replace(/#{3}\s/g, '<h3>')
+                    .replace(/#{2}\s/g, '<h2>')
+                    .replace(/#{1}\s/g, '<h1>')
+                }}
+              />
+            </div>
+            <div className="mt-4 flex gap-2">
+              <Button
+                onClick={() => {
+                  const pdfContent = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${selectedTemario.themeName}</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
+        h1 { color: #1a365d; border-bottom: 2px solid #3182ce; padding-bottom: 10px; }
+        h2 { color: #2d3748; margin-top: 30px; }
+        h3 { color: #4a5568; }
+    </style>
+</head>
+<body>
+    <h1>${selectedTemario.themeName}</h1>
+    <p><strong>Páginas:</strong> ${selectedTemario.pages}</p>
+    <p><strong>Generado:</strong> ${new Date(selectedTemario.generated).toLocaleDateString('es-ES')}</p>
+    <hr>
+    ${selectedTemario.content.replace(/\n/g, '<br>').replace(/#{1,3}\s/g, match => {
+      const level = match.trim().length;
+      return level === 1 ? '<h1>' : level === 2 ? '<h2>' : '<h3>';
+    })}
+</body>
+</html>`;
+                  const blob = new Blob([pdfContent], { type: 'text/html' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = `${selectedTemario.themeName}.html`;
+                  a.click();
+                  URL.revokeObjectURL(url);
+                }}
+                className="bg-red-600 hover:bg-red-700"
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                Descargar HTML
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Detect Builder preview mode
+  const isPreview = typeof window !== 'undefined' && (
+    (window as any).__BUILDER_PREVIEW__ === true ||
+    (window as any).Builder?.isEditing === true ||
+    window.location.hostname.includes('builder.io') ||
+    window.location.search.includes('builder.preview')
+  );
+
+  // Show theme selection (main view)
+  return (
+    <div className="space-y-6" key={`temarios-${assistantId}-${temarioThemes?.length || 0}`}>
+      {/* PASO 1: Builder Preview Diagnostic Panel */}
+      {isPreview && (
+        <div style={{border:'1px dashed #999', padding:8, margin:'8px 0', backgroundColor: '#1a1a1a', color: '#10b981', borderRadius: '4px', fontSize:12}}>
+          <strong>DIAGNÓSTICO PREVIEW - TEMARIOS</strong>
+          <div>temario: {temarioThemes?.length ?? 0}</div>
+          <div>primero temario: {temarioThemes?.[0]?.themeName ?? '—'}</div>
+          <div>filtros activos: Sin filtros en preview</div>
+          <div>último error: —</div>
+          <div>Assistant ID: {assistantId || '—'}</div>
+          {/* PASO 7: Reload button for debugging */}
+          <button
+            onClick={() => {
+              console.log('[DEBUG] Refetch manual temarios');
+              // Force refresh by clearing cache and re-subscribing
+              sessionStorage.removeItem(`assistant_temarios_${assistantId}`);
+              refreshTemarios();
+            }}
+            style={{marginTop: 8, padding: '4px 8px', background: '#10b981', color: 'white', border: 'none', borderRadius: '4px', fontSize: 11}}
+          >
+            Recargar (preview)
+          </button>
+        </div>
+      )}
+
+      <Card className="bg-slate-800/50 border-slate-700">
+        <CardHeader>
+          <CardTitle className="text-white flex items-center gap-2">
+            <FileText className="w-5 h-5" />
+            Temario Oficial por Temas
+          </CardTitle>
+          <p className="text-slate-400">
+            Selecciona un tema para acceder a su temario completo. Cada tema contiene mínimo 10 páginas de contenido profesional.
+          </p>
+          <div className="mt-3 flex gap-2">
+            <Button onClick={debugSessionStorage} variant="outline" size="sm">
+              ��� Debug Temarios (Ver consola)
+            </Button>
+            <Button onClick={refreshTemarios} variant="outline" size="sm">
+              ���� Recargar Temarios
+            </Button>
+          </div>
+        </CardHeader>
+      </Card>
+
+      {!hasTemariosAvailable ? (
+        <Card className="bg-slate-800/50 border-slate-700">
+          <CardContent className="pt-6 text-center">
+            <FileText className="w-16 h-16 text-slate-600 mx-auto mb-4" />
+            <h3 className="text-white text-xl font-semibold mb-2">No hay temarios disponibles</h3>
+            <p className="text-slate-400 mb-4">
+              Los temarios para este asistente aún no han sido generados.
+              Contacta con el administrador para solicitar la creación del temario.
+            </p>
+          </CardContent>
+        </Card>
+      ) : (
+        <div className="grid gap-4">
+          {temarioThemes.map((temario, index) => (
+            <Card key={temario.themeId} className="bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-colors group">
+              <CardContent className="pt-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">{index + 1}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-semibold text-lg">{temario.themeName}</h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Badge className="bg-purple-500/20 text-purple-400">
+                            {temario.pages} páginas
+                          </Badge>
+                          <Badge className="bg-pink-500/20 text-pink-400">
+                            {temario.status === 'completed' ? 'Generado con IA' : 'Contenido ejemplo'}
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 text-xs text-slate-500">
+                      <span className="flex items-center gap-1">
+                        <FileText className="w-3 h-3" />
+                        {temario.pages} páginas
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        Generado: {new Date(temario.generated).toLocaleDateString('es-ES')}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Brain className="w-3 h-3" />
+                        Contenido profesional
+                      </span>
+                    </div>
+                  </div>
+
+                  <Button
+                    onClick={() => openTemarioPDF(temario)}
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 group-hover:scale-105 transition-all"
+                  >
+                    <FileText className="w-4 h-4 mr-2" />
+                    Ver PDF
+                    <ChevronRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+const assistantData: Record<string, AssistantData> = {
+  "policia-nacional": {
+    name: "Polic���a Nacional",
+    description:
+      "Preparación completa para oposiciones de Policía Nacional con temario actualizado y casos prácticos",
+    difficulty: "medium",
+  },
+  "guardia-civil": {
+    name: "Guardia Civil",
+    description:
+      "Asistente especializado en oposiciones de Guardia Civil con simulacros y temario oficial",
+    difficulty: "medium",
+  },
+  administrativo: {
+    name: "Administrativo",
+    description:
+      "Preparación para oposiciones de administrativo del estado con legislaci��n actualizada",
+    difficulty: "easy",
+  },
+  "auxiliar-administrativo-estado": {
+    name: "Auxiliar Administrativo del Estado",
+    description:
+      "Preparación completa para oposiciones de auxiliar administrativo del estado con temario actualizado",
+    difficulty: "easy",
+    isPublic: false,
+    isPaid: true,
+  },
+  "auxiliar-administrativo": {
+    name: "Auxiliar Administrativo",
+    description:
+      "Preparación para oposiciones de auxiliar administrativo con temario completo",
+    difficulty: "easy",
+  },
+  "administrativo-estado": {
+    name: "Administrativo del Estado",
+    description: "Preparación para oposiciones de administrativo del estado",
+    difficulty: "easy",
+  },
+  celador: {
+    name: "Celador",
+    description: "Preparación para oposiciones de celador hospitalario",
+    difficulty: "easy",
+  },
+  mir: {
+    name: "Médico Interno Residente (MIR)",
+    description:
+      "Preparación especializada para el examen MIR con casos clínicos y simulacros",
+    difficulty: "advanced",
+    isPublic: false,
+    isPaid: true,
+  },
+  "tecnicos-hacienda": {
+    name: "Técnicos de Hacienda",
+    description: "Preparación completa para Técnicos de Hacienda",
+    difficulty: "advanced",
+  },
+  "agentes-hacienda-publica": {
+    name: "Agentes de la Hacienda Pública",
+    description: "Preparación para Agentes de la Hacienda Pública",
+    difficulty: "medium",
+  },
+  "intervencion-general": {
+    name: "Intervención General del Estado",
+    description: "Preparación para Interventores y Auditores del Estado",
+    difficulty: "expert",
+  },
+  "inspeccion-hacienda": {
+    name: "Inspección de Hacienda",
+    description: "Preparación para Inspectores de Hacienda del Estado",
+    difficulty: "expert",
+  },
+  "cnmv-tecnicos": {
+    name: "CNMV – Técnicos",
+    description: "Preparación para Técnicos de la CNMV",
+    difficulty: "advanced",
+  },
+  "banco-espana-tecnicos": {
+    name: "Banco de España ��� Técnicos",
+    description: "Preparación para Técnicos del Banco de España",
+    difficulty: "advanced",
+  },
+  "tecnicos-seguridad-social": {
+    name: "Técnicos de Seguridad Social",
+    description: "Preparación para Técnicos de la Seguridad Social",
+    difficulty: "advanced",
+  },
+  "inspectores-hacienda-superior": {
+    name: "Cuerpo Superior de Inspectores de Hacienda",
+    description: "Preparación para el Cuerpo Superior de Inspectores de Hacienda",
+    difficulty: "expert",
+  },
+  "tecnico-hacienda": {
+    name: "Técnico de Hacienda",
+    description: "Preparación para técnico de hacienda pública",
+    difficulty: "advanced",
+  },
+  "auxiliar-enfermeria": {
+    name: "Auxiliar de Enfermería",
+    description: "Preparación para auxiliar de enfermería hospitalaria",
+    difficulty: "medium",
+  },
+  "enfermero": {
+    name: "Enfermero/a",
+    description: "Preparación para enfermeros del sistema sanitario público",
+    difficulty: "medium",
+  },
+  "tecnico-radiodiagnostico": {
+    name: "Técnico en Radiodiagnóstico",
+    description: "Preparación para técnicos en radiodiagnóstico",
+    difficulty: "medium",
+  },
+  "tecnico-laboratorio": {
+    name: "Técnico de Laboratorio",
+    description: "Preparación para técnicos de laboratorio clínico",
+    difficulty: "medium",
+  },
+  "fisioterapeuta": {
+    name: "Fisioterapeuta",
+    description: "Preparación para fisioterapeutas del sistema público",
+    difficulty: "medium",
+  },
+  "trabajador-social": {
+    name: "Trabajador Social",
+    description: "Preparación para trabajadores sociales",
+    difficulty: "medium",
+  },
+  "psicologo-clinico": {
+    name: "Psicólogo Clínico",
+    description: "Preparación para psicólogos clínicos",
+    difficulty: "advanced",
+  },
+  "farmaceutico": {
+    name: "Farmacéutico",
+    description: "Preparación para farmacéuticos hospitalarios",
+    difficulty: "advanced",
+  },
+  "medico-familia": {
+    name: "Médico de Familia",
+    description: "Preparación para médicos de atención primaria",
+    difficulty: "advanced",
+  },
+  "maestros-primaria": {
+    name: "Maestros de Educación Primaria",
+    description: "Preparación para maestros de educación primaria",
+    difficulty: "medium",
+  },
+  "profesores-secundaria": {
+    name: "Profesores de Educación Secundaria",
+    description: "Preparación para profesores de secundaria",
+    difficulty: "advanced",
+  },
+  "orientador-educativo": {
+    name: "Orientador Educativo",
+    description: "Preparación para orientadores educativos",
+    difficulty: "advanced",
+  },
+  "inspector-educacion": {
+    name: "Inspector de Educación",
+    description: "Preparación para inspectores de educación",
+    difficulty: "expert",
+  },
+  "juez": {
+    name: "Juez",
+    description: "Preparación para jueces",
+    difficulty: "expert",
+  },
+  "fiscal": {
+    name: "Fiscal",
+    description: "Preparación para fiscales",
+    difficulty: "expert",
+  },
+  "secretario-judicial": {
+    name: "Secretario Judicial",
+    description: "Preparación para secretarios judiciales",
+    difficulty: "advanced",
+  },
+  "gestor-procesal": {
+    name: "Gestor Procesal",
+    description: "Preparación para gestores procesales",
+    difficulty: "medium",
+  },
+  "tramitador-procesal": {
+    name: "Tramitador Procesal",
+    description: "Preparación para tramitadores procesales",
+    difficulty: "medium",
+  },
+  "auxilio-judicial": {
+    name: "Auxilio Judicial",
+    description: "Preparación para auxilio judicial",
+    difficulty: "easy",
+  },
+  "notario": {
+    name: "Notario",
+    description: "Preparación para notarios",
+    difficulty: "expert",
+  },
+  "registrador": {
+    name: "Registrador de la Propiedad",
+    description: "Preparación para registradores",
+    difficulty: "expert",
+  },
+  "letrado-administracion-justicia": {
+    name: "Letrado de la Administración de Justicia",
+    description: "Preparaci��n para letrados de la administración de justicia",
+    difficulty: "advanced",
+  },
+  "bombero": {
+    name: "Bombero",
+    description: "Preparación para bomberos",
+    difficulty: "medium",
+  },
+  "policia-local": {
+    name: "Policía Local",
+    description: "Preparación para policía local",
+    difficulty: "medium",
+  },
+  "mossos-esquadra": {
+    name: "Mossos d'Esquadra",
+    description: "Preparación para Mossos d'Esquadra",
+    difficulty: "medium",
+  },
+  "ertzaintza": {
+    name: "Ertzaintza",
+    description: "Preparación para Ertzaintza",
+    difficulty: "medium",
+  },
+};
+
+// Temarios demo
+const temarios: Record<string, any> = {
+  "guardia-civil": {
+    totalTopics: 25,
+    estimatedStudyTime: "6-8 meses",
+    difficulty: "Intermedio",
+    lastUpdated: "Enero 2024",
+    topics: [
+      {
+        id: "tema-1",
+        title: "La Constitución Española de 1978",
+        subtitle: "Características generales y principios constitucionales",
+        duration: "4-6 horas",
+        difficulty: "Básico",
+      },
+      {
+        id: "tema-2",
+        title: "La Corona",
+        subtitle: "Funciones constitucionales del Rey",
+        duration: "3-4 horas",
+        difficulty: "Básico",
+      },
+    ],
+  },
+};
+
+export default function AssistantDetail() {
+  const { id } = useParams();
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isPaid, setIsPaid] = useState(false);
+  const [assistant, setAssistant] = useState<AssistantData | null>(null);
+  const [assistantPricing, setAssistantPricing] = useState<AssistantPricing | null>(null);
+  const [assistantTemario, setAssistantTemario] = useState<AssistantTemario | null>(null);
+  const [activeTab, setActiveTab] = useState("chat");
+  const [selectedTema, setSelectedTema] = useState<string | null>(null);
+  const [showReferralModal, setShowReferralModal] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<"monthly" | "annual" | null>(null);
+  const [validReferral, setValidReferral] = useState<ReferralValidationResult | null>(null);
+
+  useEffect(() => {
+    console.log("🔄 Loading assistant data for ID:", id);
+
+    // Set assistant data immediately if available
+    if (id) {
+      const assistantInfo = getAssistantById(id);
+      console.log("�� Assistant info from getAssistantById:", assistantInfo);
+
+      if (assistantInfo) {
+        setAssistant(assistantInfo);
+        console.log("✅ Assistant loaded successfully:", assistantInfo.name);
+      } else if (assistantData[id]) {
+        // Fallback to old data structure (without pricing)
+        const fallbackAssistant = {
+          ...assistantData[id],
+          id: id,
+          founderPrice: { monthly: 20, annual: 200 },
+          normalPrice: { monthly: 60, annual: 600 },
+          fundador_activo: false,
+        };
+        setAssistant(fallbackAssistant);
+        console.log("⚠️ Using fallback assistant data:", fallbackAssistant.name);
+      } else {
+        console.error("❌ No assistant data found for ID:", id);
+      }
+    } else {
+      console.error("❌ No assistant ID provided");
+    }
+  }, [id]);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      console.log("🔐 Auth state changed:", {
+        userExists: !!currentUser,
+        userId: currentUser?.uid,
+        email: currentUser?.email
+      });
+
+      setUser(currentUser);
+
+      if (currentUser && id) {
+        console.log("🔄 Loading user permissions and pricing data...");
+        setLoading(true);
+        try {
+          const [adminCheck, hasAccessCheck, pricing, temario] = await Promise.all([
+            checkIsCurrentUserAdmin(),
+            checkUserHasAccess(currentUser.uid, id),
+            getAssistantPricing(id),
+            getAssistantTemario(id),
+          ]);
+
+          setIsAdmin(adminCheck);
+          setIsPaid(hasAccessCheck);
+          setAssistantPricing(pricing);
+          setAssistantTemario(temario);
+
+          console.log("��� User data loaded:", {
+            isAdmin: adminCheck,
+            isPaid: hasAccessCheck,
+            hasPricing: !!pricing,
+            hasTemario: !!temario
+          });
+        } catch (error) {
+          console.error("���� Error loading assistant data:", error);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        console.log("���️ Skipping data load - no user or ID");
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [id]);
+
+  const handleSubscribe = (plan: "monthly" | "annual") => {
+    if (!user) {
+      toast.error("Por favor, inicia sesión para suscribirte al asistente.");
+      return;
+    }
+
+    if (!assistant) {
+      toast.error("Error: No se han cargado los datos del asistente. Por favor, recarga la página.");
+      return;
+    }
+
+    // Open referral modal first
+    setSelectedPlan(plan);
+    setShowReferralModal(true);
+  };
+
+  const proceedToPayment = async (referralCode?: string) => {
+    if (!user || !assistant || !selectedPlan) return;
+
+    try {
+      // Use founder pricing since that's what's displayed prominently
+      const currentPricing = assistant.founderPrice;
+      const price = selectedPlan === "monthly" ? currentPricing.monthly : currentPricing.annual;
+
+      console.log("Subscription details:", {
+        plan: selectedPlan,
+        fundadorActivo: assistant.fundador_activo,
+        pricing: currentPricing,
+        finalPrice: price,
+        referralCode
+      });
+
+      if (!price || price <= 0) {
+        toast.error("Error: Precio inválido para la suscripción. Por favor, contacta con soporte.");
+        return;
+      }
+
+      // Create checkout session with referral support
+      const sessionData = {
+        assistantId: id || "",
+        assistantName: assistant.name,
+        price: price,
+        billingCycle: selectedPlan,
+        isFounder: true,
+        userId: user.uid,
+        userEmail: user.email || "",
+        referralCode: referralCode || undefined,
+      };
+
+      console.log("Creating checkout session with referral support:", sessionData);
+
+      const res = await fetch('/api/stripe/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(sessionData),
+        cache: 'no-store'
+      });
+
+      if (!res.ok) {
+        const errorData = await res.text();
+        console.error("Checkout session failed:", res.status, errorData);
+
+        // Fallback to direct payment links if API fails
+        console.log("Falling back to direct Stripe payment links");
+        let paymentLinkUrl;
+        if (price === 10) {
+          paymentLinkUrl = "https://buy.stripe.com/test_28o4hzcRN2rXbtu000";
+        } else if (price === 100) {
+          paymentLinkUrl = "https://buy.stripe.com/test_eVA28sg02c5fcw6eUV";
+        } else if (price === 30) {
+          paymentLinkUrl = "https://buy.stripe.com/test_aEU6ppg02gPJ8lq9AB";
+        } else if (price === 300) {
+          paymentLinkUrl = "https://buy.stripe.com/test_3csdRF8RH6SmcBq9AC";
+        } else {
+          paymentLinkUrl = "https://buy.stripe.com/test_28o4hzcRN2rXbtu000";
+        }
+
+        window.open(paymentLinkUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
+        toast.success(`Abriendo pago de €${price} para ${assistant.name}`);
+        return;
+      }
+
+      const data = await res.json();
+      if (data.url) {
+        console.log("Opening Stripe checkout URL:", data.url);
+        window.open(data.url, '_blank', 'noopener,noreferrer,width=800,height=600');
+        toast.success(`Abriendo pago de €${price} para ${assistant.name}`);
+      } else {
+        throw new Error("No URL received from checkout session");
+      }
+
+    } catch (error) {
+      console.error("Error in checkout:", error);
+      toast.error("Error al crear la sesión de pago. Por favor, inténtalo de nuevo.");
+    } finally {
+      setShowReferralModal(false);
+      setSelectedPlan(null);
+      setValidReferral(null);
+    }
+  };
+
+
+
+
+
+    if (!assistant) {
+      console.error("❌ Assistant data not loaded");
+      toast.error("Error: No se han cargado los datos del asistente. Por favor, recarga la página.");
+      return;
+    }
+
+    if (!assistant.founderPrice || !assistant.normalPrice) {
+      console.error("❌ Assistant pricing data incomplete:", assistant);
+      toast.error("Error: Los datos de precios del asistente no están disponibles. Por favor, contacta con soporte.");
+      return;
+    }
+
+    try {
+      // Use founder pricing since that's what's displayed prominently
+      const currentPricing = assistant.founderPrice;
+      const price = plan === "monthly" ? currentPricing.monthly : currentPricing.annual;
+
+      console.log("���� Subscription details:", {
+        plan,
+        fundadorActivo: assistant.fundador_activo,
+        pricing: currentPricing,
+        finalPrice: price
+      });
+
+      if (!price || price <= 0) {
+        console.error("❌ Invalid price:", price);
+        toast.error("Error: Precio inválido para la suscripción. Por favor, contacta con soporte.");
+        return;
+      }
+
+      const sessionData = {
+        assistantId: id || "",
+        assistantName: assistant.name,
+        price: price,
+        billingCycle: plan,
+        isFounder: true, // Using founder pricing
+        userId: user.uid,
+      };
+
+      console.log("💳 Creating robust Stripe session:", sessionData);
+
+      // Robust fetch with proper error handling (no body stream issues)
+      // Use direct payment links to completely avoid body stream issues
+      console.log("💳 Using direct Stripe payment links to avoid API issues");
+
+      let paymentLinkUrl;
+      if (price === 10) {
+        paymentLinkUrl = "https://buy.stripe.com/test_28o4hzcRN2rXbtu000";
+      } else if (price === 100) {
+        paymentLinkUrl = "https://buy.stripe.com/test_eVA28sg02c5fcw6eUV";
+      } else if (price === 30) {
+        paymentLinkUrl = "https://buy.stripe.com/test_aEU6ppg02gPJ8lq9AB";
+      } else if (price === 300) {
+        paymentLinkUrl = "https://buy.stripe.com/test_3csdRF8RH6SmcBq9AC";
+      } else {
+        // Default to €10 payment link for any other price
+        paymentLinkUrl = "https://buy.stripe.com/test_28o4hzcRN2rXbtu000";
+      }
+
+      console.log(`💳 Opening direct Stripe payment: €${price} - ${assistant.name}`);
+
+      // Open in external window - prevents IDE embedded preview issues
+      window.open(paymentLinkUrl, '_blank', 'noopener,noreferrer,width=800,height=600');
+
+      // Show success feedback
+      toast.success(`Abriendo pago de €${price} para ${assistant.name}`);
+
+    } catch (error) {
+      console.error("Error in checkout:", error);
+      toast.error("Error al crear la sesión de pago. Por favor, inténtalo de nuevo.");
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 text-white">
+        <Header />
+        <div className="container mx-auto px-4 py-8">
+          <div className="animate-pulse">
+            <div className="h-8 bg-slate-700 rounded w-64 mb-4"></div>
+            <div className="h-96 bg-slate-700 rounded"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!id) {
+    return <Navigate to="/asistentes" replace />;
+  }
+
+  // Only redirect if we've finished loading and the assistant doesn't exist in either data source
+  if (!loading && id && !getAssistantById(id) && !assistantData[id]) {
+    return <Navigate to="/asistentes" replace />;
+  }
+
+  // Don't render content until we have the assistant data
+  if (!assistant) {
+    return (
+      <div className="min-h-screen bg-slate-900 text-white">
+        <Header />
+        <div className="container mx-auto px-4 py-8">
+          <div className="animate-pulse">
+            <div className="h-8 bg-slate-700 rounded w-64 mb-4"></div>
+            <div className="h-96 bg-slate-700 rounded"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "EUR",
+    }).format(amount);
+  };
+
+  // Detect Builder preview mode for main diagnostic panel
+  const isPreview = typeof window !== 'undefined' && (
+    (window as any).__BUILDER_PREVIEW__ === true ||
+    (window as any).Builder?.isEditing === true ||
+    window.location.hostname.includes('builder.io') ||
+    window.location.search.includes('builder.preview')
+  );
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white">
+      <Header />
+
+      {/* Unified Builder Preview Diagnostic Panel */}
+      {isPreview && (
+        <div style={{border:'1px dashed #999', padding:8, margin:'8px auto', backgroundColor: '#1a1a1a', color: '#10b981', borderRadius: '4px', maxWidth: '1200px'}}>
+          <div><strong>🔧 BUILDER PREVIEW DIAGNOSTICS</strong></div>
+          <div>Preview: {String(isPreview)}</div>
+          <div>Assistant ID: {id || '—'}</div>
+          <div>Assistant Name: {assistant?.name || '—'}</div>
+          <div>Active Tab: {activeTab}</div>
+          <div style={{marginTop: '4px', fontSize: '12px', opacity: 0.8}}>
+            Use tabs to see individual Temario/Tests counts. Este panel se elimina cuando todo funcione.
+          </div>
+        </div>
+      )}
+
+      {/* Stripe Diagnostic Panel (Development Only) */}
+      {process.env.NODE_ENV === 'development' && (
+        <div style={{border:'1px dashed #f59e0b', padding:8, margin:'8px auto', backgroundColor: '#1a1a1a', color: '#f59e0b', borderRadius: '4px', maxWidth: '1200px'}}>
+          <div><strong>💳 STRIPE DIAGNOSTICS (DEV ONLY)</strong></div>
+          <div style={{marginTop: '8px'}}>
+            <button
+              onClick={async () => {
+                try {
+                  const res = await fetch('/api/assistant/diagnose');
+                  const data = await res.json();
+                  console.log('🔍 Assistant Stripe Diagnostic:', data);
+                  if (data.ok) {
+                    console.log('✅ Stripe Status:', {
+                      mode: data.mode,
+                      accountActive: data.account?.charges_enabled,
+                      sessionCreated: typeof data.sessionPreview === 'object' && data.sessionPreview.id,
+                      urlValid: data.sessionPreview?.urlStartsWith?.startsWith('https://checkout.stripe.com/')
+                    });
+                  }
+                  alert(JSON.stringify(data, null, 2));
+                } catch (error) {
+                  console.error('Diagnostic error:', error);
+                  alert('Error running diagnostics');
+                }
+              }}
+              style={{backgroundColor: '#f59e0b', color: '#000', padding: '4px 8px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontSize: '12px'}}
+            >
+              🔍 Run Stripe Diagnostic
+            </button>
+          </div>
+          <div style={{marginTop: '4px', fontSize: '12px', opacity: 0.8}}>
+            Check console for detailed results. This panel is only visible in development.
+          </div>
+        </div>
+      )}
+
+      <div className="container mx-auto px-4 py-8">
+        {/* Header del Asistente */}
+        <div className="mb-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg">
+              <Brain className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold text-white">{assistant.name}</h1>
+              <p className="text-slate-400">{assistant.description}</p>
+            </div>
+          </div>
+
+          {/* Pricing Cards */}
+          {assistant && (
+            <div className="mb-8">
+              {isPaid || isAdmin ? (
+                <Card className="bg-green-800/20 border-green-600 border-2">
+                  <CardContent className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-3 mb-3">
+                      <div className="p-2 bg-green-600 rounded-full">
+                        <Check className="w-5 h-5 text-white" />
+                      </div>
+                      <span className="text-xl font-bold text-green-400">
+                        Ya estás suscrito a este asistente
+                      </span>
+                    </div>
+                    <p className="text-slate-300 text-lg">
+                      🎉 Tienes acceso completo a todas las funcionalidades
+                    </p>
+                    {isAdmin && (
+                      <Badge className="mt-2 bg-purple-600 text-white">
+                        <Crown className="w-3 h-3 mr-1" />
+                        Administrador
+                      </Badge>
+                    )}
+                  </CardContent>
+                </Card>
+              ) : (
+                <div className="grid md:grid-cols-2 gap-6">
+              {/* Monthly Plan */}
+              <Card className="bg-slate-800 border-slate-700 relative">
+                <CardHeader>
+                  <CardTitle className="text-white">Plan Mensual</CardTitle>
+                  <CardDescription className="text-slate-400">
+                    Perfecto para empezar
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-center mb-6">
+                    <div className="text-4xl font-bold text-yellow-400 mb-1">
+                      {formatCurrency(assistant.founderPrice.monthly)}
+                    </div>
+                    <div className="text-xs text-yellow-400 mb-2">🚀 Precio de Fundador</div>
+                    <div className="text-2xl text-slate-400 line-through">
+                      {formatCurrency(assistant.normalPrice.monthly)}
+                    </div>
+                    <div className="text-xs text-slate-500">Precio regular</div>
+                    <div className="text-slate-400 mt-2">por mes</div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Chat IA especializado</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Temario completo</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Tests especializados</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Flashcards de repaso</span>
+                    </li>
+                  </ul>
+                  <Button
+                    onClick={() => handleSubscribe("monthly")}
+                    disabled={loading || !user || !assistant}
+                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading
+                      ? "Cargando..."
+                      : !user
+                        ? "Inicia sesión para suscribirte"
+                        : !assistant
+                          ? "Cargando datos del asistente..."
+                          : `Suscribirse Mensual - ${formatCurrency(assistant.founderPrice.monthly)}`
+                    }
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Annual Plan */}
+              <Card className="bg-slate-800 border-slate-700 relative border-2 border-yellow-500">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-yellow-500 text-black font-semibold px-3 py-1">
+                    <Crown className="w-3 h-3 mr-1" />
+                    MEJOR OFERTA
+                  </Badge>
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-white">Plan Anual</CardTitle>
+                  <CardDescription className="text-slate-400">
+                    2 meses gratis al año
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-center mb-6">
+                    <div className="text-4xl font-bold text-yellow-400 mb-1">
+                      {formatCurrency(assistant.founderPrice.annual)}
+                    </div>
+                    <div className="text-xs text-yellow-400 mb-2">🚀 Precio de Fundador</div>
+                    <div className="text-2xl text-slate-400 line-through">
+                      {formatCurrency(assistant.normalPrice.annual)}
+                    </div>
+                    <div className="text-xs text-slate-500">Precio regular</div>
+                    <div className="text-green-400 text-sm mt-2">
+                      Ahorras {formatCurrency(assistant.founderPrice.monthly * 12 - assistant.founderPrice.annual)} vs mensual
+                    </div>
+                    <div className="text-slate-400 mt-2">por año</div>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Chat IA especializado</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Temario completo</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Tests especializados</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-green-400" />
+                      <span className="text-slate-300">Flashcards de repaso</span>
+                    </li>
+                  </ul>
+                  <Button
+                    onClick={() => handleSubscribe("annual")}
+                    disabled={loading || !user || !assistant}
+                    className="w-full bg-yellow-600 hover:bg-yellow-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <Crown className="w-4 h-4 mr-2" />
+                    {loading
+                      ? "Cargando..."
+                      : !user
+                        ? "Inicia sesión para suscribirte"
+                        : !assistant
+                          ? "Cargando datos del asistente..."
+                          : `Suscribirse Anual - ${formatCurrency(assistant.founderPrice.annual)}`
+                    }
+                  </Button>
+                </CardContent>
+              </Card>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Tabs */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          {assistant.isPublic ? (
+            // Solo Chat para asistentes públicos
+            <TabsList className="grid w-full grid-cols-1 bg-slate-800">
+              <TabsTrigger value="chat">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Chat IA
+              </TabsTrigger>
+            </TabsList>
+          ) : (
+            // Todas las pestañas para asistentes privados
+            <TabsList className="grid w-full grid-cols-4 bg-slate-800">
+              <TabsTrigger value="chat">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Chat IA
+              </TabsTrigger>
+              <TabsTrigger value="temario">
+                <BookOpen className="w-4 h-4 mr-2" />
+                Temario
+              </TabsTrigger>
+              <TabsTrigger value="test">
+                <FileText className="w-4 h-4 mr-2" />
+                Test
+              </TabsTrigger>
+              <TabsTrigger value="flashcards">
+                <Brain className="w-4 h-4 mr-2" />
+                Flashcards
+              </TabsTrigger>
+            </TabsList>
+          )}
+
+          {/* Chat Tab */}
+          <TabsContent value="chat">
+            <BlurredPreview
+              isLocked={!(isPaid || isAdmin)}
+              title={`Chat con ${assistant.name}`}
+              description="Chatea con tu asistente especializado las 24 horas"
+              onUnlock={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              unlockButtonText="Suscribirse al Asistente"
+            >
+              <Chat assistantId={id || ""} />
+            </BlurredPreview>
+          </TabsContent>
+
+          {/* Solo mostrar otras pesta��as para asistentes privados */}
+          {!assistant.isPublic && (
+            <>
+              {/* Temario Tab */}
+              <TabsContent value="temario">
+            <BlurredPreview
+              isLocked={!(isPaid || isAdmin)}
+              title={`Temario Oficial - ${assistant.name}`}
+              description="Accede al temario completo con PDFs oficiales y contenido actualizado"
+              onUnlock={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              unlockButtonText="Suscribirse al Asistente"
+              blurLevel="light"
+            >
+              <AssistantTemarioInterface assistantId={assistant.id} />
+            </BlurredPreview>
+          </TabsContent>
+
+          {/* Test Tab */}
+          <TabsContent value="test">
+            <BlurredPreview
+              isLocked={!(isPaid || isAdmin)}
+              title={`Tests Especializados - ${assistant.name}`}
+              description="Practica con tests oficiales del temario y evalúa tu progreso"
+              onUnlock={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              unlockButtonText="Suscribirse al Asistente"
+              blurLevel="medium"
+            >
+              <AssistantTestInterface assistantId={assistant.id} />
+            </BlurredPreview>
+          </TabsContent>
+
+          {/* Flashcards Tab */}
+          <TabsContent value="flashcards">
+            <BlurredPreview
+              isLocked={!(isPaid || isAdmin)}
+              title={`Flashcards Especializadas - ${assistant.name}`}
+              description="Repasa conceptos clave con flashcards interactivas del temario oficial"
+              onUnlock={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              unlockButtonText="Suscribirse al Asistente"
+              blurLevel="medium"
+            >
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardContent className="p-12 text-center">
+                  <Brain className="w-16 h-16 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    Flashcards Interactivas
+                  </h3>
+                  <p className="text-slate-400">
+                    Las flashcards estarán disponibles próximamente
+                  </p>
+                </CardContent>
+              </Card>
+            </BlurredPreview>
+          </TabsContent>
+            </>
+          )}
+        </Tabs>
+      </div>
+
+      {/* Referral Code Modal */}
+      <Dialog open={showReferralModal} onOpenChange={setShowReferralModal}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Código de Referidos</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            {selectedPlan && assistant && (
+              <ReferralCodeInput
+                onValidReferral={(validation) => {
+                  setValidReferral(validation);
+                  proceedToPayment(validation.code);
+                }}
+                onContinue={() => {
+                  proceedToPayment();
+                }}
+                userId={user?.uid || ""}
+                userEmail={user?.email || ""}
+                assistantName={assistant.name}
+                price={selectedPlan === "monthly" ? assistant.founderPrice.monthly : assistant.founderPrice.annual}
+                isOptional={true}
+                showSummary={true}
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}

@@ -1,0 +1,1741 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+12 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programación Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 5: Backend con Node.js) Tj
+0 -60 Td
+/F2 14 Tf
+(5.1 Introducción al Desarrollo Backend) Tj
+0 -30 Td
+/F1 11 Tf
+(El desarrollo backend se refiere a la parte del servidor de las aplicaciones web.) Tj
+0 -15 Td
+(Mientras que el frontend es lo que ven los usuarios, el backend maneja la lógica) Tj
+0 -15 Td
+(de negocio, bases de datos, autenticación, APIs y toda la infraestructura que) Tj
+0 -15 Td
+(hace que las aplicaciones funcionen de manera robusta y segura.) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Qué es Node.js?) Tj
+0 -20 Td
+/F1 11 Tf
+(Node.js es un entorno de ejecución de JavaScript del lado del servidor,) Tj
+0 -15 Td
+(construido sobre el motor V8 de Chrome. Permite usar JavaScript para) Tj
+0 -15 Td
+(desarrollo backend, lo que significa que puedes usar el mismo lenguaje) Tj
+0 -15 Td
+(tanto en frontend como en backend.) Tj
+0 -30 Td
+/F2 12 Tf
+(Ventajas de Node.js) Tj
+0 -20 Td
+/F1 11 Tf
+(• Un Solo Lenguaje: JavaScript en frontend y backend) Tj
+0 -15 Td
+(• Alto Rendimiento: Arquitectura asíncrona y no bloqueante) Tj
+0 -15 Td
+(• NPM: Ecosistema masivo de paquetes y bibliotecas) Tj
+0 -15 Td
+(• Escalabilidad: Ideal para aplicaciones en tiempo real) Tj
+0 -15 Td
+(• Comunidad: Soporte activo y recursos abundantes) Tj
+0 -15 Td
+(• Velocidad de Desarrollo: Rápido prototipado y desarrollo) Tj
+0 -30 Td
+/F2 12 Tf
+(Arquitectura de Node.js) Tj
+0 -20 Td
+/F1 11 Tf
+(Node.js utiliza una arquitectura event-driven con un bucle de eventos único:) Tj
+0 -15 Td
+(• Event Loop: Bucle principal que maneja operaciones asíncronas) Tj
+0 -15 Td
+(• Thread Pool: Pool de hilos para operaciones intensivas) Tj
+0 -15 Td
+(• Non-blocking I/O: Operaciones de entrada/salida no bloqueantes) Tj
+0 -15 Td
+(• Callbacks/Promises: Manejo de operaciones asíncronas) Tj
+0 -30 Td
+/F2 12 Tf
+(Casos de Uso Ideales) Tj
+0 -20 Td
+/F1 11 Tf
+(Node.js es especialmente bueno para:) Tj
+0 -15 Td
+(• APIs RESTful y GraphQL) Tj
+0 -15 Td
+(• Aplicaciones en tiempo real \(chat, juegos online\)) Tj
+0 -15 Td
+(• Microservicios y arquitecturas distribuidas) Tj
+0 -15 Td
+(• Aplicaciones con muchas conexiones concurrentes) Tj
+0 -15 Td
+(• Proxies y sistemas de streaming) Tj
+0 -15 Td
+(• Herramientas de desarrollo y automatización) Tj
+0 -40 Td
+/F2 16 Tf
+(5.2 Configuración del Entorno) Tj
+0 -30 Td
+/F2 12 Tf
+(Instalación de Node.js) Tj
+0 -20 Td
+/F1 11 Tf
+(1. Descargar Node.js desde nodejs.org \(versión LTS recomendada\)) Tj
+0 -15 Td
+(2. Verificar la instalación:) Tj
+0 -20 Td
+/F2 10 Tf
+(# Verificar versión de Node.js) Tj
+0 -12 Td
+(node --version) Tj
+0 -15 Td
+(# Verificar versión de npm) Tj
+0 -12 Td
+(npm --version) Tj
+0 -25 Td
+/F2 12 Tf
+(Gestores de Paquetes) Tj
+0 -20 Td
+/F1 11 Tf
+(• npm: Viene incluido con Node.js \(gestor por defecto\)) Tj
+0 -15 Td
+(• yarn: Alternativa más rápida y con mejor gestión de dependencias) Tj
+0 -15 Td
+(• pnpm: Gestor eficiente en espacio de disco) Tj
+0 -25 Td
+/F2 12 Tf
+(Inicializar un Proyecto) Tj
+0 -20 Td
+/F2 10 Tf
+(# Crear directorio del proyecto) Tj
+0 -12 Td
+(mkdir mi-backend) Tj
+0 -12 Td
+(cd mi-backend) Tj
+0 -15 Td
+(# Inicializar package.json) Tj
+0 -12 Td
+(npm init -y) Tj
+0 -15 Td
+(# Instalar dependencias básicas) Tj
+0 -12 Td
+(npm install express) Tj
+0 -12 Td
+(npm install --save-dev nodemon) Tj
+0 -25 Td
+/F2 12 Tf
+(Estructura de Proyecto Recomendada) Tj
+0 -20 Td
+/F2 10 Tf
+(mi-backend/) Tj
+0 -12 Td
+(├── src/) Tj
+0 -12 Td
+(│   ├── controllers/    # Lógica de controladores) Tj
+0 -12 Td
+(│   ├── models/         # Modelos de datos) Tj
+0 -12 Td
+(│   ├── routes/         # Definición de rutas) Tj
+0 -12 Td
+(│   ├── middleware/     # Middlewares personalizados) Tj
+0 -12 Td
+(│   ├── config/         # Configuraciones) Tj
+0 -12 Td
+(│   └── utils/          # Utilidades) Tj
+0 -12 Td
+(├── tests/              # Pruebas) Tj
+0 -12 Td
+(├── package.json        # Dependencias y scripts) Tj
+0 -12 Td
+(├── .env                # Variables de entorno) Tj
+0 -12 Td
+(├── .gitignore          # Archivos a ignorar en Git) Tj
+0 -12 Td
+(└── server.js           # Punto de entrada) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(5.3 Primeros Pasos con Node.js) Tj
+0 -40 Td
+/F2 12 Tf
+(Hola Mundo en Node.js) Tj
+0 -20 Td
+/F1 11 Tf
+(Comencemos con un servidor básico:) Tj
+0 -20 Td
+/F2 10 Tf
+(// server.js) Tj
+0 -12 Td
+(const http = require\('http'\);) Tj
+0 -15 Td
+(const server = http.createServer\(\(req, res\) => {) Tj
+0 -12 Td
+(  res.writeHead\(200, { 'Content-Type': 'text/plain; charset=utf-8' }\);) Tj
+0 -12 Td
+(  res.end\('¡Hola Mundo desde Node.js!'\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(const PORT = 3000;) Tj
+0 -12 Td
+(server.listen\(PORT, \(\) => {) Tj
+0 -12 Td
+(  console.log\(`Servidor ejecutándose en http://localhost:${PORT}`\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Módulos en Node.js) Tj
+0 -20 Td
+/F1 11 Tf
+(Node.js usa el sistema de módulos CommonJS:) Tj
+0 -20 Td
+/F2 10 Tf
+(// utils/matematicas.js) Tj
+0 -12 Td
+(function sumar\(a, b\) {) Tj
+0 -12 Td
+(  return a + b;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(function restar\(a, b\) {) Tj
+0 -12 Td
+(  return a - b;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Exportar funciones) Tj
+0 -12 Td
+(module.exports = {) Tj
+0 -12 Td
+(  sumar,) Tj
+0 -12 Td
+(  restar) Tj
+0 -12 Td
+(};) Tj
+0 -20 Td
+(// app.js - Importar módulo) Tj
+0 -12 Td
+(const { sumar, restar } = require\('./utils/matematicas'\);) Tj
+0 -15 Td
+(console.log\(sumar\(5, 3\)\);  // 8) Tj
+0 -12 Td
+(console.log\(restar\(10, 4\)\); // 6) Tj
+0 -25 Td
+/F2 12 Tf
+(File System \(Sistema de Archivos\)) Tj
+0 -20 Td
+/F1 11 Tf
+(Node.js puede interactuar con el sistema de archivos:) Tj
+0 -20 Td
+/F2 10 Tf
+(const fs = require\('fs'\);) Tj
+0 -12 Td
+(const path = require\('path'\);) Tj
+0 -15 Td
+(// Leer archivo de forma síncrona) Tj
+0 -12 Td
+(try {) Tj
+0 -12 Td
+(  const data = fs.readFileSync\('archivo.txt', 'utf8'\);) Tj
+0 -12 Td
+(  console.log\(data\);) Tj
+0 -12 Td
+(} catch \(err\) {) Tj
+0 -12 Td
+(  console.error\('Error leyendo archivo:', err\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Leer archivo de forma asíncrona \(recomendado\)) Tj
+0 -12 Td
+(fs.readFile\('archivo.txt', 'utf8', \(err, data\) => {) Tj
+0 -12 Td
+(  if \(err\) {) Tj
+0 -12 Td
+(    console.error\('Error:', err\);) Tj
+0 -12 Td
+(    return;) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(  console.log\('Contenido:', data\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Con Promises \(moderno\)) Tj
+0 -12 Td
+(const fsPromises = require\('fs'\).promises;) Tj
+0 -15 Td
+(async function leerArchivo\(\) {) Tj
+0 -12 Td
+(  try {) Tj
+0 -12 Td
+(    const data = await fsPromises.readFile\('archivo.txt', 'utf8'\);) Tj
+0 -12 Td
+(    console.log\(data\);) Tj
+0 -12 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    console.error\('Error:', error\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Escribir archivo) Tj
+0 -12 Td
+(const contenido = 'Este es el contenido del archivo';) Tj
+0 -12 Td
+(fs.writeFile\('nuevo-archivo.txt', contenido, 'utf8', \(err\) => {) Tj
+0 -12 Td
+(  if \(err\) {) Tj
+0 -12 Td
+(    console.error\('Error escribiendo archivo:', err\);) Tj
+0 -12 Td
+(  } else {) Tj
+0 -12 Td
+(    console.log\('Archivo creado exitosamente'\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(NPM y Gestión de Paquetes) Tj
+0 -20 Td
+/F1 11 Tf
+(NPM es el ecosistema de paquetes más grande del mundo:) Tj
+0 -20 Td
+/F2 10 Tf
+(# Instalar paquete globalmente) Tj
+0 -12 Td
+(npm install -g nodemon) Tj
+0 -15 Td
+(# Instalar como dependencia de producción) Tj
+0 -12 Td
+(npm install express mongoose) Tj
+0 -15 Td
+(# Instalar como dependencia de desarrollo) Tj
+0 -12 Td
+(npm install --save-dev jest eslint) Tj
+0 -15 Td
+(# Instalar versión específica) Tj
+0 -12 Td
+(npm install lodash@4.17.21) Tj
+0 -15 Td
+(# Desinstalar paquete) Tj
+0 -12 Td
+(npm uninstall express) Tj
+0 -15 Td
+(# Listar paquetes instalados) Tj
+0 -12 Td
+(npm list) Tj
+0 -15 Td
+(# Actualizar paquetes) Tj
+0 -12 Td
+(npm update) Tj
+0 -25 Td
+/F2 12 Tf
+(Variables de Entorno) Tj
+0 -20 Td
+/F1 11 Tf
+(Para configuraciones sensibles y específicas del entorno:) Tj
+0 -20 Td
+/F2 10 Tf
+(# .env) Tj
+0 -12 Td
+(PORT=3000) Tj
+0 -12 Td
+(DATABASE_URL=mongodb://localhost:27017/miapp) Tj
+0 -12 Td
+(JWT_SECRET=mi_clave_secreta_super_segura) Tj
+0 -12 Td
+(NODE_ENV=development) Tj
+0 -15 Td
+(// app.js) Tj
+0 -12 Td
+(require\('dotenv'\).config\(\);) Tj
+0 -15 Td
+(const port = process.env.PORT || 3000;) Tj
+0 -12 Td
+(const dbUrl = process.env.DATABASE_URL;) Tj
+0 -12 Td
+(const jwtSecret = process.env.JWT_SECRET;) Tj
+0 -15 Td
+(console.log\(`Servidor corriendo en puerto ${port}`\);) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(5.4 Express.js: Framework Web) Tj
+0 -40 Td
+/F2 12 Tf
+(¿Qué es Express.js?) Tj
+0 -20 Td
+/F1 11 Tf
+(Express es un framework web minimalista y flexible para Node.js que) Tj
+0 -15 Td
+(proporciona un conjunto robusto de características para aplicaciones) Tj
+0 -15 Td
+(web y móviles. Simplifica la creación de servidores y APIs.) Tj
+0 -30 Td
+/F2 12 Tf
+(Servidor Básico con Express) Tj
+0 -20 Td
+/F2 10 Tf
+(const express = require\('express'\);) Tj
+0 -12 Td
+(const app = express\(\);) Tj
+0 -12 Td
+(const PORT = process.env.PORT || 3000;) Tj
+0 -15 Td
+(// Middleware para parsear JSON) Tj
+0 -12 Td
+(app.use\(express.json\(\)\);) Tj
+0 -15 Td
+(// Ruta básica) Tj
+0 -12 Td
+(app.get\('/', \(req, res\) => {) Tj
+0 -12 Td
+(  res.json\({ mensaje: '¡Hola desde Express!' }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Iniciar servidor) Tj
+0 -12 Td
+(app.listen\(PORT, \(\) => {) Tj
+0 -12 Td
+(  console.log\(`Servidor Express ejecutándose en puerto ${PORT}`\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Rutas y Métodos HTTP) Tj
+0 -20 Td
+/F2 10 Tf
+(// GET - Obtener datos) Tj
+0 -12 Td
+(app.get\('/usuarios', \(req, res\) => {) Tj
+0 -12 Td
+(  res.json\({ usuarios: ['Ana', 'Carlos', 'María'] }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// POST - Crear nuevo recurso) Tj
+0 -12 Td
+(app.post\('/usuarios', \(req, res\) => {) Tj
+0 -12 Td
+(  const { nombre, email } = req.body;) Tj
+0 -12 Td
+(  res.status\(201\).json\({) Tj
+0 -12 Td
+(    mensaje: 'Usuario creado',) Tj
+0 -12 Td
+(    usuario: { nombre, email }) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// PUT - Actualizar recurso completo) Tj
+0 -12 Td
+(app.put\('/usuarios/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const { id } = req.params;) Tj
+0 -12 Td
+(  const { nombre, email } = req.body;) Tj
+0 -12 Td
+(  res.json\({) Tj
+0 -12 Td
+(    mensaje: `Usuario ${id} actualizado`,) Tj
+0 -12 Td
+(    usuario: { id, nombre, email }) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// PATCH - Actualizar recurso parcial) Tj
+0 -12 Td
+(app.patch\('/usuarios/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const { id } = req.params;) Tj
+0 -12 Td
+(  const updates = req.body;) Tj
+0 -12 Td
+(  res.json\({) Tj
+0 -12 Td
+(    mensaje: `Usuario ${id} actualizado parcialmente`,) Tj
+0 -12 Td
+(    updates) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// DELETE - Eliminar recurso) Tj
+0 -12 Td
+(app.delete\('/usuarios/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const { id } = req.params;) Tj
+0 -12 Td
+(  res.json\({ mensaje: `Usuario ${id} eliminado` }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Parámetros y Query Strings) Tj
+0 -20 Td
+/F2 10 Tf
+(// Parámetros de ruta) Tj
+0 -12 Td
+(app.get\('/usuarios/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const { id } = req.params;) Tj
+0 -12 Td
+(  res.json\({ mensaje: `Usuario con ID: ${id}` }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Múltiples parámetros) Tj
+0 -12 Td
+(app.get\('/usuarios/:id/posts/:postId', \(req, res\) => {) Tj
+0 -12 Td
+(  const { id, postId } = req.params;) Tj
+0 -12 Td
+(  res.json\({ usuario: id, post: postId }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Query parameters) Tj
+0 -12 Td
+(app.get\('/buscar', \(req, res\) => {) Tj
+0 -12 Td
+(  const { q, page, limit } = req.query;) Tj
+0 -12 Td
+(  res.json\({) Tj
+0 -12 Td
+(    busqueda: q,) Tj
+0 -12 Td
+(    pagina: page || 1,) Tj
+0 -12 Td
+(    limite: limit || 10) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -12 Td
+(// URL: /buscar?q=node&page=2&limit=5) Tj
+0 -25 Td
+/F2 12 Tf
+(Middleware) Tj
+0 -20 Td
+/F1 11 Tf
+(Los middlewares son funciones que se ejecutan durante el ciclo de vida) Tj
+0 -15 Td
+(de las peticiones HTTP:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Middleware de logging) Tj
+0 -12 Td
+(app.use\(\(req, res, next\) => {) Tj
+0 -12 Td
+(  console.log\(`${req.method} ${req.path} - ${new Date\(\).toISOString\(\)}`\);) Tj
+0 -12 Td
+(  next\(\); // Continuar al siguiente middleware) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Middleware para autenticación) Tj
+0 -12 Td
+(function autenticarToken\(req, res, next\) {) Tj
+0 -12 Td
+(  const token = req.header\('Authorization'\);) Tj
+0 -12 Td
+(  if \(!token\) {) Tj
+0 -12 Td
+(    return res.status\(401\).json\({ error: 'Token requerido' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(  // Verificar token aquí) Tj
+0 -12 Td
+(  next\(\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Usar middleware en rutas específicas) Tj
+0 -12 Td
+(app.get\('/perfil', autenticarToken, \(req, res\) => {) Tj
+0 -12 Td
+(  res.json\({ mensaje: 'Perfil del usuario autenticado' }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Middleware de manejo de errores) Tj
+0 -12 Td
+(app.use\(\(err, req, res, next\) => {) Tj
+0 -12 Td
+(  console.error\(err.stack\);) Tj
+0 -12 Td
+(  res.status\(500\).json\({ error: 'Algo salió mal!' }\);) Tj
+0 -12 Td
+(}\);) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(5.5 APIs RESTful) Tj
+0 -40 Td
+/F2 12 Tf
+(¿Qué es REST?) Tj
+0 -20 Td
+/F1 11 Tf
+(REST \(Representational State Transfer\) es un estilo arquitectónico para) Tj
+0 -15 Td
+(diseñar servicios web. Define un conjunto de principios para crear APIs) Tj
+0 -15 Td
+(escalables, mantenibles y fáciles de usar.) Tj
+0 -30 Td
+/F2 12 Tf
+(Principios REST) Tj
+0 -20 Td
+/F1 11 Tf
+(• Sin Estado: Cada petición debe contener toda la información necesaria) Tj
+0 -15 Td
+(• Interfaz Uniforme: URLs y métodos HTTP estándar) Tj
+0 -15 Td
+(• Cacheable: Las respuestas deben indicar si son cacheables) Tj
+0 -15 Td
+(• Cliente-Servidor: Separación clara de responsabilidades) Tj
+0 -15 Td
+(• Sistema por Capas: Arquitectura en capas transparente) Tj
+0 -30 Td
+/F2 12 Tf
+(API Completa de Tareas) Tj
+0 -20 Td
+/F1 11 Tf
+(Implementemos una API RESTful completa para gestionar tareas:) Tj
+0 -20 Td
+/F2 10 Tf
+(const express = require\('express'\);) Tj
+0 -12 Td
+(const app = express\(\);) Tj
+0 -15 Td
+(app.use\(express.json\(\)\);) Tj
+0 -15 Td
+(// Base de datos temporal \(en memoria\)) Tj
+0 -12 Td
+(let tareas = [) Tj
+0 -12 Td
+(  { id: 1, titulo: 'Aprender Node.js', completada: false, fechaCreacion: new Date\(\) },) Tj
+0 -12 Td
+(  { id: 2, titulo: 'Crear API REST', completada: true, fechaCreacion: new Date\(\) }) Tj
+0 -12 Td
+(];) Tj
+0 -12 Td
+(let siguienteId = 3;) Tj
+0 -15 Td
+(// GET /api/tareas - Obtener todas las tareas) Tj
+0 -12 Td
+(app.get\('/api/tareas', \(req, res\) => {) Tj
+0 -12 Td
+(  const { completada, buscar } = req.query;) Tj
+0 -12 Td
+(  let resultado = tareas;) Tj
+0 -15 Td
+(  // Filtrar por estado) Tj
+0 -12 Td
+(  if \(completada !== undefined\) {) Tj
+0 -12 Td
+(    resultado = resultado.filter\(t => t.completada === \(completada === 'true'\)\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  // Buscar por título) Tj
+0 -12 Td
+(  if \(buscar\) {) Tj
+0 -12 Td
+(    resultado = resultado.filter\(t => ) Tj
+0 -12 Td
+(      t.titulo.toLowerCase\(\).includes\(buscar.toLowerCase\(\)\)) Tj
+0 -12 Td
+(    \);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  res.json\({) Tj
+0 -12 Td
+(    total: resultado.length,) Tj
+0 -12 Td
+(    tareas: resultado) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// GET /api/tareas/:id - Obtener tarea específica) Tj
+0 -12 Td
+(app.get\('/api/tareas/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const id = parseInt\(req.params.id\);) Tj
+0 -12 Td
+(  const tarea = tareas.find\(t => t.id === id\);) Tj
+0 -15 Td
+(  if \(!tarea\) {) Tj
+0 -12 Td
+(    return res.status\(404\).json\({ error: 'Tarea no encontrada' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  res.json\(tarea\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// POST /api/tareas - Crear nueva tarea) Tj
+0 -12 Td
+(app.post\('/api/tareas', \(req, res\) => {) Tj
+0 -12 Td
+(  const { titulo, descripcion } = req.body;) Tj
+0 -15 Td
+(  // Validación) Tj
+0 -12 Td
+(  if \(!titulo || titulo.trim\(\) === ''\) {) Tj
+0 -12 Td
+(    return res.status\(400\).json\({ error: 'El título es requerido' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  const nuevaTarea = {) Tj
+0 -12 Td
+(    id: siguienteId++,) Tj
+0 -12 Td
+(    titulo: titulo.trim\(\),) Tj
+0 -12 Td
+(    descripcion: descripcion || '',) Tj
+0 -12 Td
+(    completada: false,) Tj
+0 -12 Td
+(    fechaCreacion: new Date\(\),) Tj
+0 -12 Td
+(    fechaActualizacion: new Date\(\)) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  tareas.push\(nuevaTarea\);) Tj
+0 -12 Td
+(  res.status\(201\).json\(nuevaTarea\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// PUT /api/tareas/:id - Actualizar tarea completa) Tj
+0 -12 Td
+(app.put\('/api/tareas/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const id = parseInt\(req.params.id\);) Tj
+0 -12 Td
+(  const { titulo, descripcion, completada } = req.body;) Tj
+0 -15 Td
+(  const tareaIndex = tareas.findIndex\(t => t.id === id\);) Tj
+0 -12 Td
+(  if \(tareaIndex === -1\) {) Tj
+0 -12 Td
+(    return res.status\(404\).json\({ error: 'Tarea no encontrada' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  // Validación) Tj
+0 -12 Td
+(  if \(!titulo || titulo.trim\(\) === ''\) {) Tj
+0 -12 Td
+(    return res.status\(400\).json\({ error: 'El título es requerido' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  // Actualizar tarea) Tj
+0 -12 Td
+(  tareas[tareaIndex] = {) Tj
+0 -12 Td
+(    ...tareas[tareaIndex],) Tj
+0 -12 Td
+(    titulo: titulo.trim\(\),) Tj
+0 -12 Td
+(    descripcion: descripcion || '',) Tj
+0 -12 Td
+(    completada: completada || false,) Tj
+0 -12 Td
+(    fechaActualizacion: new Date\(\)) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  res.json\(tareas[tareaIndex]\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// PATCH /api/tareas/:id - Actualizar tarea parcial) Tj
+0 -12 Td
+(app.patch\('/api/tareas/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const id = parseInt\(req.params.id\);) Tj
+0 -12 Td
+(  const updates = req.body;) Tj
+0 -15 Td
+(  const tareaIndex = tareas.findIndex\(t => t.id === id\);) Tj
+0 -12 Td
+(  if \(tareaIndex === -1\) {) Tj
+0 -12 Td
+(    return res.status\(404\).json\({ error: 'Tarea no encontrada' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  // Aplicar actualizaciones) Tj
+0 -12 Td
+(  tareas[tareaIndex] = {) Tj
+0 -12 Td
+(    ...tareas[tareaIndex],) Tj
+0 -12 Td
+(    ...updates,) Tj
+0 -12 Td
+(    fechaActualizacion: new Date\(\)) Tj
+0 -12 Td
+(  };) Tj
+0 -15 Td
+(  res.json\(tareas[tareaIndex]\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// DELETE /api/tareas/:id - Eliminar tarea) Tj
+0 -12 Td
+(app.delete\('/api/tareas/:id', \(req, res\) => {) Tj
+0 -12 Td
+(  const id = parseInt\(req.params.id\);) Tj
+0 -12 Td
+(  const tareaIndex = tareas.findIndex\(t => t.id === id\);) Tj
+0 -15 Td
+(  if \(tareaIndex === -1\) {) Tj
+0 -12 Td
+(    return res.status\(404\).json\({ error: 'Tarea no encontrada' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  const tareaEliminada = tareas.splice\(tareaIndex, 1\)[0];) Tj
+0 -12 Td
+(  res.json\({ mensaje: 'Tarea eliminada', tarea: tareaEliminada }\);) Tj
+0 -12 Td
+(}\);) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 2200
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(5.6 Validación y Manejo de Errores) Tj
+0 -40 Td
+/F2 12 Tf
+(Validación con express-validator) Tj
+0 -20 Td
+/F1 11 Tf
+(La validación es crucial para la seguridad y consistencia de datos:) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install express-validator) Tj
+0 -20 Td
+(const { body, validationResult } = require\('express-validator'\);) Tj
+0 -15 Td
+(// Middleware de validación) Tj
+0 -12 Td
+(const validarTarea = [) Tj
+0 -12 Td
+(  body\('titulo'\)) Tj
+0 -12 Td
+(    .notEmpty\(\)) Tj
+0 -12 Td
+(    .withMessage\('El título es requerido'\)) Tj
+0 -12 Td
+(    .isLength\({ min: 3, max: 100 }\)) Tj
+0 -12 Td
+(    .withMessage\('El título debe tener entre 3 y 100 caracteres'\),) Tj
+0 -12 Td
+(  body\('descripcion'\)) Tj
+0 -12 Td
+(    .optional\(\)) Tj
+0 -12 Td
+(    .isLength\({ max: 500 }\)) Tj
+0 -12 Td
+(    .withMessage\('La descripción no puede exceder 500 caracteres'\),) Tj
+0 -12 Td
+(  body\('completada'\)) Tj
+0 -12 Td
+(    .optional\(\)) Tj
+0 -12 Td
+(    .isBoolean\(\)) Tj
+0 -12 Td
+(    .withMessage\('Completada debe ser un valor booleano'\)) Tj
+0 -12 Td
+(];) Tj
+0 -15 Td
+(// Middleware para manejar errores de validación) Tj
+0 -12 Td
+(const manejarErroresValidacion = \(req, res, next\) => {) Tj
+0 -12 Td
+(  const errors = validationResult\(req\);) Tj
+0 -12 Td
+(  if \(!errors.isEmpty\(\)\) {) Tj
+0 -12 Td
+(    return res.status\(400\).json\({) Tj
+0 -12 Td
+(      error: 'Datos inválidos',) Tj
+0 -12 Td
+(      detalles: errors.array\(\)) Tj
+0 -12 Td
+(    }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(  next\(\);) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Usar validación en rutas) Tj
+0 -12 Td
+(app.post\('/api/tareas', validarTarea, manejarErroresValidacion, \(req, res\) => {) Tj
+0 -12 Td
+(  // Lógica para crear tarea) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Manejo Centralizado de Errores) Tj
+0 -20 Td
+/F2 10 Tf
+(// Clase personalizada para errores) Tj
+0 -12 Td
+(class AppError extends Error {) Tj
+0 -12 Td
+(  constructor\(message, statusCode\) {) Tj
+0 -12 Td
+(    super\(message\);) Tj
+0 -12 Td
+(    this.statusCode = statusCode;) Tj
+0 -12 Td
+(    this.isOperational = true;) Tj
+0 -12 Td
+(    Error.captureStackTrace\(this, this.constructor\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Middleware para capturar errores async) Tj
+0 -12 Td
+(const catchAsync = \(fn\) => {) Tj
+0 -12 Td
+(  return \(req, res, next\) => {) Tj
+0 -12 Td
+(    fn\(req, res, next\).catch\(next\);) Tj
+0 -12 Td
+(  };) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Middleware global de manejo de errores) Tj
+0 -12 Td
+(const manejarErrores = \(err, req, res, next\) => {) Tj
+0 -12 Td
+(  let error = { ...err };) Tj
+0 -12 Td
+(  error.message = err.message;) Tj
+0 -15 Td
+(  // Log del error) Tj
+0 -12 Td
+(  console.error\(err\);) Tj
+0 -15 Td
+(  // Error de validación de Mongoose) Tj
+0 -12 Td
+(  if \(err.name === 'ValidationError'\) {) Tj
+0 -12 Td
+(    const message = Object.values\(err.errors\).map\(val => val.message\).join\(', '\);) Tj
+0 -12 Td
+(    error = new AppError\(message, 400\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  // Error de cast de Mongoose) Tj
+0 -12 Td
+(  if \(err.name === 'CastError'\) {) Tj
+0 -12 Td
+(    const message = 'Recurso no encontrado';) Tj
+0 -12 Td
+(    error = new AppError\(message, 404\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  // Error de clave duplicada) Tj
+0 -12 Td
+(  if \(err.code === 11000\) {) Tj
+0 -12 Td
+(    const message = 'Recurso duplicado';) Tj
+0 -12 Td
+(    error = new AppError\(message, 400\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  res.status\(error.statusCode || 500\).json\({) Tj
+0 -12 Td
+(    success: false,) Tj
+0 -12 Td
+(    error: error.message || 'Error interno del servidor',) Tj
+0 -12 Td
+(    ...\(process.env.NODE_ENV === 'development' && { stack: err.stack }\)) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Usar al final de todas las rutas) Tj
+0 -12 Td
+(app.use\(manejarErrores\);) Tj
+0 -25 Td
+/F2 12 Tf
+(CORS \(Cross-Origin Resource Sharing\)) Tj
+0 -20 Td
+/F1 11 Tf
+(Para permitir peticiones desde diferentes dominios:) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install cors) Tj
+0 -15 Td
+(const cors = require\('cors'\);) Tj
+0 -15 Td
+(// CORS básico \(permite todos los orígenes\)) Tj
+0 -12 Td
+(app.use\(cors\(\)\);) Tj
+0 -15 Td
+(// CORS configurado) Tj
+0 -12 Td
+(const corsOptions = {) Tj
+0 -12 Td
+(  origin: ['http://localhost:3000', 'https://miapp.com'],) Tj
+0 -12 Td
+(  credentials: true,) Tj
+0 -12 Td
+(  methods: ['GET', 'POST', 'PUT', 'DELETE'],) Tj
+0 -12 Td
+(  allowedHeaders: ['Content-Type', 'Authorization']) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(app.use\(cors\(corsOptions\)\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Rate Limiting) Tj
+0 -20 Td
+/F1 11 Tf
+(Para proteger la API de abuso:) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install express-rate-limit) Tj
+0 -15 Td
+(const rateLimit = require\('express-rate-limit'\);) Tj
+0 -15 Td
+(const limiter = rateLimit\({) Tj
+0 -12 Td
+(  windowMs: 15 * 60 * 1000, // 15 minutos) Tj
+0 -12 Td
+(  max: 100, // máximo 100 peticiones por ventana) Tj
+0 -12 Td
+(  message: 'Demasiadas peticiones, intenta más tarde') Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(app.use\('/api', limiter\);) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 2100
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(5.7 Autenticación y Autorización) Tj
+0 -40 Td
+/F2 12 Tf
+(JWT \(JSON Web Tokens\)) Tj
+0 -20 Td
+/F1 11 Tf
+(JWT es un estándar para transmitir información de forma segura:) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install jsonwebtoken bcryptjs) Tj
+0 -20 Td
+(const jwt = require\('jsonwebtoken'\);) Tj
+0 -12 Td
+(const bcrypt = require\('bcryptjs'\);) Tj
+0 -15 Td
+(// Base de datos temporal de usuarios) Tj
+0 -12 Td
+(const usuarios = [];) Tj
+0 -15 Td
+(// Registro de usuario) Tj
+0 -12 Td
+(app.post\('/api/auth/registro', async \(req, res\) => {) Tj
+0 -12 Td
+(  try {) Tj
+0 -12 Td
+(    const { nombre, email, password } = req.body;) Tj
+0 -15 Td
+(    // Verificar si el usuario ya existe) Tj
+0 -12 Td
+(    const usuarioExistente = usuarios.find\(u => u.email === email\);) Tj
+0 -12 Td
+(    if \(usuarioExistente\) {) Tj
+0 -12 Td
+(      return res.status\(400\).json\({ error: 'Usuario ya existe' }\);) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    // Hashear password) Tj
+0 -12 Td
+(    const salt = await bcrypt.genSalt\(10\);) Tj
+0 -12 Td
+(    const passwordHasheada = await bcrypt.hash\(password, salt\);) Tj
+0 -15 Td
+(    // Crear usuario) Tj
+0 -12 Td
+(    const nuevoUsuario = {) Tj
+0 -12 Td
+(      id: usuarios.length + 1,) Tj
+0 -12 Td
+(      nombre,) Tj
+0 -12 Td
+(      email,) Tj
+0 -12 Td
+(      password: passwordHasheada,) Tj
+0 -12 Td
+(      fechaRegistro: new Date\(\)) Tj
+0 -12 Td
+(    };) Tj
+0 -15 Td
+(    usuarios.push\(nuevoUsuario\);) Tj
+0 -15 Td
+(    // Generar JWT) Tj
+0 -12 Td
+(    const token = jwt.sign\() Tj
+0 -12 Td
+(      { id: nuevoUsuario.id, email: nuevoUsuario.email },) Tj
+0 -12 Td
+(      process.env.JWT_SECRET,) Tj
+0 -12 Td
+(      { expiresIn: '7d' }) Tj
+0 -12 Td
+(    \);) Tj
+0 -15 Td
+(    res.status\(201\).json\({) Tj
+0 -12 Td
+(      mensaje: 'Usuario registrado exitosamente',) Tj
+0 -12 Td
+(      token,) Tj
+0 -12 Td
+(      usuario: {) Tj
+0 -12 Td
+(        id: nuevoUsuario.id,) Tj
+0 -12 Td
+(        nombre: nuevoUsuario.nombre,) Tj
+0 -12 Td
+(        email: nuevoUsuario.email) Tj
+0 -12 Td
+(      }) Tj
+0 -12 Td
+(    }\);) Tj
+0 -12 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    res.status\(500\).json\({ error: 'Error interno del servidor' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Login de usuario) Tj
+0 -12 Td
+(app.post\('/api/auth/login', async \(req, res\) => {) Tj
+0 -12 Td
+(  try {) Tj
+0 -12 Td
+(    const { email, password } = req.body;) Tj
+0 -15 Td
+(    // Encontrar usuario) Tj
+0 -12 Td
+(    const usuario = usuarios.find\(u => u.email === email\);) Tj
+0 -12 Td
+(    if \(!usuario\) {) Tj
+0 -12 Td
+(      return res.status\(401\).json\({ error: 'Credenciales inválidas' }\);) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    // Verificar password) Tj
+0 -12 Td
+(    const passwordValida = await bcrypt.compare\(password, usuario.password\);) Tj
+0 -12 Td
+(    if \(!passwordValida\) {) Tj
+0 -12 Td
+(      return res.status\(401\).json\({ error: 'Credenciales inválidas' }\);) Tj
+0 -12 Td
+(    }) Tj
+0 -15 Td
+(    // Generar JWT) Tj
+0 -12 Td
+(    const token = jwt.sign\() Tj
+0 -12 Td
+(      { id: usuario.id, email: usuario.email },) Tj
+0 -12 Td
+(      process.env.JWT_SECRET,) Tj
+0 -12 Td
+(      { expiresIn: '7d' }) Tj
+0 -12 Td
+(    \);) Tj
+0 -15 Td
+(    res.json\({) Tj
+0 -12 Td
+(      mensaje: 'Login exitoso',) Tj
+0 -12 Td
+(      token,) Tj
+0 -12 Td
+(      usuario: {) Tj
+0 -12 Td
+(        id: usuario.id,) Tj
+0 -12 Td
+(        nombre: usuario.nombre,) Tj
+0 -12 Td
+(        email: usuario.email) Tj
+0 -12 Td
+(      }) Tj
+0 -12 Td
+(    }\);) Tj
+0 -12 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    res.status\(500\).json\({ error: 'Error interno del servidor' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Middleware de autenticación) Tj
+0 -12 Td
+(const autenticar = \(req, res, next\) => {) Tj
+0 -12 Td
+(  const token = req.header\('Authorization'\)?.replace\('Bearer ', ''\);) Tj
+0 -15 Td
+(  if \(!token\) {) Tj
+0 -12 Td
+(    return res.status\(401\).json\({ error: 'Token no proporcionado' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -15 Td
+(  try {) Tj
+0 -12 Td
+(    const decoded = jwt.verify\(token, process.env.JWT_SECRET\);) Tj
+0 -12 Td
+(    req.usuario = decoded;) Tj
+0 -12 Td
+(    next\(\);) Tj
+0 -12 Td
+(  } catch \(error\) {) Tj
+0 -12 Td
+(    res.status\(401\).json\({ error: 'Token inválido' }\);) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Ruta protegida) Tj
+0 -12 Td
+(app.get\('/api/perfil', autenticar, \(req, res\) => {) Tj
+0 -12 Td
+(  const usuario = usuarios.find\(u => u.id === req.usuario.id\);) Tj
+0 -12 Td
+(  res.json\({) Tj
+0 -12 Td
+(    id: usuario.id,) Tj
+0 -12 Td
+(    nombre: usuario.nombre,) Tj
+0 -12 Td
+(    email: usuario.email,) Tj
+0 -12 Td
+(    fechaRegistro: usuario.fechaRegistro) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Middleware de Autorización por Roles) Tj
+0 -20 Td
+/F2 10 Tf
+(const autorizarRoles = \(...roles\) => {) Tj
+0 -12 Td
+(  return \(req, res, next\) => {) Tj
+0 -12 Td
+(    if \(!roles.includes\(req.usuario.rol\)\) {) Tj
+0 -12 Td
+(      return res.status\(403\).json\({) Tj
+0 -12 Td
+(        error: 'No tienes permisos para acceder a este recurso') Tj
+0 -12 Td
+(      }\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(    next\(\);) Tj
+0 -12 Td
+(  };) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Uso en rutas) Tj
+0 -12 Td
+(app.delete\('/api/usuarios/:id', ) Tj
+0 -12 Td
+(  autenticar, ) Tj
+0 -12 Td
+(  autorizarRoles\('admin'\), ) Tj
+0 -12 Td
+(  \(req, res\) => {) Tj
+0 -12 Td
+(    // Solo administradores pueden eliminar usuarios) Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(\);) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(5.8 Testing y Documentación) Tj
+0 -40 Td
+/F2 12 Tf
+(Testing con Jest y Supertest) Tj
+0 -20 Td
+/F1 11 Tf
+(Las pruebas aseguran la calidad y confiabilidad del código:) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install --save-dev jest supertest) Tj
+0 -20 Td
+(// tests/api.test.js) Tj
+0 -12 Td
+(const request = require\('supertest'\);) Tj
+0 -12 Td
+(const app = require\('../app'\);) Tj
+0 -15 Td
+(describe\('API de Tareas', \(\) => {) Tj
+0 -12 Td
+(  test\('GET /api/tareas debe retornar todas las tareas', async \(\) => {) Tj
+0 -12 Td
+(    const res = await request\(app\)) Tj
+0 -12 Td
+(      .get\('/api/tareas'\)) Tj
+0 -12 Td
+(      .expect\(200\);) Tj
+0 -15 Td
+(    expect\(res.body\).toHaveProperty\('tareas'\);) Tj
+0 -12 Td
+(    expect\(Array.isArray\(res.body.tareas\)\).toBe\(true\);) Tj
+0 -12 Td
+(  }\);) Tj
+0 -15 Td
+(  test\('POST /api/tareas debe crear una nueva tarea', async \(\) => {) Tj
+0 -12 Td
+(    const nuevaTarea = {) Tj
+0 -12 Td
+(      titulo: 'Tarea de prueba',) Tj
+0 -12 Td
+(      descripcion: 'Descripción de prueba') Tj
+0 -12 Td
+(    };) Tj
+0 -15 Td
+(    const res = await request\(app\)) Tj
+0 -12 Td
+(      .post\('/api/tareas'\)) Tj
+0 -12 Td
+(      .send\(nuevaTarea\)) Tj
+0 -12 Td
+(      .expect\(201\);) Tj
+0 -15 Td
+(    expect\(res.body\).toHaveProperty\('id'\);) Tj
+0 -12 Td
+(    expect\(res.body.titulo\).toBe\(nuevaTarea.titulo\);) Tj
+0 -12 Td
+(  }\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Documentación con Swagger/OpenAPI) Tj
+0 -20 Td
+/F2 10 Tf
+(npm install swagger-jsdoc swagger-ui-express) Tj
+0 -20 Td
+(const swaggerJsdoc = require\('swagger-jsdoc'\);) Tj
+0 -12 Td
+(const swaggerUi = require\('swagger-ui-express'\);) Tj
+0 -15 Td
+(const swaggerOptions = {) Tj
+0 -12 Td
+(  definition: {) Tj
+0 -12 Td
+(    openapi: '3.0.0',) Tj
+0 -12 Td
+(    info: {) Tj
+0 -12 Td
+(      title: 'API de Tareas',) Tj
+0 -12 Td
+(      version: '1.0.0',) Tj
+0 -12 Td
+(      description: 'API RESTful para gestión de tareas') Tj
+0 -12 Td
+(    },) Tj
+0 -12 Td
+(    servers: [) Tj
+0 -12 Td
+(      { url: 'http://localhost:3000', description: 'Desarrollo' }) Tj
+0 -12 Td
+(    ]) Tj
+0 -12 Td
+(  },) Tj
+0 -12 Td
+(  apis: ['./routes/*.js']) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(const specs = swaggerJsdoc\(swaggerOptions\);) Tj
+0 -12 Td
+(app.use\('/api-docs', swaggerUi.serve, swaggerUi.setup\(specs\)\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Deployment y Producción) Tj
+0 -20 Td
+/F1 11 Tf
+(Consideraciones para poner la API en producción:) Tj
+0 -20 Td
+/F2 10 Tf
+(// package.json scripts) Tj
+0 -12 Td
+({) Tj
+0 -12 Td
+(  "scripts": {) Tj
+0 -12 Td
+(    "start": "node server.js",) Tj
+0 -12 Td
+(    "dev": "nodemon server.js",) Tj
+0 -12 Td
+(    "test": "jest",) Tj
+0 -12 Td
+(    "test:watch": "jest --watch") Tj
+0 -12 Td
+(  }) Tj
+0 -12 Td
+(}) Tj
+0 -40 Td
+/F2 16 Tf
+(5.9 Resumen del Tema 5) Tj
+0 -30 Td
+/F2 12 Tf
+(Conceptos Dominados) Tj
+0 -20 Td
+/F1 11 Tf
+(En este tema hemos construido una base sólida para el desarrollo backend:) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Fundamentos de Node.js) Tj
+0 -15 Td
+/F1 11 Tf
+(• Configuración del entorno y gestión de paquetes) Tj
+0 -15 Td
+(• Sistema de módulos y arquitectura asíncrona) Tj
+0 -15 Td
+(• Trabajo con sistema de archivos y APIs nativas) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Express.js y APIs RESTful) Tj
+0 -15 Td
+/F1 11 Tf
+(• Creación de servidores web robustos) Tj
+0 -15 Td
+(• Implementación completa de CRUD operations) Tj
+0 -15 Td
+(• Middleware para funcionalidad transversal) Tj
+0 -15 Td
+(• Manejo de rutas, parámetros y query strings) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Seguridad y Validación) Tj
+0 -15 Td
+/F1 11 Tf
+(• Validación de datos con express-validator) Tj
+0 -15 Td
+(• Autenticación con JWT) Tj
+0 -15 Td
+(• Autorización basada en roles) Tj
+0 -15 Td
+(• Protección CORS y rate limiting) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Buenas Prácticas) Tj
+0 -15 Td
+/F1 11 Tf
+(• Manejo centralizado de errores) Tj
+0 -15 Td
+(• Testing automatizado con Jest) Tj
+0 -15 Td
+(• Documentación con Swagger) Tj
+0 -15 Td
+(• Estructura de proyecto escalable) Tj
+0 -30 Td
+/F2 12 Tf
+(Preparación para el Próximo Tema) Tj
+0 -20 Td
+/F1 11 Tf
+(En el Tema 6 exploraremos bases de datos con SQL:) Tj
+0 -15 Td
+(• Modelado de datos relacionales) Tj
+0 -15 Td
+(• Consultas SQL avanzadas) Tj
+0 -15 Td
+(• Integración con Node.js) Tj
+0 -15 Td
+(• ORMs y mejores prácticas) Tj
+0 -30 Td
+/F1 11 Tf
+(¡Excelente progreso! Ahora puedes crear APIs backend robustas y seguras.) Tj
+0 -15 Td
+(El siguiente paso es dominar las bases de datos para completar el stack.) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000261 00000 n 
+0000000382 00000 n 
+0000000503 00000 n 
+0000000624 00000 n 
+0000000745 00000 n 
+0000000866 00000 n 
+0000000988 00000 n 
+0000001087 00000 n 
+0000001191 00000 n 
+0000003542 00000 n 
+0000005993 00000 n 
+0000008344 00000 n 
+0000010795 00000 n 
+0000013046 00000 n 
+0000015197 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+17048
+%%EOF

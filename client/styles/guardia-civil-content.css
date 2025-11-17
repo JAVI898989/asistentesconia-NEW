@@ -1,0 +1,280 @@
+/* Estilos profesionales para el contenido de Guardia Civil */
+
+/* Temario - Estilo visual atractivo */
+.gc-temario {
+  @apply max-w-none;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* Títulos en negrita y bien espaciados */
+.gc-temario h1 {
+  @apply text-3xl font-bold text-slate-100 mb-8 mt-12 pb-4 border-b-2 border-emerald-500;
+  scroll-margin-top: 6rem;
+}
+
+.gc-temario h2 {
+  @apply text-2xl font-bold text-slate-200 mb-6 mt-10 pb-3 border-b border-slate-600;
+  scroll-margin-top: 6rem;
+}
+
+.gc-temario h3 {
+  @apply text-xl font-semibold text-slate-300 mb-4 mt-8;
+  scroll-margin-top: 6rem;
+}
+
+.gc-temario h4 {
+  @apply text-lg font-semibold text-slate-400 mb-3 mt-6;
+  scroll-margin-top: 6rem;
+}
+
+/* Párrafos con buena legibilidad */
+.gc-temario p {
+  @apply text-slate-300 mb-4 leading-relaxed;
+}
+
+/* Listas con colores y separación */
+.gc-temario ul {
+  @apply mb-6 space-y-2;
+}
+
+.gc-temario li {
+  @apply text-slate-300 leading-relaxed;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.gc-temario ul > li::before {
+  content: "•";
+  @apply text-emerald-400 font-bold absolute left-0;
+}
+
+.gc-temario ol {
+  @apply mb-6 space-y-2 counter-reset: list-counter;
+}
+
+.gc-temario ol > li {
+  @apply text-slate-300 leading-relaxed;
+  position: relative;
+  padding-left: 2rem;
+  counter-increment: list-counter;
+}
+
+.gc-temario ol > li::before {
+  content: counter(list-counter) ".";
+  @apply text-emerald-400 font-bold absolute left-0;
+}
+
+/* Separación entre puntos principales */
+.gc-temario li + li {
+  margin-top: 0.5rem;
+}
+
+/* Tablas profesionales */
+.gc-temario table {
+  @apply w-full border border-slate-600 rounded-xl overflow-x-auto text-sm mb-6;
+  border-collapse: collapse;
+}
+
+.gc-temario th {
+  @apply bg-slate-700 text-slate-200 font-semibold p-3 border-b border-slate-600;
+}
+
+.gc-temario td {
+  @apply text-slate-300 p-3 border-b border-slate-700;
+}
+
+.gc-temario tr:last-child td {
+  border-bottom: none;
+}
+
+/* Callouts con colores específicos */
+.gc-temario blockquote {
+  @apply my-6 p-4 rounded-xl border-l-4;
+}
+
+/* Nota azul */
+.gc-temario blockquote:has(strong:first-child:contains("Nota")) {
+  @apply bg-blue-500/10 border-blue-400 text-blue-300;
+}
+
+/* Atención amarillo */
+.gc-temario blockquote:has(strong:first-child:contains("Atención")) {
+  @apply bg-amber-500/10 border-amber-400 text-amber-300;
+}
+
+/* Importante rojo */
+.gc-temario blockquote:has(strong:first-child:contains("Importante")) {
+  @apply bg-red-500/10 border-red-400 text-red-300;
+}
+
+/* Código y elementos técnicos */
+.gc-temario pre {
+  @apply bg-slate-800 text-slate-300 p-4 rounded-xl overflow-x-auto mb-6 font-mono text-sm;
+  break-inside: avoid;
+}
+
+.gc-temario code {
+  @apply bg-slate-700 text-emerald-300 px-2 py-1 rounded font-mono text-sm;
+}
+
+.gc-temario pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Elementos destacados */
+.gc-temario strong {
+  @apply text-emerald-400 font-semibold;
+}
+
+.gc-temario em {
+  @apply text-slate-200 italic;
+}
+
+/* Links */
+.gc-temario a {
+  @apply text-emerald-400 hover:text-emerald-300 underline decoration-emerald-500/50 hover:decoration-emerald-300;
+}
+
+/* Separadores */
+.gc-temario hr {
+  @apply border-slate-600 my-8;
+}
+
+/* Espaciado especial para secciones */
+.gc-temario > div > *:first-child {
+  margin-top: 0;
+}
+
+/* Evitar ruptura de elementos en impresión/PDF */
+.gc-temario h2,
+.gc-temario h3,
+.gc-temario table,
+.gc-temario ul,
+.gc-temario pre {
+  break-inside: avoid;
+}
+
+/* Salto de página para impresión */
+.page-break {
+  break-after: page;
+}
+
+/* Elementos de resumen y datos clave */
+.gc-resumen {
+  @apply bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-6 mt-8;
+}
+
+.gc-resumen h3 {
+  @apply text-emerald-400 font-bold text-xl mb-4;
+}
+
+.gc-datos-clave {
+  @apply bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6 mt-6;
+}
+
+.gc-datos-clave h3 {
+  @apply text-amber-400 font-bold text-xl mb-4;
+}
+
+.gc-datos-clave ul {
+  @apply space-y-3;
+}
+
+.gc-datos-clave li {
+  @apply bg-slate-800/50 rounded-lg p-3 border border-slate-600;
+}
+
+/* Esquemas y diagramas */
+.gc-esquema {
+  @apply bg-slate-800/50 border border-slate-600 rounded-2xl p-6 mb-6;
+}
+
+.gc-esquema h4 {
+  @apply text-indigo-400 font-bold text-lg mb-4;
+}
+
+/* Casos prácticos destacados */
+.gc-caso-practico {
+  @apply bg-violet-500/10 border border-violet-500/30 rounded-2xl p-6 mb-6;
+}
+
+.gc-caso-practico h4 {
+  @apply text-violet-400 font-bold text-lg mb-3;
+}
+
+/* Checklist visual */
+.gc-checklist {
+  @apply bg-slate-800/50 rounded-2xl p-6 mb-6;
+}
+
+.gc-checklist ul {
+  @apply space-y-3;
+}
+
+.gc-checklist li {
+  @apply flex items-start gap-3 p-3 rounded-lg border border-slate-600;
+}
+
+.gc-checklist li::before {
+  content: "✓";
+  @apply text-green-400 font-bold text-lg min-w-0;
+  position: static;
+  padding-left: 0;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .gc-temario {
+    @apply text-sm leading-relaxed;
+  }
+  
+  .gc-temario h1 {
+    @apply text-2xl;
+  }
+  
+  .gc-temario h2 {
+    @apply text-xl;
+  }
+  
+  .gc-temario h3 {
+    @apply text-lg;
+  }
+  
+  .gc-temario table {
+    @apply text-xs;
+  }
+}
+
+/* Animaciones suaves */
+.gc-temario * {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Print styles para PDF */
+@media print {
+  .gc-temario {
+    @apply text-black;
+  }
+  
+  .gc-temario h1,
+  .gc-temario h2,
+  .gc-temario h3,
+  .gc-temario h4 {
+    @apply text-black;
+  }
+  
+  .gc-temario p,
+  .gc-temario li {
+    @apply text-gray-800;
+  }
+  
+  .gc-temario h2,
+  .gc-temario h3,
+  .gc-temario table,
+  .gc-temario ul,
+  .gc-temario pre {
+    break-inside: avoid;
+  }
+}

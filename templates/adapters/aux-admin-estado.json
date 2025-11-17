@@ -1,0 +1,144 @@
+{
+  "id": "aux-admin-estado",
+  "name": "Auxiliar Administrativo del Estado",
+  "description": "Adaptador para generar temarios de Auxiliar Administrativo del Estado (C2)",
+  "version": "1.0",
+  "ROL_DESTINO": "Auxiliar Administrativo del Estado (C2)",
+  "AMBITO_DESTINO": "administración pública, atención ciudadana, gestión documental, procedimiento administrativo",
+  "REMAP_NORMATIVA": {
+    "LECrim": null,
+    "CP": null,
+    "LO 4/2015": null,
+    "RDL 6/2015": null,
+    "RD 1428/2003": null,
+    "LO 1/2004": null,
+    "Ley 17/2015": null,
+    "RD 137/1993": null,
+    "RD 203/2021": "añadir",
+    "LPAC 39/2015": "añadir",
+    "LRJSP 40/2015": "añadir", 
+    "LOPDGDD/RGPD": "añadir",
+    "LCSP 9/2017": "añadir",
+    "Ley 19/2013": "añadir",
+    "RD 364/1995": "añadir"
+  },
+  "REMAP_BLOQUES": {
+    "procedimiento-penal": "lpac",
+    "seguridad-ciudadana": "atencion-ciudadano",
+    "trafico": "gestion-documental",
+    "armas": "contratacion-basica",
+    "extranjeria": "transparencia-proteccion-datos",
+    "proteccion-civil": "archivo",
+    "derechos-ffccse": "constitucion-organizacion-estado",
+    "vg": "igualdad-no-discriminacion",
+    "medioambiente": "ofimatica-aplicada",
+    "organizacion-gc": "sector-publico-lrjsp"
+  },
+  "BLOQUES_DESTINO": {
+    "lpac": {
+      "titulo": "Ley del Procedimiento Administrativo Común (LPAC 39/2015)",
+      "requisitos": ["procedimiento", "recursos", "silencio administrativo"],
+      "normativa_principal": ["LPAC 39/2015"],
+      "horas_estimadas": 25,
+      "complejidad": "alta"
+    },
+    "atencion-ciudadano": {
+      "titulo": "Atención al ciudadano y comunicación",
+      "requisitos": ["ventanilla", "información", "quejas y sugerencias"],
+      "normativa_principal": ["LPAC 39/2015", "LRJSP 40/2015"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "gestion-documental": {
+      "titulo": "Gestión documental y archivo",
+      "requisitos": ["clasificación", "archivo", "acceso documentos"],
+      "normativa_principal": ["RD 364/1995", "Ley 19/2013"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "contratacion-basica": {
+      "titulo": "Contratación del sector público (nivel básico)",
+      "requisitos": ["contratos menores", "expedientes", "tramitación"],
+      "normativa_principal": ["LCSP 9/2017"],
+      "horas_estimadas": 25,
+      "complejidad": "alta"
+    },
+    "transparencia-proteccion-datos": {
+      "titulo": "Transparencia y protección de datos",
+      "requisitos": ["acceso información", "RGPD", "derechos ARCO"],
+      "normativa_principal": ["LOPDGDD", "RGPD", "Ley 19/2013"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "archivo": {
+      "titulo": "Organización y gestión de archivos",
+      "requisitos": ["clasificación", "conservación", "eliminación"],
+      "normativa_principal": ["RD 364/1995"],
+      "horas_estimadas": 15,
+      "complejidad": "baja"
+    },
+    "constitucion-organizacion-estado": {
+      "titulo": "Constitución y organización del Estado",
+      "requisitos": ["estructura estado", "CCAA", "administraciones"],
+      "normativa_principal": ["Constitución", "LRJSP 40/2015"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "igualdad-no-discriminacion": {
+      "titulo": "Igualdad y no discriminación",
+      "requisitos": ["igualdad género", "discapacidad", "no discriminación"],
+      "normativa_principal": ["LO 3/2007", "RDL 1/2013"],
+      "horas_estimadas": 15,
+      "complejidad": "baja"
+    },
+    "ofimatica-aplicada": {
+      "titulo": "Ofimática aplicada a la administración",
+      "requisitos": ["procesador texto", "hoja cálculo", "gestores documentales"],
+      "normativa_principal": ["RD 203/2021"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    },
+    "sector-publico-lrjsp": {
+      "titulo": "Régimen jurídico del sector público (LRJSP 40/2015)",
+      "requisitos": ["administraciones p��blicas", "relaciones", "competencias"],
+      "normativa_principal": ["LRJSP 40/2015"],
+      "horas_estimadas": 20,
+      "complejidad": "media"
+    }
+  },
+  "ESTILO_EXAMEN_DESTINO": "tipo test 30-50 preguntas + prácticos de tramitación",
+  "REGLAS_REESCRITURA": {
+    "min_rewrite_ratio": 0.45,
+    "cambios_obligatorios": [
+      "cambiar jerga operativa policial por administrativa",
+      "sustituir ejemplos por ventanilla/registro",
+      "añadir plazos y cómputo LPAC",
+      "incluir procedimientos administrativos específicos",
+      "cambiar casos policiales por tramitación administrativa"
+    ],
+    "mantener_estructura": [
+      "Objetivos",
+      "Desarrollo teórico",
+      "Ejemplos prácticos",
+      "Test",
+      "Casos",
+      "Glosario"
+    ],
+    "ejemplos_contexto": [
+      "ventanilla única",
+      "registro de entrada",
+      "tramitación expedientes",
+      "atención telefónica",
+      "gestión citas previas",
+      "archivo y clasificación",
+      "recursos administrativos"
+    ]
+  },
+  "COMPETENCIAS_DESTINO": [
+    "Procedimiento administrativo común",
+    "Atención al ciudadano",
+    "Gestión documental",
+    "Tramitación de expedientes",
+    "Aplicación normativa administrativa"
+  ]
+}

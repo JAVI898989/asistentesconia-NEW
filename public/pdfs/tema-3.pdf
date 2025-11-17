@@ -1,0 +1,1575 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R]
+/Count 7
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 12 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 13 0 R
+>>
+endobj
+
+5 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 14 0 R
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 15 0 R
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 16 0 R
+>>
+endobj
+
+8 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 17 0 R
+>>
+endobj
+
+9 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 10 0 R
+/F2 11 0 R
+>>
+>>
+/Contents 18 0 R
+>>
+endobj
+
+10 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+
+12 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 24 Tf
+50 720 Td
+(Curso de Programación Desde Cero) Tj
+0 -40 Td
+/F2 18 Tf
+(Tema 3: JavaScript Fundamentals) Tj
+0 -60 Td
+/F2 14 Tf
+(3.1 Introducción a JavaScript) Tj
+0 -30 Td
+/F1 11 Tf
+(JavaScript es el lenguaje de programación que da vida a las páginas web.) Tj
+0 -15 Td
+(Es el único lenguaje que los navegadores web entienden nativamente para) Tj
+0 -15 Td
+(crear interactividad, manipular contenido dinámicamente y comunicarse) Tj
+0 -15 Td
+(con servidores. Dominar JavaScript es esencial para cualquier desarrollador web.) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Qué es JavaScript?) Tj
+0 -20 Td
+/F1 11 Tf
+(JavaScript es un lenguaje de programación interpretado, dinámico y de alto nivel) Tj
+0 -15 Td
+(que permite crear experiencias interactivas en la web. A pesar de su nombre,) Tj
+0 -15 Td
+(no tiene relación directa con Java - son lenguajes completamente diferentes.) Tj
+0 -30 Td
+/F2 12 Tf
+(Historia y Evolución) Tj
+0 -20 Td
+/F1 11 Tf
+(• 1995: Brendan Eich crea JavaScript en Netscape en solo 10 días) Tj
+0 -15 Td
+(• 1997: Estandarización como ECMAScript \(ES1\)) Tj
+0 -15 Td
+(• 2009: ES5 - Estabiliza el lenguaje con nuevas características) Tj
+0 -15 Td
+(• 2015: ES6/ES2015 - Revolución con clases, arrow functions, let/const) Tj
+0 -15 Td
+(• 2016-presente: Actualizaciones anuales con nuevas características) Tj
+0 -30 Td
+/F2 12 Tf
+(¿Dónde se Ejecuta JavaScript?) Tj
+0 -20 Td
+/F1 11 Tf
+(• Frontend: En navegadores web \(Chrome, Firefox, Safari, Edge\)) Tj
+0 -15 Td
+(• Backend: En servidores con Node.js) Tj
+0 -15 Td
+(• Móvil: Aplicaciones híbridas \(React Native, Ionic\)) Tj
+0 -15 Td
+(• Desktop: Aplicaciones de escritorio \(Electron\)) Tj
+0 -15 Td
+(• IoT: Dispositivos conectados y microcontroladores) Tj
+0 -30 Td
+/F2 12 Tf
+(Características de JavaScript) Tj
+0 -20 Td
+/F1 11 Tf
+(• Interpretado: No necesita compilación previa) Tj
+0 -15 Td
+(• Dinámico: Las variables pueden cambiar de tipo) Tj
+0 -15 Td
+(• Orientado a objetos: Soporta programación basada en objetos) Tj
+0 -15 Td
+(• Funcional: Las funciones son ciudadanos de primera clase) Tj
+0 -15 Td
+(• Event-driven: Responde a eventos del usuario) Tj
+0 -15 Td
+(• Case-sensitive: Distingue entre mayúsculas y minúsculas) Tj
+0 -40 Td
+/F2 16 Tf
+(3.2 Configuración del Entorno) Tj
+0 -30 Td
+/F2 12 Tf
+(Herramientas Necesarias) Tj
+0 -20 Td
+/F1 11 Tf
+(Para empezar a programar en JavaScript solo necesitas:) Tj
+0 -15 Td
+(• Un navegador web moderno \(Chrome recomendado\)) Tj
+0 -15 Td
+(• Un editor de código \(Visual Studio Code recomendado\)) Tj
+0 -15 Td
+(• Extensiones útiles: Live Server, ES6 String HTML) Tj
+0 -30 Td
+/F2 12 Tf
+(Formas de Ejecutar JavaScript) Tj
+0 -20 Td
+/F2 11 Tf
+(1. En la Consola del Navegador) Tj
+0 -15 Td
+/F1 11 Tf
+(Presiona F12 > Console y escribe directamente:) Tj
+0 -15 Td
+/F2 10 Tf
+(console.log\("¡Hola mundo!"\);) Tj
+0 -12 Td
+(2 + 3) Tj
+0 -12 Td
+(Math.random\(\)) Tj
+0 -20 Td
+/F2 11 Tf
+(2. En un Archivo HTML) Tj
+0 -15 Td
+/F2 10 Tf
+(<!DOCTYPE html>) Tj
+0 -12 Td
+(<html>) Tj
+0 -12 Td
+(<head>) Tj
+0 -12 Td
+(    <title>Mi Primera Página con JS</title>) Tj
+0 -12 Td
+(</head>) Tj
+0 -12 Td
+(<body>) Tj
+0 -12 Td
+(    <h1>JavaScript en Acción</h1>) Tj
+0 -12 Td
+(    <script>) Tj
+0 -12 Td
+(        alert\("¡Bienvenido a JavaScript!"\);) Tj
+0 -12 Td
+(        console.log\("JavaScript funcionando"\);) Tj
+0 -12 Td
+(    </script>) Tj
+0 -12 Td
+(</body>) Tj
+0 -12 Td
+(</html>) Tj
+0 -20 Td
+/F2 11 Tf
+(3. En un Archivo Externo) Tj
+0 -15 Td
+/F2 10 Tf
+(<!-- En el HTML -->) Tj
+0 -12 Td
+(<script src="mi-script.js"></script>) Tj
+0 -15 Td
+(// En el archivo mi-script.js) Tj
+0 -12 Td
+(console.log\("Desde archivo externo"\);) Tj
+0 -12 Td
+(document.getElementById\("titulo"\).textContent = "¡Cambiado con JS!";) Tj
+ET
+endstream
+endobj
+
+13 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(3.3 Variables y Tipos de Datos en JavaScript) Tj
+0 -40 Td
+/F2 12 Tf
+(Declaración de Variables) Tj
+0 -20 Td
+/F1 11 Tf
+(JavaScript tiene tres formas de declarar variables:) Tj
+0 -20 Td
+/F2 10 Tf
+(// var - forma antigua, evitar usar) Tj
+0 -12 Td
+(var nombre = "Juan";) Tj
+0 -15 Td
+(// let - para variables que pueden cambiar) Tj
+0 -12 Td
+(let edad = 25;) Tj
+0 -12 Td
+(edad = 26;  // Puede cambiar) Tj
+0 -15 Td
+(// const - para constantes \(no pueden cambiar\)) Tj
+0 -12 Td
+(const PI = 3.14159;) Tj
+0 -12 Td
+(const nombre = "María";) Tj
+0 -12 Td
+(// PI = 3.15;  // Error! No se puede cambiar) Tj
+0 -25 Td
+/F2 12 Tf
+(Reglas para Nombrar Variables) Tj
+0 -20 Td
+/F1 11 Tf
+(• Deben comenzar con letra, $ o _) Tj
+0 -15 Td
+(• No pueden empezar con números) Tj
+0 -15 Td
+(• No pueden contener espacios) Tj
+0 -15 Td
+(• Son case-sensitive \(edad ≠ Edad\)) Tj
+0 -15 Td
+(• No pueden ser palabras reservadas) Tj
+0 -25 Td
+/F2 10 Tf
+(// Nombres válidos) Tj
+0 -12 Td
+(let nombreUsuario = "Ana";) Tj
+0 -12 Td
+(let _contador = 0;) Tj
+0 -12 Td
+(let $precio = 99.99;) Tj
+0 -12 Td
+(let variable2 = "válido";) Tj
+0 -15 Td
+(// Nombres inválidos) Tj
+0 -12 Td
+(// let 2variable = "error";) Tj
+0 -12 Td
+(// let nombre usuario = "error";) Tj
+0 -12 Td
+(// let class = "error";  // palabra reservada) Tj
+0 -25 Td
+/F2 12 Tf
+(Tipos de Datos Primitivos) Tj
+0 -20 Td
+/F2 11 Tf
+(1. Number \(Números\)) Tj
+0 -15 Td
+/F1 11 Tf
+(JavaScript maneja enteros y decimales como el mismo tipo:) Tj
+0 -15 Td
+/F2 10 Tf
+(let entero = 42;) Tj
+0 -12 Td
+(let decimal = 3.14;) Tj
+0 -12 Td
+(let negativo = -17;) Tj
+0 -12 Td
+(let cientifico = 2.5e6;  // 2,500,000) Tj
+0 -12 Td
+(let infinito = Infinity;) Tj
+0 -12 Td
+(let noNumero = NaN;  // Not a Number) Tj
+0 -20 Td
+/F2 11 Tf
+(2. String \(Cadenas de Texto\)) Tj
+0 -15 Td
+/F2 10 Tf
+(let nombre = "María";) Tj
+0 -12 Td
+(let apellido = 'García';) Tj
+0 -12 Td
+(let mensaje = `Hola ${nombre} ${apellido}`;  // Template literal) Tj
+0 -12 Td
+(let multilinea = `Primera línea) Tj
+0 -12 Td
+(Segunda línea) Tj
+0 -12 Td
+(Tercera línea`;) Tj
+0 -20 Td
+/F2 11 Tf
+(3. Boolean \(Booleanos\)) Tj
+0 -15 Td
+/F2 10 Tf
+(let esVerdadero = true;) Tj
+0 -12 Td
+(let esFalso = false;) Tj
+0 -12 Td
+(let esMayor = 25 > 18;  // true) Tj
+0 -12 Td
+(let tienePermiso = esVerdadero && esMayor;) Tj
+0 -20 Td
+/F2 11 Tf
+(4. Undefined y Null) Tj
+0 -15 Td
+/F2 10 Tf
+(let sinDefinir;  // undefined) Tj
+0 -12 Td
+(let vacio = null;  // intencionalmente vacío) Tj
+0 -12 Td
+(let resultado = undefined;) Tj
+0 -20 Td
+/F2 11 Tf
+(5. Symbol \(ES6+\)) Tj
+0 -15 Td
+/F2 10 Tf
+(let simbolo = Symbol\("descripcion"\);) Tj
+0 -12 Td
+(let simboloUnico = Symbol\(\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Tipos de Datos Complejos) Tj
+0 -20 Td
+/F2 11 Tf
+(Arrays \(Arreglos\)) Tj
+0 -15 Td
+/F2 10 Tf
+(let numeros = [1, 2, 3, 4, 5];) Tj
+0 -12 Td
+(let frutas = ["manzana", "banana", "naranja"];) Tj
+0 -12 Td
+(let mixto = [1, "texto", true, null];) Tj
+0 -12 Td
+(let vacio = [];) Tj
+0 -15 Td
+(// Acceso a elementos) Tj
+0 -12 Td
+(console.log\(frutas[0]\);  // "manzana") Tj
+0 -12 Td
+(console.log\(frutas.length\);  // 3) Tj
+0 -20 Td
+/F2 11 Tf
+(Objects \(Objetos\)) Tj
+0 -15 Td
+/F2 10 Tf
+(let persona = {) Tj
+0 -12 Td
+(    nombre: "Carlos",) Tj
+0 -12 Td
+(    edad: 30,) Tj
+0 -12 Td
+(    ciudad: "Madrid",) Tj
+0 -12 Td
+(    activo: true) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Acceso a propiedades) Tj
+0 -12 Td
+(console.log\(persona.nombre\);  // "Carlos") Tj
+0 -12 Td
+(console.log\(persona["edad"]\);  // 30) Tj
+0 -25 Td
+/F2 12 Tf
+(Verificar Tipos de Datos) Tj
+0 -20 Td
+/F2 10 Tf
+(let numero = 42;) Tj
+0 -12 Td
+(let texto = "Hola";) Tj
+0 -12 Td
+(let lista = [1, 2, 3];) Tj
+0 -15 Td
+(console.log\(typeof numero\);   // "number") Tj
+0 -12 Td
+(console.log\(typeof texto\);    // "string") Tj
+0 -12 Td
+(console.log\(typeof lista\);    // "object") Tj
+0 -12 Td
+(console.log\(Array.isArray\(lista\)\);  // true) Tj
+ET
+endstream
+endobj
+
+14 0 obj
+<<
+/Length 2300
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(3.4 Operadores y Expresiones) Tj
+0 -40 Td
+/F2 12 Tf
+(Operadores Aritméticos) Tj
+0 -20 Td
+/F1 11 Tf
+(Realizan operaciones matemáticas:) Tj
+0 -20 Td
+/F2 10 Tf
+(let a = 10;) Tj
+0 -12 Td
+(let b = 3;) Tj
+0 -15 Td
+(console.log\(a + b\);   // 13 \(suma\)) Tj
+0 -12 Td
+(console.log\(a - b\);   // 7  \(resta\)) Tj
+0 -12 Td
+(console.log\(a * b\);   // 30 \(multiplicación\)) Tj
+0 -12 Td
+(console.log\(a / b\);   // 3.333... \(división\)) Tj
+0 -12 Td
+(console.log\(a % b\);   // 1  \(módulo - resto\)) Tj
+0 -12 Td
+(console.log\(a ** b\);  // 1000 \(exponencial\)) Tj
+0 -15 Td
+(// Incremento y decremento) Tj
+0 -12 Td
+(let contador = 5;) Tj
+0 -12 Td
+(contador++;  // Incrementa en 1 \(ahora es 6\)) Tj
+0 -12 Td
+(contador--;  // Decrementa en 1 \(ahora es 5\)) Tj
+0 -12 Td
+(++contador;  // Pre-incremento) Tj
+0 -12 Td
+(--contador;  // Pre-decremento) Tj
+0 -25 Td
+/F2 12 Tf
+(Operadores de Asignación) Tj
+0 -20 Td
+/F2 10 Tf
+(let x = 10;) Tj
+0 -15 Td
+(x += 5;   // x = x + 5  \(ahora x = 15\)) Tj
+0 -12 Td
+(x -= 3;   // x = x - 3  \(ahora x = 12\)) Tj
+0 -12 Td
+(x *= 2;   // x = x * 2  \(ahora x = 24\)) Tj
+0 -12 Td
+(x /= 4;   // x = x / 4  \(ahora x = 6\)) Tj
+0 -12 Td
+(x %= 5;   // x = x % 5  \(ahora x = 1\)) Tj
+0 -12 Td
+(x **= 3;  // x = x ** 3 \(ahora x = 1\)) Tj
+0 -25 Td
+/F2 12 Tf
+(Operadores de Comparación) Tj
+0 -20 Td
+/F2 10 Tf
+(let edad1 = 25;) Tj
+0 -12 Td
+(let edad2 = "25";) Tj
+0 -15 Td
+(// Igualdad \(convierte tipos\)) Tj
+0 -12 Td
+(console.log\(edad1 == edad2\);   // true) Tj
+0 -12 Td
+(console.log\(edad1 == 25\);     // true) Tj
+0 -15 Td
+(// Igualdad estricta \(no convierte tipos\)) Tj
+0 -12 Td
+(console.log\(edad1 === edad2\);  // false) Tj
+0 -12 Td
+(console.log\(edad1 === 25\);    // true) Tj
+0 -15 Td
+(// Desigualdad) Tj
+0 -12 Td
+(console.log\(edad1 != edad2\);   // false) Tj
+0 -12 Td
+(console.log\(edad1 !== edad2\);  // true) Tj
+0 -15 Td
+(// Comparaciones numéricas) Tj
+0 -12 Td
+(console.log\(25 > 20\);    // true) Tj
+0 -12 Td
+(console.log\(25 < 30\);    // true) Tj
+0 -12 Td
+(console.log\(25 >= 25\);   // true) Tj
+0 -12 Td
+(console.log\(25 <= 24\);   // false) Tj
+0 -25 Td
+/F2 12 Tf
+(Operadores Lógicos) Tj
+0 -20 Td
+/F2 10 Tf
+(let esAdulto = true;) Tj
+0 -12 Td
+(let tieneLicencia = false;) Tj
+0 -12 Td
+(let edad = 20;) Tj
+0 -15 Td
+(// AND \(&&\) - Ambas condiciones deben ser true) Tj
+0 -12 Td
+(let puedeConducir = esAdulto && tieneLicencia;  // false) Tj
+0 -15 Td
+(// OR \(||\) - Al menos una condición debe ser true) Tj
+0 -12 Td
+(let puedeEntrar = esAdulto || edad >= 18;  // true) Tj
+0 -15 Td
+(// NOT \(!\) - Invierte el valor booleano) Tj
+0 -12 Td
+(let noEsAdulto = !esAdulto;  // false) Tj
+0 -15 Td
+(// Combinaciones complejas) Tj
+0 -12 Td
+(let acceso = \(edad >= 18 && tieneLicencia\) || \(edad >= 21\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Operadores de Cadena) Tj
+0 -20 Td
+/F2 10 Tf
+(let nombre = "Ana";) Tj
+0 -12 Td
+(let apellido = "García";) Tj
+0 -15 Td
+(// Concatenación con +) Tj
+0 -12 Td
+(let nombreCompleto = nombre + " " + apellido;) Tj
+0 -12 Td
+(console.log\(nombreCompleto\);  // "Ana García") Tj
+0 -15 Td
+(// Template literals \(preferido\)) Tj
+0 -12 Td
+(let saludo = `Hola ${nombre}, ¿cómo estás?`;) Tj
+0 -12 Td
+(let mensaje = `Tu nombre completo es ${nombreCompleto}`;) Tj
+0 -25 Td
+/F2 12 Tf
+(Operador Ternario) Tj
+0 -20 Td
+/F1 11 Tf
+(Una forma concisa de escribir if-else:) Tj
+0 -15 Td
+/F2 10 Tf
+(let edad = 20;) Tj
+0 -15 Td
+(// Sintaxis: condicion ? valorSiTrue : valorSiFalse) Tj
+0 -12 Td
+(let status = edad >= 18 ? "Adulto" : "Menor";) Tj
+0 -12 Td
+(console.log\(status\);  // "Adulto") Tj
+0 -15 Td
+(// Ejemplos más complejos) Tj
+0 -12 Td
+(let precio = 100;) Tj
+0 -12 Td
+(let descuento = precio > 50 ? precio * 0.1 : 0;) Tj
+0 -12 Td
+(let mensaje = edad >= 18 ? "Puede votar" : "No puede votar";) Tj
+0 -25 Td
+/F2 12 Tf
+(Precedencia de Operadores) Tj
+0 -20 Td
+/F1 11 Tf
+(El orden en que se evalúan las operaciones:) Tj
+0 -15 Td
+(1. Paréntesis \(\)) Tj
+0 -15 Td
+(2. Exponencial **) Tj
+0 -15 Td
+(3. Unarios !, ++, --) Tj
+0 -15 Td
+(4. Multiplicación, División *, /, %) Tj
+0 -15 Td
+(5. Suma, Resta +, -) Tj
+0 -15 Td
+(6. Comparación <, >, <=, >=) Tj
+0 -15 Td
+(7. Igualdad ==, ===, !=, !==) Tj
+0 -15 Td
+(8. AND lógico &&) Tj
+0 -15 Td
+(9. OR lógico ||) Tj
+0 -15 Td
+(10. Ternario ? :) Tj
+0 -15 Td
+(11. Asignación =, +=, -=, etc.) Tj
+0 -20 Td
+/F2 10 Tf
+(// Ejemplos de precedencia) Tj
+0 -12 Td
+(let resultado1 = 5 + 3 * 2;      // 11 \(no 16\)) Tj
+0 -12 Td
+(let resultado2 = \(5 + 3\) * 2;    // 16) Tj
+0 -12 Td
+(let resultado3 = 10 > 5 && 3 < 7; // true) Tj
+0 -12 Td
+(let resultado4 = false || true && false; // false) Tj
+ET
+endstream
+endobj
+
+15 0 obj
+<<
+/Length 2400
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(3.5 Estructuras de Control) Tj
+0 -40 Td
+/F2 12 Tf
+(Condicionales: if, else if, else) Tj
+0 -20 Td
+/F1 11 Tf
+(Permiten tomar decisiones basadas en condiciones:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Condicional simple) Tj
+0 -12 Td
+(let edad = 18;) Tj
+0 -12 Td
+(if \(edad >= 18\) {) Tj
+0 -12 Td
+(    console.log\("Eres mayor de edad"\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Condicional con else) Tj
+0 -12 Td
+(if \(edad >= 18\) {) Tj
+0 -12 Td
+(    console.log\("Eres mayor de edad"\);) Tj
+0 -12 Td
+(} else {) Tj
+0 -12 Td
+(    console.log\("Eres menor de edad"\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Múltiples condiciones) Tj
+0 -12 Td
+(let calificacion = 85;) Tj
+0 -12 Td
+(if \(calificacion >= 90\) {) Tj
+0 -12 Td
+(    console.log\("Excelente - A"\);) Tj
+0 -12 Td
+(} else if \(calificacion >= 80\) {) Tj
+0 -12 Td
+(    console.log\("Muy bien - B"\);) Tj
+0 -12 Td
+(} else if \(calificacion >= 70\) {) Tj
+0 -12 Td
+(    console.log\("Bien - C"\);) Tj
+0 -12 Td
+(} else if \(calificacion >= 60\) {) Tj
+0 -12 Td
+(    console.log\("Suficiente - D"\);) Tj
+0 -12 Td
+(} else {) Tj
+0 -12 Td
+(    console.log\("Insuficiente - F"\);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Switch: Múltiples Opciones) Tj
+0 -20 Td
+/F1 11 Tf
+(Útil cuando tienes muchas opciones específicas:) Tj
+0 -20 Td
+/F2 10 Tf
+(let diaSemana = 3;) Tj
+0 -12 Td
+(let nombreDia;) Tj
+0 -15 Td
+(switch \(diaSemana\) {) Tj
+0 -12 Td
+(    case 1:) Tj
+0 -12 Td
+(        nombreDia = "Lunes";) Tj
+0 -12 Td
+(        break;) Tj
+0 -12 Td
+(    case 2:) Tj
+0 -12 Td
+(        nombreDia = "Martes";) Tj
+0 -12 Td
+(        break;) Tj
+0 -12 Td
+(    case 3:) Tj
+0 -12 Td
+(        nombreDia = "Miércoles";) Tj
+0 -12 Td
+(        break;) Tj
+0 -12 Td
+(    case 4:) Tj
+0 -12 Td
+(        nombreDia = "Jueves";) Tj
+0 -12 Td
+(        break;) Tj
+0 -12 Td
+(    case 5:) Tj
+0 -12 Td
+(        nombreDia = "Viernes";) Tj
+0 -12 Td
+(        break;) Tj
+0 -12 Td
+(    case 6:) Tj
+0 -12 Td
+(    case 7:) Tj
+0 -12 Td
+(        nombreDia = "Fin de semana";) Tj
+0 -12 Td
+(        break;) Tj
+0 -12 Td
+(    default:) Tj
+0 -12 Td
+(        nombreDia = "Día inválido";) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(console.log\(nombreDia\);  // "Miércoles") Tj
+0 -25 Td
+/F2 12 Tf
+(Bucles: for) Tj
+0 -20 Td
+/F1 11 Tf
+(Repite código un número específico de veces:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Bucle for básico) Tj
+0 -12 Td
+(for \(let i = 0; i < 5; i++\) {) Tj
+0 -12 Td
+(    console.log\(`Iteración ${i}`\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Recorrer un array) Tj
+0 -12 Td
+(let frutas = ["manzana", "banana", "naranja"];) Tj
+0 -12 Td
+(for \(let i = 0; i < frutas.length; i++\) {) Tj
+0 -12 Td
+(    console.log\(`Fruta ${i + 1}: ${frutas[i]}`\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// for...of \(para arrays\)) Tj
+0 -12 Td
+(for \(let fruta of frutas\) {) Tj
+0 -12 Td
+(    console.log\(`Me gusta la ${fruta}`\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// for...in \(para objetos\)) Tj
+0 -12 Td
+(let persona = { nombre: "Ana", edad: 25, ciudad: "Madrid" };) Tj
+0 -12 Td
+(for \(let propiedad in persona\) {) Tj
+0 -12 Td
+(    console.log\(`${propiedad}: ${persona[propiedad]}`\);) Tj
+0 -12 Td
+(}) Tj
+0 -25 Td
+/F2 12 Tf
+(Bucles: while) Tj
+0 -20 Td
+/F1 11 Tf
+(Repite mientras una condición sea verdadera:) Tj
+0 -20 Td
+/F2 10 Tf
+(// while básico) Tj
+0 -12 Td
+(let contador = 0;) Tj
+0 -12 Td
+(while \(contador < 3\) {) Tj
+0 -12 Td
+(    console.log\(`Contador: ${contador}`\);) Tj
+0 -12 Td
+(    contador++;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// do...while \(ejecuta al menos una vez\)) Tj
+0 -12 Td
+(let numero;) Tj
+0 -12 Td
+(do {) Tj
+0 -12 Td
+(    numero = parseInt\(prompt\("Ingresa un número mayor a 10:"\)\);) Tj
+0 -12 Td
+(} while \(numero <= 10\);) Tj
+0 -15 Td
+(console.log\(`Número válido: ${numero}`\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Control de Bucles: break y continue) Tj
+0 -20 Td
+/F2 10 Tf
+(// break - sale del bucle completamente) Tj
+0 -12 Td
+(for \(let i = 0; i < 10; i++\) {) Tj
+0 -12 Td
+(    if \(i === 5\) {) Tj
+0 -12 Td
+(        break;  // Sale cuando i es 5) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(    console.log\(i\);  // 0, 1, 2, 3, 4) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// continue - salta a la siguiente iteración) Tj
+0 -12 Td
+(for \(let i = 0; i < 5; i++\) {) Tj
+0 -12 Td
+(    if \(i === 2\) {) Tj
+0 -12 Td
+(        continue;  // Salta cuando i es 2) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(    console.log\(i\);  // 0, 1, 3, 4) Tj
+0 -12 Td
+(}) Tj
+ET
+endstream
+endobj
+
+16 0 obj
+<<
+/Length 2200
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(3.6 Funciones en JavaScript) Tj
+0 -40 Td
+/F2 12 Tf
+(Declaración de Funciones) Tj
+0 -20 Td
+/F1 11 Tf
+(Las funciones permiten agrupar código reutilizable:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Función básica) Tj
+0 -12 Td
+(function saludar\(\) {) Tj
+0 -12 Td
+(    console.log\("¡Hola mundo!"\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Llamar a la función) Tj
+0 -12 Td
+(saludar\(\);  // "¡Hola mundo!") Tj
+0 -15 Td
+(// Función con parámetros) Tj
+0 -12 Td
+(function saludarPersona\(nombre\) {) Tj
+0 -12 Td
+(    console.log\(`¡Hola ${nombre}!`\);) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(saludarPersona\("Ana"\);  // "¡Hola Ana!") Tj
+0 -15 Td
+(// Función con múltiples parámetros) Tj
+0 -12 Td
+(function sumar\(a, b\) {) Tj
+0 -12 Td
+(    return a + b;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(let resultado = sumar\(5, 3\);) Tj
+0 -12 Td
+(console.log\(resultado\);  // 8) Tj
+0 -25 Td
+/F2 12 Tf
+(Expresiones de Función) Tj
+0 -20 Td
+/F2 10 Tf
+(// Función anónima asignada a variable) Tj
+0 -12 Td
+(const multiplicar = function\(a, b\) {) Tj
+0 -12 Td
+(    return a * b;) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(console.log\(multiplicar\(4, 7\)\);  // 28) Tj
+0 -15 Td
+(// Arrow functions \(ES6\)) Tj
+0 -12 Td
+(const dividir = \(a, b\) => {) Tj
+0 -12 Td
+(    return a / b;) Tj
+0 -12 Td
+(};) Tj
+0 -15 Td
+(// Arrow function simplificada) Tj
+0 -12 Td
+(const cuadrado = x => x * x;) Tj
+0 -12 Td
+(const saludar = nombre => `Hola ${nombre}`;) Tj
+0 -15 Td
+(console.log\(cuadrado\(5\)\);      // 25) Tj
+0 -12 Td
+(console.log\(saludar\("Carlos"\)\); // "Hola Carlos") Tj
+0 -25 Td
+/F2 12 Tf
+(Parámetros por Defecto) Tj
+0 -20 Td
+/F2 10 Tf
+(function crearSaludo\(nombre = "Usuario", hora = "día"\) {) Tj
+0 -12 Td
+(    return `Buenos ${hora}, ${nombre}`;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(console.log\(crearSaludo\(\)\);                    // "Buenos día, Usuario") Tj
+0 -12 Td
+(console.log\(crearSaludo\("Ana"\)\);              // "Buenos día, Ana") Tj
+0 -12 Td
+(console.log\(crearSaludo\("Carlos", "tardes"\)\); // "Buenos tardes, Carlos") Tj
+0 -25 Td
+/F2 12 Tf
+(Funciones de Orden Superior) Tj
+0 -20 Td
+/F1 11 Tf
+(Funciones que reciben otras funciones como parámetros:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Función que recibe otra función) Tj
+0 -12 Td
+(function procesar\(numeros, operacion\) {) Tj
+0 -12 Td
+(    let resultado = [];) Tj
+0 -12 Td
+(    for \(let numero of numeros\) {) Tj
+0 -12 Td
+(        resultado.push\(operacion\(numero\)\);) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(    return resultado;) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(// Funciones para las operaciones) Tj
+0 -12 Td
+(const doblar = x => x * 2;) Tj
+0 -12 Td
+(const elevarAlCuadrado = x => x * x;) Tj
+0 -15 Td
+(let numeros = [1, 2, 3, 4, 5];) Tj
+0 -12 Td
+(console.log\(procesar\(numeros, doblar\)\);          // [2, 4, 6, 8, 10]) Tj
+0 -12 Td
+(console.log\(procesar\(numeros, elevarAlCuadrado\)\); // [1, 4, 9, 16, 25]) Tj
+0 -25 Td
+/F2 12 Tf
+(Métodos de Array Importantes) Tj
+0 -20 Td
+/F2 10 Tf
+(let numeros = [1, 2, 3, 4, 5];) Tj
+0 -15 Td
+(// map - transforma cada elemento) Tj
+0 -12 Td
+(let dobles = numeros.map\(x => x * 2\);) Tj
+0 -12 Td
+(console.log\(dobles\);  // [2, 4, 6, 8, 10]) Tj
+0 -15 Td
+(// filter - filtra elementos) Tj
+0 -12 Td
+(let pares = numeros.filter\(x => x % 2 === 0\);) Tj
+0 -12 Td
+(console.log\(pares\);   // [2, 4]) Tj
+0 -15 Td
+(// find - encuentra el primer elemento que cumple la condición) Tj
+0 -12 Td
+(let mayorATres = numeros.find\(x => x > 3\);) Tj
+0 -12 Td
+(console.log\(mayorATres\);  // 4) Tj
+0 -15 Td
+(// reduce - reduce a un solo valor) Tj
+0 -12 Td
+(let suma = numeros.reduce\(\(acc, x\) => acc + x, 0\);) Tj
+0 -12 Td
+(console.log\(suma\);    // 15) Tj
+0 -15 Td
+(// forEach - ejecuta función para cada elemento) Tj
+0 -12 Td
+(numeros.forEach\(\(numero, indice\) => {) Tj
+0 -12 Td
+(    console.log\(`Elemento ${indice}: ${numero}`\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Scope \(Alcance\) de Variables) Tj
+0 -20 Td
+/F2 10 Tf
+(let variableGlobal = "Soy global";) Tj
+0 -15 Td
+(function miFuncion\(\) {) Tj
+0 -12 Td
+(    let variableLocal = "Soy local";) Tj
+0 -12 Td
+(    console.log\(variableGlobal\);  // Accesible) Tj
+0 -12 Td
+(    console.log\(variableLocal\);   // Accesible) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(miFuncion\(\);) Tj
+0 -12 Td
+(console.log\(variableGlobal\);  // Accesible) Tj
+0 -12 Td
+(// console.log\(variableLocal\);   // Error: no definida) Tj
+0 -15 Td
+(// Block scope con let y const) Tj
+0 -12 Td
+(if \(true\) {) Tj
+0 -12 Td
+(    let bloqueVariable = "Solo en este bloque";) Tj
+0 -12 Td
+(    console.log\(bloqueVariable\);  // Funciona) Tj
+0 -12 Td
+(}) Tj
+0 -12 Td
+(// console.log\(bloqueVariable\);  // Error: no definida) Tj
+ET
+endstream
+endobj
+
+17 0 obj
+<<
+/Length 2100
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(3.7 Manipulación del DOM) Tj
+0 -40 Td
+/F2 12 Tf
+(¿Qué es el DOM?) Tj
+0 -20 Td
+/F1 11 Tf
+(El DOM \(Document Object Model\) es la representación en memoria de la) Tj
+0 -15 Td
+(estructura HTML de una página. JavaScript puede manipular el DOM para) Tj
+0 -15 Td
+(cambiar contenido, estilos y estructura dinámicamente.) Tj
+0 -30 Td
+/F2 12 Tf
+(Seleccionar Elementos) Tj
+0 -20 Td
+/F2 10 Tf
+(// Por ID) Tj
+0 -12 Td
+(let titulo = document.getElementById\("mi-titulo"\);) Tj
+0 -15 Td
+(// Por clase \(devuelve el primero\)) Tj
+0 -12 Td
+(let primerBoton = document.getElementsByClassName\("boton"\)[0];) Tj
+0 -15 Td
+(// Por etiqueta) Tj
+0 -12 Td
+(let todosLosParagrafos = document.getElementsByTagName\("p"\);) Tj
+0 -15 Td
+(// Selectores CSS \(más flexibles\)) Tj
+0 -12 Td
+(let elemento = document.querySelector\("#mi-id"\);) Tj
+0 -12 Td
+(let primerElemento = document.querySelector\(".mi-clase"\);) Tj
+0 -12 Td
+(let todosLosElementos = document.querySelectorAll\(".mi-clase"\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Modificar Contenido) Tj
+0 -20 Td
+/F2 10 Tf
+(let titulo = document.getElementById\("titulo"\);) Tj
+0 -15 Td
+(// Cambiar texto) Tj
+0 -12 Td
+(titulo.textContent = "Nuevo título";) Tj
+0 -12 Td
+(titulo.innerText = "Otro título";) Tj
+0 -15 Td
+(// Cambiar HTML) Tj
+0 -12 Td
+(titulo.innerHTML = "<strong>Título en negrita</strong>";) Tj
+0 -15 Td
+(// Modificar atributos) Tj
+0 -12 Td
+(let imagen = document.querySelector\("img"\);) Tj
+0 -12 Td
+(imagen.src = "nueva-imagen.jpg";) Tj
+0 -12 Td
+(imagen.alt = "Nueva descripción";) Tj
+0 -12 Td
+(imagen.setAttribute\("title", "Título de la imagen"\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Modificar Estilos) Tj
+0 -20 Td
+/F2 10 Tf
+(let elemento = document.getElementById\("mi-elemento"\);) Tj
+0 -15 Td
+(// Estilos individuales) Tj
+0 -12 Td
+(elemento.style.color = "red";) Tj
+0 -12 Td
+(elemento.style.backgroundColor = "yellow";) Tj
+0 -12 Td
+(elemento.style.fontSize = "20px";) Tj
+0 -12 Td
+(elemento.style.display = "none";  // Ocultar) Tj
+0 -15 Td
+(// Agregar/quitar clases CSS) Tj
+0 -12 Td
+(elemento.classList.add\("nueva-clase"\);) Tj
+0 -12 Td
+(elemento.classList.remove\("clase-vieja"\);) Tj
+0 -12 Td
+(elemento.classList.toggle\("activo"\);  // Cambia si existe) Tj
+0 -12 Td
+(elemento.classList.contains\("mi-clase"\);  // true/false) Tj
+0 -25 Td
+/F2 12 Tf
+(Crear y Agregar Elementos) Tj
+0 -20 Td
+/F2 10 Tf
+(// Crear nuevo elemento) Tj
+0 -12 Td
+(let nuevoParrafo = document.createElement\("p"\);) Tj
+0 -12 Td
+(nuevoParrafo.textContent = "Este es un nuevo párrafo";) Tj
+0 -12 Td
+(nuevoParrafo.className = "parrafo-dinamico";) Tj
+0 -15 Td
+(// Agregar al DOM) Tj
+0 -12 Td
+(let contenedor = document.getElementById\("contenedor"\);) Tj
+0 -12 Td
+(contenedor.appendChild\(nuevoParrafo\);) Tj
+0 -15 Td
+(// Insertar en posición específica) Tj
+0 -12 Td
+(let primerHijo = contenedor.firstElementChild;) Tj
+0 -12 Td
+(contenedor.insertBefore\(nuevoParrafo, primerHijo\);) Tj
+0 -15 Td
+(// Eliminar elemento) Tj
+0 -12 Td
+(let elementoAEliminar = document.getElementById\("eliminar"\);) Tj
+0 -12 Td
+(elementoAEliminar.remove\(\);  // ES6+) Tj
+0 -12 Td
+(// o la forma clásica:) Tj
+0 -12 Td
+(// elementoAEliminar.parentNode.removeChild\(elementoAEliminar\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Eventos) Tj
+0 -20 Td
+/F1 11 Tf
+(Los eventos permiten responder a acciones del usuario:) Tj
+0 -20 Td
+/F2 10 Tf
+(// Event listener básico) Tj
+0 -12 Td
+(let boton = document.getElementById\("mi-boton"\);) Tj
+0 -12 Td
+(boton.addEventListener\("click", function\(\) {) Tj
+0 -12 Td
+(    alert\("¡Botón clickeado!"\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Con arrow function) Tj
+0 -12 Td
+(boton.addEventListener\("click", \(\) => {) Tj
+0 -12 Td
+(    console.log\("Click detectado"\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Eventos con parámetros) Tj
+0 -12 Td
+(function manejarClick\(evento\) {) Tj
+0 -12 Td
+(    console.log\("Elemento clickeado:", evento.target\);) Tj
+0 -12 Td
+(    evento.preventDefault\(\);  // Prevenir comportamiento por defecto) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(boton.addEventListener\("click", manejarClick\);) Tj
+0 -15 Td
+(// Diferentes tipos de eventos) Tj
+0 -12 Td
+(let input = document.getElementById\("mi-input"\);) Tj
+0 -12 Td
+(input.addEventListener\("input", \(e\) => {) Tj
+0 -12 Td
+(    console.log\("Valor actual:", e.target.value\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -15 Td
+(// Evento de formulario) Tj
+0 -12 Td
+(let formulario = document.getElementById\("mi-formulario"\);) Tj
+0 -12 Td
+(formulario.addEventListener\("submit", \(e\) => {) Tj
+0 -12 Td
+(    e.preventDefault\(\);) Tj
+0 -12 Td
+(    console.log\("Formulario enviado"\);) Tj
+0 -12 Td
+(}\);) Tj
+0 -25 Td
+/F2 12 Tf
+(Ejemplo Práctico: Lista de Tareas) Tj
+0 -20 Td
+/F2 10 Tf
+(// HTML: <input id="nueva-tarea"> <button id="agregar">Agregar</button>) Tj
+0 -12 Td
+(//       <ul id="lista-tareas"></ul>) Tj
+0 -15 Td
+(let input = document.getElementById\("nueva-tarea"\);) Tj
+0 -12 Td
+(let botonAgregar = document.getElementById\("agregar"\);) Tj
+0 -12 Td
+(let lista = document.getElementById\("lista-tareas"\);) Tj
+0 -15 Td
+(function agregarTarea\(\) {) Tj
+0 -12 Td
+(    let textoTarea = input.value.trim\(\);) Tj
+0 -12 Td
+(    if \(textoTarea !== ""\) {) Tj
+0 -12 Td
+(        let nuevoItem = document.createElement\("li"\);) Tj
+0 -12 Td
+(        nuevoItem.textContent = textoTarea;) Tj
+0 -12 Td
+(        lista.appendChild\(nuevoItem\);) Tj
+0 -12 Td
+(        input.value = "";  // Limpiar input) Tj
+0 -12 Td
+(    }) Tj
+0 -12 Td
+(}) Tj
+0 -15 Td
+(botonAgregar.addEventListener\("click", agregarTarea\);) Tj
+0 -12 Td
+(input.addEventListener\("keypress", \(e\) => {) Tj
+0 -12 Td
+(    if \(e.key === "Enter"\) agregarTarea\(\);) Tj
+0 -12 Td
+(}\);) Tj
+ET
+endstream
+endobj
+
+18 0 obj
+<<
+/Length 1800
+>>
+stream
+BT
+/F2 16 Tf
+50 720 Td
+(3.8 Resumen del Tema 3) Tj
+0 -40 Td
+/F2 12 Tf
+(Conceptos Fundamentales Aprendidos) Tj
+0 -20 Td
+/F1 11 Tf
+(En este tema hemos dominado JavaScript, el lenguaje que da vida a la web:) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Fundamentos de JavaScript) Tj
+0 -15 Td
+/F1 11 Tf
+(• Historia y evolución del lenguaje) Tj
+0 -15 Td
+(• Configuración del entorno de desarrollo) Tj
+0 -15 Td
+(• Formas de ejecutar código JavaScript) Tj
+0 -15 Td
+(• Características del lenguaje) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Variables y Tipos de Datos) Tj
+0 -15 Td
+/F1 11 Tf
+(• Declaración con let, const y var) Tj
+0 -15 Td
+(• Tipos primitivos: number, string, boolean, undefined, null) Tj
+0 -15 Td
+(• Tipos complejos: arrays y objetos) Tj
+0 -15 Td
+(• Conversión y verificación de tipos) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Operadores y Expresiones) Tj
+0 -15 Td
+/F1 11 Tf
+(• Aritméticos, de comparación y lógicos) Tj
+0 -15 Td
+(• Operador ternario para condicionales simples) Tj
+0 -15 Td
+(• Precedencia y asociatividad) Tj
+0 -15 Td
+(• Template literals para strings) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Estructuras de Control) Tj
+0 -15 Td
+/F1 11 Tf
+(• Condicionales: if, else if, else, switch) Tj
+0 -15 Td
+(• Bucles: for, while, do-while, for...of, for...in) Tj
+0 -15 Td
+(• Control de flujo: break y continue) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Funciones) Tj
+0 -15 Td
+/F1 11 Tf
+(• Declaración de funciones y expresiones) Tj
+0 -15 Td
+(• Arrow functions y sintaxis moderna) Tj
+0 -15 Td
+(• Parámetros, valores de retorno y scope) Tj
+0 -15 Td
+(• Funciones de orden superior y métodos de array) Tj
+0 -20 Td
+/F2 11 Tf
+(✓ Manipulación del DOM) Tj
+0 -15 Td
+/F1 11 Tf
+(• Selección de elementos HTML) Tj
+0 -15 Td
+(• Modificación de contenido y estilos) Tj
+0 -15 Td
+(• Creación y eliminación de elementos) Tj
+0 -15 Td
+(• Manejo de eventos para interactividad) Tj
+0 -30 Td
+/F2 12 Tf
+(Ejercicios de Autoevaluación) Tj
+0 -20 Td
+/F1 11 Tf
+(Para consolidar tu aprendizaje, desarrolla estos proyectos:) Tj
+0 -20 Td
+/F2 11 Tf
+(1. Calculadora Interactiva) Tj
+0 -15 Td
+/F1 11 Tf
+(Crea una calculadora completa con interfaz web y todas las operaciones.) Tj
+0 -20 Td
+/F2 11 Tf
+(2. Juego de Adivinanza) Tj
+0 -15 Td
+/F1 11 Tf
+(Implementa un juego donde el usuario adivine un número aleatorio.) Tj
+0 -20 Td
+/F2 11 Tf
+(3. Lista de Tareas Avanzada) Tj
+0 -15 Td
+/F1 11 Tf
+(Expande la lista básica con edición, eliminación y persistencia local.) Tj
+0 -20 Td
+/F2 11 Tf
+(4. Validador de Formularios) Tj
+0 -15 Td
+/F1 11 Tf
+(Crea un formulario con validación en tiempo real usando JavaScript.) Tj
+0 -30 Td
+/F2 12 Tf
+(Mejores Prácticas Aprendidas) Tj
+0 -20 Td
+/F1 11 Tf
+(• Usa const para valores que no cambian, let para variables) Tj
+0 -15 Td
+(• Prefiere arrow functions para funciones simples) Tj
+0 -15 Td
+(• Usa === en lugar de == para comparaciones) Tj
+0 -15 Td
+(• Nombra funciones y variables de forma descriptiva) Tj
+0 -15 Td
+(• Separa la lógica de JavaScript del HTML) Tj
+0 -30 Td
+/F2 12 Tf
+(Preparación para el Próximo Tema) Tj
+0 -20 Td
+/F1 11 Tf
+(En el Tema 4 exploraremos React, que nos permitirá:) Tj
+0 -15 Td
+(• Crear aplicaciones web modernas y reactivas) Tj
+0 -15 Td
+(• Organizar código en componentes reutilizables) Tj
+0 -15 Td
+(• Manejar estado y efectos de forma eficiente) Tj
+0 -15 Td
+(• Implementar Single Page Applications \(SPAs\)) Tj
+0 -15 Td
+(• Usar herramientas modernas de desarrollo) Tj
+0 -30 Td
+/F2 12 Tf
+(Recursos para Profundizar) Tj
+0 -20 Td
+/F1 11 Tf
+(• MDN Web Docs para referencia completa) Tj
+0 -15 Td
+(• JavaScript.info para tutoriales detallados) Tj
+0 -15 Td
+(• Codewars y LeetCode para practicar algoritmos) Tj
+0 -15 Td
+(• GitHub para explorar proyectos de código abierto) Tj
+0 -30 Td
+/F1 11 Tf
+(¡Excelente progreso! Ahora tienes las habilidades fundamentales de JavaScript.) Tj
+0 -15 Td
+(Estás listo para dar el siguiente paso hacia el desarrollo moderno con React.) Tj
+ET
+endstream
+endobj
+
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000140 00000 n 
+0000000261 00000 n 
+0000000382 00000 n 
+0000000503 00000 n 
+0000000624 00000 n 
+0000000745 00000 n 
+0000000866 00000 n 
+0000000988 00000 n 
+0000001087 00000 n 
+0000001191 00000 n 
+0000003542 00000 n 
+0000005993 00000 n 
+0000008344 00000 n 
+0000010795 00000 n 
+0000013046 00000 n 
+0000015197 00000 n 
+trailer
+<<
+/Size 19
+/Root 1 0 R
+>>
+startxref
+17048
+%%EOF

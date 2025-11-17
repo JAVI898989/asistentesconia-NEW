@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 6: Bases de Datos</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #a78bfa;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #a78bfa;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #1f2937;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #c4b5fd;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #a78bfa;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #34d399;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #fbbf24;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🗄️ TEMA 6: BASES DE DATOS</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #1f2937">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        MongoDB, diseño de esquemas y operaciones CRUD
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>Introducción a las Bases de Datos</li>
+        <li>MongoDB y NoSQL</li>
+        <li>Mongoose ODM</li>
+        <li>Diseño de Esquemas</li>
+        <li>Operaciones CRUD</li>
+        <li>Relaciones entre Documentos</li>
+        <li>Consultas Avanzadas</li>
+        <li>Índices y Performance</li>
+        <li>Mejores Prácticas</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. INTRODUCCIÓN A LAS BASES DE DATOS</h2>
+
+      <div class="definition">
+        <h4>¿Qué es una Base de Datos?</h4>
+        <p>
+          Una base de datos es un sistema organizado para almacenar, gestionar y
+          recuperar información de manera eficiente. Permite persistir datos
+          entre sesiones de aplicación.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Tipos de Bases de Datos</h3>
+
+        <h4>SQL (Relacionales):</h4>
+        <ul>
+          <li><strong>Estructura:</strong> Tablas con filas y columnas</li>
+          <li><strong>Esquema:</strong> Fijo y predefinido</li>
+          <li><strong>Relaciones:</strong> Claves foráneas</li>
+          <li><strong>Ejemplos:</strong> MySQL, PostgreSQL, SQLite</li>
+          <li><strong>ACID:</strong> Transacciones estrictas</li>
+        </ul>
+
+        <h4>NoSQL (No Relacionales):</h4>
+        <ul>
+          <li><strong>Estructura:</strong> Documentos, clave-valor, grafos</li>
+          <li><strong>Esquema:</strong> Flexible y dinámico</li>
+          <li><strong>Escalabilidad:</strong> Horizontal más fácil</li>
+          <li><strong>Ejemplos:</strong> MongoDB, Redis, Cassandra</li>
+          <li><strong>BASE:</strong> Disponibilidad sobre consistencia</li>
+        </ul>
+
+        <div class="example">
+          // Comparación: Mismo dato en SQL vs NoSQL<br /><br />
+          -- SQL (Relacional)<br />
+          CREATE TABLE users (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;id INT PRIMARY KEY,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;name VARCHAR(100),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;email VARCHAR(100)<br />
+          );<br /><br />
+          CREATE TABLE posts (<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;id INT PRIMARY KEY,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;user_id INT,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;title VARCHAR(200),<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;content TEXT,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;FOREIGN KEY (user_id) REFERENCES users(id)<br />
+          );<br /><br />
+          // NoSQL (Documento)<br />
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"_id": "507f1f77bcf86cd799439011",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"name": "Juan Pérez",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"email": "juan@email.com",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;"posts": [<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title":
+          "Mi primer post",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content":
+          "Contenido del post...",<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"createdAt":
+          "2024-01-15T10:30:00Z"<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;]<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. MONGODB Y NOSQL</h2>
+
+      <div class="definition">
+        <h4>MongoDB</h4>
+        <p>
+          MongoDB es una base de datos NoSQL orientada a documentos que almacena
+          datos en formato BSON (Binary JSON), ofreciendo flexibilidad de
+          esquema y escalabilidad horizontal.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>2.1 Conceptos Fundamentales</h3>
+
+        <h4>Terminología MongoDB vs SQL:</h4>
+        <div class="example">
+          SQL Database → MongoDB Database<br />
+          Table → Collection<br />
+          Row → Document<br />
+          Column → Field<br />
+          Primary Key → _id field<br />
+          Index → Index<br />
+          JOIN → $lookup (Aggregation)
+        </div>
+
+        <h4>Instalación y Conexión:</h4>
+        <div class="example">
+          # Instalar MongoDB (Ubuntu/Debian)<br />
+          sudo apt update<br />
+          sudo apt install mongodb<br /><br />
+          # Instalar MongoDB Compass (GUI)<br />
+          # Descargar desde: https://www.mongodb.com/try/download/compass<br /><br />
+          # Instalar driver para Node.js<br />
+          npm install mongodb<br />
+          # O instalar Mongoose (ODM)<br />
+          npm install mongoose<br /><br />
+          // Conexión básica con MongoDB<br />
+          const { MongoClient } = require('mongodb');<br />
+          const url = 'mongodb://localhost:27017';<br />
+          const dbName = 'miBaseDeDatos';<br /><br />
+          async function conectar() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const client = new MongoClient(url);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;await client.connect();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;console.log('Conectado exitosamente a
+          MongoDB');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const db = client.db(dbName);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return { client, db };<br />
+          }
+        </div>
+
+        <h3>2.2 Operaciones Básicas en MongoDB</h3>
+
+        <div class="example">
+          // Operaciones CRUD básicas con MongoDB nativo<br /><br />
+          // CREATE - Insertar documentos<br />
+          await db.collection('users').insertOne({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;name: 'Ana García',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;email: 'ana@email.com',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;age: 28,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;createdAt: new Date()<br />
+          });<br /><br />
+          await db.collection('users').insertMany([<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ name: 'Carlos López', email:
+          'carlos@email.com', age: 32 },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ name: 'María Rodríguez', email:
+          'maria@email.com', age: 25 }<br />
+          ]);<br /><br />
+          // READ - Buscar documentos<br />
+          const usuario = await db.collection('users').findOne({ email:
+          'ana@email.com' });<br />
+          const usuariosJovenes = await db.collection('users').find({ age: {
+          $lt: 30 } }).toArray();<br /><br />
+          // UPDATE - Actualizar documentos<br />
+          await db.collection('users').updateOne(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ email: 'ana@email.com' },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ $set: { age: 29, updatedAt: new Date() }
+          }<br />
+          );<br /><br />
+          await db.collection('users').updateMany(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ age: { $lt: 25 } },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ $set: { category: 'joven' } }<br />
+          );<br /><br />
+          // DELETE - Eliminar documentos<br />
+          await db.collection('users').deleteOne({ email: 'carlos@email.com'
+          });<br />
+          await db.collection('users').deleteMany({ age: { $gt: 50 } });
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. MONGOOSE ODM</h2>
+
+      <div class="definition">
+        <h4>Mongoose</h4>
+        <p>
+          Mongoose es un ODM (Object Document Mapper) para MongoDB y Node.js que
+          proporciona una solución sencilla basada en esquemas para modelar
+          datos de aplicación.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>3.1 Configuración de Mongoose</h3>
+
+        <div class="example">
+          // config/database.js<br />
+          const mongoose = require('mongoose');<br /><br />
+          const connectDB = async () => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const conn = await
+          mongoose.connect(process.env.MONGO_URI ||
+          'mongodb://localhost:27017/miapp');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`MongoDB
+          Conectado: ${conn.connection.host}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error('Error
+          conectando a MongoDB:', error.message);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;process.exit(1);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          module.exports = connectDB;<br /><br />
+          // En app.js<br />
+          const connectDB = require('./config/database');<br />
+          connectDB();
+        </div>
+
+        <h3>3.2 Definir Esquemas y Modelos</h3>
+
+        <div class="example">
+          // models/User.js<br />
+          const mongoose = require('mongoose');<br />
+          const bcrypt = require('bcryptjs');<br /><br />
+          const userSchema = new mongoose.Schema({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;username: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required: [true, 'El
+          nombre de usuario es obligatorio'],<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unique: true,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trim: true,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minlength: [3, 'El
+          username debe tener al menos 3 caracteres'],<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxlength: [30, 'El
+          username no puede exceder 30 caracteres']<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;email: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required: [true, 'El
+          email es obligatorio'],<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unique: true,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lowercase: true,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match:
+          [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Email inválido']<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;password: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;required: [true, 'La
+          contraseña es obligatoria'],<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minlength: [6, 'La
+          contraseña debe tener al menos 6 caracteres']<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;profile: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstName: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastName: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avatar: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bio: { type: String,
+          maxlength: 500 }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;role: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: String,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enum: ['user',
+          'admin', 'moderator'],<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default: 'user'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;},<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;isActive: { type: Boolean, default: true },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;lastLogin: Date<br />
+          }, {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;timestamps: true, // Añade createdAt y
+          updatedAt automáticamente<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;toJSON: { virtuals: true },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;toObject: { virtuals: true }<br />
+          });<br /><br />
+          // Middleware pre-save para hashear contraseña<br />
+          userSchema.pre('save', async function(next) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;if (!this.isModified('password')) return
+          next();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;this.password = await
+          bcrypt.hash(this.password, 12);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;next();<br />
+          });<br /><br />
+          // Método de instancia<br />
+          userSchema.methods.comparePassword = async function(candidatePassword)
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return await bcrypt.compare(candidatePassword,
+          this.password);<br />
+          };<br /><br />
+          // Virtual para nombre completo<br />
+          userSchema.virtual('fullName').get(function() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return `${this.profile.firstName}
+          ${this.profile.lastName}`;<br />
+          });<br /><br />
+          // Índices<br />
+          userSchema.index({ email: 1 });<br />
+          userSchema.index({ username: 1 });<br />
+          userSchema.index({ 'profile.firstName': 1, 'profile.lastName': 1
+          });<br /><br />
+          module.exports = mongoose.model('User', userSchema);
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. OPERACIONES CRUD CON MONGOOSE</h2>
+
+      <div class="section">
+        <h3>4.1 Create (Crear)</h3>
+
+        <div class="example">
+          const User = require('../models/User');<br /><br />
+          // Crear un usuario<br />
+          const createUser = async (userData) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = new
+          User(userData);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const savedUser =
+          await user.save();<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return savedUser;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          creando usuario: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Crear múltiples usuarios<br />
+          const createMultipleUsers = async (usersArray) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const users = await
+          User.insertMany(usersArray);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return users;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          creando usuarios: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Uso<br />
+          const nuevoUsuario = await createUser({<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;username: 'johndoe',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;email: 'john@example.com',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;password: 'password123',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;profile: {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstName: 'John',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastName: 'Doe'<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          });
+        </div>
+
+        <h3>4.2 Read (Leer)</h3>
+
+        <div class="example">
+          // Buscar un usuario por ID<br />
+          const findUserById = async (id) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = await
+          User.findById(id).populate('posts');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new
+          Error(`Usuario no encontrado: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Buscar usuarios con filtros<br />
+          const findUsers = async (filters = {}, options = {}) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const { page = 1, limit = 10, sort = {
+          createdAt: -1 } } = options;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;const skip = (page - 1) * limit;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const users = await
+          User.find(filters)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.select('-password')
+          // Excluir contraseña<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.sort(sort)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.skip(skip)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.limit(limit);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const total = await
+          User.countDocuments(filters);<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pagination:
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limit,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages:
+          Math.ceil(total / limit)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          buscando usuarios: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Búsquedas específicas<br />
+          const activeUsers = await findUsers({ isActive: true });<br />
+          const adminUsers = await findUsers({ role: 'admin' });<br />
+          const recentUsers = await findUsers(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ createdAt: { $gte: new Date(Date.now() - 7 *
+          24 * 60 * 60 * 1000) } },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ page: 1, limit: 5 }<br />
+          );
+        </div>
+
+        <h3>4.3 Update (Actualizar)</h3>
+
+        <div class="example">
+          // Actualizar un usuario<br />
+          const updateUser = async (id, updateData) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = await
+          User.findByIdAndUpdate(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updateData,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          new: true, runValidators: true }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;).select('-password');<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!user) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw
+          new Error('Usuario no encontrado');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          actualizando usuario: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Actualizar múltiples usuarios<br />
+          const updateMultipleUsers = async (filter, updateData) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const result = await
+          User.updateMany(filter, updateData);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matchedCount:
+          result.matchedCount,<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifiedCount:
+          result.modifiedCount<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          actualizando usuarios: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Ejemplos de uso<br />
+          await updateUser('507f1f77bcf86cd799439011', {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;'profile.bio': 'Desarrollador Full Stack',<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;lastLogin: new Date()<br />
+          });<br /><br />
+          // Activar todos los usuarios inactivos<br />
+          await updateMultipleUsers(<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ isActive: false },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{ isActive: true }<br />
+          );
+        </div>
+
+        <h3>4.4 Delete (Eliminar)</h3>
+
+        <div class="example">
+          // Eliminar un usuario<br />
+          const deleteUser = async (id) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const user = await
+          User.findByIdAndDelete(id);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!user) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw
+          new Error('Usuario no encontrado');<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return user;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          eliminando usuario: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };<br /><br />
+          // Soft delete (marcar como inactivo)<br />
+          const softDeleteUser = async (id) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return await updateUser(id, { isActive: false
+          });<br />
+          };<br /><br />
+          // Eliminar múltiples usuarios<br />
+          const deleteMultipleUsers = async (filter) => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;try {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const result = await
+          User.deleteMany(filter);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deletedCount:
+          result.deletedCount<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;} catch (error) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error(`Error
+          eliminando usuarios: ${error.message}`);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          };
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 EJERCICIOS PRÁCTICOS</h2>
+
+      <h3>Ejercicio 1: Sistema de Blog</h3>
+      <p>Crear modelos y operaciones para:</p>
+      <ul>
+        <li>Usuarios con perfiles completos</li>
+        <li>Posts con categorías y tags</li>
+        <li>Comentarios anidados</li>
+        <li>Sistema de likes y favoritos</li>
+      </ul>
+
+      <h3>Ejercicio 2: E-commerce Database</h3>
+      <p>Diseñar esquemas para:</p>
+      <ul>
+        <li>Productos con variantes y stock</li>
+        <li>Carrito de compras persistente</li>
+        <li>Órdenes con historial de estados</li>
+        <li>Sistema de reseñas y calificaciones</li>
+      </ul>
+
+      <h3>Ejercicio 3: API Social Media</h3>
+      <p>Implementar:</p>
+      <ul>
+        <li>Relaciones de seguimiento entre usuarios</li>
+        <li>Feed de actividades</li>
+        <li>Mensajería privada</li>
+        <li>Grupos y membresías</li>
+      </ul>
+    </div>
+
+    <div class="important">
+      <h2>🎯 MEJORES PRÁCTICAS</h2>
+      <ul>
+        <li>
+          Diseñar <strong>esquemas flexibles</strong> pero con validaciones
+          apropiadas
+        </li>
+        <li>
+          Usar <strong>índices estratégicos</strong> para optimizar consultas
+          frecuentes
+        </li>
+        <li>
+          Implementar <strong>paginación</strong> en consultas que retornen
+          muchos documentos
+        </li>
+        <li>
+          Aplicar <strong>soft deletes</strong> para datos críticos del negocio
+        </li>
+        <li>
+          Usar <strong>populate sparingly</strong> - solo cuando sea necesario
+        </li>
+        <li>
+          Implementar <strong>validaciones robustas</strong> tanto en esquema
+          como en aplicación
+        </li>
+        <li>
+          Considerar <strong>embedding vs referencing</strong> según el patrón
+          de acceso
+        </li>
+        <li>
+          Monitorear <strong>performance</strong> y optimizar consultas lentas
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 6: Bases de Datos</strong> | Página 1 de 1 | Curso
+        Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>

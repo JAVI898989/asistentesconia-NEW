@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema 1: Fundamentos de Programación</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #3b82f6;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      .chapter {
+        background: rgba(15, 23, 42, 0.8);
+        margin: 25px 0;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #10b981;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .section {
+        background: rgba(30, 41, 59, 0.6);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #475569;
+      }
+      h1 {
+        color: #ffffff;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        color: #60a5fa;
+        font-size: 1.8em;
+        margin-top: 0;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #34d399;
+        font-size: 1.4em;
+        margin-top: 25px;
+      }
+      h4 {
+        color: #fbbf24;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+      .definition {
+        background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #10b981;
+        font-style: italic;
+      }
+      .example {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        font-family: "Courier New", monospace;
+      }
+      .important {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        border-left: 4px solid #ef4444;
+        font-weight: bold;
+      }
+      ul,
+      ol {
+        padding-left: 25px;
+      }
+      li {
+        margin: 8px 0;
+        color: #cbd5e1;
+      }
+      .code {
+        background: #0f172a;
+        color: #22d3ee;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        border: 1px solid #334155;
+        overflow-x: auto;
+      }
+      .exercise {
+        background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8b5cf6;
+      }
+      .page-number {
+        text-align: center;
+        margin-top: 30px;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .toc {
+        background: rgba(15, 23, 42, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 1px solid #475569;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>💻 TEMA 1: FUNDAMENTOS DE PROGRAMACIÓN</h1>
+      <p style="font-size: 1.3em; margin: 15px 0 0 0; color: #e0e7ff">
+        <strong>Curso Profesional de Programación desde Cero</strong><br />
+        Conceptos básicos, algoritmos y lógica de programación
+      </p>
+    </div>
+
+    <div class="toc">
+      <h3>📋 ÍNDICE DE CONTENIDOS</h3>
+      <ol>
+        <li>Introducción a la Programación</li>
+        <li>Algoritmos y Lógica de Programación</li>
+        <li>Variables y Tipos de Datos</li>
+        <li>Estructuras de Control</li>
+        <li>Funciones y Procedimientos</li>
+        <li>Introducción a la Programación Orientada a Objetos</li>
+        <li>Ejercicios Prácticos</li>
+        <li>Autoevaluación</li>
+      </ol>
+    </div>
+
+    <div class="chapter">
+      <h2>1. INTRODUCCIÓN A LA PROGRAMACIÓN</h2>
+
+      <div class="definition">
+        <h4>¿Qué es la Programación?</h4>
+        <p>
+          La programación es el proceso de crear un conjunto de instrucciones
+          que le dicen a una computadora cómo realizar una tarea específica. Es
+          tanto un arte como una ciencia que combina creatividad, lógica y
+          resolución de problemas.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>1.1 Historia y Evolución</h3>
+        <p>
+          La programación ha evolucionado desde los primeros computadores
+          mecánicos hasta los sistemas modernos:
+        </p>
+        <ul>
+          <li>
+            <strong>1940s:</strong> Primeros lenguajes de máquina (código
+            binario)
+          </li>
+          <li><strong>1950s:</strong> Aparición del ensamblador y FORTRAN</li>
+          <li>
+            <strong>1960s-70s:</strong> COBOL, BASIC, C - bases de la
+            programación moderna
+          </li>
+          <li>
+            <strong>1980s-90s:</strong> Programación orientada a objetos (C++,
+            Java)
+          </li>
+          <li>
+            <strong>2000s-presente:</strong> Web, móvil, IA (JavaScript, Python,
+            Swift)
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>1.2 Tipos de Lenguajes de Programación</h3>
+
+        <h4>Lenguajes Compilados vs Interpretados</h4>
+
+        <div class="example">
+          <strong>Lenguajes Compilados (C++, C#, Go):</strong><br />
+          Código fuente → Compilador → Código máquina → Ejecución<br /><br />
+          <strong>Ventajas:</strong> Más rápidos en ejecución<br />
+          <strong>Desventajas:</strong> Proceso de compilación necesario
+        </div>
+
+        <div class="example">
+          <strong>Lenguajes Interpretados (Python, JavaScript, PHP):</strong
+          ><br />
+          Código fuente → Intérprete → Ejecución directa<br /><br />
+          <strong>Ventajas:</strong> Desarrollo más rápido, multiplataforma<br />
+          <strong>Desventajas:</strong> Ejecución más lenta
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>1.3 Paradigmas de Programación</h3>
+        <ul>
+          <li>
+            <strong>Programación Imperativa:</strong> Secuencia de comandos (C,
+            Pascal)
+          </li>
+          <li>
+            <strong>Programación Orientada a Objetos:</strong> Clases y objetos
+            (Java, C++)
+          </li>
+          <li>
+            <strong>Programación Funcional:</strong> Funciones matemáticas
+            (Haskell, Lisp)
+          </li>
+          <li>
+            <strong>Programación Declarativa:</strong> Qué hacer, no cómo (SQL,
+            HTML)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>2. ALGORITMOS Y LÓGICA DE PROGRAMACIÓN</h2>
+
+      <div class="definition">
+        <h4>Definición de Algoritmo</h4>
+        <p>
+          Un algoritmo es una secuencia finita de instrucciones bien definidas,
+          ordenadas y no ambiguas para resolver un problema específico. Todo
+          programa de computadora está basado en uno o más algoritmos.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>2.1 Características de un Algoritmo</h3>
+        <ul>
+          <li>
+            <strong>Precisión:</strong> Cada paso debe estar claramente definido
+          </li>
+          <li>
+            <strong>Determinismo:</strong> Mismo input produce mismo output
+          </li>
+          <li>
+            <strong>Finitud:</strong> Debe terminar en un número finito de pasos
+          </li>
+          <li>
+            <strong>Entrada:</strong> Puede tener cero o más datos de entrada
+          </li>
+          <li><strong>Salida:</strong> Debe producir al menos un resultado</li>
+          <li><strong>Efectividad:</strong> Cada operación debe ser básica</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>2.2 Pseudocódigo</h3>
+        <p>
+          El pseudocódigo es una descripción de alto nivel de un algoritmo que
+          usa las convenciones estructurales de un lenguaje de programación,
+          pero está diseñado para ser leído por humanos.
+        </p>
+
+        <div class="example">
+          <strong>Ejemplo: Algoritmo para hacer café</strong><br /><br />
+          INICIO<br />
+          1. Verificar si hay agua en la cafetera<br />
+          2. SI no hay agua ENTONCES<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;Añadir agua a la cafetera<br />
+          3. Verificar si hay café molido<br />
+          4. SI no hay café ENTONCES<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;Moler granos de café<br />
+          5. Poner filtro en la cafetera<br />
+          6. Añadir café molido al filtro<br />
+          7. Encender la cafetera<br />
+          8. ESPERAR hasta que termine de prepararse<br />
+          9. Servir café en taza<br />
+          FIN
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>2.3 Diagramas de Flujo</h3>
+        <p>
+          Los diagramas de flujo son representaciones gráficas de algoritmos
+          usando símbolos estándar:
+        </p>
+        <ul>
+          <li><strong>Óvalo:</strong> Inicio/Fin</li>
+          <li><strong>Rectángulo:</strong> Proceso/Acción</li>
+          <li><strong>Rombo:</strong> Decisión/Condición</li>
+          <li><strong>Paralelelogramo:</strong> Entrada/Salida</li>
+          <li><strong>Círculo:</strong> Conector</li>
+          <li><strong>Flecha:</strong> Flujo de control</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>3. VARIABLES Y TIPOS DE DATOS</h2>
+
+      <div class="definition">
+        <h4>Variables</h4>
+        <p>
+          Una variable es un espacio de memoria con un nombre asociado que
+          contiene datos que pueden cambiar durante la ejecución del programa.
+          Es como una caja etiquetada donde guardamos información.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>3.1 Tipos de Datos Primitivos</h3>
+
+        <h4>Números Enteros (int)</h4>
+        <div class="example">
+          int edad = 25;<br />
+          int temperatura = -5;<br />
+          int poblacion = 1000000;
+        </div>
+
+        <h4>Números Decimales (float/double)</h4>
+        <div class="example">
+          float altura = 1.75;<br />
+          double pi = 3.14159265359;<br />
+          double precio = 29.99;
+        </div>
+
+        <h4>Texto (string)</h4>
+        <div class="example">
+          string nombre = "Juan Pérez";<br />
+          string mensaje = "¡Hola Mundo!";<br />
+          string codigo = "ABC123";
+        </div>
+
+        <h4>Booleanos (bool)</h4>
+        <div class="example">
+          bool esEstudiante = true;<br />
+          bool tienePermiso = false;<br />
+          bool esMayorDeEdad = (edad >= 18);
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>3.2 Declaración e Inicialización</h3>
+
+        <div class="example">
+          <strong>Declaración:</strong> Reservar espacio en memoria<br />
+          int numero; // Se declara pero no se inicializa<br /><br />
+          <strong>Inicialización:</strong> Asignar un valor inicial<br />
+          numero = 10; // Ahora tiene valor<br /><br />
+          <strong>Declaración + Inicialización:</strong><br />
+          int numero = 10; // En una sola línea
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>3.3 Operadores</h3>
+
+        <h4>Operadores Aritméticos</h4>
+        <div class="example">
+          + (suma): 5 + 3 = 8<br />
+          - (resta): 5 - 3 = 2<br />
+          * (multiplicación): 5 * 3 = 15<br />
+          / (división): 15 / 3 = 5<br />
+          % (módulo): 15 % 4 = 3 (resto de la división)
+        </div>
+
+        <h4>Operadores de Comparación</h4>
+        <div class="example">
+          == (igual): 5 == 5 (true)<br />
+          != (no igual): 5 != 3 (true)<br />
+          > (mayor que): 5 > 3 (true)<br />
+          < (menor que): 5 < 3 (false)<br />
+          >= (mayor o igual): 5 >= 5 (true)<br />
+          <= (menor o igual): 3 <= 5 (true)
+        </div>
+
+        <h4>Operadores Lógicos</h4>
+        <div class="example">
+          && (AND): true && false = false<br />
+          || (OR): true || false = true<br />
+          ! (NOT): !true = false
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>4. ESTRUCTURAS DE CONTROL</h2>
+
+      <div class="definition">
+        <h4>Estructuras de Control</h4>
+        <p>
+          Las estructuras de control determinan el orden en que se ejecutan las
+          instrucciones en un programa. Permiten tomar decisiones y repetir
+          acciones.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>4.1 Estructuras Condicionales</h3>
+
+        <h4>IF (Si)</h4>
+        <div class="example">
+          if (edad >= 18) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Eres mayor de edad");<br />
+          }
+        </div>
+
+        <h4>IF-ELSE (Si-Sino)</h4>
+        <div class="example">
+          if (edad >= 18) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Eres mayor de edad");<br />
+          } else {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Eres menor de edad");<br />
+          }
+        </div>
+
+        <h4>IF-ELSE IF-ELSE (Múltiples condiciones)</h4>
+        <div class="example">
+          if (nota >= 90) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Excelente");<br />
+          } else if (nota >= 80) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Bueno");<br />
+          } else if (nota >= 70) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Regular");<br />
+          } else {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Insuficiente");<br />
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>4.2 Estructuras Repetitivas (Bucles)</h3>
+
+        <h4>FOR (Para)</h4>
+        <p>Usado cuando sabemos cuántas veces queremos repetir algo.</p>
+        <div class="example">
+          for (int i = 1; i <= 10; i++) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Número: " + i);<br />
+          }<br />
+          // Imprime números del 1 al 10
+        </div>
+
+        <h4>WHILE (Mientras)</h4>
+        <p>Repite mientras una condición sea verdadera.</p>
+        <div class="example">
+          int contador = 1;<br />
+          while (contador <= 5) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Contador: " + contador);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;contador++; // Incrementar<br />
+          }
+        </div>
+
+        <h4>DO-WHILE (Hacer-Mientras)</h4>
+        <p>Ejecuta al menos una vez, luego verifica la condición.</p>
+        <div class="example">
+          int numero;<br />
+          do {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;print("Ingresa un número positivo:");<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;numero = input();<br />
+          } while (numero <= 0);
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>4.3 Switch-Case</h3>
+        <p>Alternativa elegante para múltiples condiciones IF-ELSE IF.</p>
+        <div class="example">
+          switch (dia) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;case 1:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Lunes");<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;case 2:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Martes");<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;case 3:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Miércoles");<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;default:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Día no
+          válido");<br />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>5. FUNCIONES Y PROCEDIMIENTOS</h2>
+
+      <div class="definition">
+        <h4>Funciones</h4>
+        <p>
+          Una función es un bloque de código reutilizable que realiza una tarea
+          específica. Puede recibir datos (parámetros) y devolver un resultado.
+          Las funciones ayudan a organizar el código y evitar repetición.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>5.1 Declaración de Funciones</h3>
+        <div class="example">
+          // Función que suma dos números<br />
+          function sumar(a, b) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br />
+          }<br /><br />
+          // Uso de la función<br />
+          int resultado = sumar(5, 3); // resultado = 8
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>5.2 Parámetros y Argumentos</h3>
+        <ul>
+          <li>
+            <strong>Parámetros:</strong> Variables que recibe la función (a, b)
+          </li>
+          <li>
+            <strong>Argumentos:</strong> Valores que pasamos a la función (5, 3)
+          </li>
+        </ul>
+
+        <div class="example">
+          function saludar(nombre, apellido) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return "Hola " + nombre + " " + apellido;<br />
+          }<br /><br />
+          string mensaje = saludar("Juan", "Pérez");
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>5.3 Ventajas de las Funciones</h3>
+        <ul>
+          <li>
+            <strong>Reutilización:</strong> Escribir una vez, usar muchas veces
+          </li>
+          <li>
+            <strong>Modularidad:</strong> Dividir problemas complejos en partes
+            simples
+          </li>
+          <li><strong>Mantenimiento:</strong> Cambios en un solo lugar</li>
+          <li><strong>Legibilidad:</strong> Código más claro y organizado</li>
+          <li>
+            <strong>Testing:</strong> Probar cada función independientemente
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <h2>6. INTRODUCCIÓN A LA PROGRAMACIÓN ORIENTADA A OBJETOS</h2>
+
+      <div class="definition">
+        <h4>Programación Orientada a Objetos (POO)</h4>
+        <p>
+          La POO es un paradigma de programación basado en el concepto de
+          "objetos", que contienen datos (atributos) y funciones (métodos). Es
+          una forma de organizar y estructurar código que modela entidades del
+          mundo real.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>6.1 Conceptos Fundamentales</h3>
+
+        <h4>Clase</h4>
+        <p>Una plantilla o molde para crear objetos.</p>
+        <div class="example">
+          class Persona {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Atributos<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;string nombre;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;int edad;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;string profesion;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// Métodos<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;function caminar() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(nombre + " está
+          caminando");<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          }
+        </div>
+
+        <h4>Objeto</h4>
+        <p>Una instancia específica de una clase.</p>
+        <div class="example">
+          Persona juan = new Persona();<br />
+          juan.nombre = "Juan Pérez";<br />
+          juan.edad = 30;<br />
+          juan.profesion = "Programador";<br /><br />
+          juan.caminar(); // "Juan Pérez está caminando"
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>6.2 Principios de la POO</h3>
+        <ul>
+          <li>
+            <strong>Encapsulación:</strong> Ocultar detalles internos del objeto
+          </li>
+          <li>
+            <strong>Herencia:</strong> Crear nuevas clases basadas en clases
+            existentes
+          </li>
+          <li>
+            <strong>Polimorfismo:</strong> Múltiples formas de comportamiento
+          </li>
+          <li><strong>Abstracción:</strong> Simplificar la complejidad</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <h2>🔧 EJERCICIOS PRÁCTICOS</h2>
+
+      <h3>Ejercicio 1: Calculadora Básica</h3>
+      <p>
+        Crear un algoritmo que realice operaciones básicas (suma, resta,
+        multiplicación, división) entre dos números.
+      </p>
+
+      <h3>Ejercicio 2: Número Par o Impar</h3>
+      <p>
+        Escribir un programa que determine si un número ingresado por el usuario
+        es par o impar.
+      </p>
+
+      <h3>Ejercicio 3: Tabla de Multiplicar</h3>
+      <p>Generar la tabla de multiplicar de un número dado del 1 al 10.</p>
+
+      <h3>Ejercicio 4: Mayor de Tres Números</h3>
+      <p>Encontrar el número mayor entre tres números ingresados.</p>
+
+      <h3>Ejercicio 5: Suma de Números Naturales</h3>
+      <p>
+        Calcular la suma de los primeros N números naturales usando un bucle.
+      </p>
+    </div>
+
+    <div class="chapter">
+      <h2>📝 AUTOEVALUACIÓN</h2>
+
+      <div class="section">
+        <h3>Preguntas de Repaso</h3>
+        <ol>
+          <li>
+            ¿Cuál es la diferencia entre un lenguaje compilado e interpretado?
+          </li>
+          <li>¿Qué es un algoritmo y cuáles son sus características?</li>
+          <li>Nombra los tipos de datos primitivos más comunes.</li>
+          <li>¿Para qué sirven las estructuras de control condicionales?</li>
+          <li>¿Cuándo usar un bucle FOR vs un bucle WHILE?</li>
+          <li>¿Qué ventajas ofrece el uso de funciones?</li>
+          <li>
+            Explica brevemente qué es la Programación Orientada a Objetos.
+          </li>
+        </ol>
+      </div>
+
+      <div class="important">
+        <h4>💡 Puntos Clave para Recordar</h4>
+        <ul>
+          <li>La programación es resolución de problemas paso a paso</li>
+          <li>Los algoritmos deben ser precisos, deterministas y finitos</li>
+          <li>Las variables son contenedores de datos que pueden cambiar</li>
+          <li>Las estructuras de control dirigen el flujo del programa</li>
+          <li>Las funciones permiten reutilizar código y organizarlo mejor</li>
+          <li>La POO modela entidades del mundo real como objetos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">
+      <p>
+        <strong>Tema 1: Fundamentos de Programación</strong> | Página 1 de 1 |
+        Curso Profesional de Programación desde Cero
+      </p>
+    </div>
+  </body>
+</html>
